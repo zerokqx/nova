@@ -9,6 +9,8 @@ import {
 import type { ReactNode } from "react";
 import style from "@styles/effects/Hover.module.css";
 import { ternary } from "@utils/conditions/ternary";
+import type { IconNode } from "lucide";
+import type { Fn } from "@t/functions/fn.type";
 
 const AsideRoot = ({ children, ...props }: AppShellAsideProps) => {
   return (
@@ -63,26 +65,6 @@ const AsideAction = ({
   );
 };
 
-const AsideStatic = ({
-  title,
-  children,
-}: {
-  title?: string;
-  children?: ReactNode;
-}) => {
-  return (
-    <Stack gap={"xs"}>
-      {title && (
-        <Text c="dimmed" size="xs" fw={700} tt="uppercase" px={"xs"}>
-          {title}
-        </Text>
-      )}
-      {children}
-    </Stack>
-  );
-};
-
 export const Aside = Object.assign(AsideRoot, {
   Action: AsideAction,
-  Static: AsideStatic,
 });

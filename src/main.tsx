@@ -32,7 +32,7 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <MantineProvider theme={mantineTheme}>
+      <MantineProvider theme={mantineTheme} defaultColorScheme="dark">
         <QueryClientProvider client={queryClient}>
           <RouterProvider router={router} />
         </QueryClientProvider>
