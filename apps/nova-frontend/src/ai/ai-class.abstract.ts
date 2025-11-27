@@ -3,8 +3,6 @@ import type { IMeta } from "./types/source-meta.type";
 import type { TModels } from "./types/source-models.type";
 import type { ISourceReturn } from "./types/source-return.type";
 export abstract class AiSourceAbstact<M extends TModels> {
-  private static _instances: Map<string, AiSourceAbstact<unknown[]>> =
-    new Map();
   public meta: IMeta<M> | null = null;
   public models: M;
 
@@ -14,6 +12,7 @@ export abstract class AiSourceAbstact<M extends TModels> {
     this.models = models;
     if (meta) this.meta = meta;
     if (api) this._api = api;
+    console.log(meta);
   }
 
   hash(): number {
@@ -22,6 +21,7 @@ export abstract class AiSourceAbstact<M extends TModels> {
   get api(): string | undefined {
     return this._api;
   }
+
   abstract sendMessageStream(
     content: string,
     model: M[number],
@@ -33,4 +33,3 @@ export abstract class AiSourceAbstact<M extends TModels> {
   ): Promise<ISourceReturn>;
   abstract get defaultModel(): M[number];
 }
-

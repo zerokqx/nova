@@ -1,4 +1,4 @@
-import { createTheme, Textarea, TextInput } from "@mantine/core";
+import { createTheme, Modal, Textarea, TextInput } from "@mantine/core";
 export const mantineTheme = createTheme({
   colors: {
     fiolet: [
@@ -81,6 +81,36 @@ export const mantineTheme = createTheme({
   },
   defaultRadius: "xs",
   components: {
+    Modal: Modal.extend({
+      styles(theme) {
+        return {
+          header: {
+            background: "black",
+            borderBottom: `0.1rem ${theme.colors.dark[9]} solid`,
+          },
+          content: {
+            border: `0.1rem solid ${theme.colors.dark[9]}`,
+            background: "#000000",
+          },
+        };
+      },
+      defaultProps: {
+        bd: `1px solid `,
+      },
+    }),
+    TextInput: TextInput.extend({
+      defaultProps: {
+        bd: "none",
+      },
+
+      styles(theme, props, ctx) {
+        return {
+          input: {
+            background: theme.colors.dark[9],
+          },
+        };
+      },
+    }),
     Textarea: Textarea.extend({
       styles(theme) {
         return {

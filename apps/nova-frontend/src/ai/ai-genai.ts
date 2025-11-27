@@ -2,10 +2,12 @@ import { GoogleGenAI } from "@google/genai";
 import { AiSourceAbstact } from "./ai-class.abstract";
 import type { ISourceReturn } from "./types/source-return.type";
 import type { ISourceChatCreate } from "./types/source-chat.type";
+import { Providers } from "./providers";
 
 export class AiSourceGenai extends AiSourceAbstact<
   ["gemini-2.5-flash", "gemini-2.5-pro", "gemini-flash-lite"]
 > {
+  static providerName = "Gemini";
   private ai: GoogleGenAI;
   constructor(api: string) {
     super(["gemini-2.5-flash", "gemini-2.5-pro", "gemini-flash-lite"], {
@@ -73,6 +75,3 @@ export class AiSourceGenai extends AiSourceAbstact<
     };
   }
 }
-
-
-

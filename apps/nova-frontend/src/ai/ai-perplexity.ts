@@ -1,9 +1,11 @@
 import { AiSourceAbstact } from "./ai-class.abstract";
+import { Providers } from "./providers";
 import type { ISourceChatCreate } from "./types/source-chat.type";
 import type { ISourceReturn } from "./types/source-return.type";
 
 import Perplexity from "@perplexity-ai/perplexity_ai";
 export class AiSourcePerplexity extends AiSourceAbstact<["sonar"]> {
+  static providerName = "Perplexity";
   private ai: Perplexity;
   constructor(api: string) {
     super(
@@ -42,6 +44,7 @@ export class AiSourcePerplexity extends AiSourceAbstact<["sonar"]> {
     }
     return generator();
   }
+
   get defaultModel(): "sonar" {
     return this.models[0];
   }
