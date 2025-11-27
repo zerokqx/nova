@@ -1,0 +1,8 @@
+.effect {
+  transition: ease .1s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+
+  }
+}
