@@ -1,0 +1,16 @@
+{
+  "entry": [
+    "src/main.tsx",
+    "src/routes/**/*.tsx",
+    "vite.config.ts"
+  ],
+  "project": [
+    "src/**/*.{ts,tsx}"
+  ],
+  "ignore": [
+    "src/routeTree.gen.ts"
+  ],
+  "ignoreDependencies": [
+    "@types/*"
+  ]
+}

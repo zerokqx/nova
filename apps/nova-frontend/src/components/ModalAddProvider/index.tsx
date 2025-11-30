@@ -1,19 +1,13 @@
 import { useAppForm } from "@components/Form/ui/FormV2/FormV2";
-import {
-  Button,
-  Modal,
-  Space,
-  Stack,
-  TextInput,
-  type ModalProps,
-} from "@mantine/core";
+import { Modal, type ModalProps } from "@mantine/core";
 import { Save } from "lucide-react";
 import { useAiProviders } from "src/stores/useAiProviders";
-import { apiKeyStoreActions, useApiKeyStore } from "src/stores/useApiKeyStore";
+import { apiKeyStoreActions } from "src/stores/useApiKeyStore";
 
 export const ModalAddProvider = ({
   providerName,
   title,
+  onClose,
   ...props
 }: {
   opened: ModalProps["opened"];
@@ -27,20 +21,21 @@ export const ModalAddProvider = ({
       api: "",
     },
     onSubmit: ({ value }) => {
-      if (value) {
+      if (value.api.length > 20) {
         apiKeyStoreActions.doNewApiKey(providerName, value.api);
         updateProviders((s) => s.push(providerName));
+        onClose();
       }
     },
   });
   return (
-    <Modal title={title} {...props}>
+    <Modal onClose={onClose} title={title} {...props}>
       <form.AppForm>
         <form.Form>
           <form.Vertical p={"md"}>
             <form.AppField
               name="api"
-              children={(field) => <field.TextInput />}
+              children={(field) => <field.TextInput placeholder="API ключ" />}
             />
             <form.DirtyButton type="submit" leftSection={<Save size={16} />}>
               Сохранить
