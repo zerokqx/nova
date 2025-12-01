@@ -10,7 +10,7 @@ export const SettingsPage = () => {
   const avalibleProviders = useAiProviders((s) => s.data);
   return (
     <AppShellMain h={"100dvh"}>
-      <Group align="start" grow wrap="wrap">
+      <Group align="stretch" grow wrap="wrap">
         {map(allProvidersKey, (provider) => (
           <AiCard
             models={provider.models}

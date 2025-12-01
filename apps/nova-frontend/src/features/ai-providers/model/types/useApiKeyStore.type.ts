@@ -10,4 +10,5 @@ export interface IUseApiKeyActions {
   doHasApiKey: Fn<[key: Key], boolean>;
   doPutchApiKey: Fn<[key: Key, value: Value], void>;
   doRemoveApi: Fn<[key: Key], void>;
+  doGetApi: Fn<[key: Key], string | undefined>;
 }
