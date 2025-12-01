@@ -3,7 +3,6 @@ import { transformMetaModelsForSelect } from "@shared/api/ai/lib/formatModel/mod
 import { useAiProviders } from "@shared/api/ai/model/useAiProvidersStore";
 import { LogotypeCombined } from "@shared/ui/LogotypeSection";
 import { ternary } from "@utils/conditions/ternary";
-import { AiInputTextArea } from "@widgets/AiInput";
 import { AiInput } from "@widgets/AiInput/ui/AiInput";
 import { useResponsive } from "src/hooks/useResponsive";
 

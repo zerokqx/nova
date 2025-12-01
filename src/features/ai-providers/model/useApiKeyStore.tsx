@@ -17,6 +17,9 @@ export const useApiKeyStore = createStore<TUseApiKeyStore>(
 );
 
 export const apiKeyStoreActions: IUseApiKeyActions = {
+  doGetApi: (key) => {
+    return useApiKeyStore.getState().data[key];
+  },
   doNewApiKey: (key, value) => {
     useApiKeyStore.getState().update((data) => {
       data[key] = value;

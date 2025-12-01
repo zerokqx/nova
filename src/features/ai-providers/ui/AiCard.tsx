@@ -1,22 +1,29 @@
-import {
-  ActionIcon,
-  Button,
-  Group,
-  List,
-  Stack,
-  Text,
-  Title,
-  useMantineTheme,
-} from "@mantine/core";
+import { Button, Group, Paper } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { aiProvidersAction } from "@shared/api/ai/model/useAiProvidersStore";
-import { ternary } from "@utils/conditions/ternary";
 import { map } from "lodash";
-import { CircleX, Key, Trash } from "lucide-react";
-import { ModalApiAddKeyForm } from ".";
+import { Key } from "lucide-react";
 import type { TModels } from "@shared/api/ai/aiAbstract/types/models.type";
 import type { TSources } from "@shared/api/ai/types/sources.type";
+import { lazy } from "react";
+import { Container } from "./AiCard/Container";
+import { Remove } from "./AiCard/Remove";
+import { CardTitle } from "./AiCard/Title";
+import { CardList } from "./AiCard/StatusList";
+import { Model } from "./AiCard/Model";
+import { CreateApiKeyButton } from "./AiCard/CreateApiKeyButton";
+import { PuthcApiKeyButton } from "./AiCard/PuthcApiKeyButton";
 
+import style from "@shared/styles/effects/Scale.module.css";
+const LazyAddModal = lazy(() =>
+  import(".").then((m) => ({ default: m.ModalApiAddKeyForm })),
+);
+
+const LazyPutchModal = lazy(() =>
+  import("./PutchApiKeyModal.tsx").then((m) => ({
+    default: m.PutchApiKeyModal,
+  })),
+);
 export const AiCard = ({
   name,
   available,
@@ -26,69 +33,55 @@ export const AiCard = ({
   available: boolean;
   models: TModels;
 }) => {
-  const t = useMantineTheme();
-  const [opened, { toggle }] = useDisclosure(false);
-  return (
-    <Stack
-      bd={`${t.colors.dark[9]} solid 0.1rem`}
-      miw={330}
-      maw={660}
-      p={"md"}
-      bdrs={"sm"}
-      gap={"sm"}
-    >
-      <Group justify="space-between">
-        <Title size={"lg"} c={"blue"}>
-          {name}
-        </Title>
-        {available && (
-          <ActionIcon
-            color="red"
-            variant="filled"
-            autoContrast
-            onClick={() => aiProvidersAction.doRemove(name)}
-          >
-            <Trash size={16} />
-          </ActionIcon>
-        )}
-      </Group>
+  const [openedAdd, { toggle: toggleAdd }] = useDisclosure(false);
 
-      <List p={"sm"}>
-        {ternary(
-          available,
-          <List.Item c={"lime"}>Доступно</List.Item>,
-          <>
-            <List.Item icon={<CircleX />} c={"red"}>
+  const [openedPutch, { toggle: togglePutch }] = useDisclosure(false);
+  return (
+    <Container maw={"30rem"} className={style.main}>
+      <Container.Item span={"auto"}>
+        <CardTitle>{name}</CardTitle>
+      </Container.Item>
+      <Container.Item>
+        <Group>
+          {map(models, (model) => (
+            <Model name={model} />
+          ))}
+        </Group>
+      </Container.Item>
+
+      <Container.Item span={12}>
+        <CardList p={"none"}>
+          {available ? (
+            <CardList.NormalItem>Доступно</CardList.NormalItem>
+          ) : (
+            <CardList.ErrorItem>
               Не доступно, создайте API ключ
-            </List.Item>
-          </>,
-        )}
-      </List>
-      <ModalApiAddKeyForm
+            </CardList.ErrorItem>
+          )}
+        </CardList>
+      </Container.Item>
+      <LazyPutchModal onClose={togglePutch} name={name} opened={openedPutch} />
+      <LazyAddModal
         providerName={name}
         title={`Ключ ${name}`}
-        opened={opened}
-        onClose={toggle}
+        opened={openedAdd}
+        onClose={toggleAdd}
       />
 
-      <Group justify="space-between" align="end">
-        <Stack gap={"xs"}>
-          <Title size={"lg"} c={"blue"}>
-            Модели
-          </Title>
-          {map(models, (model) => (
-            <Text>{model}</Text>
-          ))}
-        </Stack>
-
-        {!available && (
-          <Group justify="end">
-            <Button leftSection={<Key size={16} />} onClick={toggle}>
-              Создать ключ
-            </Button>
-          </Group>
-        )}
-      </Group>
-    </Stack>
+      <Container.Item>
+        <Group justify="end" align="end">
+          {!available ? (
+            <Group justify="end">
+              <CreateApiKeyButton onClick={toggleAdd} />
+            </Group>
+          ) : (
+            <>
+              <Remove onClick={() => aiProvidersAction.doRemove(name)} />
+              <PuthcApiKeyButton onClick={togglePutch} />
+            </>
+          )}
+        </Group>
+      </Container.Item>
+    </Container>
   );
 };
