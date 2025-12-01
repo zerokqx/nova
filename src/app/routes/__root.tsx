@@ -1,7 +1,10 @@
 import * as React from "react";
 import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { AppShell } from "@mantine/core";
-import { useLayoutStore } from "src/stores/useLayout";
+import { useLayoutStore } from "@shared/lib/stores/useLayout";
+import { Aside } from "@widgets/Aside";
+import { Header } from "@widgets/Header";
+import { Navbar } from "@widgets/Navbar";
 
 export const Route = createRootRoute({
   component: RootComponent,

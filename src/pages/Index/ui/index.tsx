@@ -1,10 +1,11 @@
-import { transformMetaModelsForSelect } from "@ai/utils/transformModelsForSelect";
-import { InputWithControls } from "@components/CombinedInputIcon";
-import { useResponsive } from "@hooks/useResponsive";
 import { AppShellMain, Stack } from "@mantine/core";
+import { transformMetaModelsForSelect } from "@shared/api/ai/lib/formatModel/modelsForSelect";
+import { useAiProviders } from "@shared/api/ai/model/useAiProvidersStore";
+import { LogotypeCombined } from "@shared/ui/LogotypeSection";
 import { ternary } from "@utils/conditions/ternary";
-import { LogotypeCombined } from "src/shared/ui/LogotypeSection/LogotypeCombined";
-import { useAiProviders } from "src/stores/useAiProviders";
+import { AiInputTextArea } from "@widgets/AiInput";
+import { AiInput } from "@widgets/AiInput/ui/AiInput";
+import { useResponsive } from "src/hooks/useResponsive";
 
 export const IndexPage = () => {
   const { mobile } = useResponsive();
@@ -19,7 +20,7 @@ export const IndexPage = () => {
           h={"60%"}
         >
           <LogotypeCombined />
-          <InputWithControls providers={providers} />
+          <AiInput providers={providers} />
         </Stack>
       </Stack>
     </AppShellMain>

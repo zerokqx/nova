@@ -1,10 +1,11 @@
 import { createStore } from "@colorfy-software/zfy";
 import { has } from "lodash";
-import type {
-  IUseApiKeyActions,
-  TUseApiKeyStore,
-} from "@t/stores/use-api-keys.type";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import type {
+  TUseApiKeyStore,
+  IUseApiKeyActions,
+} from "./types/useApiKeyStore.type";
+
 export const useApiKeyStore = createStore<TUseApiKeyStore>(
   "api-keys",
   {},

@@ -1,6 +1,5 @@
 import {
   AppShellNavbar,
-  Button,
   Center,
   Loader,
   Space,
@@ -8,11 +7,10 @@ import {
   Text,
   Title,
 } from "@mantine/core";
-import { ChatsDB } from "src/dexie/Chats";
 import { useLiveQuery } from "dexie-react-hooks";
 import { map } from "lodash";
 import { NavItem } from "./NavItem";
-import { checkUndefinedLength } from "@t/utils/checkUndefinedLength";
+import { ChatsDB } from "@entities/chat";
 export const Navbar = () => {
   const chats = useLiveQuery(() => ChatsDB.getAllChats());
   console.log(chats);

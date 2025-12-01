@@ -1,8 +1,8 @@
-import { getAllMeta } from "@ai/utils/providerUtils";
-import { AiCard } from "@components/AiCard";
+import { AiCard } from "@features/ai-providers/ui/AiCard";
 import { AppShellMain, Group } from "@mantine/core";
+import { getAllMeta } from "@shared/api/ai/lib/di/getAllMeta";
+import { useAiProviders } from "@shared/api/ai/model/useAiProvidersStore";
 import { map } from "lodash";
-import { useAiProviders } from "src/stores/useAiProviders";
 
 export const SettingsPage = () => {
   const allProvidersKey = getAllMeta();

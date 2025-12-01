@@ -1,5 +1,5 @@
 import type { ComponentProps } from 'react';
-import { useFormContext } from '../../model';
+import { useFormContext } from '../../../model';
 
 export const Form = ({ ...props }: ComponentProps<'form'>) => {
   const form = useFormContext();

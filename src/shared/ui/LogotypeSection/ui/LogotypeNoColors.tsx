@@ -1,5 +1,5 @@
-import MonoLogo from "@assets/Group 4.svg?react";
-import { Flex, Stack } from "@mantine/core";
+import MonoLogo from "@shared/assets/Group 4.svg?react";
+import { Stack } from "@mantine/core";
 import type { ILogotypeNoColors } from "../types/LogotypeNoColors.type";
 export const LogotypeNoColors = ({ width = 16 }: ILogotypeNoColors) => {
   return (

@@ -1,4 +1,4 @@
-import LogotypeIconSvg from "@assets/Group 3.svg?react";
+import LogotypeIconSvg from "@shared/assets/Group 3.svg?react";
 import { motion } from "motion/react";
 import type { ILogotypeIcon } from "../types/LogotypeIconProps.type";
 const Logo = motion.create(LogotypeIconSvg);
