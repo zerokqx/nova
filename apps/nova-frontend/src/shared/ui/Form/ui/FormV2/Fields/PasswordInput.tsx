@@ -1,8 +1,8 @@
 import {
   PasswordInput as PasswordInputM,
   type PasswordInputProps,
-} from '@mantine/core';
-import { useFieldContext } from '../../../model';
+} from "@mantine/core";
+import { useFieldContext } from "../../../model";
 
 export const PasswordInput = ({ ...props }: PasswordInputProps) => {
   const field = useFieldContext<string>();

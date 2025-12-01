@@ -5,4 +5,3 @@ export interface IChat {
   model: string;
   preview: string;
 }
-

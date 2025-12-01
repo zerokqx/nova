@@ -1,11 +1,10 @@
-import { Button, Group, Paper } from "@mantine/core";
+import { Group } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { aiProvidersAction } from "@shared/api/ai/model/useAiProvidersStore";
 import { map } from "lodash";
-import { Key } from "lucide-react";
 import type { TModels } from "@shared/api/ai/aiAbstract/types/models.type";
 import type { TSources } from "@shared/api/ai/types/sources.type";
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import { Container } from "./AiCard/Container";
 import { Remove } from "./AiCard/Remove";
 import { CardTitle } from "./AiCard/Title";
@@ -60,13 +59,19 @@ export const AiCard = ({
           )}
         </CardList>
       </Container.Item>
-      <LazyPutchModal onClose={togglePutch} name={name} opened={openedPutch} />
-      <LazyAddModal
-        providerName={name}
-        title={`Ключ ${name}`}
-        opened={openedAdd}
-        onClose={toggleAdd}
-      />
+      <Suspense fallback={null}>
+        <LazyPutchModal
+          onClose={togglePutch}
+          name={name}
+          opened={openedPutch}
+        />
+        <LazyAddModal
+          providerName={name}
+          title={`Ключ ${name}`}
+          opened={openedAdd}
+          onClose={toggleAdd}
+        />
+      </Suspense>
 
       <Container.Item>
         <Group justify="end" align="end">

@@ -1,13 +1,13 @@
-import { Group, Stack } from '@mantine/core';
+import { Group, Stack } from "@mantine/core";
 
 const Vertical = Stack.withProps({
-  gap: 'md',
+  gap: "md",
 });
 const Horizontal = Group.withProps({
   grow: true,
-  justify: 'space-between',
-  gap: 'md',
-  wrap: 'wrap',
+  justify: "space-between",
+  gap: "md",
+  wrap: "wrap",
 });
 export const Layouts = {
   Vertical,

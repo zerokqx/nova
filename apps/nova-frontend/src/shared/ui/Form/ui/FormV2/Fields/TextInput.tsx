@@ -1,5 +1,5 @@
-import { TextInput as TextInputM, type TextInputProps } from '@mantine/core';
-import { useFieldContext } from '../../../model';
+import { TextInput as TextInputM, type TextInputProps } from "@mantine/core";
+import { useFieldContext } from "../../../model";
 export const TextInput = ({ ...props }: TextInputProps) => {
   const field = useFieldContext<string>();
   return (
