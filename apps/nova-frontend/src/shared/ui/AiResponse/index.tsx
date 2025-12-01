@@ -1,7 +1,8 @@
 import { Stack } from "@mantine/core";
 import Markdown from "react-markdown";
+import type { IAiResponseProps } from "./types/AiResponse.interface";
 
-export const AiResponse = ({ content }: { content: string }) => {
+export const AiResponse = ({ content }: IAiResponseProps) => {
   return (
     <Stack
       bdrs={"xs"}

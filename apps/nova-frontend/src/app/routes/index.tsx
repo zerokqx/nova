@@ -1,5 +1,5 @@
+import { IndexPage } from "@pages/Index/ui";
 import { createFileRoute } from "@tanstack/react-router";
-import { IndexPage } from "src/pages/IndexPage";
 
 export const Route = createFileRoute("/")({
   component: IndexPage,

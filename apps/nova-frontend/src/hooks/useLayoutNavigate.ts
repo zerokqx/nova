@@ -1,5 +1,5 @@
+import { useLayoutStore } from "@shared/lib/stores/useLayout";
 import { useNavigate, type NavigateOptions } from "@tanstack/react-router";
-import { useLayoutStore } from "src/stores/useLayout";
 
 export const useLayoutNavigate = () => {
   const navigate = useNavigate();

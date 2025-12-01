@@ -5,12 +5,12 @@ import {
   Group,
   useMantineTheme,
 } from "@mantine/core";
-import { useLayoutStore } from "src/stores/useLayout";
 import { useAnimateMini } from "motion/react";
 import { ternary } from "@utils/conditions/ternary";
 import { Settings } from "lucide-react";
 import { useNavigate } from "@tanstack/react-router";
-import { LogotypeIcon } from "../LogotypeSection/LogotypeIcon";
+import { useLayoutStore } from "@shared/lib/stores/useLayout";
+import { LogotypeIcon } from "@shared/ui/LogotypeSection";
 
 export const Header = () => {
   const update = useLayoutStore((s) => s.update);

@@ -1,5 +1,5 @@
 import { createStore } from "@colorfy-software/zfy";
-import type { IUseLayoutStore } from "@t/stores/use-layout.type";
+import type { IUseLayoutStore } from "./types/useLayout.interface";
 
 export const useLayoutStore = createStore<IUseLayoutStore>("layout-store", {
   aside: false,

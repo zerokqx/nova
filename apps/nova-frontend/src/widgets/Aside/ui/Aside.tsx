@@ -1,8 +1,7 @@
 import { useMantineTheme } from "@mantine/core";
 import { Aside as AsideComponent } from "./AsideRoot";
-import BrainCog from "@assets/brainCog.svg?react";
 import { useLayoutNavigate } from "src/hooks/useLayoutNavigate";
-import { CircleQuestionMark } from "lucide-react";
+import { BrainCog, CircleQuestionMark } from "lucide-react";
 
 export const Aside = () => {
   const blue = useMantineTheme().colors.blue[8];

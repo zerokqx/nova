@@ -1,6 +1,3 @@
-import type { TModels } from "@ai/types/source-models.type";
-import type { TSources } from "@ai/types/sources.type";
-import { ModalAddProvider } from "@components/ModalAddProvider";
 import {
   ActionIcon,
   Button,
@@ -12,24 +9,25 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { aiProvidersAction } from "@shared/api/ai/model/useAiProvidersStore";
 import { ternary } from "@utils/conditions/ternary";
 import { map } from "lodash";
 import { CircleX, Key, Trash } from "lucide-react";
-import { useAiProviders } from "src/stores/useAiProviders";
+import { ModalApiAddKeyForm } from ".";
+import type { TModels } from "@shared/api/ai/aiAbstract/types/models.type";
+import type { TSources } from "@shared/api/ai/types/sources.type";
 
 export const AiCard = ({
   name,
   available,
   models,
 }: {
-  name: string;
+  name: TSources;
   available: boolean;
   models: TModels;
 }) => {
   const t = useMantineTheme();
   const [opened, { toggle }] = useDisclosure(false);
-  const update = useAiProviders((s) => s.update);
-  const d = useAiProviders((s) => s.data);
   return (
     <Stack
       bd={`${t.colors.dark[9]} solid 0.1rem`}
@@ -48,14 +46,7 @@ export const AiCard = ({
             color="red"
             variant="filled"
             autoContrast
-            onClick={() => {
-              update((s) => {
-                const index = s.indexOf(name);
-                if (index > -1) {
-                  s.splice(index, 1);
-                }
-              });
-            }}
+            onClick={() => aiProvidersAction.doRemove(name)}
           >
             <Trash size={16} />
           </ActionIcon>
@@ -73,7 +64,7 @@ export const AiCard = ({
           </>,
         )}
       </List>
-      <ModalAddProvider
+      <ModalApiAddKeyForm
         providerName={name}
         title={`Ключ ${name}`}
         opened={opened}

@@ -8,7 +8,7 @@ import type { ISourceChatCreate } from "../aiAbstract/types/sourceChat.interface
 import type { ISourceWithFunctionParametres } from "../aiAbstract/types/sourceWith.interface";
 
 @injectable()
-export class AiSourceGenai extends AiSourceAbstact {
+export class AiSourceGemini extends AiSourceAbstact {
   static providerName = "Gemini";
   private ai: GoogleGenAI;
 
