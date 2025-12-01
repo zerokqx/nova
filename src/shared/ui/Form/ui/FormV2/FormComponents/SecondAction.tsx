@@ -1,5 +1,5 @@
-import { Button, Center, Text } from '@mantine/core';
-import type { SecondActionProp } from '../../../types/secondActionProp.type';
+import { Button, Center, Text } from "@mantine/core";
+import type { SecondActionProp } from "../../../types/secondActionProp.type";
 
 export const SecondAction = ({ title, ...props }: SecondActionProp) => {
   return (
