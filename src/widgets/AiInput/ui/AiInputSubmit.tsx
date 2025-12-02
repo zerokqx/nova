@@ -17,7 +17,7 @@ export const AiInputSubmit = withForm({
             size={"xl"}
             bdrs={"xl"}
             variant="gradient"
-            disabled={canSubmit}
+            disabled={!canSubmit}
           >
             <Send size={16} />
           </ActionIcon>
