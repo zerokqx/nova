@@ -1,7 +1,7 @@
 import type { Fn } from "@shared/types/functions/fn.type";
-import type { TSources } from "../../types/sources.type";
+import type { TModels } from "../../aiAbstract/types/models.type";
 
-type Value = TSources;
+type Value = TModels;
 export type TUseAiProvidersStore = Value[];
 export interface IUseAiProvidersAction {
   doAdd: Fn<[value: Value]>;

@@ -1,14 +1,15 @@
 import type { StackProps } from "@mantine/core";
-import type { TModels } from "@shared/api/ai/aiAbstract/types/models.type";
 import type { TOnSubmitHandlerForm } from "@shared/ui/Form";
+import type { TProviders } from "./providers.type";
+import type { TSourceAndModel } from "@shared/api/ai/lib/formatModel/types/metaSourceAndModel.type";
 
 interface IAiInputFields {
-  provider: TModels[number];
+  provider: TSourceAndModel;
   content: string;
 }
 
 export interface IAiInputProps extends Omit<StackProps, "onSubmit"> {
   readOnly?: boolean;
-  providers: TModels;
+  providers: TProviders;
   onSubmit?: TOnSubmitHandlerForm<IAiInputFields>;
 }

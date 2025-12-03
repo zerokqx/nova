@@ -1,6 +1,6 @@
-import type { TModels } from "@shared/api/ai/aiAbstract/types/models.type";
 import { withForm } from "@shared/ui/Form";
 import { AiInputSubmit } from "./AiInputSubmit";
+import type { ITransformModel } from "@shared/api/ai/lib/formatModel/types/transform.type";
 
 export const AiInputBottomSection = withForm({
   defaultValues: {
@@ -9,9 +9,10 @@ export const AiInputBottomSection = withForm({
   },
   props: {
     readOnly: false,
-    providers: ["Provider", "Provider"] as TModels,
+    providers: [{ label: "", value: "" }] as ITransformModel["forSelect"],
   },
   render({ form, readOnly, providers }) {
+    console.log(providers);
     return (
       <form.Horizontal
         wrap="nowrap"

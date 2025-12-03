@@ -3,22 +3,26 @@ import stl from "./styles/nav-item-hove.module.css";
 import type { TModels } from "@shared/api/ai/aiAbstract/types/models.type";
 import { Link, useNavigate, useParams } from "@tanstack/react-router";
 import { useLayoutStore } from "@shared/lib/stores/useLayout";
+import { deSlashNotation } from "@shared/api/ai/lib/formatModel/nameModelFormat";
+import type { TSourceAndModel } from "@shared/api/ai/lib/formatModel/types/metaSourceAndModel.type";
 
 export const NavItem = ({
   text,
   id,
-  model,
+  url,
 }: {
   text: string;
   id: number;
-  model: TModels[number];
+  url: TSourceAndModel;
 }) => {
   const t = useMantineTheme();
   const updateLayout = useLayoutStore((s) => s.update);
+  const { model, source } = deSlashNotation(url);
   return (
     <Link
-      to="/chat/$id/$model"
+      to="/chat/$id/$provider/$model"
       params={{
+        provider: source,
         id: id.toString(),
         model,
       }}

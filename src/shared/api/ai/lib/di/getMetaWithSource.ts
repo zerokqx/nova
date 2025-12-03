@@ -4,6 +4,7 @@ import { AI, AIMETA } from "../symbols/symbols";
 import type { TGetMetaWithSource } from "./types/getMetaWithSource.type";
 
 /**
+ * @deprecated
  * @param key - Имя провайдера к которому хотим получить meta и source
  */
 export const getMetaWithSource: TGetMetaWithSource = (key) => {

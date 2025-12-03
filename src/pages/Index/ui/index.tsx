@@ -1,15 +1,24 @@
 import { initializeChat } from "@entities/chat/lib/initializeChat";
+import { apiKeyStoreActions } from "@features/ai-providers/model/useApiKeyStore";
 import { AppShellMain, Stack } from "@mantine/core";
-import { useAiProviders } from "@shared/api/ai/model/useAiProvidersStore";
+import { deSlashNotation } from "@shared/api/ai/lib/formatModel/nameModelFormat";
+import type { ITransformModel } from "@shared/api/ai/lib/formatModel/types/transform.type";
+import { getAllow } from "@shared/api/ai/utils/meta/getAllow";
+import { mergeArraySlashNotation } from "@shared/api/ai/utils/meta/mergeArraySlashNotation";
 import { LogotypeCombined } from "@shared/ui/LogotypeSection";
 import { useNavigate } from "@tanstack/react-router";
 import { ternary } from "@utils/conditions/ternary";
 import { AiInput } from "@widgets/AiInput/ui/AiInput";
+import { flatMap, flatten, forEach, map, merge } from "lodash";
 import { useResponsive } from "src/hooks/useResponsive";
 
 export const IndexPage = () => {
   const { mobile } = useResponsive();
-  const providers = useAiProviders((s) => s.data);
+  const providers = mergeArraySlashNotation(
+    map(getAllow(apiKeyStoreActions.doKeys()), (meta) => {
+      return meta.slash;
+    }),
+  );
   const navigate = useNavigate();
 
   return (
@@ -20,26 +29,28 @@ export const IndexPage = () => {
           align="center"
           h={"60%"}
         >
+          {" "}
           <LogotypeCombined />
-
           <AiInput
             onSubmit={async ({ value: { content, provider } }) => {
+              const { model, source } = deSlashNotation(provider);
               const [chatId] = await initializeChat({
-                model: provider,
+                model,
                 preview: content,
                 content,
                 role: "user",
               });
 
               navigate({
-                to: "/chat/$id/$model",
+                to: `/chat/$id/${provider}`,
                 params: {
+                  provider: source,
                   id: chatId.toString(),
-                  model: provider,
+                  model,
                 },
               });
             }}
-            providers={providers}
+            providers={providers.forSelect}
           />
         </Stack>
       </Stack>

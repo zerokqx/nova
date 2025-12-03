@@ -14,6 +14,7 @@ import { CreateApiKeyButton } from "./AiCard/CreateApiKeyButton";
 import { PuthcApiKeyButton } from "./AiCard/PuthcApiKeyButton";
 
 import style from "@shared/styles/effects/Scale.module.css";
+import { apiKeyStoreActions } from "../model/useApiKeyStore.tsx";
 const LazyAddModal = lazy(() =>
   import("./ModalApiAddKeyForm.tsx").then((m) => ({
     default: m.ModalApiAddKeyForm,
@@ -81,7 +82,7 @@ export const AiCard = ({
             </Group>
           ) : (
             <>
-              <Remove onClick={() => aiProvidersAction.doRemove(name)} />
+              <Remove onClick={() => apiKeyStoreActions.doRemoveApi(name)} />
               <PuthcApiKeyButton onClick={togglePutch} />
             </>
           )}
