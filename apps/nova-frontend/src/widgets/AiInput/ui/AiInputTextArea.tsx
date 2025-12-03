@@ -24,7 +24,7 @@ export const AiInputTextArea = withForm({
             maxRows={10}
             autosize
             styles={(t) => ({
-              input: { borderRadius: t.radius.sm, border: "none" },
+              input: { border: "none" },
             })}
           />
         )}
