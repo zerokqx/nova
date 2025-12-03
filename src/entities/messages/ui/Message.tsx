@@ -6,13 +6,16 @@ import { CopyButton } from "@shared/ui/CopyButton";
 import { motion } from "motion/react";
 
 const MoitonCopy = motion.create(CopyButton);
-export const Message = ({ message: { role, content } }: IMessageProps) => {
+export const Message = ({
+  message: { role, content },
+  ...props
+}: IMessageProps) => {
   const t = useMantineTheme();
   const lenght = content.length > 300;
   const [hidden, setHidden] = useState(lenght);
   const height = hidden ? 8 : 0;
   return (
-    <Stack align={role === "assistent" ? "start" : "end"}>
+    <Stack {...props} align={role === "assistent" ? "start" : "end"}>
       <Text
         lineClamp={height}
         maw={{ base: "100%", sm: "50%" }}

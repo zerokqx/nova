@@ -2,6 +2,7 @@ import { Group, rem, Text, useMantineTheme } from "@mantine/core";
 import stl from "./styles/nav-item-hove.module.css";
 import type { TModels } from "@shared/api/ai/aiAbstract/types/models.type";
 import { Link, useNavigate, useParams } from "@tanstack/react-router";
+import { useLayoutStore } from "@shared/lib/stores/useLayout";
 
 export const NavItem = ({
   text,
@@ -13,6 +14,7 @@ export const NavItem = ({
   model: TModels[number];
 }) => {
   const t = useMantineTheme();
+  const updateLayout = useLayoutStore((s) => s.update);
   return (
     <Link
       to="/chat/$id/$model"
@@ -23,6 +25,12 @@ export const NavItem = ({
       style={{
         borderRadius: t.radius.md,
         textDecoration: "none",
+      }}
+      onClick={() => {
+        updateLayout((s) => {
+          s.aside = false;
+          s.navbar = false;
+        });
       }}
       activeProps={{
         style: { border: `${t.colors.dark[9]} solid ${rem(1)}` },
