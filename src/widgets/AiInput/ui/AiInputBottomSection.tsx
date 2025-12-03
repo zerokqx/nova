@@ -8,9 +8,10 @@ export const AiInputBottomSection = withForm({
     content: "",
   },
   props: {
+    readOnly: false,
     providers: ["Provider", "Provider"] as TModels,
   },
-  render({ form, providers }) {
+  render({ form, readOnly, providers }) {
     return (
       <form.Horizontal
         wrap="nowrap"
@@ -22,6 +23,7 @@ export const AiInputBottomSection = withForm({
           name="provider"
           children={(field) => (
             <field.Select
+              {...{ readOnly }}
               aria-label="Provider"
               radius={"xl"}
               data={providers}

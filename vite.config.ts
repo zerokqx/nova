@@ -10,7 +10,7 @@ export default defineConfig({
     tanstackRouter({
       target: "react",
       autoCodeSplitting: true,
-      routesDirectory: APP + "/routes",
+      routesDirectory: `${APP}/routes`,
     }),
     tsPaths(),
     react({

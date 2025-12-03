@@ -36,7 +36,6 @@ function RootComponent() {
       header={{ height: 50 }}
       padding="md"
       bg="black"
-      h="100dvh"
     >
       <React.Suspense fallback={null}>
         <Aside />
