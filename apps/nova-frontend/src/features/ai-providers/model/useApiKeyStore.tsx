@@ -1,9 +1,10 @@
 import { createStore } from "@colorfy-software/zfy";
-import { has } from "lodash";
+import { has, keys } from "lodash";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import type {
   TUseApiKeyStore,
   IUseApiKeyActions,
+  Key,
 } from "./types/useApiKeyStore.type";
 
 export const useApiKeyStore = createStore<TUseApiKeyStore>(
@@ -17,10 +18,15 @@ export const useApiKeyStore = createStore<TUseApiKeyStore>(
 );
 
 export const apiKeyStoreActions: IUseApiKeyActions = {
+  doKeys: () => {
+    return keys(useApiKeyStore.getState().data) as Key[];
+  },
   doGetApi: (key) => {
     return useApiKeyStore.getState().data[key];
   },
+
   doNewApiKey: (key, value) => {
+    console.log("Saving key:", key, "with value:", value);
     useApiKeyStore.getState().update((data) => {
       data[key] = value;
     });
@@ -31,16 +37,13 @@ export const apiKeyStoreActions: IUseApiKeyActions = {
     return has(store, key);
   },
   doPutchApiKey: (key, value) => {
-    useApiKeyStore.getState().update((s) => ({
-      ...s,
-      [key]: value,
-    }));
+    useApiKeyStore.getState().update((s) => {
+      s[key] = value;
+    });
   },
   doRemoveApi: (key) => {
     useApiKeyStore.getState().update((s) => {
-      const copy = { ...s };
-      delete copy[key];
-      return copy;
+      delete s[key];
     });
   },
 };

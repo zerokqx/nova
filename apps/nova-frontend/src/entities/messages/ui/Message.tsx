@@ -4,10 +4,12 @@ import { useState } from "react";
 import { ShowMoreButton } from "./ShowMoreButton";
 import { CopyButton } from "@shared/ui/CopyButton";
 import { motion } from "motion/react";
+import { DeleteButton } from "@shared/ui/DeleteButton/ui";
+import { MessagesDB } from "../model";
 
 const MoitonCopy = motion.create(CopyButton);
 export const Message = ({
-  message: { role, content },
+  message: { role, content, id },
   ...props
 }: IMessageProps) => {
   const t = useMantineTheme();
@@ -23,6 +25,7 @@ export const Message = ({
         p={"sm"}
         bg={"blue.6"}
         style={{
+          wordWrap: "break-word",
           overflowY: "hidden",
           whiteSpace: "pre-wrap", // ✅ перенос \n
         }}
@@ -39,6 +42,11 @@ export const Message = ({
           whileTap={{
             backgroundColor: t.colors.green[7],
             rotate: 180,
+          }}
+        />
+        <DeleteButton
+          onClick={() => {
+            MessagesDB.removeMessage({ id });
           }}
         />
       </Group>

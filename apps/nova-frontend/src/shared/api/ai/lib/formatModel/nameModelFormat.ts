@@ -8,8 +8,10 @@ import type {
  * @description Противоположная функция `namedModelForSelect`
  * @see `namedModelForSelect`
  */
+
 export const deSlashNotation: TDeSlashNotatonFn = (value) => {
   const deFormt = split(value, "/") as TAfterSplit;
+  console.log(deFormt);
   return {
     source: deFormt[0],
     model: deFormt[1],

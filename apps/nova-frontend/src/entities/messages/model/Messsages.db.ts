@@ -11,6 +11,9 @@ class __MessagesDB extends Dexie {
     });
   }
 
+  async removeMessage({ id }: Pick<IMessage, "id">) {
+    return await this.messages.delete(id);
+  }
   async createMessage({ chatId, content, role }: Omit<IMessage, "id">) {
     return await this.messages.add({ chatId, content, role });
   }

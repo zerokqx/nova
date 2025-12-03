@@ -1,37 +1,48 @@
 import { Message, MessagesDB } from "@entities/messages";
+import {
+  apiKeyStoreActions,
+  useApiKeyStore,
+} from "@features/ai-providers/model/useApiKeyStore";
 import { AppShellMain, Stack, Center } from "@mantine/core";
-import { useElementSize } from "@mantine/hooks";
+import { getAllow } from "@shared/api/ai/utils/meta/getAllow";
 import { useAdaptiveSpace } from "@shared/lib/hooks/useAdaptiveSpace";
 import { useParams } from "@tanstack/react-router";
 import { AiInput } from "@widgets/AiInput/ui/AiInput";
 import { useLiveQuery } from "dexie-react-hooks";
-import { map } from "lodash";
+import { keys, map } from "lodash";
 import { motion } from "motion/react";
+import { useEffect, useRef } from "react";
 
 const MotionMessage = motion.create(Message);
 export function Chat() {
   const [ref, Space] = useAdaptiveSpace();
-  const { id, model } = useParams({ from: "/chat/$id/$model" });
+  const { id, model } = useParams({ from: "/chat/$id/$provider/$model" });
   const messages = useLiveQuery(
     async () => await MessagesDB.getChatMessages({ chatId: id }),
     [id],
   );
-
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
   return (
     <>
       <AppShellMain>
-        <Stack>
-          {messages &&
-            map(messages, (message) => (
-              <MotionMessage
-                initial={{ opacity: 0, scale: 1.1 }}
-                animate={{ opacity: 1, scale: 1 }}
-                key={`${message.id}-${message.chatId}`}
-                message={message}
-              />
-            ))}
-        </Stack>
+        <Center>
+          <Stack w={{ base: "100%", sm: "40%" }}>
+            {messages &&
+              map(messages, (message) => (
+                <MotionMessage
+                  initial={{ opacity: 0, scale: 1.1 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  key={`${message.id}-${message.chatId}`}
+                  message={message}
+                />
+              ))}
+          </Stack>
+        </Center>
 
+        <div ref={messagesEndRef} />
         <Space />
         <Center
           ref={ref}
@@ -48,7 +59,17 @@ export function Chat() {
           }}
           w="100%"
         >
-          <AiInput readOnly providers={[model]} />
+          <AiInput
+            onSubmit={({ value: { content } }) => {
+              MessagesDB.createMessage({
+                chatId: Number(id),
+                content,
+                role: "user",
+              });
+            }}
+            readOnly
+            providers={[{ label: model, value: "model" }]}
+          />
         </Center>
       </AppShellMain>
     </>

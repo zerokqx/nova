@@ -13,6 +13,7 @@ import { NavItem } from "./NavItem";
 import { ChatsDB } from "@entities/chat";
 export const Navbar = () => {
   const chats = useLiveQuery(() => ChatsDB.getAllChats());
+  console.log(chats);
   return (
     <AppShellNavbar
       p={"md"}
@@ -38,7 +39,7 @@ export const Navbar = () => {
         </Center>
       ) : (
         map(chats.reverse(), ({ id, preview, model }) => (
-          <NavItem key={id} {...{ model, id }} text={preview} />
+          <NavItem key={id} url={model} {...{ id }} text={preview} />
         ))
       )}
     </AppShellNavbar>

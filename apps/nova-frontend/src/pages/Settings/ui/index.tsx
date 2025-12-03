@@ -1,17 +1,22 @@
+import {
+  apiKeyStoreActions,
+  useApiKeyStore,
+} from "@features/ai-providers/model/useApiKeyStore";
 import { AiCard } from "@features/ai-providers/ui/AiCard";
 import { AppShellMain, Group } from "@mantine/core";
-import { getAllMeta } from "@shared/api/ai/lib/di/getAllMeta";
-import { useAiProviders } from "@shared/api/ai/model/useAiProvidersStore";
+import { MetaController } from "@shared/api/ai";
+import { getAllow } from "@shared/api/ai/utils/meta/getAllow";
 import { map } from "lodash";
 
 export const SettingsPage = () => {
-  const allProvidersKey = getAllMeta();
-  console.log(allProvidersKey);
-  const avalibleProviders = useAiProviders((s) => s.data);
+  const keys = useApiKeyStore((s) => Object.keys(s.data));
+  const allProviders = MetaController.getAll();
+  const avalibleProviders = getAllow(keys).map((s) => s.providerName);
+
   return (
     <AppShellMain h={"100dvh"}>
       <Group align="stretch" grow wrap="wrap">
-        {map(allProvidersKey, (provider) => (
+        {map(allProviders, (provider) => (
           <AiCard
             models={provider.models}
             name={provider.providerName}
