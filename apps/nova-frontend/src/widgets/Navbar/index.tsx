@@ -13,11 +13,11 @@ import { NavItem } from "./NavItem";
 import { ChatsDB } from "@entities/chat";
 export const Navbar = () => {
   const chats = useLiveQuery(() => ChatsDB.getAllChats());
-  console.log(chats);
   return (
     <AppShellNavbar
       p={"md"}
       bg={"black"}
+      zIndex={501}
       styles={(t) => ({
         navbar: {
           overflowY: "auto",
@@ -32,12 +32,14 @@ export const Navbar = () => {
       ) : chats.length === 0 ? (
         <Center>
           <Stack>
-            <Title c={"blue"}>Чатов нету</Title>
+            <Title c={"blue"}>Чатов нет</Title>
             <Text>Перейдите на главную страницу и введите запрос</Text>
           </Stack>
         </Center>
       ) : (
-        map(chats, (chat) => <NavItem text={chat.preview} />)
+        map(chats.reverse(), ({ id, preview, model }) => (
+          <NavItem key={id} {...{ model, id }} text={preview} />
+        ))
       )}
     </AppShellNavbar>
   );

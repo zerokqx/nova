@@ -1,12 +1,36 @@
-import { alpha, Group, Text, useMantineTheme } from "@mantine/core";
+import { Group, Text } from "@mantine/core";
 import stl from "./styles/nav-item-hove.module.css";
+import type { TModels } from "@shared/api/ai/aiAbstract/types/models.type";
+import { useNavigate } from "@tanstack/react-router";
 
-export const NavItem = ({ text }: { text: string }) => {
-  const t = useMantineTheme().colors;
-  const light = alpha(t.blue[6], 0.6);
+export const NavItem = ({
+  text,
+  id,
+  model,
+}: {
+  text: string;
+  id: number;
+  model: TModels[number];
+}) => {
+  const navigate = useNavigate();
   return (
-    <Group className={stl.effect} w={"100%"} p={"md"} bdrs={"xl"}>
-      <Text c={"white"} w={"100%"} truncate="end">
+    <Group
+      onClick={() => {
+        navigate({
+          to: "/chat/$id/$model",
+          params: {
+            id: id.toString(),
+            model,
+          },
+        });
+      }}
+      className={stl.effect}
+      w={"100%"}
+      p={"md"}
+      bdrs={"xl"}
+      wrap="nowrap"
+    >
+      <Text w={"100%"} c={"white"} truncate="end">
         {text}
       </Text>
     </Group>

@@ -27,6 +27,7 @@
     "@tanstack/react-router-devtools": "^1.139.3",
     "@tanstack/zod-adapter": "^1.139.12",
     "@types/lodash": "^4.17.21",
+    "@vanilla-extract/css-utils": "^0.1.6",
     "dexie": "^4.2.1",
     "dexie-react-hooks": "^4.2.0",
     "embla-carousel": "^8.5.2",

@@ -15,9 +15,10 @@ import { PuthcApiKeyButton } from "./AiCard/PuthcApiKeyButton";
 
 import style from "@shared/styles/effects/Scale.module.css";
 const LazyAddModal = lazy(() =>
-  import(".").then((m) => ({ default: m.ModalApiAddKeyForm })),
+  import("./ModalApiAddKeyForm.tsx").then((m) => ({
+    default: m.ModalApiAddKeyForm,
+  })),
 );
-
 const LazyPutchModal = lazy(() =>
   import("./PutchApiKeyModal.tsx").then((m) => ({
     default: m.PutchApiKeyModal,
@@ -36,7 +37,7 @@ export const AiCard = ({
 
   const [openedPutch, { toggle: togglePutch }] = useDisclosure(false);
   return (
-    <Container maw={"30rem"} className={style.main}>
+    <Container miw={"20rem"} maw={"30rem"} className={style.main}>
       <Container.Item span={"auto"}>
         <CardTitle>{name}</CardTitle>
       </Container.Item>
@@ -72,7 +73,6 @@ export const AiCard = ({
           onClose={toggleAdd}
         />
       </Suspense>
-
       <Container.Item>
         <Group justify="end" align="end">
           {!available ? (

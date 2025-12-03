@@ -7,12 +7,16 @@ class __MessagesDB extends Dexie {
   constructor() {
     super("MessagesDatabase");
     this.version(1).stores({
-      messages: "++id, [chatId,id]",
+      messages: "++id, [chatId+id]",
     });
   }
 
   async createMessage({ chatId, content, role }: Omit<IMessage, "id">) {
-    await this.messages.add({ chatId, content, role });
+    return await this.messages.add({ chatId, content, role });
+  }
+  async getChatMessages({ chatId }: { chatId: IMessage["chatId"] | string }) {
+    if (typeof chatId === "string") chatId = Number(chatId);
+    return await this.messages.where("chatId").equals(chatId).toArray();
   }
 }
 

@@ -2,7 +2,8 @@ import type { TId } from "@entities/chat/@x/messages";
 
 export interface IMessage {
   id: TId;
-  role: string;
+  role: "assistent" | "user";
   chatId: TId;
+  initialize?: boolean;
   content: string;
 }
