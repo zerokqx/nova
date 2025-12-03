@@ -2,31 +2,28 @@ import { Message, MessagesDB } from "@entities/messages";
 import {
   Affix,
   AppShellMain,
+  AppShellSection,
   Box,
   Center,
-  Container,
-  Flex,
   Grid,
   Group,
-  Portal,
   ScrollArea,
   Space,
   Stack,
-  Title,
 } from "@mantine/core";
 import { useElementSize } from "@mantine/hooks";
+import { useLayoutStore } from "@shared/lib/stores/useLayout";
 import { createFileRoute, useParams } from "@tanstack/react-router";
 import { AiInput } from "@widgets/AiInput/ui/AiInput";
 import { useLiveQuery } from "dexie-react-hooks";
 import { map } from "lodash";
-import { useRef } from "react";
 
 export const Route = createFileRoute("/chat/$id/$model")({
   component: RouteComponent,
 });
 
 function RouteComponent() {
-  const { ref, height } = useElementSize();
+  const { height, ref } = useElementSize();
   const { id, model } = useParams({ from: "/chat/$id/$model" });
   const messages = useLiveQuery(
     async () => await MessagesDB.getChatMessages({ chatId: id }),
@@ -34,25 +31,37 @@ function RouteComponent() {
   );
 
   return (
-    <AppShellMain>
-      <Grid justify="center" align="center">
-        <Grid.Col>
-          <ScrollArea
-            h={"40rem"}
-            p={{ base: "xs", sm: "md" }}
-            w={{ base: "100%", sm: "60rem" }}
-          >
-            {messages &&
-              map(messages, (message) => <Message message={message} />)}
-            <Space h={height * 3} />
+    <>
+      <AppShellMain>
+        <Stack>
+          {messages &&
+            map(messages, (message) => (
+              <Message
+                key={`${message.id}-${message.chatId}`}
+                message={message}
+              />
+            ))}
+        </Stack>
 
-            <Center>
-              <AiInput readOnly providers={[model]} />
-            </Center>
-          </ScrollArea>
-        </Grid.Col>
-        <Grid.Col span={"auto"}></Grid.Col>
-      </Grid>
-    </AppShellMain>
+        <Space h={height} />
+        <Center
+          ref={ref}
+          pos="fixed"
+          bottom={0}
+          pb="md"
+          left={0}
+          right={0}
+          style={{
+            transition: "padding ease 0.1s",
+            paddingLeft: "var(--app-shell-navbar-offset, 0px)", // НАВБАР (ЛЕВО)
+            paddingRight: "var(--app-shell-aside-offset, 0px)", // ASIDE (ПРАВО)
+            zIndex: 0,
+          }}
+          w="100%"
+        >
+          <AiInput readOnly providers={[model]} />
+        </Center>
+      </AppShellMain>
+    </>
   );
 }

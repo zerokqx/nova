@@ -1,7 +1,7 @@
-import { Group, Text } from "@mantine/core";
+import { Group, rem, Text, useMantineTheme } from "@mantine/core";
 import stl from "./styles/nav-item-hove.module.css";
 import type { TModels } from "@shared/api/ai/aiAbstract/types/models.type";
-import { useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate, useParams } from "@tanstack/react-router";
 
 export const NavItem = ({
   text,
@@ -12,27 +12,33 @@ export const NavItem = ({
   id: number;
   model: TModels[number];
 }) => {
-  const navigate = useNavigate();
+  const t = useMantineTheme();
   return (
-    <Group
-      onClick={() => {
-        navigate({
-          to: "/chat/$id/$model",
-          params: {
-            id: id.toString(),
-            model,
-          },
-        });
+    <Link
+      to="/chat/$id/$model"
+      params={{
+        id: id.toString(),
+        model,
       }}
-      className={stl.effect}
-      w={"100%"}
-      p={"md"}
-      bdrs={"xl"}
-      wrap="nowrap"
+      style={{
+        borderRadius: t.radius.md,
+        textDecoration: "none",
+      }}
+      activeProps={{
+        style: { border: `${t.colors.dark[9]} solid ${rem(1)}` },
+      }}
     >
-      <Text w={"100%"} c={"white"} truncate="end">
-        {text}
-      </Text>
-    </Group>
+      <Group
+        bdrs={"inherit"}
+        className={stl.effect}
+        w={"100%"}
+        p={"md"}
+        wrap="nowrap"
+      >
+        <Text w={"100%"} c={"white"} truncate="end">
+          {text}
+        </Text>
+      </Group>
+    </Link>
   );
 };
