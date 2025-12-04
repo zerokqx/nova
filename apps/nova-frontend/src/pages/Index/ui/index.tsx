@@ -15,10 +15,11 @@ import { useResponsive } from "src/hooks/useResponsive";
 
 export const IndexPage = () => {
   const { mobile } = useResponsive();
+  const allows = getAllow(apiKeyStoreActions.doKeys());
   const providers = mergeArraySlashNotation(
-    map(getAllow(apiKeyStoreActions.doKeys()), (meta) => {
+    map(allows, (meta) => {
       return meta.slash;
-    }),
+    }) as ITransformModel[],
   );
   const navigate = useNavigate();
 
@@ -34,7 +35,6 @@ export const IndexPage = () => {
           <AiInput
             onSubmit={async ({ value: { content, provider } }) => {
               const { model, source } = deSlashNotation(provider as TAiUrl);
-              console.trace(provider);
               const [chatId] = await initializeChat({
                 url: provider as TAiUrl,
                 preview: content,
