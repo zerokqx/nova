@@ -1,5 +1,8 @@
 import { Message, MessagesDB } from "@entities/messages";
-import { useApiKeyStore } from "@features/ai-providers/model/useApiKeyStore";
+import {
+  apiKeyStoreActions,
+  useApiKeyStore,
+} from "@features/ai-providers/model/useApiKeyStore";
 import { AppShellMain, Stack, Center } from "@mantine/core";
 import { providers } from "@shared/api/ai/container";
 import { AI } from "@shared/api/ai/lib/symbols/symbols";
@@ -10,7 +13,7 @@ import { AiInput } from "@widgets/AiInput/ui/AiInput";
 import { useLiveQuery } from "dexie-react-hooks";
 import { map } from "lodash";
 import { motion } from "motion/react";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 
 const MotionMessage = motion.create(Message);
 export function Chat() {
@@ -20,10 +23,10 @@ export function Chat() {
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const source = useCallback(
+  const source = useMemo(
     () => providers.get(AI[provider as TSources]),
     [provider],
-  )();
+  );
 
   const messages = useLiveQuery(
     async () => await MessagesDB.getChatMessages({ chatId: id }),
@@ -38,23 +41,35 @@ export function Chat() {
 
   const initMessage = useLiveQuery(
     async () => await MessagesDB.getInitMessage({ chatId: Number(id) }),
-    [],
+    [id],
   );
-  if (!initMessage?.processed) {
-    const response = source
-      .with({
-        apiKey: useApiKeyStore.getState().data[source.meta.providerName],
-      })
-      .sendMessage(initMessage?.content, model)
-      .then((resp) => {
-        MessagesDB.createMessage({
-          role: "assistent",
-          chatId: Number(id),
-          content: resp.data.content as string,
-          processed: true,
-        });
-      });
-  }
+  const apiKey = apiKeyStoreActions.doGetApi(source.meta.providerName);
+  useEffect(() => {
+    if (!initMessage || initMessage.processed) return;
+
+    const sendInitMessage = async () => {
+      try {
+        if (apiKey) {
+          const response = await source
+            .with({ apiKey })
+            .sendMessage(initMessage.content, model);
+          await MessagesDB.setProcessed({
+            id: initMessage.id,
+            processed: true,
+          });
+          await MessagesDB.createMessage({
+            role: "assistent",
+            chatId: Number(id),
+            content: response.data.content as string,
+          });
+        }
+      } catch (error) {
+        console.error("Failed to send init message:", error);
+      }
+    };
+
+    sendInitMessage();
+  }, [initMessage, id, apiKey, model]);
   return (
     <>
       <AppShellMain>
@@ -90,12 +105,43 @@ export function Chat() {
           w="100%"
         >
           <AiInput
-            onSubmit={({ value: { content } }) => {
-              MessagesDB.createMessage({
-                chatId: Number(id),
-                content,
-                role: "user",
-              });
+            onSubmit={async ({ value: { content } }) => {
+              console.log(1);
+              try {
+                // 1. Создаём сообщение пользователя
+                await MessagesDB.createMessage({
+                  chatId: Number(id),
+                  content,
+                  processed: false, // Не обработано ещё
+                  role: "user",
+                });
+
+                const history = await MessagesDB.getChatHistory({
+                  chatId: Number(id),
+                  key: "text",
+                });
+
+                const response = await source
+                  .with({ apiKey })
+                  .sendMessage(history, model);
+
+                await MessagesDB.createMessage({
+                  chatId: Number(id),
+                  processed: false,
+                  role: "assistent",
+                  content: response?.data.content ?? "Ошибка: AI не ответил",
+                });
+              } catch (error) {
+                console.error("Ошибка отправки сообщения:", error);
+
+                // Опционально: создаём сообщение об ошибке
+                await MessagesDB.createMessage({
+                  chatId: Number(id),
+                  processed: false,
+                  role: "assistent",
+                  content: "Произошла ошибка при отправке запроса",
+                });
+              }
             }}
             readOnly
             providers={[{ label: model, value: "model" }]}

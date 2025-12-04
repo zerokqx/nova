@@ -9,6 +9,7 @@ export const AiInput = ({
   readOnly = false,
   ...props
 }: IAiInputProps) => {
+  console.log(onSubmit);
   const { t, form } = useAiInputForm(providers, onSubmit);
   return (
     <form.AppForm>

@@ -5,8 +5,9 @@ import type { TSources } from "@shared/api/ai/types/sources.type";
 export interface IMetaClass {
   readonly providerName: TSources;
   readonly models: TModels;
+  readonly contentKeyHistory: string;
   readonly thinking: boolean;
   readonly defaultModel: TModels[number];
-  readonly _slashNotation: ITransformModel;
-  readonly slash: ITransformModel;
+  readonly _slashNotation?: ITransformModel;
+  readonly slash?: ITransformModel;
 }

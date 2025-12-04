@@ -2,6 +2,8 @@ import Dexie from "dexie";
 import type { TMessagesDB } from "./types/TMessagesDB.type";
 import type { IMessage } from "./types/IMessage.interface";
 import { providers } from "@shared/api/ai/container";
+import type { IHistoryItem } from "@shared/api/ai/aiAbstract/types/history.interface";
+import type { Provider } from "react";
 
 class __MessagesDB extends Dexie {
   messages!: TMessagesDB["messages"];
@@ -39,6 +41,7 @@ class __MessagesDB extends Dexie {
       .where("chatId")
       .equals(chatId)
       .and((msg) => msg.initialize === true)
+      .and((msg) => msg.role === "user")
       .first();
   }
   async setProcessed({
@@ -47,6 +50,20 @@ class __MessagesDB extends Dexie {
     processed,
   }: Pick<IMessage, "id" | "processed">) {
     return await this.messages.update(id, { processed });
+  }
+  async getChatHistory<Key extends string = "content">({
+    chatId,
+    key,
+  }: Pick<IMessage, "chatId"> & { key: Key }): Promise<IHistoryItem<Key>[]> {
+    const messages = await MessagesDB.messages
+      .where("chatId")
+      .equals(chatId)
+      .toArray();
+
+    return messages.map((msg) => ({
+      role: msg.role === "assistent" ? "assistant" : msg.role,
+      [key]: msg.content,
+    })) as IHistoryItem<Key>[];
   }
 }
 

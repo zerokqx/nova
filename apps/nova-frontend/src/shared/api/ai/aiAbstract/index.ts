@@ -1,4 +1,5 @@
 import type { IMetaClass } from "../utils/meta/types/meta.interface";
+import type { IHistoryItem } from "./types/history.interface";
 import type { TModels } from "./types/models.type";
 import type { ISourceChatCreate } from "./types/sourceChat.interface";
 import type { ISourceReturn } from "./types/sourceReturn.interface";
@@ -24,8 +25,8 @@ export abstract class AiSourceAbstact {
     model: TModels[number],
   ): Promise<AsyncGenerator<{ text: string | undefined }, unknown, unknown>>;
   abstract createChat(model: TModels[number]): ISourceChatCreate;
-  abstract sendMessage(
-    content: string,
+  abstract sendMessage<T extends string = "content">(
+    content: string | IHistoryItem<T>[],
     model?: TModels[number],
   ): Promise<ISourceReturn>;
 }

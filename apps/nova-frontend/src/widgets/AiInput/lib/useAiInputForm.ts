@@ -11,10 +11,11 @@ export const useAiInputForm = (
   console.log(providers);
   const form = useAppForm({
     defaultValues: {
-      provider: providers[0].value || "",
+      provider: providers[0]?.value || "Провайдеров нету",
       content: "",
     },
     onSubmit(props) {
+      console.log(1);
       onSubmit?.(props);
       form.reset();
     },
