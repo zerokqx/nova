@@ -8,6 +8,7 @@ export class AiSourcePerplexity extends AiSourceAbstact {
   private ai: Perplexity;
   constructor(public meta: IMetaClass) {
     super();
+    console.log(this.api);
     this.ai = new Perplexity({ apiKey: this.api });
   }
   createChat(model: "sonar"): ISourceChatCreate {

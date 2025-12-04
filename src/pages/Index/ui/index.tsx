@@ -30,7 +30,6 @@ export const IndexPage = () => {
           align="center"
           h={"60%"}
         >
-          {" "}
           <LogotypeCombined />
           <AiInput
             onSubmit={async ({ value: { content, provider } }) => {

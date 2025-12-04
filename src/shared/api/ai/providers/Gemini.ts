@@ -14,7 +14,6 @@ export class AiSourceGemini extends AiSourceAbstact {
 
   constructor(public meta: IMetaClass) {
     super();
-    console.log(this.api);
     this.ai = new GoogleGenAI({ apiKey: this.api });
   }
 
@@ -63,6 +62,7 @@ export class AiSourceGemini extends AiSourceAbstact {
     content: string,
     model = this.defaultModel,
   ): Promise<ISourceReturn> {
+    console.log(this.api);
     const response = await this.ai.models.generateContent({
       model,
       contents: content,

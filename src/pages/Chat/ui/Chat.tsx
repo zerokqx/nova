@@ -1,30 +1,60 @@
 import { Message, MessagesDB } from "@entities/messages";
-import {
-  apiKeyStoreActions,
-  useApiKeyStore,
-} from "@features/ai-providers/model/useApiKeyStore";
+import { useApiKeyStore } from "@features/ai-providers/model/useApiKeyStore";
 import { AppShellMain, Stack, Center } from "@mantine/core";
-import { getAllow } from "@shared/api/ai/utils/meta/getAllow";
+import { providers } from "@shared/api/ai/container";
+import { AI } from "@shared/api/ai/lib/symbols/symbols";
+import type { TSources } from "@shared/api/ai/types/sources.type";
 import { useAdaptiveSpace } from "@shared/lib/hooks/useAdaptiveSpace";
 import { useParams } from "@tanstack/react-router";
 import { AiInput } from "@widgets/AiInput/ui/AiInput";
 import { useLiveQuery } from "dexie-react-hooks";
-import { keys, map } from "lodash";
+import { map } from "lodash";
 import { motion } from "motion/react";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 const MotionMessage = motion.create(Message);
 export function Chat() {
-  const [ref, Space] = useAdaptiveSpace();
-  const { id, model } = useParams({ from: "/chat/$id/$provider/$model" });
+  const { id, model, provider } = useParams({
+    from: "/chat/$id/$provider/$model",
+  });
+
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const source = useCallback(
+    () => providers.get(AI[provider as TSources]),
+    [provider],
+  )();
+
   const messages = useLiveQuery(
     async () => await MessagesDB.getChatMessages({ chatId: id }),
     [id],
   );
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const [ref, Space] = useAdaptiveSpace();
+
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+
+  const initMessage = useLiveQuery(
+    async () => await MessagesDB.getInitMessage({ chatId: Number(id) }),
+    [],
+  );
+  if (!initMessage?.processed) {
+    const response = source
+      .with({
+        apiKey: useApiKeyStore.getState().data[source.meta.providerName],
+      })
+      .sendMessage(initMessage?.content, model)
+      .then((resp) => {
+        MessagesDB.createMessage({
+          role: "assistent",
+          chatId: Number(id),
+          content: resp.data.content as string,
+          processed: true,
+        });
+      });
+  }
   return (
     <>
       <AppShellMain>

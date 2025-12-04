@@ -6,7 +6,7 @@ import type { ISourceWithFunctionParametres } from "./types/sourceWith.interface
 
 export abstract class AiSourceAbstact {
   abstract meta: IMetaClass;
-  private _api?: string;
+  private _api?: string = "";
 
   hash(): number {
     return Math.random();
