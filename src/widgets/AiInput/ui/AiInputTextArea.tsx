@@ -13,8 +13,11 @@ export const AiInputTextArea = withForm({
       <form.AppField
         name="content"
         validators={{
-          onChange: ({ value }) =>
-            value.length > 0 ? undefined : "Введите запрос",
+          onChange: ({ value }) => {
+            const isValid = value.trim().length > 0;
+            console.log("Validation:", value, "isValid:", isValid);
+            return isValid ? undefined : "Введите запрос";
+          },
         }}
         children={(field) => (
           <field.TextArea

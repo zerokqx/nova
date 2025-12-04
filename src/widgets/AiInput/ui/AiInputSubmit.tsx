@@ -10,7 +10,10 @@ export const AiInputSubmit = withForm({
   render({ form }) {
     return (
       <form.Subscribe
-        selector={(s) => [s.canSubmit]}
+        selector={(s) => {
+          console.log(s.canSubmit);
+          return [s.canSubmit];
+        }}
         children={([canSubmit]) => (
           <ActionIcon
             type="submit"

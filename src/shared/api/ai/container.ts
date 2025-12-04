@@ -14,12 +14,14 @@ providers.bind(AIMETA.GeminiMeta).toConstantValue(
   new Meta({
     models: ["gemini-2.5-flash", "gemini-2.5-pro", "gemini-flash-lite"],
     providerName: "Gemini",
+    contentKeyHistory: "text",
     thinking: true,
     defaultModel: "gemini-2.5-flash",
   }),
 );
 providers.bind(AIMETA.PerplexityMeta).toConstantValue(
   new Meta({
+    contentKeyHistory: "text",
     models: ["sonar"],
     providerName: "Perplexity",
     thinking: true,

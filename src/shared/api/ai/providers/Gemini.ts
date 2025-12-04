@@ -6,6 +6,7 @@ import type { ISourceReturn } from "../aiAbstract/types/sourceReturn.interface";
 import type { TModels } from "../aiAbstract/types/models.type";
 import type { ISourceChatCreate } from "../aiAbstract/types/sourceChat.interface";
 import type { ISourceWithFunctionParametres } from "../aiAbstract/types/sourceWith.interface";
+import type { IHistoryItem } from "../aiAbstract/types/history.interface";
 
 @injectable()
 export class AiSourceGemini extends AiSourceAbstact {
@@ -19,6 +20,7 @@ export class AiSourceGemini extends AiSourceAbstact {
 
   with({ apiKey }: ISourceWithFunctionParametres): this {
     this.api = apiKey;
+    this.ai = new GoogleGenAI({ apiKey: this.api }); // Пересоздаем клиент
     return this;
   }
   async sendMessageStream(
@@ -58,8 +60,8 @@ export class AiSourceGemini extends AiSourceAbstact {
   get defaultModel() {
     return this.meta.models[0];
   }
-  async sendMessage(
-    content: string,
+  async sendMessage<Key extends string = "text">(
+    content: string | IHistoryItem<Key>[],
     model = this.defaultModel,
   ): Promise<ISourceReturn> {
     console.log(this.api);
