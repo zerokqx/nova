@@ -69,7 +69,7 @@ export function Chat() {
     };
 
     sendInitMessage();
-  }, [initMessage, id, apiKey, model]);
+  }, [initMessage, id, source, apiKey, model]);
   return (
     <>
       <AppShellMain>

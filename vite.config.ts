@@ -11,6 +11,7 @@ export default defineConfig({
       target: "react",
       autoCodeSplitting: true,
       routesDirectory: `${APP}/routes`,
+      generatedRouteTree: `${APP}/routeTree.gen.ts`,
     }),
     tsPaths(),
     react({

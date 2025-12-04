@@ -30,4 +30,3 @@ providers.bind(AIMETA.PerplexityMeta).toConstantValue(
 );
 providers.bind(AI.Perplexity).to(AiSourcePerplexity).inSingletonScope();
 providers.bind(AI.Gemini).to(AiSourceGemini).inSingletonScope();
-console.log(providers.get(AIMETA.GeminiMeta).slashNotation);

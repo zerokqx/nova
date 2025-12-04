@@ -10,7 +10,6 @@ import type { IHistoryItem } from "../aiAbstract/types/history.interface";
 
 @injectable()
 export class AiSourceGemini extends AiSourceAbstact {
-  static providerName = "Gemini";
   private ai: GoogleGenAI;
 
   constructor(public meta: IMetaClass) {

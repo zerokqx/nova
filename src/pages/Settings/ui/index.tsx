@@ -1,7 +1,4 @@
-import {
-  apiKeyStoreActions,
-  useApiKeyStore,
-} from "@features/ai-providers/model/useApiKeyStore";
+import { useApiKeyStore } from "@features/ai-providers/model/useApiKeyStore";
 import { AiCard } from "@features/ai-providers/ui/AiCard";
 import { AppShellMain, Group } from "@mantine/core";
 import { MetaController } from "@shared/api/ai";
