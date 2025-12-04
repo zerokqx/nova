@@ -1,3 +1,2 @@
-const d = "Привет как дела fawaw";
-
-console.log(`${d.slice(0, 20)}...`);
+const d = new URL("Gemini/flash");
+console.log(d.host);

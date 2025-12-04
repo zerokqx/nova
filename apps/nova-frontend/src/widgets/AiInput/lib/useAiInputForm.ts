@@ -8,9 +8,10 @@ export const useAiInputForm = (
   onSubmit: IAiInputProps["onSubmit"],
 ) => {
   const t = useMantineTheme();
+  console.log(providers);
   const form = useAppForm({
     defaultValues: {
-      provider: providers[0].label ?? "",
+      provider: providers[0].value || "",
       content: "",
     },
     onSubmit(props) {

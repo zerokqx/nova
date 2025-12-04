@@ -1,10 +1,10 @@
 import type { StackProps } from "@mantine/core";
 import type { TOnSubmitHandlerForm } from "@shared/ui/Form";
 import type { TProviders } from "./providers.type";
-import type { TSourceAndModel } from "@shared/api/ai/lib/formatModel/types/metaSourceAndModel.type";
+import type { TAiUrl } from "@shared/api/ai/lib/formatModel/types/metaSourceAndModel.type";
 
 interface IAiInputFields {
-  provider: TSourceAndModel;
+  provider: string;
   content: string;
 }
 
