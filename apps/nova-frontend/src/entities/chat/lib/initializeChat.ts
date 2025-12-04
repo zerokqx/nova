@@ -4,7 +4,6 @@ import { MessagesDB } from "@entities/messages";
 
 export const initializeChat: TInitializeChatFn = async ({
   content,
-
   url,
   preview,
   role,

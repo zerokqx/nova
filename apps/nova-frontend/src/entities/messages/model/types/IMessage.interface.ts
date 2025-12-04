@@ -5,5 +5,6 @@ export interface IMessage {
   role: "assistent" | "user";
   chatId: TId;
   initialize?: boolean;
+  processed?: boolean;
   content: string;
 }
