@@ -10,9 +10,9 @@ class __ChatsDB extends Dexie {
       chats: "++id",
     });
   }
-  async createChat({ model, preview }: Omit<IChat, "id">) {
+  async createChat({ url, preview }: Omit<IChat, "id">) {
     const previewSlice = preview.slice(0, 20);
-    return await this.chats.add({ model, preview: `${previewSlice}...` });
+    return await this.chats.add({ url, preview: `${previewSlice}...` });
   }
   async deleteChat(id: IChat["id"]) {
     return await this.chats.delete(id);

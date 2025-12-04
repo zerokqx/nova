@@ -4,7 +4,7 @@ import type { TModels } from "@shared/api/ai/aiAbstract/types/models.type";
 import { Link, useNavigate, useParams } from "@tanstack/react-router";
 import { useLayoutStore } from "@shared/lib/stores/useLayout";
 import { deSlashNotation } from "@shared/api/ai/lib/formatModel/nameModelFormat";
-import type { TSourceAndModel } from "@shared/api/ai/lib/formatModel/types/metaSourceAndModel.type";
+import type { TAiUrl } from "@shared/api/ai/lib/formatModel/types/metaSourceAndModel.type";
 
 export const NavItem = ({
   text,
@@ -13,11 +13,13 @@ export const NavItem = ({
 }: {
   text: string;
   id: number;
-  url: TSourceAndModel;
+  url: TAiUrl;
 }) => {
   const t = useMantineTheme();
   const updateLayout = useLayoutStore((s) => s.update);
+  console.log(url);
   const { model, source } = deSlashNotation(url);
+
   return (
     <Link
       to="/chat/$id/$provider/$model"
@@ -40,6 +42,7 @@ export const NavItem = ({
         style: { border: `${t.colors.dark[9]} solid ${rem(1)}` },
       }}
     >
+      {" "}
       <Group
         bdrs={"inherit"}
         className={stl.effect}

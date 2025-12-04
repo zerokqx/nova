@@ -2,6 +2,7 @@ import { initializeChat } from "@entities/chat/lib/initializeChat";
 import { apiKeyStoreActions } from "@features/ai-providers/model/useApiKeyStore";
 import { AppShellMain, Stack } from "@mantine/core";
 import { deSlashNotation } from "@shared/api/ai/lib/formatModel/nameModelFormat";
+import type { TAiUrl } from "@shared/api/ai/lib/formatModel/types/metaSourceAndModel.type";
 import type { ITransformModel } from "@shared/api/ai/lib/formatModel/types/transform.type";
 import { getAllow } from "@shared/api/ai/utils/meta/getAllow";
 import { mergeArraySlashNotation } from "@shared/api/ai/utils/meta/mergeArraySlashNotation";
@@ -33,9 +34,10 @@ export const IndexPage = () => {
           <LogotypeCombined />
           <AiInput
             onSubmit={async ({ value: { content, provider } }) => {
-              const { model, source } = deSlashNotation(provider);
+              const { model, source } = deSlashNotation(provider as TAiUrl);
+              console.trace(provider);
               const [chatId] = await initializeChat({
-                model,
+                url: provider as TAiUrl,
                 preview: content,
                 content,
                 role: "user",

@@ -38,8 +38,8 @@ export const Navbar = () => {
           </Stack>
         </Center>
       ) : (
-        map(chats.reverse(), ({ id, preview, model }) => (
-          <NavItem key={id} url={model} {...{ id }} text={preview} />
+        map(chats.reverse(), ({ id, preview, url }) => (
+          <NavItem key={id} url={url} {...{ id }} text={preview} />
         ))
       )}
     </AppShellNavbar>

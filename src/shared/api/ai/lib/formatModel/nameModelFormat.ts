@@ -3,6 +3,7 @@ import type {
   TAfterSplit,
   TDeSlashNotatonFn,
 } from "./types/deSlashNotation.type";
+import type { TAiUrlSeparator } from "./types/metaSourceAndModel.type";
 
 /**
  * @description Противоположная функция `namedModelForSelect`
@@ -10,8 +11,8 @@ import type {
  */
 
 export const deSlashNotation: TDeSlashNotatonFn = (value) => {
-  const deFormt = split(value, "/") as TAfterSplit;
-  console.log(deFormt);
+  const separator = "/" satisfies TAiUrlSeparator;
+  const deFormt = split(value, separator) as TAfterSplit;
   return {
     source: deFormt[0],
     model: deFormt[1],

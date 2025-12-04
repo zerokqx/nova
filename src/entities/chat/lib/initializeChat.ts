@@ -4,11 +4,12 @@ import { MessagesDB } from "@entities/messages";
 
 export const initializeChat: TInitializeChatFn = async ({
   content,
-  model,
+
+  url,
   preview,
   role,
 }) => {
-  const chat = await ChatsDB.createChat({ model, preview });
+  const chat = await ChatsDB.createChat({ url, preview });
   const message = await MessagesDB.createMessage({
     chatId: chat,
     content,
