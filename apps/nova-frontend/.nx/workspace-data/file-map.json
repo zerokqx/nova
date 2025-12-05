@@ -1,0 +1,1277 @@
+{
+  "version": "6.0",
+  "nxVersion": "22.1.3",
+  "pathMappings": {},
+  "nxJsonPlugins": [
+    {
+      "name": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "eslint:lint"
+      }
+    },
+    {
+      "name": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "vite:build",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "devTargetName": "vite:dev",
+        "previewTargetName": "vite:preview",
+        "serveStaticTargetName": "serve-static",
+        "typecheckTargetName": "typecheck",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    }
+  ],
+  "fileMap": {
+    "projectFileMap": {
+      "nova": [
+        {
+          "file": ".envrc",
+          "hash": "13324152811781206491"
+        },
+        {
+          "file": ".gitignore",
+          "hash": "9703045082672483452"
+        },
+        {
+          "file": ".prettierignore",
+          "hash": "14688272390704683536"
+        },
+        {
+          "file": ".prettierrc",
+          "hash": "16267754514737964994"
+        },
+        {
+          "file": ".tanstack/tmp/0a9fc14d-95790c52fc818fcfb9dcce9ed76e11b4",
+          "hash": "331143513499678275"
+        },
+        {
+          "file": ".tanstack/tmp/41f700a7-95790c52fc818fcfb9dcce9ed76e11b4",
+          "hash": "15158445798143934128"
+        },
+        {
+          "file": ".vscode/extensions.json",
+          "hash": "10066300031063478629"
+        },
+        {
+          "file": "Dockerfile",
+          "hash": "9149853467672119970"
+        },
+        {
+          "file": "README.md",
+          "hash": "13662199475054897685"
+        },
+        {
+          "file": "bun.lock",
+          "hash": "16878424222850167180"
+        },
+        {
+          "file": "deploy.bash",
+          "hash": "1704406115872879718"
+        },
+        {
+          "file": "devenv.lock",
+          "hash": "15384091517977820208"
+        },
+        {
+          "file": "devenv.nix",
+          "hash": "17792305063075113700"
+        },
+        {
+          "file": "devenv.yaml",
+          "hash": "5340945071397116989"
+        },
+        {
+          "file": "eslint.base.config.mjs",
+          "hash": "12926286793420397906"
+        },
+        {
+          "file": "eslint.config.js",
+          "hash": "16942999842498204",
+          "deps": [
+            "npm:@eslint/js@9.39.1",
+            "npm:globals@16.5.0",
+            "npm:eslint-plugin-react-hooks@7.0.1",
+            "npm:eslint-plugin-react-refresh@0.4.24",
+            "npm:typescript-eslint@8.48.0",
+            "npm:eslint@9.39.1"
+          ]
+        },
+        {
+          "file": "eslint.config.mjs",
+          "hash": "13312304780678173934"
+        },
+        {
+          "file": "index.html",
+          "hash": "14610024454939361261"
+        },
+        {
+          "file": "jest.config.ts",
+          "hash": "6870352021923392442"
+        },
+        {
+          "file": "jest.preset.cjs",
+          "hash": "9430166341120122740"
+        },
+        {
+          "file": "knip.json",
+          "hash": "8568331070152930810"
+        },
+        {
+          "file": "nx.json",
+          "hash": "13097372826788897504"
+        },
+        {
+          "file": "package.json",
+          "hash": "13067461361580065813",
+          "deps": [
+            "npm:@babel/plugin-proposal-class-properties@7.18.6",
+            "npm:@babel/plugin-proposal-decorators@7.28.0",
+            "npm:@eslint/js@9.39.1",
+            "npm:@nx/docker@22.1.3",
+            "npm:@nx/eslint@22.1.3",
+            "npm:@nx/vite@22.1.3",
+            "npm:@nx/web@22.1.3",
+            "npm:@tanstack/router-plugin@1.139.3",
+            "npm:@types/node@24.10.1",
+            "npm:@types/react@19.2.7",
+            "npm:@types/react-dom@19.2.3",
+            "npm:@vitejs/plugin-react@5.1.1",
+            "npm:@vitest/ui@4.0.15",
+            "npm:babel-plugin-react-compiler@1.0.0",
+            "npm:eslint@9.39.1",
+            "npm:eslint-plugin-react-hooks@7.0.1",
+            "npm:eslint-plugin-react-refresh@0.4.24",
+            "npm:globals@16.5.0",
+            "npm:jiti@2.4.2",
+            "npm:nx@22.1.3",
+            "npm:typescript@5.9.3",
+            "npm:typescript-eslint@8.48.0",
+            "npm:vite@7.2.4",
+            "npm:vite-plugin-svgr@4.5.0",
+            "npm:vitest@4.0.15",
+            "npm:@colorfy-software/zfy@1.0.0",
+            "npm:@google/genai@1.30.0",
+            "npm:@inversifyjs/strongly-typed@2.2.0",
+            "npm:@mantine/carousel@8.3.9",
+            "npm:@mantine/code-highlight@8.3.9",
+            "npm:@mantine/core@8.3.9",
+            "npm:@mantine/hooks@8.3.9",
+            "npm:@mantine/modals@8.3.9",
+            "npm:@perplexity-ai/perplexity_ai@0.16.0",
+            "npm:@react-native-async-storage/async-storage@2.2.0",
+            "npm:@tanstack/react-form@1.26.0",
+            "npm:@tanstack/react-query@5.90.11",
+            "npm:@tanstack/react-query-devtools@5.91.1",
+            "npm:@tanstack/react-router@1.139.3",
+            "npm:@tanstack/react-router-devtools@1.139.3",
+            "npm:@tanstack/zod-adapter@1.139.12",
+            "npm:@types/lodash@4.17.21",
+            "npm:@vanilla-extract/css-utils@0.1.6",
+            "npm:dexie@4.2.1",
+            "npm:dexie-react-hooks@4.2.0",
+            "npm:embla-carousel@8.6.0",
+            "npm:embla-carousel-react@8.6.0",
+            "npm:immer@9.0.21",
+            "npm:inversify@7.10.4",
+            "npm:lodash@4.17.21",
+            "npm:lucide-react@0.555.0",
+            "npm:motion@12.23.24",
+            "npm:nanoid@5.1.6",
+            "npm:postcss@8.5.6",
+            "npm:postcss-preset-mantine@1.18.0",
+            "npm:postcss-simple-vars@7.0.1",
+            "npm:react@19.2.0",
+            "npm:react-dom@19.2.0",
+            "npm:react-if@4.1.6",
+            "npm:react-markdown@10.1.0",
+            "npm:reflect-metadata@0.2.2",
+            "npm:type-fest",
+            "npm:vite-tsconfig-paths@5.1.4",
+            "npm:zod@4.1.13",
+            "npm:zustand@5.0.8"
+          ]
+        },
+        {
+          "file": "postcss.config.cjs",
+          "hash": "13446174197773995177"
+        },
+        {
+          "file": "public/vite.svg",
+          "hash": "16046085400642193116"
+        },
+        {
+          "file": "sandbox.ts",
+          "hash": "7919695193509142897"
+        },
+        {
+          "file": "serve.json",
+          "hash": "6452219605806721202"
+        },
+        {
+          "file": "src/app/index.css",
+          "hash": "16110839749660051537"
+        },
+        {
+          "file": "src/app/main.tsx",
+          "hash": "2329472717326460198",
+          "deps": [
+            "npm:react@19.2.0",
+            "npm:react-dom@19.2.0",
+            "npm:@tanstack/react-router@1.139.3",
+            "npm:@mantine/core@8.3.9",
+            "npm:@tanstack/react-query@5.90.11",
+            [
+              "npm:@tanstack/query-core@5.90.11",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "src/app/routeTree.gen.ts",
+          "hash": "1068912433497593068"
+        },
+        {
+          "file": "src/app/routes/__root.tsx",
+          "hash": "10516146893205468995",
+          "deps": [
+            "npm:react@19.2.0",
+            "npm:@tanstack/react-router@1.139.3",
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/app/routes/chat.$id.$provider.$model.tsx",
+          "hash": "15555667530107775927",
+          "deps": [
+            "npm:@tanstack/react-router@1.139.3"
+          ]
+        },
+        {
+          "file": "src/app/routes/index.tsx",
+          "hash": "14786430770324504814",
+          "deps": [
+            "npm:@tanstack/react-router@1.139.3"
+          ]
+        },
+        {
+          "file": "src/app/routes/settings.tsx",
+          "hash": "4012289386774947909",
+          "deps": [
+            "npm:@tanstack/react-router@1.139.3"
+          ]
+        },
+        {
+          "file": "src/entities/chat/@x/messages.ts",
+          "hash": "11550966108530942131"
+        },
+        {
+          "file": "src/entities/chat/index.ts",
+          "hash": "2439152948388948234"
+        },
+        {
+          "file": "src/entities/chat/lib/initializeChat.ts",
+          "hash": "7961832448396907096"
+        },
+        {
+          "file": "src/entities/chat/lib/types/initializeChat.types.ts",
+          "hash": "7405532835661054811",
+          "deps": [
+            "npm:type-fest"
+          ]
+        },
+        {
+          "file": "src/entities/chat/model/Chats.db.ts",
+          "hash": "6288509527654970171",
+          "deps": [
+            "npm:dexie@4.2.1"
+          ]
+        },
+        {
+          "file": "src/entities/chat/model/index.ts",
+          "hash": "13875435017078719529"
+        },
+        {
+          "file": "src/entities/chat/model/types/IChat.interface.ts",
+          "hash": "8096694828386067518"
+        },
+        {
+          "file": "src/entities/chat/model/types/IChatsDB.type.ts",
+          "hash": "18329324892566420091",
+          "deps": [
+            "npm:dexie@4.2.1"
+          ]
+        },
+        {
+          "file": "src/entities/chat/model/types/TId.type.ts",
+          "hash": "5873353543497588549"
+        },
+        {
+          "file": "src/entities/messages/@x/chat.ts",
+          "hash": "9226444755959943741"
+        },
+        {
+          "file": "src/entities/messages/index.ts",
+          "hash": "12143116816621510372"
+        },
+        {
+          "file": "src/entities/messages/model/Messsages.db.ts",
+          "hash": "1990083862269053647",
+          "deps": [
+            "npm:dexie@4.2.1"
+          ]
+        },
+        {
+          "file": "src/entities/messages/model/index.ts",
+          "hash": "10820938353783098169"
+        },
+        {
+          "file": "src/entities/messages/model/types/IMessage.interface.ts",
+          "hash": "1777895974572120403"
+        },
+        {
+          "file": "src/entities/messages/model/types/TMessagesDB.type.ts",
+          "hash": "15700446111142672797",
+          "deps": [
+            "npm:dexie@4.2.1"
+          ]
+        },
+        {
+          "file": "src/entities/messages/model/types/index.ts",
+          "hash": "9669413849822558326"
+        },
+        {
+          "file": "src/entities/messages/ui/Message.tsx",
+          "hash": "18263270888262333399",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:react@19.2.0",
+            "npm:motion@12.23.24",
+            "npm:react-markdown@10.1.0"
+          ]
+        },
+        {
+          "file": "src/entities/messages/ui/ShowMoreButton.tsx",
+          "hash": "8854274220630341931",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:lucide-react@0.555.0",
+            "npm:react@19.2.0"
+          ]
+        },
+        {
+          "file": "src/entities/messages/ui/types/Message.interface.ts",
+          "hash": "1281184446809695139"
+        },
+        {
+          "file": "src/features/ai-providers/index.ts",
+          "hash": "5163365713162945418"
+        },
+        {
+          "file": "src/features/ai-providers/model/types/useApiKeyStore.type.ts",
+          "hash": "7104983746543121263"
+        },
+        {
+          "file": "src/features/ai-providers/model/useApiKeyStore.tsx",
+          "hash": "16958599806801389842",
+          "deps": [
+            "npm:@colorfy-software/zfy@1.0.0",
+            "npm:lodash@4.17.21",
+            "npm:@react-native-async-storage/async-storage@2.2.0"
+          ]
+        },
+        {
+          "file": "src/features/ai-providers/ui/AiCard.tsx",
+          "hash": "13866638380360709582",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:@mantine/hooks@8.3.9",
+            "npm:lodash@4.17.21",
+            "npm:react@19.2.0"
+          ]
+        },
+        {
+          "file": "src/features/ai-providers/ui/AiCard/Container.tsx",
+          "hash": "8152257086743665092",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/features/ai-providers/ui/AiCard/CreateApiKeyButton.tsx",
+          "hash": "2816128656837307743",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:lucide-react@0.555.0"
+          ]
+        },
+        {
+          "file": "src/features/ai-providers/ui/AiCard/CreateKey.tsx",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "src/features/ai-providers/ui/AiCard/Model.tsx",
+          "hash": "11606183099882850482",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/features/ai-providers/ui/AiCard/PuthcApiKeyButton.tsx",
+          "hash": "11562918370984171336",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:lucide-react@0.555.0"
+          ]
+        },
+        {
+          "file": "src/features/ai-providers/ui/AiCard/Remove.tsx",
+          "hash": "18070527872499826395",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:lucide-react@0.555.0"
+          ]
+        },
+        {
+          "file": "src/features/ai-providers/ui/AiCard/StatusList.tsx",
+          "hash": "6522468922004390540",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:lucide-react@0.555.0"
+          ]
+        },
+        {
+          "file": "src/features/ai-providers/ui/AiCard/Title.tsx",
+          "hash": "13062730972521363033",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/features/ai-providers/ui/ApiAddKeyForm.tsx",
+          "hash": "4400267950980450512",
+          "deps": [
+            "npm:lucide-react@0.555.0"
+          ]
+        },
+        {
+          "file": "src/features/ai-providers/ui/ModalApiAddKeyForm.tsx",
+          "hash": "8131099327570657317",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/features/ai-providers/ui/PutchApiKeyForm.tsx",
+          "hash": "7348425911263606673"
+        },
+        {
+          "file": "src/features/ai-providers/ui/PutchApiKeyModal.tsx",
+          "hash": "13626225115858043405",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/features/ai-providers/ui/types/ApiAddKeyForm.interface.ts",
+          "hash": "20030698516013903"
+        },
+        {
+          "file": "src/features/ai-providers/ui/types/CardList.interface.ts",
+          "hash": "1407524350435819430",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/features/ai-providers/ui/types/Container.interface.ts",
+          "hash": "18380550863613082909",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/features/ai-providers/ui/types/Model.interface.ts",
+          "hash": "2739671320389188405"
+        },
+        {
+          "file": "src/features/ai-providers/ui/types/PutchApiKeyForm.interface.ts",
+          "hash": "11236570403274656733"
+        },
+        {
+          "file": "src/features/ai-providers/ui/types/PutchApiKeyModal.interface.ts",
+          "hash": "7725112780407975864",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/features/ai-providers/ui/types/Remove.interface.ts",
+          "hash": "14297008075075566147",
+          "deps": [
+            "npm:react@19.2.0"
+          ]
+        },
+        {
+          "file": "src/hooks/ai/index.ts",
+          "hash": "1227193798602631792"
+        },
+        {
+          "file": "src/hooks/ai/useAi.ts",
+          "hash": "9456344938383165880",
+          "deps": [
+            "npm:@tanstack/react-query@5.90.11"
+          ]
+        },
+        {
+          "file": "src/hooks/ai/useAiStream.ts",
+          "hash": "7685837339954270530",
+          "deps": [
+            "npm:@tanstack/react-query@5.90.11",
+            "npm:react@19.2.0"
+          ]
+        },
+        {
+          "file": "src/hooks/useLayoutNavigate.ts",
+          "hash": "12462631503996136823",
+          "deps": [
+            "npm:@tanstack/react-router@1.139.3"
+          ]
+        },
+        {
+          "file": "src/hooks/useResponsive/index.ts",
+          "hash": "10346332609645079542",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:@mantine/hooks@8.3.9"
+          ]
+        },
+        {
+          "file": "src/pages/Chat/ui/Chat.tsx",
+          "hash": "432754653583048301",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:@tanstack/react-router@1.139.3",
+            "npm:dexie-react-hooks@4.2.0",
+            "npm:lodash@4.17.21",
+            "npm:motion@12.23.24",
+            "npm:react@19.2.0"
+          ]
+        },
+        {
+          "file": "src/pages/Index/ui/index.tsx",
+          "hash": "4912763657756524366",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:@tanstack/react-router@1.139.3",
+            "npm:lodash@4.17.21",
+            "npm:react@19.2.0"
+          ]
+        },
+        {
+          "file": "src/pages/Settings/ui/index.tsx",
+          "hash": "5523167469811664990",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:lodash@4.17.21"
+          ]
+        },
+        {
+          "file": "src/shared/api/ai/aiAbstract/index.ts",
+          "hash": "81235204627605097"
+        },
+        {
+          "file": "src/shared/api/ai/aiAbstract/types/history.interface.ts",
+          "hash": "13055924833264710347"
+        },
+        {
+          "file": "src/shared/api/ai/aiAbstract/types/models.type.ts",
+          "hash": "13947025905096514327"
+        },
+        {
+          "file": "src/shared/api/ai/aiAbstract/types/sourceChat.interface.ts",
+          "hash": "12669997383662920614"
+        },
+        {
+          "file": "src/shared/api/ai/aiAbstract/types/sourceReturn.interface.ts",
+          "hash": "11198212303269132502"
+        },
+        {
+          "file": "src/shared/api/ai/aiAbstract/types/sourceWith.interface.ts",
+          "hash": "1383125970851440111"
+        },
+        {
+          "file": "src/shared/api/ai/container.ts",
+          "hash": "12358804222035790019",
+          "deps": [
+            "npm:@inversifyjs/strongly-typed@2.2.0",
+            "npm:inversify@7.10.4"
+          ]
+        },
+        {
+          "file": "src/shared/api/ai/index.ts",
+          "hash": "9163508534739309587"
+        },
+        {
+          "file": "src/shared/api/ai/lib/di/MetaController.ts",
+          "hash": "4283664036865310498"
+        },
+        {
+          "file": "src/shared/api/ai/lib/di/getAllMeta.ts",
+          "hash": "10192868906684582892"
+        },
+        {
+          "file": "src/shared/api/ai/lib/di/getByMetaName.ts",
+          "hash": "10531010764586524890"
+        },
+        {
+          "file": "src/shared/api/ai/lib/di/getMetaWithSource.ts",
+          "hash": "8770046664168121093"
+        },
+        {
+          "file": "src/shared/api/ai/lib/di/types/MetaController.interface.ts",
+          "hash": "11303111930664702480"
+        },
+        {
+          "file": "src/shared/api/ai/lib/di/types/getAllMeta.type.ts",
+          "hash": "2297462789386778363"
+        },
+        {
+          "file": "src/shared/api/ai/lib/di/types/getByMetaName.type.ts",
+          "hash": "5269759458199472590"
+        },
+        {
+          "file": "src/shared/api/ai/lib/di/types/getMetaWithSource.interface.ts",
+          "hash": "15922742350384465535"
+        },
+        {
+          "file": "src/shared/api/ai/lib/di/types/getMetaWithSource.type.ts",
+          "hash": "5838326678513972773"
+        },
+        {
+          "file": "src/shared/api/ai/lib/formatModel/modelsForSelect.ts",
+          "hash": "12667665893810290600",
+          "deps": [
+            "npm:lodash@4.17.21"
+          ]
+        },
+        {
+          "file": "src/shared/api/ai/lib/formatModel/nameModelFormat.ts",
+          "hash": "13512534524071776176",
+          "deps": [
+            "npm:lodash@4.17.21"
+          ]
+        },
+        {
+          "file": "src/shared/api/ai/lib/formatModel/nameSlashNotation.ts",
+          "hash": "10471645784844272378"
+        },
+        {
+          "file": "src/shared/api/ai/lib/formatModel/types/deSlashNotation.type.ts",
+          "hash": "9801309996587782502"
+        },
+        {
+          "file": "src/shared/api/ai/lib/formatModel/types/metaSourceAndModel.type.ts",
+          "hash": "71718268679991017"
+        },
+        {
+          "file": "src/shared/api/ai/lib/formatModel/types/nameSlashNotation.type.ts",
+          "hash": "15688408034361026633"
+        },
+        {
+          "file": "src/shared/api/ai/lib/formatModel/types/transform.type.ts",
+          "hash": "15164866634934713190",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/shared/api/ai/lib/symbols/symbols.ts",
+          "hash": "12641228580693748463"
+        },
+        {
+          "file": "src/shared/api/ai/lib/symbols/typedMetaSymbol.ts",
+          "hash": "13325138444443970974"
+        },
+        {
+          "file": "src/shared/api/ai/lib/symbols/typedSourceSymbol.ts",
+          "hash": "6964389900069352057"
+        },
+        {
+          "file": "src/shared/api/ai/lib/symbols/typedSymbol.ts",
+          "hash": "16896302146220921087"
+        },
+        {
+          "file": "src/shared/api/ai/lib/symbols/types/typedSymbol.ts",
+          "hash": "4199788358515073991"
+        },
+        {
+          "file": "src/shared/api/ai/model/types/useAiProvidersStore.types.ts",
+          "hash": "4724020489048328253"
+        },
+        {
+          "file": "src/shared/api/ai/model/useAiProvidersStore.ts",
+          "hash": "2804114119762002414",
+          "deps": [
+            "npm:@colorfy-software/zfy@1.0.0",
+            "npm:@react-native-async-storage/async-storage@2.2.0"
+          ]
+        },
+        {
+          "file": "src/shared/api/ai/providers/Gemini.ts",
+          "hash": "10705464024185946458",
+          "deps": [
+            "npm:@google/genai@1.30.0",
+            "npm:inversify@7.10.4"
+          ]
+        },
+        {
+          "file": "src/shared/api/ai/providers/Perplexity.ts",
+          "hash": "14101778542439758881",
+          "deps": [
+            "npm:@perplexity-ai/perplexity_ai@0.16.0"
+          ]
+        },
+        {
+          "file": "src/shared/api/ai/types/bindingsMap.type.ts",
+          "hash": "294781678930077342"
+        },
+        {
+          "file": "src/shared/api/ai/types/sources.type.ts",
+          "hash": "11739885635560093972"
+        },
+        {
+          "file": "src/shared/api/ai/utils/meta/Meta.ts",
+          "hash": "13125491984627904521"
+        },
+        {
+          "file": "src/shared/api/ai/utils/meta/getAllow.ts",
+          "hash": "7728695151593640752",
+          "deps": [
+            "npm:lodash@4.17.21"
+          ]
+        },
+        {
+          "file": "src/shared/api/ai/utils/meta/mergeArraySlashNotation.ts",
+          "hash": "6702972883202568732",
+          "deps": [
+            "npm:lodash@4.17.21"
+          ]
+        },
+        {
+          "file": "src/shared/api/ai/utils/meta/metaKey.ts",
+          "hash": "7264241731803386289"
+        },
+        {
+          "file": "src/shared/api/ai/utils/meta/types/meta.interface.ts",
+          "hash": "14566504754161235241"
+        },
+        {
+          "file": "src/shared/api/ai/utils/meta/types/metaKey.type.ts",
+          "hash": "11896155086846878278"
+        },
+        {
+          "file": "src/shared/api/ai/utils/meta/types/metaSources.type.ts",
+          "hash": "1177762396056409581"
+        },
+        {
+          "file": "src/shared/api/ai/utils/meta/types/witoutMetaSuffix.type.ts",
+          "hash": "4793600054434573103"
+        },
+        {
+          "file": "src/shared/api/ai/utils/meta/withOutMetaSuffix.ts",
+          "hash": "1037766952495869471"
+        },
+        {
+          "file": "src/shared/assets/Group 3.svg",
+          "hash": "3433259491527645918"
+        },
+        {
+          "file": "src/shared/assets/Group 4.svg",
+          "hash": "18084481782037783409"
+        },
+        {
+          "file": "src/shared/assets/Nova.svg",
+          "hash": "17446156276765641792"
+        },
+        {
+          "file": "src/shared/assets/brainCog.svg",
+          "hash": "15084723911076686439"
+        },
+        {
+          "file": "src/shared/assets/react.svg",
+          "hash": "16069471864800376455"
+        },
+        {
+          "file": "src/shared/assets/send.svg",
+          "hash": "7476969719560786405"
+        },
+        {
+          "file": "src/shared/assets/settings.svg",
+          "hash": "10143174608756264338"
+        },
+        {
+          "file": "src/shared/lib/hooks/types.ts",
+          "hash": "15158285436319619942",
+          "deps": [
+            "npm:react@19.2.0"
+          ]
+        },
+        {
+          "file": "src/shared/lib/hooks/useAdaptiveSpace.tsx",
+          "hash": "4793744120794297787",
+          "deps": [
+            "npm:@mantine/hooks@8.3.9",
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/shared/lib/stores/types/useLayout.interface.ts",
+          "hash": "1766571484975640335"
+        },
+        {
+          "file": "src/shared/lib/stores/useLayout.ts",
+          "hash": "18003730615410468661",
+          "deps": [
+            "npm:@colorfy-software/zfy@1.0.0"
+          ]
+        },
+        {
+          "file": "src/shared/lib/utils/i.ts",
+          "hash": "199670289318992086"
+        },
+        {
+          "file": "src/shared/styles/effects/Hover.module.css",
+          "hash": "10215238473808738169"
+        },
+        {
+          "file": "src/shared/styles/effects/Scale.module.css",
+          "hash": "4428231511363757671"
+        },
+        {
+          "file": "src/shared/styles/effects/Shine.module.css",
+          "hash": "9752898186073332355"
+        },
+        {
+          "file": "src/shared/styles/mantine/index.ts",
+          "hash": "11350066726408781141"
+        },
+        {
+          "file": "src/shared/styles/mantine/theme.ts",
+          "hash": "11005581364800232533",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/shared/types/functions/fn.type.ts",
+          "hash": "16643195522939155724"
+        },
+        {
+          "file": "src/shared/types/theme/mantine.d.ts",
+          "hash": "18095334420720149843",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/shared/types/utils/baseActionsForArray.interface.ts",
+          "hash": "693951418328066816",
+          "deps": [
+            "npm:type-fest"
+          ]
+        },
+        {
+          "file": "src/shared/types/utils/checkUndefinedLength.ts",
+          "hash": "15144807862175790222"
+        },
+        {
+          "file": "src/shared/ui/AiResponse/index.tsx",
+          "hash": "8207160172922686933",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:react-markdown@10.1.0"
+          ]
+        },
+        {
+          "file": "src/shared/ui/AiResponse/types/AiResponse.interface.ts",
+          "hash": "430399126742121152"
+        },
+        {
+          "file": "src/shared/ui/CopyButton/index.tsx",
+          "hash": "11838831998478874668",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:@mantine/hooks@8.3.9",
+            "npm:lucide-react@0.555.0"
+          ]
+        },
+        {
+          "file": "src/shared/ui/DeleteButton/ui/index.tsx",
+          "hash": "13173874374217378119",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:lucide-react@0.555.0",
+            "npm:react@19.2.0"
+          ]
+        },
+        {
+          "file": "src/shared/ui/Form/index.ts",
+          "hash": "434529993768611954"
+        },
+        {
+          "file": "src/shared/ui/Form/model/formContext.ts",
+          "hash": "883562701064983654",
+          "deps": [
+            "npm:@tanstack/react-form@1.26.0"
+          ]
+        },
+        {
+          "file": "src/shared/ui/Form/model/index.ts",
+          "hash": "11902153295831391219"
+        },
+        {
+          "file": "src/shared/ui/Form/types/fieldSet.type.ts",
+          "hash": "11734140296958472331",
+          "deps": [
+            "npm:@tanstack/react-form@1.26.0",
+            "npm:react@19.2.0"
+          ]
+        },
+        {
+          "file": "src/shared/ui/Form/types/form.type.ts",
+          "hash": "16018930213135966148",
+          "deps": [
+            "npm:@tanstack/react-form@1.26.0"
+          ]
+        },
+        {
+          "file": "src/shared/ui/Form/types/formButtonProp.type.ts",
+          "hash": "2462415567237123026",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:@tanstack/react-form@1.26.0",
+            "npm:react@19.2.0"
+          ]
+        },
+        {
+          "file": "src/shared/ui/Form/types/index.ts",
+          "hash": "133906077945960676"
+        },
+        {
+          "file": "src/shared/ui/Form/types/secondActionProp.type.ts",
+          "hash": "4854353977473137358",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/shared/ui/Form/ui/FormV2/Fields/Checkbox.tsx",
+          "hash": "10708961434388144998",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/shared/ui/Form/ui/FormV2/Fields/PasswordInput.tsx",
+          "hash": "2278995452461403522",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/shared/ui/Form/ui/FormV2/Fields/Select.tsx",
+          "hash": "8570586643330904432",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/shared/ui/Form/ui/FormV2/Fields/TextArea.tsx",
+          "hash": "16700378063879758601",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/shared/ui/Form/ui/FormV2/Fields/TextInput.tsx",
+          "hash": "17633376475379942931",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/shared/ui/Form/ui/FormV2/FormComponents/Button.tsx",
+          "hash": "8191650034244058141",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:@tanstack/react-form@1.26.0"
+          ]
+        },
+        {
+          "file": "src/shared/ui/Form/ui/FormV2/FormComponents/Form.tsx",
+          "hash": "215082071706853437",
+          "deps": [
+            "npm:react@19.2.0"
+          ]
+        },
+        {
+          "file": "src/shared/ui/Form/ui/FormV2/FormComponents/Layouts.tsx",
+          "hash": "6192645178865987153",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/shared/ui/Form/ui/FormV2/FormComponents/SecondAction.tsx",
+          "hash": "11925403786126865745",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/shared/ui/Form/ui/FormV2/FormComponents/Title.tsx",
+          "hash": "1360621212305277566",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/shared/ui/Form/ui/FormV2/FormV2.tsx",
+          "hash": "14631287542353038379",
+          "deps": [
+            "npm:@tanstack/react-form@1.26.0"
+          ]
+        },
+        {
+          "file": "src/shared/ui/Form/ui/FormV2/lib/getErrorMessage.ts",
+          "hash": "1170952556921013761"
+        },
+        {
+          "file": "src/shared/ui/Form/ui/FormV2/types/onSubmitHandler.type.ts",
+          "hash": "17742342402250370863"
+        },
+        {
+          "file": "src/shared/ui/LogotypeSection/index.ts",
+          "hash": "10183301408821448312"
+        },
+        {
+          "file": "src/shared/ui/LogotypeSection/types/LogotypeIconProps.type.ts",
+          "hash": "10464718468783287931"
+        },
+        {
+          "file": "src/shared/ui/LogotypeSection/types/LogotypeNoColors.type.ts",
+          "hash": "1703970221757968355"
+        },
+        {
+          "file": "src/shared/ui/LogotypeSection/types/LogotypeProps.type.ts",
+          "hash": "5036916073787976612"
+        },
+        {
+          "file": "src/shared/ui/LogotypeSection/types/LogotypeWidth.type.ts",
+          "hash": "8006849593782807387"
+        },
+        {
+          "file": "src/shared/ui/LogotypeSection/types/index.ts",
+          "hash": "4740767756295051584"
+        },
+        {
+          "file": "src/shared/ui/LogotypeSection/ui/LogotypeCombined.tsx",
+          "hash": "15115965706115129076",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/shared/ui/LogotypeSection/ui/LogotypeIcon.tsx",
+          "hash": "9914949884627378669",
+          "deps": [
+            "npm:motion@12.23.24"
+          ]
+        },
+        {
+          "file": "src/shared/ui/LogotypeSection/ui/LogotypeNoColors.tsx",
+          "hash": "10002953822680379880",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/shared/ui/LogotypeSection/ui/LogotypeText.tsx",
+          "hash": "6059767346246590607"
+        },
+        {
+          "file": "src/shared/ui/LogotypeSection/ui/index.ts",
+          "hash": "11772879636514136353"
+        },
+        {
+          "file": "src/shared/ui/SendButton/index.ts",
+          "hash": "2274895476352891674"
+        },
+        {
+          "file": "src/shared/ui/SendButton/types/SendButtonProps.type.ts",
+          "hash": "1285145454697540265"
+        },
+        {
+          "file": "src/shared/ui/SendButton/ui/index.tsx",
+          "hash": "14209865592889808499",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:lucide-react@0.555.0"
+          ]
+        },
+        {
+          "file": "src/shared/ui/SendButton/ui/styles/animation.module.css",
+          "hash": "15618599505786270980"
+        },
+        {
+          "file": "src/shared/utils/conditions/ternary.ts",
+          "hash": "10448436104487206594"
+        },
+        {
+          "file": "src/widgets/AiInput/index.ts",
+          "hash": "571985454311173143"
+        },
+        {
+          "file": "src/widgets/AiInput/lib/useAiInputForm.ts",
+          "hash": "13774863140422442866",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/widgets/AiInput/ui/AiInput.tsx",
+          "hash": "2835193213450240949"
+        },
+        {
+          "file": "src/widgets/AiInput/ui/AiInputBottomSection.tsx",
+          "hash": "16025841933341702663"
+        },
+        {
+          "file": "src/widgets/AiInput/ui/AiInputSubmit.tsx",
+          "hash": "1955741258308492670",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:lucide-react@0.555.0"
+          ]
+        },
+        {
+          "file": "src/widgets/AiInput/ui/AiInputTextArea.tsx",
+          "hash": "14906863338509882424"
+        },
+        {
+          "file": "src/widgets/AiInput/ui/types/AiInput.interface.ts",
+          "hash": "10830991990569526210",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/widgets/AiInput/ui/types/providers.type.ts",
+          "hash": "15739783264771853429"
+        },
+        {
+          "file": "src/widgets/Aside/index.tsx",
+          "hash": "7535714702112972450"
+        },
+        {
+          "file": "src/widgets/Aside/ui/Aside.tsx",
+          "hash": "13665718391259611794",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:lucide-react@0.555.0"
+          ]
+        },
+        {
+          "file": "src/widgets/Aside/ui/AsideAction.tsx",
+          "hash": "8663815629073343999",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:react@19.2.0"
+          ]
+        },
+        {
+          "file": "src/widgets/Aside/ui/AsideRoot.tsx",
+          "hash": "13980097240836255399",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "src/widgets/Header/index.tsx",
+          "hash": "14692799081346850534",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:motion@12.23.24",
+            "npm:lucide-react@0.555.0",
+            "npm:@tanstack/react-router@1.139.3"
+          ]
+        },
+        {
+          "file": "src/widgets/Navbar/NavItem.tsx",
+          "hash": "9470760754135020301",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:@tanstack/react-router@1.139.3"
+          ]
+        },
+        {
+          "file": "src/widgets/Navbar/index.tsx",
+          "hash": "17226804963118645372",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:dexie-react-hooks@4.2.0",
+            "npm:lodash@4.17.21"
+          ]
+        },
+        {
+          "file": "src/widgets/Navbar/styles/nav-item-hove.module.css",
+          "hash": "6212893682851377115"
+        },
+        {
+          "file": "tsconfig.app.json",
+          "hash": "798664455796074471"
+        },
+        {
+          "file": "tsconfig.base.json",
+          "hash": "10580821794494799127"
+        },
+        {
+          "file": "tsconfig.json",
+          "hash": "2365188958523842680"
+        },
+        {
+          "file": "tsconfig.node.json",
+          "hash": "9510386517886955948"
+        },
+        {
+          "file": "tsr.config.json",
+          "hash": "17882022060806532497"
+        },
+        {
+          "file": "vite-env.d.ts",
+          "hash": "14247539683917535697"
+        },
+        {
+          "file": "vite.config.ts",
+          "hash": "4279690067883500055",
+          "deps": [
+            "npm:vite@7.2.4",
+            "npm:@vitejs/plugin-react@5.1.1",
+            "npm:@tanstack/router-plugin@1.139.3",
+            "npm:vite-tsconfig-paths@5.1.4",
+            "npm:vite-plugin-svgr@4.5.0"
+          ]
+        },
+        {
+          "file": "vitest.workspace.ts",
+          "hash": "4665328684042819579"
+        }
+      ]
+    },
+    "nonProjectFiles": []
+  },
+  "externalNodesHash": "5440392694961024573"
+}

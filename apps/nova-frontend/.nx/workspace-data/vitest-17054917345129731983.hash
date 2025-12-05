@@ -1,0 +1,325 @@
+{
+  "1201431213624373257vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "14828806284686782025vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "6415503255412441777apps/vite.config.mts": {
+    "targets": {
+      "test": {
+        "command": "vitest",
+        "options": {
+          "cwd": "apps"
+        },
+        "cache": true,
+        "inputs": [
+          "default",
+          "^default",
+          {
+            "externalDependencies": [
+              "vitest"
+            ]
+          },
+          {
+            "env": "CI"
+          }
+        ],
+        "outputs": [
+          "{workspaceRoot}/coverage/apps"
+        ],
+        "metadata": {
+          "technologies": [
+            "vitest"
+          ],
+          "description": "Run Vitest tests",
+          "help": {
+            "command": "bun vitest --help",
+            "example": {
+              "options": {
+                "bail": 1,
+                "coverage": true
+              }
+            }
+          }
+        }
+      },
+      "test-ci--src/app/app.spec.tsx": {
+        "command": "vitest run src/app/app.spec.tsx",
+        "cache": true,
+        "inputs": [
+          "default",
+          "^default",
+          {
+            "externalDependencies": [
+              "vitest"
+            ]
+          },
+          {
+            "env": "CI"
+          }
+        ],
+        "outputs": [
+          "{workspaceRoot}/coverage/apps"
+        ],
+        "options": {
+          "cwd": "apps"
+        },
+        "metadata": {
+          "technologies": [
+            "vitest"
+          ],
+          "description": "Run Vitest Tests in src/app/app.spec.tsx",
+          "help": {
+            "command": "bun vitest --help",
+            "example": {
+              "options": {
+                "coverage": true
+              }
+            }
+          }
+        }
+      },
+      "test-ci": {
+        "executor": "nx:noop",
+        "cache": true,
+        "inputs": [
+          "default",
+          "^default",
+          {
+            "externalDependencies": [
+              "vitest"
+            ]
+          },
+          {
+            "env": "CI"
+          }
+        ],
+        "outputs": [
+          "{workspaceRoot}/coverage/apps"
+        ],
+        "dependsOn": [
+          "test-ci--src/app/app.spec.tsx"
+        ],
+        "metadata": {
+          "technologies": [
+            "vitest"
+          ],
+          "description": "Run Vitest Tests in CI",
+          "nonAtomizedTarget": "test",
+          "help": {
+            "command": "bun vitest --help",
+            "example": {
+              "options": {
+                "coverage": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "TEST (CI)": [
+          "test-ci",
+          "test-ci--src/app/app.spec.tsx"
+        ]
+      }
+    },
+    "projectType": "library"
+  },
+  "18397086391868755425vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "9840522356781054601apps/vite.config.mts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "9132406479997829558vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "13986797733414852668vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "6214544698040123736apps/vite.config.mts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "906964411116759796vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "15756029276561505782vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "6122812205163267692vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "6262551924906046196vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "11610037502476735981vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "1091944326125693458vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "8727815556825213453apps/react/vite.config.mts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "855244649102523468vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "18145107993851593776vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "14278981640476098314vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "633754292923589838apps/react/nova-frontend/vite.config.mts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "1218610456208054387vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "8958955921479638034vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "14112178579633527761apps/react/nova-frontend/vite.config.mts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "6242852474664366107vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "10582025896131404914apps/react/nova-frontend/vite.config.mts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "7195345213672261511vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "17968905610950711520vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "13472157349427020935apps/react/nova-frontend/vite.config.mts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "1908565875042588228vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "15022023129912670235apps/react/nova-frontend/vite.config.mts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "2891569029910660156vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "7980671990009202051apps/react/nova-frontend/vite.config.mts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "3647522207428891209vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "6646698723699600139apps/react/nova-frontend/vite.config.mts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "5088633168136647407vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "3871023326860840106apps/react/nova-frontend/vite.config.mts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "5801896753227035425vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "3583276166640423459vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "16284468535970475243apps/react/nova-frontend/vite.config.mts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "8445590968268794555vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "7095137351559877188apps/react/nova-frontend/vite.config.mts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  },
+  "1027804444153862564vite.config.ts": {
+    "targets": {},
+    "metadata": {},
+    "projectType": "library"
+  }
+}
