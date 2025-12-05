@@ -1,12 +1,11 @@
-import { Code, Group, Stack, Text, useMantineTheme } from "@mantine/core";
-import type { IMessageProps } from "./types/Message.interface";
-import { useState } from "react";
-import { ShowMoreButton } from "./ShowMoreButton";
-import { CopyButton } from "@shared/ui/CopyButton";
-import { motion } from "motion/react";
-import { DeleteButton } from "@shared/ui/DeleteButton/ui";
-import { MessagesDB } from "../model";
-import Markdown from "react-markdown";
+import { Code, Group, Stack, Text, useMantineTheme } from '@mantine/core';
+import type { IMessageProps } from './types/Message.interface';
+import { useState } from 'react';
+import { ShowMoreButton } from './ShowMoreButton';
+import { CopyButton } from '@shared/ui/CopyButton';
+import { motion } from 'motion/react';
+import { DeleteButton } from '@shared/ui/DeleteButton/ui';
+import { MessagesDB } from '../model';
 
 const MoitonCopy = motion.create(CopyButton);
 export const Message = ({
@@ -18,17 +17,17 @@ export const Message = ({
   const [hidden, setHidden] = useState(lenght);
   const height = hidden ? 8 : 0;
   return (
-    <Stack {...props} align={role === "assistent" ? "start" : "end"}>
+    <Stack {...props} align={role === 'assistent' ? 'start' : 'end'}>
       <Text
         lineClamp={height}
-        maw={{ base: "100%", sm: "50%" }}
-        bdrs={"sm"}
-        p={"sm"}
-        bg={"blue.6"}
+        maw={{ base: '100%', sm: '50%' }}
+        bdrs={'sm'}
+        p={'sm'}
+        bg={'blue.6'}
         style={{
-          wordWrap: "break-word",
-          overflowY: "hidden",
-          whiteSpace: "pre-wrap", // ✅ перенос \n
+          wordWrap: 'break-word',
+          overflowY: 'hidden',
+          whiteSpace: 'pre-wrap', // ✅ перенос \n
         }}
         dangerouslySetInnerHTML={{ __html: content }}
       ></Text>
@@ -38,7 +37,7 @@ export const Message = ({
         )}
         <MoitonCopy
           copyTarget={content}
-          bg={"dark.9"}
+          bg={'dark.9'}
           whileTap={{
             backgroundColor: t.colors.green[7],
             rotate: 180,

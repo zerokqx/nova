@@ -1,0 +1,9 @@
+{
+  "name": "nova-frontend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nova-frontend/src",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project nova-frontend --web",
+  "targets": {}
+}

@@ -1,6 +1,6 @@
-import LogotypeIconSvg from "@shared/assets/Group 3.svg?react";
-import { motion } from "motion/react";
-import type { ILogotypeIcon } from "../types/LogotypeIconProps.type";
+import { ReactComponent as LogotypeIconSvg } from '@shared/assets/Group 3.svg';
+import { motion } from 'motion/react';
+import type { ILogotypeIcon } from '../types/LogotypeIconProps.type';
 const Logo = motion.create(LogotypeIconSvg);
 export const LogotypeIcon = ({
   width = 64,
@@ -11,10 +11,10 @@ export const LogotypeIcon = ({
     <Logo
       onClick={onClick}
       width={width}
-      height={"max-content"}
+      height={'max-content'}
       {...(animate && {
-        initial: { opacity: 0, scale: 2 }, // 💡 Используем синтаксис объекта: ключ: значение
-        animate: { opacity: 1, scale: 1 }, // 💡 Используем синтаксис объекта: ключ: значение
+        initial: { opacity: 0, scale: 2 },
+        animate: { opacity: 1, scale: 1 }, // 💡 Используем синтаксис объекта: ключ: значени
         transition: { duration: 0.5 }, // Добавим transition для лучшего эффекта
       })}
     />

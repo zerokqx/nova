@@ -1,18 +1,17 @@
-import { initializeChat } from "@entities/chat/lib/initializeChat";
-import { apiKeyStoreActions } from "@features/ai-providers/model/useApiKeyStore";
-import { AppShellMain, Stack } from "@mantine/core";
-import { deSlashNotation } from "@shared/api/ai/lib/formatModel/nameModelFormat";
-import type { TAiUrl } from "@shared/api/ai/lib/formatModel/types/metaSourceAndModel.type";
-import type { ITransformModel } from "@shared/api/ai/lib/formatModel/types/transform.type";
-import { getAllow } from "@shared/api/ai/utils/meta/getAllow";
-import { mergeArraySlashNotation } from "@shared/api/ai/utils/meta/mergeArraySlashNotation";
-import { LogotypeCombined } from "@shared/ui/LogotypeSection";
-import { useNavigate } from "@tanstack/react-router";
-import { ternary } from "@utils/conditions/ternary";
-import { AiInput } from "@widgets/AiInput/ui/AiInput";
-import { flatMap, flatten, forEach, map, merge } from "lodash";
-import { useResponsive } from "src/hooks/useResponsive";
-import { useEffect } from "react";
+import { initializeChat } from '@entities/chat/lib/initializeChat';
+import { apiKeyStoreActions } from '@features/ai-providers/model/useApiKeyStore';
+import { AppShellMain, Stack } from '@mantine/core';
+import { deSlashNotation } from '@shared/api/ai/lib/formatModel/nameModelFormat';
+import type { TAiUrl } from '@shared/api/ai/lib/formatModel/types/metaSourceAndModel.type';
+import type { ITransformModel } from '@shared/api/ai/lib/formatModel/types/transform.type';
+import { getAllow } from '@shared/api/ai/utils/meta/getAllow';
+import { mergeArraySlashNotation } from '@shared/api/ai/utils/meta/mergeArraySlashNotation';
+import { useResponsive } from '@shared/lib/hooks/useResponsive';
+import { LogotypeCombined } from '@shared/ui/LogotypeSection';
+import { useNavigate } from '@tanstack/react-router';
+import { ternary } from '@utils/conditions/ternary';
+import { AiInput } from '@widgets/AiInput/ui/AiInput';
+import { flatMap, flatten, forEach, map, merge } from 'lodash';
 
 export const IndexPage = () => {
   const { mobile } = useResponsive();
@@ -20,16 +19,16 @@ export const IndexPage = () => {
   const providers = mergeArraySlashNotation(
     map(allows, (meta) => {
       return meta.slash;
-    }) as ITransformModel[],
+    }) as ITransformModel[]
   );
   const navigate = useNavigate();
   return (
-    <AppShellMain h={"100dvh"}>
-      <Stack justify={ternary(mobile, "end", "center")} h={"100%"}>
+    <AppShellMain h={'100dvh'}>
+      <Stack justify={ternary(mobile, 'end', 'center')} h={'100%'}>
         <Stack
-          justify={ternary(mobile, "space-between", "center")}
+          justify={ternary(mobile, 'space-between', 'center')}
           align="center"
-          h={"60%"}
+          h={'60%'}
         >
           <LogotypeCombined />
           <AiInput
@@ -39,7 +38,7 @@ export const IndexPage = () => {
                 url: provider as TAiUrl,
                 preview: content,
                 content,
-                role: "user",
+                role: 'user',
               });
 
               navigate({
