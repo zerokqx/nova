@@ -10,6 +10,8 @@ export class Meta implements IMetaClass {
   models;
   defaultModel;
   contentKeyHistory;
+
+  systemPrompt?: string[] | undefined;
   thinking;
   _slashNotation!: ITransformModel;
   constructor({
@@ -17,12 +19,14 @@ export class Meta implements IMetaClass {
     contentKeyHistory,
     models,
     thinking,
+    systemPrompt,
     defaultModel,
   }: Omit<IMetaClass, "slashNotation">) {
     this.providerName = providerName;
     this.contentKeyHistory = contentKeyHistory;
     this.models = models;
     this.thinking = thinking;
+    this.systemPrompt = systemPrompt;
     this.defaultModel = defaultModel;
   }
   public get slash() {

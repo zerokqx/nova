@@ -7,7 +7,7 @@ export const DeleteButton = ({
 }: Omit<ActionIconProps, "children"> &
   Pick<ComponentProps<"button">, "onClick">) => {
   return (
-    <ActionIcon bdrs={"xl"} {...props} color="red">
+    <ActionIcon bdrs={"xl"} {...props} color="dark.9" c={"blue.5"}>
       <Trash size={16} />
     </ActionIcon>
   );

@@ -19,7 +19,7 @@ export class AiSourceGemini extends AiSourceAbstact {
 
   with({ apiKey }: ISourceWithFunctionParametres): this {
     this.api = apiKey;
-    this.ai = new GoogleGenAI({ apiKey: this.api }); // Пересоздаем клиент
+    this.ai = new GoogleGenAI({ apiKey: this.api });
     return this;
   }
   async sendMessageStream(
@@ -64,9 +64,15 @@ export class AiSourceGemini extends AiSourceAbstact {
     model = this.defaultModel,
   ): Promise<ISourceReturn> {
     console.log(this.api);
+    const request: IHistoryItem<Key>[] = Array.isArray(content)
+      ? content
+      : [{ role: "user", text: content } as IHistoryItem<Key>];
     const response = await this.ai.models.generateContent({
       model,
-      contents: content,
+      config: {
+        systemInstruction: this.meta.systemPrompt,
+      },
+      contents: [...request],
     });
 
     return {

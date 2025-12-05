@@ -21,4 +21,5 @@ class __ChatsDB extends Dexie {
     return await this.chats.toArray();
   }
 }
+
 export const ChatsDB = new __ChatsDB();
