@@ -1,0 +1,13 @@
+.main {
+
+  transition: transform ease 0.1s;
+
+}
+
+@media(hover:hover) {
+
+  .main:hover {
+
+    transform: scale(1.05) rotate(0.2deg);
+  }
+}
