@@ -1,4 +1,4 @@
-import { Group, Stack, Text, useMantineTheme } from "@mantine/core";
+import { Code, Group, Stack, Text, useMantineTheme } from "@mantine/core";
 import type { IMessageProps } from "./types/Message.interface";
 import { useState } from "react";
 import { ShowMoreButton } from "./ShowMoreButton";
@@ -6,6 +6,7 @@ import { CopyButton } from "@shared/ui/CopyButton";
 import { motion } from "motion/react";
 import { DeleteButton } from "@shared/ui/DeleteButton/ui";
 import { MessagesDB } from "../model";
+import Markdown from "react-markdown";
 
 const MoitonCopy = motion.create(CopyButton);
 export const Message = ({
@@ -29,9 +30,8 @@ export const Message = ({
           overflowY: "hidden",
           whiteSpace: "pre-wrap", // ✅ перенос \n
         }}
-      >
-        {content}
-      </Text>
+        dangerouslySetInnerHTML={{ __html: content }}
+      ></Text>
       <Group>
         {lenght && (
           <ShowMoreButton onClick={() => setHidden(!hidden)} show={hidden} />

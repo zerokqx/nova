@@ -12,6 +12,7 @@ import { ternary } from "@utils/conditions/ternary";
 import { AiInput } from "@widgets/AiInput/ui/AiInput";
 import { flatMap, flatten, forEach, map, merge } from "lodash";
 import { useResponsive } from "src/hooks/useResponsive";
+import { useEffect } from "react";
 
 export const IndexPage = () => {
   const { mobile } = useResponsive();
@@ -22,7 +23,6 @@ export const IndexPage = () => {
     }) as ITransformModel[],
   );
   const navigate = useNavigate();
-
   return (
     <AppShellMain h={"100dvh"}>
       <Stack justify={ternary(mobile, "end", "center")} h={"100%"}>
