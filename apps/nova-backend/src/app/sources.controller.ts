@@ -11,7 +11,6 @@ export class SourcesController {
 
   @Get('one')
   async one(@Query('name') name: string, @Query('f') f: string) {
-    const d = await this.models.getForSourceWithNotation({ source_id: 1 });
-    return d;
+    return 'd';
   }
 }

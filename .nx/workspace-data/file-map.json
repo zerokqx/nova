@@ -65,12 +65,20 @@
         "watchDepsTargetName": "watch-deps",
         "serveStaticTargetName": "serve-static"
       }
+    },
+    {
+      "name": "@nx/rollup/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
     }
   ],
   "fileMap": {
     "nonProjectFiles": [],
     "projectFileMap": {
-      "slashNotation": [
+      "slash": [
         {
           "file": "libs/slash/README.md",
           "hash": "3427103029841435589"
@@ -91,19 +99,29 @@
         },
         {
           "file": "libs/slash/package.json",
-          "hash": "6198378001911146284"
+          "hash": "9500561728365604141",
+          "deps": [
+            "npm:swc-loader@0.2.6"
+          ]
         },
         {
           "file": "libs/slash/project.json",
-          "hash": "16538454030246949261"
+          "hash": "6914390660274373975"
+        },
+        {
+          "file": "libs/slash/rollup.config.cjs",
+          "hash": "1792143028273360024",
+          "deps": [
+            "npm:@nx/rollup@22.1.3"
+          ]
         },
         {
           "file": "libs/slash/src/index.ts",
-          "hash": "2406681182042304147"
+          "hash": "14959902190173985433"
         },
         {
           "file": "libs/slash/src/lib/create-notation.ts",
-          "hash": "15337480909351762410"
+          "hash": "14545072480492417146"
         },
         {
           "file": "libs/slash/src/lib/create-string-notation.ts",
@@ -123,15 +141,15 @@
         },
         {
           "file": "libs/slash/src/lib/types/create-notation.type.ts",
-          "hash": "13903858712725539672"
+          "hash": "12373462351855089905"
         },
         {
           "file": "libs/slash/src/lib/types/create-string-notation.type.ts",
           "hash": "10947896226435293977"
         },
         {
-          "file": "libs/slash/src/lib/types/infet-separator.type.ts",
-          "hash": "14400528991397069394"
+          "file": "libs/slash/src/lib/types/infer-notation.type.ts",
+          "hash": "16447268067537412869"
         },
         {
           "file": "libs/slash/src/lib/types/parse-notation.type.ts",
@@ -147,11 +165,11 @@
         },
         {
           "file": "libs/slash/tsconfig.json",
-          "hash": "5070021987914214887"
+          "hash": "10380475172586007973"
         },
         {
           "file": "libs/slash/tsconfig.lib.json",
-          "hash": "288835638868683319"
+          "hash": "8748416309693338571"
         },
         {
           "file": "libs/slash/tsconfig.spec.json",
@@ -159,12 +177,200 @@
         },
         {
           "file": "libs/slash/vite.config.mts",
-          "hash": "2470589448522509717",
+          "hash": "9921730491731441977",
           "deps": [
             "npm:vite@7.2.4",
             "npm:vite-plugin-dts@4.5.4",
             "npm:@nx/vite@22.1.3"
           ]
+        }
+      ],
+      "nova-backend": [
+        {
+          "file": "apps/nova-backend/.gitignore",
+          "hash": "13706716744923412033"
+        },
+        {
+          "file": "apps/nova-backend/docker-compose.yml",
+          "hash": "17764945983202611994"
+        },
+        {
+          "file": "apps/nova-backend/eslint.config.mjs",
+          "hash": "2624537849564014525"
+        },
+        {
+          "file": "apps/nova-backend/initdb/create_table.sql",
+          "hash": "11831292700222444068"
+        },
+        {
+          "file": "apps/nova-backend/jest.config.cts",
+          "hash": "9061414154381486110"
+        },
+        {
+          "file": "apps/nova-backend/packages.json",
+          "hash": "11516466410028744051"
+        },
+        {
+          "file": "apps/nova-backend/prisma.config.ts",
+          "hash": "10430941411193006570",
+          "deps": [
+            "npm:dotenv@17.2.3",
+            "npm:prisma@6.19.0"
+          ]
+        },
+        {
+          "file": "apps/nova-backend/prisma/schema.prisma",
+          "hash": "4896966245891207431"
+        },
+        {
+          "file": "apps/nova-backend/project.json",
+          "hash": "16103207358501439690"
+        },
+        {
+          "file": "apps/nova-backend/src/app/app.controller.spec.ts",
+          "hash": "16855569388125111485",
+          "deps": [
+            "npm:@nestjs/testing@11.1.9"
+          ]
+        },
+        {
+          "file": "apps/nova-backend/src/app/app.controller.ts",
+          "hash": "15276891910009544695",
+          "deps": [
+            "npm:@nestjs/common@11.1.9"
+          ]
+        },
+        {
+          "file": "apps/nova-backend/src/app/app.module.ts",
+          "hash": "3404763656731610636",
+          "deps": [
+            "npm:@nestjs/common@11.1.9"
+          ]
+        },
+        {
+          "file": "apps/nova-backend/src/app/app.service.spec.ts",
+          "hash": "13111976464657524091",
+          "deps": [
+            "npm:@nestjs/testing@11.1.9"
+          ]
+        },
+        {
+          "file": "apps/nova-backend/src/app/app.service.ts",
+          "hash": "9967902337593410053",
+          "deps": [
+            "npm:@nestjs/common@11.1.9"
+          ]
+        },
+        {
+          "file": "apps/nova-backend/src/app/model.service.ts",
+          "hash": "411777824434735530",
+          "deps": [
+            "npm:@nestjs/common@11.1.9"
+          ]
+        },
+        {
+          "file": "apps/nova-backend/src/app/prisma.service.ts",
+          "hash": "9097632514932803921",
+          "deps": [
+            "npm:@prisma/adapter-pg@7.1.0",
+            "npm:@nestjs/common@11.1.9"
+          ]
+        },
+        {
+          "file": "apps/nova-backend/src/app/sources.controller.ts",
+          "hash": "3115129485387990096",
+          "deps": [
+            "npm:@nestjs/common@11.1.9"
+          ]
+        },
+        {
+          "file": "apps/nova-backend/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/nova-backend/src/lib/notation.ts",
+          "hash": "5968837476378268292",
+          "deps": [
+            "slash"
+          ]
+        },
+        {
+          "file": "apps/nova-backend/src/main.ts",
+          "hash": "10183831501780087334",
+          "deps": [
+            "npm:@nestjs/common@11.1.9",
+            "npm:@nestjs/core@11.1.9",
+            "npm:@nestjs/platform-express@11.1.9"
+          ]
+        },
+        {
+          "file": "apps/nova-backend/tsconfig.app.json",
+          "hash": "12966450040856831804"
+        },
+        {
+          "file": "apps/nova-backend/tsconfig.json",
+          "hash": "3490524966360018312"
+        },
+        {
+          "file": "apps/nova-backend/tsconfig.spec.json",
+          "hash": "11597518787694032981"
+        },
+        {
+          "file": "apps/nova-backend/webpack.config.cjs",
+          "hash": "12854908855801939083",
+          "deps": [
+            "npm:@nx/webpack@22.1.3"
+          ]
+        }
+      ],
+      "nova-backend-e2e": [
+        {
+          "file": "apps/nova-backend-e2e/eslint.config.mjs",
+          "hash": "2624537849564014525"
+        },
+        {
+          "file": "apps/nova-backend-e2e/jest.config.cts",
+          "hash": "9156508797104118334"
+        },
+        {
+          "file": "apps/nova-backend-e2e/project.json",
+          "hash": "1650824680971610568"
+        },
+        {
+          "file": "apps/nova-backend-e2e/src/nova-backend/nova-backend.spec.ts",
+          "hash": "110394728024017389",
+          "deps": [
+            "npm:axios@1.13.2"
+          ]
+        },
+        {
+          "file": "apps/nova-backend-e2e/src/support/global-setup.ts",
+          "hash": "10817858795115919263",
+          "deps": [
+            "npm:@nx/node@22.1.3"
+          ]
+        },
+        {
+          "file": "apps/nova-backend-e2e/src/support/global-teardown.ts",
+          "hash": "14210317125869451873",
+          "deps": [
+            "npm:@nx/node@22.1.3"
+          ]
+        },
+        {
+          "file": "apps/nova-backend-e2e/src/support/test-setup.ts",
+          "hash": "15521797170623961900",
+          "deps": [
+            "npm:axios@1.13.2"
+          ]
+        },
+        {
+          "file": "apps/nova-backend-e2e/tsconfig.json",
+          "hash": "15443990093475294480"
+        },
+        {
+          "file": "apps/nova-backend-e2e/tsconfig.spec.json",
+          "hash": "14954872453723519891"
         }
       ],
       "nova-frontend": [
@@ -177,7 +383,7 @@
         },
         {
           "file": "apps/nova-frontend/index.html",
-          "hash": "2940161200269032476"
+          "hash": "12803636651547411835"
         },
         {
           "file": "apps/nova-frontend/jest.config.cts",
@@ -878,8 +1084,7 @@
           "file": "apps/nova-frontend/src/shared/ui/AiResponse/index.tsx",
           "hash": "8207160172922686933",
           "deps": [
-            "npm:@mantine/core@8.3.9",
-            "npm:react-markdown@10.1.0"
+            "npm:@mantine/core@8.3.9"
           ]
         },
         {
@@ -1252,214 +1457,6 @@
           ]
         }
       ],
-      "nova-backend": [
-        {
-          "file": "apps/nova-backend/.gitignore",
-          "hash": "8040725459051045703"
-        },
-        {
-          "file": "apps/nova-backend/docker-compose.yml",
-          "hash": "17764945983202611994"
-        },
-        {
-          "file": "apps/nova-backend/docker-entrypoint-initdb.d",
-          "hash": "9641337071800907142"
-        },
-        {
-          "file": "apps/nova-backend/eslint.config.mjs",
-          "hash": "2624537849564014525"
-        },
-        {
-          "file": "apps/nova-backend/initdb/create_table.sql",
-          "hash": "11831292700222444068"
-        },
-        {
-          "file": "apps/nova-backend/jest.config.cts",
-          "hash": "9061414154381486110"
-        },
-        {
-          "file": "apps/nova-backend/packages.json",
-          "hash": "5124797026744451872"
-        },
-        {
-          "file": "apps/nova-backend/prisma.config.ts",
-          "hash": "2730672182428299844",
-          "deps": [
-            "npm:dotenv@17.2.3",
-            "npm:prisma@7.1.0"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/prisma/schema.prisma",
-          "hash": "4896966245891207431"
-        },
-        {
-          "file": "apps/nova-backend/project.json",
-          "hash": "720879244404629822"
-        },
-        {
-          "file": "apps/nova-backend/src/app/app.controller.spec.ts",
-          "hash": "16855569388125111485",
-          "deps": [
-            "npm:@nestjs/testing@11.1.9"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/src/app/app.controller.ts",
-          "hash": "15276891910009544695",
-          "deps": [
-            "npm:@nestjs/common@11.1.9"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/src/app/app.module.ts",
-          "hash": "1456469093245039468",
-          "deps": [
-            "npm:@nestjs/common@11.1.9"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/src/app/app.service.spec.ts",
-          "hash": "13111976464657524091",
-          "deps": [
-            "npm:@nestjs/testing@11.1.9"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/src/app/app.service.ts",
-          "hash": "9967902337593410053",
-          "deps": [
-            "npm:@nestjs/common@11.1.9"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/src/app/model.service.ts",
-          "hash": "152988246422412446",
-          "deps": [
-            "npm:@nestjs/common@11.1.9"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/src/app/prisma.service.ts",
-          "hash": "15606992086263000172",
-          "deps": [
-            "npm:@prisma/adapter-pg@7.1.0",
-            "npm:@nestjs/common@11.1.9"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/src/app/sources.controller.ts",
-          "hash": "10610774591528908103",
-          "deps": [
-            "npm:@nestjs/common@11.1.9",
-            "npm:express@4.22.1"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/nova-backend/src/generated/prisma/browser.ts",
-          "hash": "8573886313516134985"
-        },
-        {
-          "file": "apps/nova-backend/src/generated/prisma/client.ts",
-          "hash": "6886327885440449632",
-          "deps": [
-            "npm:@prisma/client@7.1.0"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/src/generated/prisma/commonInputTypes.ts",
-          "hash": "13669153458655675926",
-          "deps": [
-            "npm:@prisma/client@7.1.0"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/src/generated/prisma/enums.ts",
-          "hash": "16539255818723660420"
-        },
-        {
-          "file": "apps/nova-backend/src/generated/prisma/internal/class.ts",
-          "hash": "1108273979007467951",
-          "deps": [
-            "npm:@prisma/client@7.1.0"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/src/generated/prisma/internal/prismaNamespace.ts",
-          "hash": "13760273519701012659",
-          "deps": [
-            "npm:@prisma/client@7.1.0"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/src/generated/prisma/internal/prismaNamespaceBrowser.ts",
-          "hash": "15452571760056941215",
-          "deps": [
-            "npm:@prisma/client@7.1.0"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/src/generated/prisma/libquery_engine.node",
-          "hash": "17123913502717802052"
-        },
-        {
-          "file": "apps/nova-backend/src/generated/prisma/models.ts",
-          "hash": "6604866743382333701"
-        },
-        {
-          "file": "apps/nova-backend/src/generated/prisma/models/models.ts",
-          "hash": "3924661943862522407",
-          "deps": [
-            "npm:@prisma/client@7.1.0"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/src/generated/prisma/models/sources.ts",
-          "hash": "13145115064332619412",
-          "deps": [
-            "npm:@prisma/client@7.1.0"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/src/lib/notation.ts",
-          "hash": "16086100774890790591",
-          "deps": [
-            "slashNotation"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/src/main.ts",
-          "hash": "10183831501780087334",
-          "deps": [
-            "npm:@nestjs/common@11.1.9",
-            "npm:@nestjs/core@11.1.9",
-            "npm:@nestjs/platform-express@11.1.9"
-          ]
-        },
-        {
-          "file": "apps/nova-backend/tsconfig.app.json",
-          "hash": "5472844457208136929"
-        },
-        {
-          "file": "apps/nova-backend/tsconfig.json",
-          "hash": "9933585081296545785"
-        },
-        {
-          "file": "apps/nova-backend/tsconfig.spec.json",
-          "hash": "11597518787694032981"
-        },
-        {
-          "file": "apps/nova-backend/webpack.config.cjs",
-          "hash": "16987406507059215904",
-          "deps": [
-            "npm:@nx/webpack@22.1.3"
-          ]
-        }
-      ],
       "nova": [
         {
           "file": ".envrc",
@@ -1499,7 +1496,7 @@
         },
         {
           "file": "bun.lock",
-          "hash": "444352599578807858"
+          "hash": "5834726441400213581"
         },
         {
           "file": "deploy.bash",
@@ -1525,10 +1522,6 @@
           ]
         },
         {
-          "file": "index.html",
-          "hash": "14610024454939361261"
-        },
-        {
           "file": "jest.config.ts",
           "hash": "6870352021923392442",
           "deps": [
@@ -1545,11 +1538,11 @@
         },
         {
           "file": "nx.json",
-          "hash": "3037270996280373749"
+          "hash": "5317277062848726757"
         },
         {
           "file": "package.json",
-          "hash": "6894815979045625532",
+          "hash": "6418355541515124384",
           "deps": [
             "npm:@babel/plugin-proposal-class-properties@7.18.6",
             "npm:@babel/plugin-proposal-decorators@7.28.0",
@@ -1557,6 +1550,7 @@
             "npm:@nestjs/schematics@11.0.9",
             "npm:@nestjs/testing@11.1.9",
             "npm:@nx/docker@22.1.3",
+            "npm:@nx/esbuild@22.1.3",
             "npm:@nx/eslint@22.1.3",
             "npm:@nx/eslint-plugin@22.1.3",
             "npm:@nx/jest@22.1.3",
@@ -1564,6 +1558,7 @@
             "npm:@nx/nest@22.1.3",
             "npm:@nx/node@22.1.3",
             "npm:@nx/react@22.1.3",
+            "npm:@nx/rollup@22.1.3",
             "npm:@nx/vite@22.1.3",
             "npm:@nx/web@22.1.3",
             "npm:@nx/webpack@22.1.3",
@@ -1585,6 +1580,8 @@
             "npm:autoprefixer@10.4.13",
             "npm:babel-jest@30.2.0",
             "npm:babel-plugin-react-compiler@1.0.0",
+            "npm:core-js@3.47.0",
+            "npm:esbuild@0.27.1",
             "npm:eslint@9.39.1",
             "npm:eslint-config-prettier@10.1.8",
             "npm:eslint-plugin-import@2.31.0",
@@ -1602,11 +1599,13 @@
             "npm:jsonc-eslint-parser@2.4.1",
             "npm:nx@22.1.3",
             "npm:prettier@2.8.8",
-            "npm:prisma@7.1.0",
+            "npm:prisma@6.19.0",
+            "npm:rollup@4.53.3",
             "npm:tailwindcss@3.4.3",
             "npm:ts-jest@29.4.6",
             "npm:ts-node@10.9.1",
             "npm:ts-to-zod@5.1.0",
+            "npm:tsx@4.21.0",
             "npm:typescript@5.9.3",
             "npm:typescript-eslint@8.48.0",
             "npm:vite@7.2.4",
@@ -1627,7 +1626,7 @@
             "npm:@nestjs/platform-express@11.1.9",
             "npm:@perplexity-ai/perplexity_ai@0.16.0",
             "npm:@prisma/adapter-pg@7.1.0",
-            "npm:@prisma/client@7.1.0",
+            "npm:@prisma/client@6.19.0",
             "npm:@react-native-async-storage/async-storage@2.2.0",
             "npm:@tanstack/react-form@1.26.0",
             "npm:@tanstack/react-query@5.90.11",
@@ -1647,11 +1646,9 @@
             "npm:immer@9.0.21",
             "npm:inversify@7.10.4",
             "npm:isma@1.0.0",
-            "npm:knip@5.71.0",
             "npm:lodash@4.17.21",
             "npm:lucide-react@0.555.0",
             "npm:motion@12.23.24",
-            "npm:nanoid@5.1.6",
             "npm:number@0.0.1",
             "npm:pg@8.16.3",
             "npm:postcss@8.5.6",
@@ -1660,7 +1657,6 @@
             "npm:react@19.2.0",
             "npm:react-dom@19.2.0",
             "npm:react-if@4.1.6",
-            "npm:react-markdown@10.1.0",
             "npm:react-router-dom@6.29.0",
             "npm:reflect-metadata@0.2.2",
             "npm:rxjs@7.8.1",
@@ -1684,8 +1680,16 @@
           "hash": "3244421341483603138"
         },
         {
+          "file": "tmp/libs/slash/build/tsconfig.generated.23c6c7e6-5fce-4d18-a965-477e7f6c2fbf.json",
+          "hash": "12987338610101891295"
+        },
+        {
+          "file": "tmp/libs/slash/build/tsconfig.generated.28794777-98c1-49cf-b10a-076aee2fd48b.json",
+          "hash": "12987338610101891295"
+        },
+        {
           "file": "tsconfig.base.json",
-          "hash": "92992995815014097"
+          "hash": "2280612449956525440"
         },
         {
           "file": "tsconfig.json",
@@ -1693,64 +1697,14 @@
         },
         {
           "file": "tsconfig.node.json",
-          "hash": "9510386517886955948"
+          "hash": "919032401390910244"
         },
         {
           "file": "vitest.workspace.ts",
           "hash": "4665328684042819579"
         }
-      ],
-      "nova-backend-e2e": [
-        {
-          "file": "apps/nova-backend-e2e/eslint.config.mjs",
-          "hash": "2624537849564014525"
-        },
-        {
-          "file": "apps/nova-backend-e2e/jest.config.cts",
-          "hash": "9156508797104118334"
-        },
-        {
-          "file": "apps/nova-backend-e2e/project.json",
-          "hash": "1650824680971610568"
-        },
-        {
-          "file": "apps/nova-backend-e2e/src/nova-backend/nova-backend.spec.ts",
-          "hash": "110394728024017389",
-          "deps": [
-            "npm:axios@1.13.2"
-          ]
-        },
-        {
-          "file": "apps/nova-backend-e2e/src/support/global-setup.ts",
-          "hash": "10817858795115919263",
-          "deps": [
-            "npm:@nx/node@22.1.3"
-          ]
-        },
-        {
-          "file": "apps/nova-backend-e2e/src/support/global-teardown.ts",
-          "hash": "14210317125869451873",
-          "deps": [
-            "npm:@nx/node@22.1.3"
-          ]
-        },
-        {
-          "file": "apps/nova-backend-e2e/src/support/test-setup.ts",
-          "hash": "15521797170623961900",
-          "deps": [
-            "npm:axios@1.13.2"
-          ]
-        },
-        {
-          "file": "apps/nova-backend-e2e/tsconfig.json",
-          "hash": "15443990093475294480"
-        },
-        {
-          "file": "apps/nova-backend-e2e/tsconfig.spec.json",
-          "hash": "14954872453723519891"
-        }
       ]
     }
   },
-  "externalNodesHash": "9931276042669321143"
+  "externalNodesHash": "2696450412909386246"
 }

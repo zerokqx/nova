@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "paths": {}
+  },
+  "extends": "../../../../libs/slash/tsconfig.lib.json"
+}

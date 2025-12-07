@@ -13,6 +13,10 @@ export const createNotation = <
     inferSep() {
       return sep as Separator;
     },
+
+    inferNotation() {
+      return `text${sep}text`;
+    },
     parseNotation: parseNotation,
     parseSeparator: parseSeparator,
     createStringNotation: createStringNotation,
