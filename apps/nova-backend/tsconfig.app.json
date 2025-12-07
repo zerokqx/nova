@@ -1,0 +1,29 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "module": "esnext",
+    "types": ["node"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "target": "es2021",
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "@orm/*": ["src/generated/*"],
+      "@ormClient": ["src/generated/prisma/client.ts"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": [
+    "jest.config.ts",
+    "jest.config.cts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts"
+  ],
+  "references": [
+    {
+      "path": "../../libs/slash/tsconfig.lib.json"
+    }
+  ]
+}

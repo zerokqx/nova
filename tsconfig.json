@@ -1,7 +1,18 @@
 {
+  "extends": "./tsconfig.base.json",
   "files": [],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    {
+      "path": "./apps/nova-backend-e2e"
+    },
+    {
+      "path": "./apps/nova-frontend"
+    },
+    {
+      "path": "./libs/slash"
+    },
+    {
+      "path": "./apps/nova-backend"
+    }
   ]
 }

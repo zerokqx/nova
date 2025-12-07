@@ -1,0 +1,94 @@
+{
+  "name": "nova-backend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nova-backend/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "prisma:regenerate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "prisma db pull && prisma generate"
+        ],
+        "cwd": "apps/nova-backend"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "webpack-cli build",
+        "args": [
+          "--node-env=production"
+        ],
+        "cwd": "apps/nova-backend"
+      },
+      "configurations": {
+        "development": {
+          "args": [
+            "--node-env=development"
+          ]
+        }
+      }
+    },
+    "prune-lockfile": {
+      "dependsOn": [
+        "build"
+      ],
+      "cache": true,
+      "executor": "@nx/js:prune-lockfile",
+      "outputs": [
+        "{workspaceRoot}/dist/apps/nova-backend/package.json",
+        "{workspaceRoot}/dist/apps/nova-backend/bun.lock"
+      ],
+      "options": {
+        "buildTarget": "build"
+      }
+    },
+    "copy-workspace-modules": {
+      "dependsOn": [
+        "build"
+      ],
+      "cache": true,
+      "outputs": [
+        "{workspaceRoot}/dist/apps/nova-backend/workspace_modules"
+      ],
+      "executor": "@nx/js:copy-workspace-modules",
+      "options": {
+        "buildTarget": "build"
+      }
+    },
+    "prune": {
+      "dependsOn": [
+        "prune-lockfile",
+        "copy-workspace-modules"
+      ],
+      "executor": "nx:noop"
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": [
+        "build"
+      ],
+      "options": {
+        "buildTarget": "nova-backend:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "nova-backend:build:development"
+        },
+        "production": {
+          "buildTarget": "nova-backend:build:production"
+        }
+      }
+    },
+    "test": {
+      "options": {
+        "passWithNoTests": true
+      }
+    }
+  }
+}

@@ -5,11 +5,20 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2022",
     "experimentalDecorators": true,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
     "emitDecoratorMetadata": true,
     "useDefineForClassFields": true,
-    "lib": ["ES2022.Error", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2022.Error",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "module": "ESNext",
-    "types": ["vite/client"],
+    "types": [
+      "vite/client"
+    ],
     "skipLibCheck": true,
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -22,6 +31,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "paths": {}
+    "paths": {
+      "@nova/slash": [
+        "libs/slash/src/index.ts"
+      ]
+    }
   }
 }

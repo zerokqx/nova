@@ -7,15 +7,24 @@
 }:
 
 {
-  # https://devenv.sh/basics/
   env.GREET = "Yobble";
 
-  # https://devenv.sh/packages/
   packages = with pkgs; [
     git
     eslint
+    docker-compose
+    openssl
     bun
+    prisma
+    prisma-engines
   ];
+  env = {
+    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+    PRISMA_SCHEMA_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/schema-engine";
+    PRISMA_QUERY_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/query-engine";
+    PRISMA_QUERY_ENGINE_LIBRARY = "${pkgs.prisma-engines}/lib/libquery_engine.node";
+    PRISMA_FMT_BINARY = "${pkgs.prisma-engines}/bin/prisma-fmt";
+  };
 
   scripts = {
     testProdBuild.exec = "bun vite build && bunx serve ./dist -l 5173 -c ../serve.json";
