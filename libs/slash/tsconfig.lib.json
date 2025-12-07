@@ -1,16 +1,11 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/libs/slash",
-    "composite": true,
+    "outDir": "../../dist/out-tsc",
     "declaration": true,
-    "types": [
-      "node"
-    ]
+    "types": ["node", "vite/client"]
   },
-  "include": [
-    "src/**/*.ts"
-  ],
+  "include": ["src/**/*.ts"],
   "exclude": [
     "jest.config.ts",
     "jest.config.cts",

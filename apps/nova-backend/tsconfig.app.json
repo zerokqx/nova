@@ -1,29 +1,20 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/apps/nova-backend",
-    "module": "nodenext",
-    "types": [
-      "node"
-    ],
+    "outDir": "../../dist/out-tsc",
+    "module": "esnext",
+    "types": ["node"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "target": "es2022",
-    "moduleResolution": "nodenext",
-    "composite": true,
+    "target": "es2021",
+    "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
-      "@orm/*": [
-        "src/generated/*"
-      ],
-      "@ormClient": [
-        "src/generated/prisma/client.ts"
-      ]
+      "@orm/*": ["src/generated/*"],
+      "@ormClient": ["src/generated/prisma/client.ts"]
     }
   },
-  "include": [
-    "src/**/*.ts"
-  ],
+  "include": ["src/**/*.ts"],
   "exclude": [
     "jest.config.ts",
     "jest.config.cts",

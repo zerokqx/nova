@@ -1,5 +1,5 @@
 {
-  "10178164264686881474": {
+  "9691828774600511352": {
     "apps/nova-backend": {
       "targets": {
         "lint": {
@@ -41,7 +41,7 @@
       }
     }
   },
-  "8436735478609204085": {
+  "14677876500789506685": {
     "apps/nova-backend-e2e": {
       "targets": {
         "lint": {
@@ -83,7 +83,7 @@
       }
     }
   },
-  "9533568605717607179": {
+  "13828218135349975945": {
     "apps/nova-frontend": {
       "targets": {
         "lint": {
@@ -125,7 +125,7 @@
       }
     }
   },
-  "2709222615644973324": {
+  "3392924216800765422": {
     "libs/slash": {
       "targets": {
         "lint": {
@@ -167,8 +167,8 @@
       }
     }
   },
-  "16676910230367683926": {},
-  "10403574315809707358": {
+  "9002370806263430517": {},
+  "13235189252964531479": {
     "apps/nova-backend": {
       "targets": {
         "lint": {
@@ -210,388 +210,5 @@
       }
     }
   },
-  "11624669575753552409": {},
-  "3636716077412110801": {
-    "apps/nova-backend": {
-      "targets": {
-        "lint": {
-          "command": "eslint .",
-          "cache": true,
-          "options": {
-            "cwd": "apps/nova-backend"
-          },
-          "inputs": [
-            "default",
-            "^default",
-            "{workspaceRoot}/eslint.config.mjs",
-            "{workspaceRoot}/apps/nova-backend/eslint.config.mjs",
-            "{workspaceRoot}/tools/eslint-rules/**/*",
-            {
-              "externalDependencies": [
-                "eslint"
-              ]
-            }
-          ],
-          "outputs": [
-            "{options.outputFile}"
-          ],
-          "metadata": {
-            "technologies": [
-              "eslint"
-            ],
-            "description": "Runs ESLint on project",
-            "help": {
-              "command": "bun eslint --help",
-              "example": {
-                "options": {
-                  "max-warnings": 0
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "8446221310478997797": {},
-  "12564114557986271040": {},
-  "11475979761234123908": {
-    "apps/nova-backend": {
-      "targets": {
-        "lint": {
-          "command": "eslint .",
-          "cache": true,
-          "options": {
-            "cwd": "apps/nova-backend"
-          },
-          "inputs": [
-            "default",
-            "^default",
-            "{workspaceRoot}/eslint.config.mjs",
-            "{workspaceRoot}/apps/nova-backend/eslint.config.mjs",
-            "{workspaceRoot}/tools/eslint-rules/**/*",
-            {
-              "externalDependencies": [
-                "eslint"
-              ]
-            }
-          ],
-          "outputs": [
-            "{options.outputFile}"
-          ],
-          "metadata": {
-            "technologies": [
-              "eslint"
-            ],
-            "description": "Runs ESLint on project",
-            "help": {
-              "command": "bun eslint --help",
-              "example": {
-                "options": {
-                  "max-warnings": 0
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "17910676981561483101": {
-    "apps/nova-backend-e2e": {
-      "targets": {
-        "lint": {
-          "command": "eslint .",
-          "cache": true,
-          "options": {
-            "cwd": "apps/nova-backend-e2e"
-          },
-          "inputs": [
-            "default",
-            "^default",
-            "{workspaceRoot}/eslint.config.mjs",
-            "{workspaceRoot}/apps/nova-backend-e2e/eslint.config.mjs",
-            "{workspaceRoot}/tools/eslint-rules/**/*",
-            {
-              "externalDependencies": [
-                "eslint"
-              ]
-            }
-          ],
-          "outputs": [
-            "{options.outputFile}"
-          ],
-          "metadata": {
-            "technologies": [
-              "eslint"
-            ],
-            "description": "Runs ESLint on project",
-            "help": {
-              "command": "bun eslint --help",
-              "example": {
-                "options": {
-                  "max-warnings": 0
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "1875094993041296316": {
-    "apps/nova-frontend": {
-      "targets": {
-        "lint": {
-          "command": "eslint .",
-          "cache": true,
-          "options": {
-            "cwd": "apps/nova-frontend"
-          },
-          "inputs": [
-            "default",
-            "^default",
-            "{workspaceRoot}/eslint.config.mjs",
-            "{workspaceRoot}/apps/nova-frontend/eslint.config.mjs",
-            "{workspaceRoot}/tools/eslint-rules/**/*",
-            {
-              "externalDependencies": [
-                "eslint"
-              ]
-            }
-          ],
-          "outputs": [
-            "{options.outputFile}"
-          ],
-          "metadata": {
-            "technologies": [
-              "eslint"
-            ],
-            "description": "Runs ESLint on project",
-            "help": {
-              "command": "bun eslint --help",
-              "example": {
-                "options": {
-                  "max-warnings": 0
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "14161119894554764848": {
-    "libs/slash": {
-      "targets": {
-        "lint": {
-          "command": "eslint .",
-          "cache": true,
-          "options": {
-            "cwd": "libs/slash"
-          },
-          "inputs": [
-            "default",
-            "^default",
-            "{workspaceRoot}/eslint.config.mjs",
-            "{workspaceRoot}/libs/slash/eslint.config.cjs",
-            "{workspaceRoot}/tools/eslint-rules/**/*",
-            {
-              "externalDependencies": [
-                "eslint"
-              ]
-            }
-          ],
-          "outputs": [
-            "{options.outputFile}"
-          ],
-          "metadata": {
-            "technologies": [
-              "eslint"
-            ],
-            "description": "Runs ESLint on project",
-            "help": {
-              "command": "bun eslint --help",
-              "example": {
-                "options": {
-                  "max-warnings": 0
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "10183731483555351717": {},
-  "18196622929629868439": {
-    "apps/nova-backend": {
-      "targets": {
-        "lint": {
-          "command": "eslint .",
-          "cache": true,
-          "options": {
-            "cwd": "apps/nova-backend"
-          },
-          "inputs": [
-            "default",
-            "^default",
-            "{workspaceRoot}/eslint.config.mjs",
-            "{workspaceRoot}/apps/nova-backend/eslint.config.mjs",
-            "{workspaceRoot}/tools/eslint-rules/**/*",
-            {
-              "externalDependencies": [
-                "eslint"
-              ]
-            }
-          ],
-          "outputs": [
-            "{options.outputFile}"
-          ],
-          "metadata": {
-            "technologies": [
-              "eslint"
-            ],
-            "description": "Runs ESLint on project",
-            "help": {
-              "command": "bun eslint --help",
-              "example": {
-                "options": {
-                  "max-warnings": 0
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "10600849617865594199": {
-    "apps/nova-backend-e2e": {
-      "targets": {
-        "lint": {
-          "command": "eslint .",
-          "cache": true,
-          "options": {
-            "cwd": "apps/nova-backend-e2e"
-          },
-          "inputs": [
-            "default",
-            "^default",
-            "{workspaceRoot}/eslint.config.mjs",
-            "{workspaceRoot}/apps/nova-backend-e2e/eslint.config.mjs",
-            "{workspaceRoot}/tools/eslint-rules/**/*",
-            {
-              "externalDependencies": [
-                "eslint"
-              ]
-            }
-          ],
-          "outputs": [
-            "{options.outputFile}"
-          ],
-          "metadata": {
-            "technologies": [
-              "eslint"
-            ],
-            "description": "Runs ESLint on project",
-            "help": {
-              "command": "bun eslint --help",
-              "example": {
-                "options": {
-                  "max-warnings": 0
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "16461870003998934864": {
-    "apps/nova-frontend": {
-      "targets": {
-        "lint": {
-          "command": "eslint .",
-          "cache": true,
-          "options": {
-            "cwd": "apps/nova-frontend"
-          },
-          "inputs": [
-            "default",
-            "^default",
-            "{workspaceRoot}/eslint.config.mjs",
-            "{workspaceRoot}/apps/nova-frontend/eslint.config.mjs",
-            "{workspaceRoot}/tools/eslint-rules/**/*",
-            {
-              "externalDependencies": [
-                "eslint"
-              ]
-            }
-          ],
-          "outputs": [
-            "{options.outputFile}"
-          ],
-          "metadata": {
-            "technologies": [
-              "eslint"
-            ],
-            "description": "Runs ESLint on project",
-            "help": {
-              "command": "bun eslint --help",
-              "example": {
-                "options": {
-                  "max-warnings": 0
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "10448013022260917038": {
-    "libs/slash": {
-      "targets": {
-        "lint": {
-          "command": "eslint .",
-          "cache": true,
-          "options": {
-            "cwd": "libs/slash"
-          },
-          "inputs": [
-            "default",
-            "^default",
-            "{workspaceRoot}/eslint.config.mjs",
-            "{workspaceRoot}/libs/slash/eslint.config.cjs",
-            "{workspaceRoot}/tools/eslint-rules/**/*",
-            {
-              "externalDependencies": [
-                "eslint"
-              ]
-            }
-          ],
-          "outputs": [
-            "{options.outputFile}"
-          ],
-          "metadata": {
-            "technologies": [
-              "eslint"
-            ],
-            "description": "Runs ESLint on project",
-            "help": {
-              "command": "bun eslint --help",
-              "example": {
-                "options": {
-                  "max-warnings": 0
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "309450419224646411": {},
-  "14867752038802985947": {}
+  "3075505759132541450": {}
 }

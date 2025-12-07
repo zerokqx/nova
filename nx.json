@@ -42,7 +42,9 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/nova-backend-e2e/**/*"]
+      "exclude": [
+        "apps/nova-backend-e2e/**/*"
+      ]
     },
     {
       "plugin": "@nx/js/typescript",
@@ -67,14 +69,6 @@
         "buildDepsTargetName": "build-deps",
         "watchDepsTargetName": "watch-deps",
         "serveStaticTargetName": "serve-static"
-      }
-    },
-    {
-      "plugin": "@nx/rollup/plugin",
-      "options": {
-        "buildTargetName": "build",
-        "buildDepsTargetName": "build-deps",
-        "watchDepsTargetName": "watch-deps"
       }
     }
   ],

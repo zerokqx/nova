@@ -7,7 +7,7 @@ import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin';
 
 export default defineConfig(() => ({
   root: import.meta.dirname,
-  cacheDir: '../../node_modules/.vite/libs/slash',
+  cacheDir: '../../node_modules/.vite/libs/slashNotation',
   plugins: [
     nxViteTsPaths(),
     nxCopyAssetsPlugin(['*.md']),
@@ -24,23 +24,21 @@ export default defineConfig(() => ({
   // Configuration for building your library.
   // See: https://vite.dev/guide/build.html#library-mode
   build: {
-    outDir: './dist',
+    outDir: '../../dist/libs/slashNotation',
     emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
     },
     lib: {
+      // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
-      name: 'slash',
+      name: 'slashNotation',
       fileName: 'index',
       formats: ['es' as const],
     },
     rollupOptions: {
       external: [],
-      output: {
-        preserveModules: false,
-      },
     },
   },
 }));

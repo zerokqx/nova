@@ -14,5 +14,4 @@ export type TCreateNotation<
     Separator,
     PartSecond
   >;
-  inferNotation: () => string;
 };
