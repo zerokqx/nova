@@ -2,5 +2,8 @@
   "name": "nova-backend",
   "scripts": {
     "prisma:regenerate": "prisma db pull && prisma generate"
+  },
+  "devDependencies": {
+    "@nova/slash": "workspace:*"
   }
 }

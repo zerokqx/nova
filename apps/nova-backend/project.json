@@ -72,6 +72,10 @@
       "dependsOn": [
         "build"
       ],
+      "runtime": "tsx",
+      "runtimeArgs": [
+        "src/main.ts"
+      ],
       "options": {
         "buildTarget": "nova-backend:build",
         "runBuildTargetDependencies": false
