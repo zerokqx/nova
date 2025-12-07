@@ -15,75 +15,35 @@
       }
     },
     "build": {
-      "executor": "nx:run-commands",
+      "executor": "@nx/webpack:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
-        "command": "webpack-cli build",
-        "args": [
-          "--node-env=production"
-        ],
-        "cwd": "apps/nova-backend"
+        "outputPath": "dist/apps/nova-backend",
+        "webpackConfig": "apps/nova-backend/webpack.config.ts",
+        "target": "node",
+        "tsConfig": "apps/nova-backend/tsconfig.app.json"
       },
       "configurations": {
         "development": {
-          "args": [
-            "--node-env=development"
-          ]
+          "optimization": false
+        },
+        "production": {
+          "optimization": true
         }
-      }
-    },
-    "prune-lockfile": {
-      "dependsOn": [
-        "build"
-      ],
-      "cache": true,
-      "executor": "@nx/js:prune-lockfile",
-      "outputs": [
-        "{workspaceRoot}/dist/apps/nova-backend/package.json",
-        "{workspaceRoot}/dist/apps/nova-backend/bun.lock"
-      ],
-      "options": {
-        "buildTarget": "build"
-      }
-    },
-    "copy-workspace-modules": {
-      "dependsOn": [
-        "build"
-      ],
-      "cache": true,
-      "outputs": [
-        "{workspaceRoot}/dist/apps/nova-backend/workspace_modules"
-      ],
-      "executor": "@nx/js:copy-workspace-modules",
-      "options": {
-        "buildTarget": "build"
-      }
-    },
-    "prune": {
-      "dependsOn": [
-        "prune-lockfile",
-        "copy-workspace-modules"
-      ],
-      "executor": "nx:noop"
+      },
+      "defaultConfiguration": "development"
     },
     "serve": {
-      "continuous": true,
-      "executor": "@nx/js:node",
-      "defaultConfiguration": "development",
-      "dependsOn": [
-        "build"
-      ],
-      "runtime": "tsx",
-      "runtimeArgs": [
-        "src/main.ts"
-      ],
+      "executor": "@nx/webpack:dev-server",
       "options": {
+        "webpackConfig": "apps/nova-backend/webpack.config.ts",
+        "tsConfig": "apps/nova-backend/tsconfig.app.json",
         "buildTarget": "nova-backend:build",
-        "runBuildTargetDependencies": false
+        "hmr": true
       },
       "configurations": {
-        "development": {
-          "buildTarget": "nova-backend:build:development"
-        },
         "production": {
           "buildTarget": "nova-backend:build:production"
         }

@@ -1,0 +1,21 @@
+{
+  "name": "@nova/backend",
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-decorators": "^7.28.0",
+    "@babel/plugin-transform-class-static-block": "^7.28.3",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-typescript": "^7.28.5",
+    "@nova/notation": "workspace:*",
+    "@swc/cli": "^0.7.9",
+    "@swc/core": "^1.15.3",
+    "babel-plugin-transform-typescript-metadata": "^0.4.0",
+    "swc-loader": "^0.2.6",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "dependencies": {
+    "run-script-webpack-plugin": "^0.2.3",
+    "webpack": "^5.103.0"
+  }
+}

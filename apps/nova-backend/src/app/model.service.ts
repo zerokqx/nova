@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { Prisma, type models } from '@ormClient';
 import { PrismaService } from './prisma.service';
-import { notation } from 'src/lib/notation';
+import { notation } from '../lib/notation';
 @Injectable()
 export class ModelService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService) { }
   async getAll(): Promise<models[]> {
     return this.prisma.models.findMany();
   }

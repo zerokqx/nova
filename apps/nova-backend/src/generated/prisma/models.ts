@@ -7,6 +7,6 @@
  *
  * 🟢 You can import this file directly.
  */
-export type * from './models/models.ts'
-export type * from './models/sources.ts'
-export type * from './commonInputTypes.ts'
+export type * from './models/models.js'
+export type * from './models/sources.js'
+export type * from './commonInputTypes.js'
