@@ -16,9 +16,9 @@ async function bootstrap() {
   const port = process.env.PORT || 3000;
   app.useGlobalPipes(
     new ValidationPipe({
-      whitelist: true, // Удаляет свойства, которых нет в DTO
-      forbidNonWhitelisted: true, // Выбрасывает ошибку при лишних полях
-      transform: true, // Автоматически преобразует типы
+      whitelist: true,
+      forbidNonWhitelisted: true,
+      transform: true,
     })
   );
   Logger.log(
@@ -30,6 +30,12 @@ async function bootstrap() {
   }
   const documentFactory = () => SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('docs', app, documentFactory);
+  app.enableCors({
+    origin: ['http://localhost:5173'],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    credentials: true,
+    allowedHeaders: 'Content-Type, Authorization',
+  });
   await app.listen(port);
 }
 
