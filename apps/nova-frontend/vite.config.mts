@@ -1,6 +1,4 @@
 /// <reference types='vitest' />
-/// <reference types="vite/client" />
-/// <reference types="vite-plugin-svgr/client" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { tanstackRouter } from '@tanstack/router-plugin/vite';
@@ -24,15 +22,8 @@ export default defineConfig(() => ({
   },
   plugins: [
     nxViteTsPaths(),
-    svgr({
-      svgrOptions: {
-        exportType: 'named',
-        ref: true,
-        svgo: false,
-        titleProp: true,
-      },
-      include: '**/*.svg',
-    }),
+
+    svgr(),
     tanstackRouter({
       target: 'react',
       autoCodeSplitting: true,
@@ -50,11 +41,11 @@ export default defineConfig(() => ({
     }),
     nxCopyAssetsPlugin(['*.md']),
   ],
-  // resolve: {
-  //   alias: {
-  //     '@shared': path.resolve(__dirname, './src/shared'),
-  //   },
-  // },
+  resolve: {
+    alias: {
+      '@shared': path.resolve(__dirname, './src/shared'),
+    },
+  },
   build: {
     outDir: '../../dist/apps/nova-frontend',
     emptyOutDir: true,

@@ -12,6 +12,8 @@ import { useNavigate } from '@tanstack/react-router';
 import { ternary } from '@utils/conditions/ternary';
 import { AiInput } from '@widgets/AiInput/ui/AiInput';
 import { flatMap, flatten, forEach, map, merge } from 'lodash';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 export const IndexPage = () => {
   const { mobile } = useResponsive();
@@ -21,6 +23,13 @@ export const IndexPage = () => {
       return meta.slash;
     }) as ITransformModel[]
   );
+  useEffect(() => {
+    const data = axios
+      .get('http://localhost:3000/api/sources/full')
+      .then((s) => {
+        console.log(s.data);
+      });
+  }, []);
   const navigate = useNavigate();
   return (
     <AppShellMain h={'100dvh'}>

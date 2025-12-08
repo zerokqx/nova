@@ -38329,6 +38329,11 @@
       },
       {
         "source": "nova-frontend",
+        "target": "npm:axios@1.13.2",
+        "type": "static"
+      },
+      {
+        "source": "nova-frontend",
         "target": "npm:@inversifyjs/strongly-typed@2.2.0",
         "type": "static"
       },
@@ -53735,5 +53740,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1765221591120
+  "computedAt": 1765227954320
 }
