@@ -26,3 +26,8 @@ export type models = Prisma.modelsModel
  * 
  */
 export type sources = Prisma.sourcesModel
+/**
+ * Model keys
+ * 
+ */
+export type keys = Prisma.keysModel

@@ -36,18 +36,25 @@
       "defaultConfiguration": "development"
     },
     "serve": {
-      "executor": "@nx/webpack:dev-server",
+      "executor": "nx:run-commands",
       "options": {
-        "webpackConfig": "apps/nova-backend/webpack.config.ts",
-        "tsConfig": "apps/nova-backend/tsconfig.app.json",
-        "buildTarget": "nova-backend:build",
-        "hmr": true
-      },
-      "configurations": {
-        "production": {
-          "buildTarget": "nova-backend:build:production"
-        }
+        "commands": [
+          "nx build nova-backend --watch",
+          "node dist/apps/nova-backend/main.js"
+        ],
+        "parallel": false,
+        "cwd": "."
       }
+    },
+    "serve:dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nodemon --watch dist/apps/nova-backend dist/apps/nova-backend/main.js",
+        "cwd": "."
+      },
+      "dependsOn": [
+        "build"
+      ]
     },
     "test": {
       "options": {

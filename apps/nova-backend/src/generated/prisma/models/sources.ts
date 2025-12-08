@@ -192,12 +192,14 @@ export type sourcesWhereInput = {
   id?: Prisma.IntFilter<"sources"> | number
   name?: Prisma.StringFilter<"sources"> | string
   models?: Prisma.ModelsListRelationFilter
+  keys?: Prisma.KeysListRelationFilter
 }
 
 export type sourcesOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   models?: Prisma.modelsOrderByRelationAggregateInput
+  keys?: Prisma.keysOrderByRelationAggregateInput
 }
 
 export type sourcesWhereUniqueInput = Prisma.AtLeast<{
@@ -207,6 +209,7 @@ export type sourcesWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.sourcesWhereInput | Prisma.sourcesWhereInput[]
   name?: Prisma.StringFilter<"sources"> | string
   models?: Prisma.ModelsListRelationFilter
+  keys?: Prisma.KeysListRelationFilter
 }, "id">
 
 export type sourcesOrderByWithAggregationInput = {
@@ -230,23 +233,27 @@ export type sourcesScalarWhereWithAggregatesInput = {
 export type sourcesCreateInput = {
   name: string
   models?: Prisma.modelsCreateNestedManyWithoutSourcesInput
+  keys?: Prisma.keysCreateNestedManyWithoutSourcesInput
 }
 
 export type sourcesUncheckedCreateInput = {
   id?: number
   name: string
   models?: Prisma.modelsUncheckedCreateNestedManyWithoutSourcesInput
+  keys?: Prisma.keysUncheckedCreateNestedManyWithoutSourcesInput
 }
 
 export type sourcesUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   models?: Prisma.modelsUpdateManyWithoutSourcesNestedInput
+  keys?: Prisma.keysUpdateManyWithoutSourcesNestedInput
 }
 
 export type sourcesUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   models?: Prisma.modelsUncheckedUpdateManyWithoutSourcesNestedInput
+  keys?: Prisma.keysUncheckedUpdateManyWithoutSourcesNestedInput
 }
 
 export type sourcesCreateManyInput = {
@@ -305,13 +312,29 @@ export type sourcesUpdateOneRequiredWithoutModelsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.sourcesUpdateToOneWithWhereWithoutModelsInput, Prisma.sourcesUpdateWithoutModelsInput>, Prisma.sourcesUncheckedUpdateWithoutModelsInput>
 }
 
+export type sourcesCreateNestedOneWithoutKeysInput = {
+  create?: Prisma.XOR<Prisma.sourcesCreateWithoutKeysInput, Prisma.sourcesUncheckedCreateWithoutKeysInput>
+  connectOrCreate?: Prisma.sourcesCreateOrConnectWithoutKeysInput
+  connect?: Prisma.sourcesWhereUniqueInput
+}
+
+export type sourcesUpdateOneRequiredWithoutKeysNestedInput = {
+  create?: Prisma.XOR<Prisma.sourcesCreateWithoutKeysInput, Prisma.sourcesUncheckedCreateWithoutKeysInput>
+  connectOrCreate?: Prisma.sourcesCreateOrConnectWithoutKeysInput
+  upsert?: Prisma.sourcesUpsertWithoutKeysInput
+  connect?: Prisma.sourcesWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.sourcesUpdateToOneWithWhereWithoutKeysInput, Prisma.sourcesUpdateWithoutKeysInput>, Prisma.sourcesUncheckedUpdateWithoutKeysInput>
+}
+
 export type sourcesCreateWithoutModelsInput = {
   name: string
+  keys?: Prisma.keysCreateNestedManyWithoutSourcesInput
 }
 
 export type sourcesUncheckedCreateWithoutModelsInput = {
   id?: number
   name: string
+  keys?: Prisma.keysUncheckedCreateNestedManyWithoutSourcesInput
 }
 
 export type sourcesCreateOrConnectWithoutModelsInput = {
@@ -332,11 +355,51 @@ export type sourcesUpdateToOneWithWhereWithoutModelsInput = {
 
 export type sourcesUpdateWithoutModelsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  keys?: Prisma.keysUpdateManyWithoutSourcesNestedInput
 }
 
 export type sourcesUncheckedUpdateWithoutModelsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  keys?: Prisma.keysUncheckedUpdateManyWithoutSourcesNestedInput
+}
+
+export type sourcesCreateWithoutKeysInput = {
+  name: string
+  models?: Prisma.modelsCreateNestedManyWithoutSourcesInput
+}
+
+export type sourcesUncheckedCreateWithoutKeysInput = {
+  id?: number
+  name: string
+  models?: Prisma.modelsUncheckedCreateNestedManyWithoutSourcesInput
+}
+
+export type sourcesCreateOrConnectWithoutKeysInput = {
+  where: Prisma.sourcesWhereUniqueInput
+  create: Prisma.XOR<Prisma.sourcesCreateWithoutKeysInput, Prisma.sourcesUncheckedCreateWithoutKeysInput>
+}
+
+export type sourcesUpsertWithoutKeysInput = {
+  update: Prisma.XOR<Prisma.sourcesUpdateWithoutKeysInput, Prisma.sourcesUncheckedUpdateWithoutKeysInput>
+  create: Prisma.XOR<Prisma.sourcesCreateWithoutKeysInput, Prisma.sourcesUncheckedCreateWithoutKeysInput>
+  where?: Prisma.sourcesWhereInput
+}
+
+export type sourcesUpdateToOneWithWhereWithoutKeysInput = {
+  where?: Prisma.sourcesWhereInput
+  data: Prisma.XOR<Prisma.sourcesUpdateWithoutKeysInput, Prisma.sourcesUncheckedUpdateWithoutKeysInput>
+}
+
+export type sourcesUpdateWithoutKeysInput = {
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  models?: Prisma.modelsUpdateManyWithoutSourcesNestedInput
+}
+
+export type sourcesUncheckedUpdateWithoutKeysInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  models?: Prisma.modelsUncheckedUpdateManyWithoutSourcesNestedInput
 }
 
 
@@ -346,10 +409,12 @@ export type sourcesUncheckedUpdateWithoutModelsInput = {
 
 export type SourcesCountOutputType = {
   models: number
+  keys: number
 }
 
 export type SourcesCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   models?: boolean | SourcesCountOutputTypeCountModelsArgs
+  keys?: boolean | SourcesCountOutputTypeCountKeysArgs
 }
 
 /**
@@ -369,11 +434,19 @@ export type SourcesCountOutputTypeCountModelsArgs<ExtArgs extends runtime.Types.
   where?: Prisma.modelsWhereInput
 }
 
+/**
+ * SourcesCountOutputType without action
+ */
+export type SourcesCountOutputTypeCountKeysArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.keysWhereInput
+}
+
 
 export type sourcesSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   name?: boolean
   models?: boolean | Prisma.sources$modelsArgs<ExtArgs>
+  keys?: boolean | Prisma.sources$keysArgs<ExtArgs>
   _count?: boolean | Prisma.SourcesCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["sources"]>
 
@@ -395,6 +468,7 @@ export type sourcesSelectScalar = {
 export type sourcesOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name", ExtArgs["result"]["sources"]>
 export type sourcesInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   models?: boolean | Prisma.sources$modelsArgs<ExtArgs>
+  keys?: boolean | Prisma.sources$keysArgs<ExtArgs>
   _count?: boolean | Prisma.SourcesCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type sourcesIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -404,6 +478,7 @@ export type $sourcesPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
   name: "sources"
   objects: {
     models: Prisma.$modelsPayload<ExtArgs>[]
+    keys: Prisma.$keysPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -803,6 +878,7 @@ readonly fields: sourcesFieldRefs;
 export interface Prisma__sourcesClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   models<T extends Prisma.sources$modelsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.sources$modelsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$modelsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  keys<T extends Prisma.sources$keysArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.sources$keysArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$keysPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1243,6 +1319,30 @@ export type sources$modelsArgs<ExtArgs extends runtime.Types.Extensions.Internal
   take?: number
   skip?: number
   distinct?: Prisma.ModelsScalarFieldEnum | Prisma.ModelsScalarFieldEnum[]
+}
+
+/**
+ * sources.keys
+ */
+export type sources$keysArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the keys
+   */
+  select?: Prisma.keysSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the keys
+   */
+  omit?: Prisma.keysOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.keysInclude<ExtArgs> | null
+  where?: Prisma.keysWhereInput
+  orderBy?: Prisma.keysOrderByWithRelationInput | Prisma.keysOrderByWithRelationInput[]
+  cursor?: Prisma.keysWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.KeysScalarFieldEnum | Prisma.KeysScalarFieldEnum[]
 }
 
 /**

@@ -1,10 +1,6 @@
 import 'reflect-metadata';
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
 
-import { Logger } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app/app.module';
 import type { NestExpressApplication } from '@nestjs/platform-express';
@@ -19,6 +15,13 @@ async function bootstrap() {
     module.hot.accept();
     module.hot.dispose(() => app.close());
   }
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true, // Удаляет свойства, которых нет в DTO
+      forbidNonWhitelisted: true, // Выбрасывает ошибку при лишних полях
+      transform: true, // Автоматически преобразует типы
+    })
+  );
   Logger.log(
     `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`
   );

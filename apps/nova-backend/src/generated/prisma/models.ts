@@ -9,4 +9,5 @@
  */
 export type * from './models/models.js'
 export type * from './models/sources.js'
+export type * from './models/keys.js'
 export type * from './commonInputTypes.js'

@@ -12,6 +12,9 @@
     "composite": true,
     "baseUrl": "./",
     "paths": {
+      "@lib/*": [
+        "src/lib/*"
+      ],
       "@/*": [
         "src/*"
       ],

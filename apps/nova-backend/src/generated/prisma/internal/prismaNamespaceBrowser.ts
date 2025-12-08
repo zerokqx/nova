@@ -49,7 +49,8 @@ export const AnyNull = runtime.objectEnumValues.instances.AnyNull
 
 export const ModelName = {
   models: 'models',
-  sources: 'sources'
+  sources: 'sources',
+  keys: 'keys'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -83,6 +84,18 @@ export const SourcesScalarFieldEnum = {
 } as const
 
 export type SourcesScalarFieldEnum = (typeof SourcesScalarFieldEnum)[keyof typeof SourcesScalarFieldEnum]
+
+
+export const KeysScalarFieldEnum = {
+  id: 'id',
+  source_id: 'source_id',
+  api_key: 'api_key',
+  is_active: 'is_active',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type KeysScalarFieldEnum = (typeof KeysScalarFieldEnum)[keyof typeof KeysScalarFieldEnum]
 
 
 export const SortOrder = {

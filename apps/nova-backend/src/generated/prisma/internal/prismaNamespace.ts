@@ -390,7 +390,8 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   models: 'models',
-  sources: 'sources'
+  sources: 'sources',
+  keys: 'keys'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -406,7 +407,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "models" | "sources"
+    modelProps: "models" | "sources" | "keys"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -558,6 +559,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    keys: {
+      payload: Prisma.$keysPayload<ExtArgs>
+      fields: Prisma.keysFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.keysFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$keysPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.keysFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$keysPayload>
+        }
+        findFirst: {
+          args: Prisma.keysFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$keysPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.keysFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$keysPayload>
+        }
+        findMany: {
+          args: Prisma.keysFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$keysPayload>[]
+        }
+        create: {
+          args: Prisma.keysCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$keysPayload>
+        }
+        createMany: {
+          args: Prisma.keysCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.keysCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$keysPayload>[]
+        }
+        delete: {
+          args: Prisma.keysDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$keysPayload>
+        }
+        update: {
+          args: Prisma.keysUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$keysPayload>
+        }
+        deleteMany: {
+          args: Prisma.keysDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.keysUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.keysUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$keysPayload>[]
+        }
+        upsert: {
+          args: Prisma.keysUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$keysPayload>
+        }
+        aggregate: {
+          args: Prisma.KeysAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateKeys>
+        }
+        groupBy: {
+          args: Prisma.keysGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.KeysGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.keysCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.KeysCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -614,6 +689,18 @@ export const SourcesScalarFieldEnum = {
 export type SourcesScalarFieldEnum = (typeof SourcesScalarFieldEnum)[keyof typeof SourcesScalarFieldEnum]
 
 
+export const KeysScalarFieldEnum = {
+  id: 'id',
+  source_id: 'source_id',
+  api_key: 'api_key',
+  is_active: 'is_active',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type KeysScalarFieldEnum = (typeof KeysScalarFieldEnum)[keyof typeof KeysScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -661,6 +748,27 @@ export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 
  * Reference to a field of type 'String[]'
  */
 export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Boolean'
+ */
+export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+/**
+ * Reference to a field of type 'DateTime'
+ */
+export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+/**
+ * Reference to a field of type 'DateTime[]'
+ */
+export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
     
 
 
@@ -766,6 +874,7 @@ export interface PrismaClientOptions {
 export type GlobalOmitConfig = {
   models?: Prisma.modelsOmit
   sources?: Prisma.sourcesOmit
+  keys?: Prisma.keysOmit
 }
 
 /* Types for Logging */
