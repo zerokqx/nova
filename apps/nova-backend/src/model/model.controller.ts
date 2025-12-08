@@ -4,48 +4,104 @@ import {
   Post,
   Body,
   Param,
-  PreconditionFailedException,
-  BadRequestException,
+  NotFoundException,
+  InternalServerErrorException,
+  HttpException,
 } from '@nestjs/common';
 import { ModelService } from './model.service';
 import { CreateModelDto } from './dto/create-model.dto';
+import { DataService } from '@/data/data.service';
 
 @Controller('models')
 export class ModelController {
-  constructor(private readonly modelService: ModelService) {}
+  constructor(
+    private readonly modelService: ModelService,
+    private data: DataService
+  ) {}
 
   @Post()
-  create(@Body() modelsDto: CreateModelDto) {
-    return this.modelService.createModel(modelsDto);
+  async create(@Body() modelsDto: CreateModelDto) {
+    try {
+      const result = await this.modelService.createModel(modelsDto);
+      return this.data.format(result);
+    } catch {
+      throw new InternalServerErrorException('Не удалось создать модель');
+    }
+  }
+
+  @Get('all/include/source')
+  async getAllIncludeSouce() {
+    try {
+      const data = await this.modelService.getAllIncludeSources();
+      return this.data.format(data);
+    } catch {
+      throw new InternalServerErrorException(
+        'Ошибка при получении моделей с источниками'
+      );
+    }
   }
 
   @Get('count')
   async getCount() {
-    return this.modelService.getCount();
+    try {
+      const count = await this.modelService.getCount();
+      return this.data.format({ count });
+    } catch {
+      throw new InternalServerErrorException(
+        'Ошибка при получении количества моделей'
+      );
+    }
   }
-  @Get('all')
+
+  @Get()
   async getAll() {
-    return this.modelService.getAll();
+    try {
+      const data = await this.modelService.getAll();
+      return this.data.format(data);
+    } catch {
+      throw new InternalServerErrorException(
+        'Ошибка при получении списка моделей'
+      );
+    }
   }
 
   @Get('notation/:id')
   async notation(@Param('id') id: string) {
-    const data = await this.modelService.getForSourceWithNotation({
-      source_id: parseInt(id),
-    });
-    if (data.length <= 0) throw new PreconditionFailedException();
-    return data;
+    try {
+      const data = await this.modelService.getForSourceWithNotation({
+        source_id: +id,
+      });
+
+      if (!data || data.length === 0) {
+        throw new NotFoundException(
+          `Нотация для источника с ID ${+id} не найдена`
+        );
+      }
+
+      return this.data.format(data);
+    } catch (error) {
+      if (error instanceof HttpException) {
+        throw error;
+      }
+      throw new InternalServerErrorException('Ошибка при получении нотации');
+    }
   }
+
   @Get(':id')
   async getOne(@Param('id') id: string) {
-    const idNumber = parseInt(id, 10);
+    try {
+      const model = await this.modelService.getById({ id: +id });
 
-    if (isNaN(idNumber)) {
-      throw new BadRequestException('ID должен быть числом');
+      if (!model) {
+        throw new NotFoundException(`Модель с ID ${+id} не найдена`);
+      }
+
+      return this.data.format(model);
+    } catch (error) {
+      if (error instanceof HttpException) {
+        throw error;
+      }
+      throw new InternalServerErrorException('Ошибка при получении модели');
     }
-
-    const model = await this.modelService.getById({ id: idNumber });
-    if (model) return model;
-    else throw new PreconditionFailedException();
   }
 }

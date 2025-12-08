@@ -1,34 +1,51 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { KeysService } from './keys.service';
 import { CreateKeyDto } from './dto/create-key.dto';
 import { UpdateKeyDto } from './dto/update-key.dto';
+import { DataService } from '@/data/data.service';
 
 @Controller('keys')
 export class KeysController {
-  constructor(private readonly keysService: KeysService) {}
+  constructor(
+    private readonly keysService: KeysService,
+    private data: DataService
+  ) {}
 
   @Post()
-  create(@Body() createKeyDto: CreateKeyDto) {
-    return this.keysService.create(createKeyDto);
+  async create(@Body() createKeyDto: CreateKeyDto) {
+    const data = await this.keysService.create(createKeyDto);
+    return this.data.format(data);
   }
 
   @Get()
-  findAll() {
-    return this.keysService.findAll();
+  async findAll() {
+    const data = await this.keysService.findMany();
+    return this.data.format(data);
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.keysService.findOne(+id);
+  async findOne(@Param('id') id: string) {
+    const data = this.keysService.findOne({ id: +id });
+    return this.data.format(data);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateKeyDto: UpdateKeyDto) {
-    return this.keysService.update(+id, updateKeyDto);
+  async update(@Param('id') id: string, @Body() updateKeyDto: UpdateKeyDto) {
+    const data = await this.keysService.update({ id: +id, updateKeyDto });
+    return this.data.format(data);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.keysService.remove(+id);
+  async remove(@Param('id') id: string) {
+    const data = await this.keysService.remove({ where: { id: +id } });
+    return this.data.format(data);
   }
 }

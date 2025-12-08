@@ -1,26 +1,39 @@
 import { Injectable } from '@nestjs/common';
 import { CreateKeyDto } from './dto/create-key.dto';
 import { UpdateKeyDto } from './dto/update-key.dto';
+import { PrismaService } from '@/prisma/prisma.service';
+import { Prisma } from '@/generated/prisma/client';
 
 @Injectable()
 export class KeysService {
-  create(createKeyDto: CreateKeyDto) {
-    return 'This action adds a new key';
+  constructor(private keyService: PrismaService) {}
+
+  async create(createKeyDto: CreateKeyDto) {
+    return await this.keyService.keys.create({ data: createKeyDto });
   }
 
-  findAll() {
-    return `This action returns all keys`;
+  async findMany() {
+    return this.keyService.keys.findMany();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} key`;
+  async findOne(data: Prisma.keysWhereUniqueInput) {
+    return await this.keyService.keys.findUnique({ where: data });
   }
 
-  update(id: number, updateKeyDto: UpdateKeyDto) {
-    return `This action updates a #${id} key`;
+  async update({
+    id,
+    updateKeyDto,
+  }: {
+    id: number;
+    updateKeyDto: UpdateKeyDto;
+  }) {
+    return await this.keyService.keys.update({
+      where: { id },
+      data: updateKeyDto,
+    });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} key`;
+  async remove(data: Prisma.keysDeleteArgs) {
+    return this.keyService.keys.delete(data);
   }
 }
