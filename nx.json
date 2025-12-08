@@ -94,5 +94,10 @@
         "linter": "eslint"
       }
     }
+  },
+  "targetDefaults": {
+    "test": {
+      "dependsOn": ["^build"]
+    }
   }
 }

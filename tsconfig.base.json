@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "ES2022",
     "lib": [
       "ES2022.Error",
       "DOM",
@@ -10,13 +9,8 @@
     "strict": true,
     "composite": true,
     "declaration": true,
-    "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "baseUrl": "./"
   },
-  "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
-  }
 }

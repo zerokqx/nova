@@ -1,6 +1,7 @@
-import type { TCreateStringNotationFn } from './create-string-notation.type';
-import type { TParseNotationFn } from './parse-notation.type';
-import type { TParseSeparatorFn } from './parse-separator.type';
+import type { TCreateStringNotationFn } from './create-string-notation.type.ts';
+import type { TParseNotationFn } from './parse-notation.type.ts';
+import type { TParseSeparatorFn } from './parse-separator.type.ts';
+import type { TSlashNotation } from './slash-notation.type.ts';
 export type TCreateNotation<
   PartFirst extends string = string,
   Separator extends string = '/',
@@ -14,5 +15,5 @@ export type TCreateNotation<
     Separator,
     PartSecond
   >;
-  inferNotation: () => string;
+  inferNotation: () => TSlashNotation<PartFirst, Separator, PartSecond>;
 };

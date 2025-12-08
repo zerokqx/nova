@@ -1,5 +1,8 @@
-import { parseSeparator } from './parse-separator';
-import type { TBeforeSplit, TSlashNotation } from './types/slash-notation.type';
+import { parseSeparator } from './parse-separator.js';
+import type {
+  TBeforeSplit,
+  TSlashNotation,
+} from './types/slash-notation.type.ts';
 export const parseNotation = <
   PartFirst extends string = string,
   Separator extends string = '/',

@@ -9,10 +9,10 @@
       "path": "./apps/nova-frontend"
     },
     {
-      "path": "./libs/slash"
+      "path": "./apps/nova-backend"
     },
     {
-      "path": "./apps/nova-backend"
+      "path": "./libs/notation"
     }
   ]
 }

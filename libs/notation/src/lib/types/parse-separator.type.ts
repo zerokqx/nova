@@ -1,4 +1,4 @@
-import type { TSlashNotation } from './slash-notation.type';
+import type { TSlashNotation } from './slash-notation.type.ts';
 
 export type TParseSeparatorFn<
   PartFirst extends string = string,

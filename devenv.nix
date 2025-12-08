@@ -7,11 +7,14 @@
 }:
 
 {
-  env.GREET = "Yobble";
+  env.GREET = "NovaAI";
 
   packages = with pkgs; [
     git
+    insomnia
     eslint
+
+    nest-cli
     docker-compose
     openssl
     bun

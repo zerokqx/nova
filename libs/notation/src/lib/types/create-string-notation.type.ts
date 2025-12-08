@@ -1,4 +1,4 @@
-import type { TSlashNotation } from './slash-notation.type';
+import type { TSlashNotation } from './slash-notation.type.ts';
 
 export type TCreateStringNotationFn<
   PartFirst extends string,

@@ -1,4 +1,4 @@
-import { createNotation } from './create-notation.ts';
+import { createNotation } from './create-notation.js';
 
 describe('slashNotation', () => {
   const separator = '/';
