@@ -1244,5 +1244,361 @@
     },
     "metadata": {},
     "projectType": "application"
+  },
+  "8528948921506466599apps/nova-frontend/vite.config.mts": {
+    "targets": {
+      "vite:build": {
+        "command": "vite build",
+        "options": {
+          "cwd": "apps/nova-frontend"
+        },
+        "cache": true,
+        "dependsOn": [
+          "^vite:build"
+        ],
+        "inputs": [
+          "default",
+          "^default",
+          {
+            "externalDependencies": [
+              "vite"
+            ]
+          }
+        ],
+        "outputs": [
+          "{workspaceRoot}/dist/apps/nova-frontend"
+        ],
+        "metadata": {
+          "technologies": [
+            "vite"
+          ],
+          "description": "Run Vite build",
+          "help": {
+            "command": "bun vite build --help",
+            "example": {
+              "options": {
+                "sourcemap": true,
+                "manifest": "manifest.json"
+              }
+            }
+          }
+        },
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ]
+      },
+      "serve": {
+        "continuous": true,
+        "command": "vite",
+        "options": {
+          "cwd": "apps/nova-frontend"
+        },
+        "metadata": {
+          "technologies": [
+            "vite"
+          ],
+          "description": "Starts Vite dev server",
+          "help": {
+            "command": "bun vite --help",
+            "example": {
+              "options": {
+                "port": 3000
+              }
+            }
+          },
+          "deprecated": "Use devTargetName instead. This option will be removed in Nx 22."
+        },
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ]
+      },
+      "vite:dev": {
+        "continuous": true,
+        "command": "vite",
+        "options": {
+          "cwd": "apps/nova-frontend"
+        },
+        "metadata": {
+          "technologies": [
+            "vite"
+          ],
+          "description": "Starts Vite dev server",
+          "help": {
+            "command": "bun vite --help",
+            "example": {
+              "options": {
+                "port": 3000
+              }
+            }
+          }
+        },
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ]
+      },
+      "vite:preview": {
+        "continuous": true,
+        "command": "vite preview",
+        "dependsOn": [
+          "vite:build"
+        ],
+        "options": {
+          "cwd": "apps/nova-frontend"
+        },
+        "metadata": {
+          "technologies": [
+            "vite"
+          ],
+          "description": "Locally preview Vite production build",
+          "help": {
+            "command": "bun vite preview --help",
+            "example": {
+              "options": {
+                "port": 3000
+              }
+            }
+          }
+        }
+      },
+      "serve-static": {
+        "continuous": true,
+        "executor": "@nx/web:file-server",
+        "options": {
+          "buildTarget": "vite:build",
+          "spa": true
+        },
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ]
+      },
+      "typecheck": {
+        "cache": true,
+        "inputs": [
+          "default",
+          "^default",
+          {
+            "externalDependencies": [
+              "typescript"
+            ]
+          }
+        ],
+        "command": "tsc --build --emitDeclarationOnly",
+        "options": {
+          "cwd": "apps/nova-frontend"
+        },
+        "metadata": {
+          "description": "Runs type-checking for the project.",
+          "technologies": [
+            "typescript"
+          ],
+          "help": {
+            "command": "bun tsc --build --help",
+            "example": {
+              "args": [
+                "--force"
+              ]
+            }
+          }
+        },
+        "dependsOn": [
+          "^typecheck"
+        ],
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ]
+      },
+      "build-deps": {
+        "dependsOn": [
+          "^build"
+        ]
+      },
+      "watch-deps": {
+        "continuous": true,
+        "dependsOn": [
+          "build-deps"
+        ],
+        "command": "bun nx watch --projects nova-frontend --includeDependentProjects -- bun nx build-deps nova-frontend"
+      }
+    },
+    "metadata": {},
+    "projectType": "application"
+  },
+  "1962777377002262268apps/nova-frontend/vite.config.mts": {
+    "targets": {
+      "vite:build": {
+        "command": "vite build",
+        "options": {
+          "cwd": "apps/nova-frontend"
+        },
+        "cache": true,
+        "dependsOn": [
+          "^vite:build"
+        ],
+        "inputs": [
+          "default",
+          "^default",
+          {
+            "externalDependencies": [
+              "vite"
+            ]
+          }
+        ],
+        "outputs": [
+          "{workspaceRoot}/dist/apps/nova-frontend"
+        ],
+        "metadata": {
+          "technologies": [
+            "vite"
+          ],
+          "description": "Run Vite build",
+          "help": {
+            "command": "bun vite build --help",
+            "example": {
+              "options": {
+                "sourcemap": true,
+                "manifest": "manifest.json"
+              }
+            }
+          }
+        },
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ]
+      },
+      "serve": {
+        "continuous": true,
+        "command": "vite",
+        "options": {
+          "cwd": "apps/nova-frontend"
+        },
+        "metadata": {
+          "technologies": [
+            "vite"
+          ],
+          "description": "Starts Vite dev server",
+          "help": {
+            "command": "bun vite --help",
+            "example": {
+              "options": {
+                "port": 3000
+              }
+            }
+          },
+          "deprecated": "Use devTargetName instead. This option will be removed in Nx 22."
+        },
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ]
+      },
+      "vite:dev": {
+        "continuous": true,
+        "command": "vite",
+        "options": {
+          "cwd": "apps/nova-frontend"
+        },
+        "metadata": {
+          "technologies": [
+            "vite"
+          ],
+          "description": "Starts Vite dev server",
+          "help": {
+            "command": "bun vite --help",
+            "example": {
+              "options": {
+                "port": 3000
+              }
+            }
+          }
+        },
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ]
+      },
+      "vite:preview": {
+        "continuous": true,
+        "command": "vite preview",
+        "dependsOn": [
+          "vite:build"
+        ],
+        "options": {
+          "cwd": "apps/nova-frontend"
+        },
+        "metadata": {
+          "technologies": [
+            "vite"
+          ],
+          "description": "Locally preview Vite production build",
+          "help": {
+            "command": "bun vite preview --help",
+            "example": {
+              "options": {
+                "port": 3000
+              }
+            }
+          }
+        }
+      },
+      "serve-static": {
+        "continuous": true,
+        "executor": "@nx/web:file-server",
+        "options": {
+          "buildTarget": "vite:build",
+          "spa": true
+        },
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ]
+      },
+      "typecheck": {
+        "cache": true,
+        "inputs": [
+          "default",
+          "^default",
+          {
+            "externalDependencies": [
+              "typescript"
+            ]
+          }
+        ],
+        "command": "tsc --build --emitDeclarationOnly",
+        "options": {
+          "cwd": "apps/nova-frontend"
+        },
+        "metadata": {
+          "description": "Runs type-checking for the project.",
+          "technologies": [
+            "typescript"
+          ],
+          "help": {
+            "command": "bun tsc --build --help",
+            "example": {
+              "args": [
+                "--force"
+              ]
+            }
+          }
+        },
+        "dependsOn": [
+          "^typecheck"
+        ],
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ]
+      },
+      "build-deps": {
+        "dependsOn": [
+          "^build"
+        ]
+      },
+      "watch-deps": {
+        "continuous": true,
+        "dependsOn": [
+          "build-deps"
+        ],
+        "command": "bun nx watch --projects nova-frontend --includeDependentProjects -- bun nx build-deps nova-frontend"
+      }
+    },
+    "metadata": {},
+    "projectType": "application"
   }
 }

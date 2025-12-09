@@ -9,30 +9,32 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model models {
+model model {
   id        Int     @id @default(autoincrement())
   name      String  @db.VarChar(255)
-  source_id Int
-  sources   sources @relation(fields: [source_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
-
+  sourceId  Int
+  source    source  @relation(fields: [sourceId], references: [id], onDelete: Cascade, onUpdate: NoAction)
 }
 
-model sources {
-  id     Int      @id @default(autoincrement())
-  name   String   @db.VarChar(255)
-  models models[]
-  keys   keys[]
+model source {
+  id     Int     @id @default(autoincrement())
+  name   String  @db.VarChar(255)
 
+  models model[]
+  key    key?    // максимум один ключ на source
 }
 
-model keys {
+model key {
   id         Int      @id @default(autoincrement())
-  source_id  Int
-  api_key    String   @db.VarChar(512)
-  is_active  Boolean  @default(true)
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
-  sources    sources  @relation(fields: [source_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
-  @@index([source_id])
+  sourceId   Int      @unique      // <= гарантирует 1‑к‑1: один ключ на источник
+  apiKey     String   @db.VarChar(512) @unique
+
+  isActive   Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  source     source   @relation(fields: [sourceId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([sourceId])
 }

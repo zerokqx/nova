@@ -14,6 +14,7 @@
     insomnia
     eslint
 
+    nodemon
     nest-cli
     docker-compose
     openssl

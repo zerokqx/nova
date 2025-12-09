@@ -27,7 +27,7 @@ export * from "./enums.js"
  * ```
  * const prisma = new PrismaClient()
  * // Fetch zero or more Models
- * const models = await prisma.models.findMany()
+ * const models = await prisma.model.findMany()
  * ```
  * 
  * Read more in our [docs](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client).
@@ -42,17 +42,17 @@ path.join(__dirname, "libquery_engine-linux-nixos.so.node")
 path.join(process.cwd(), "src/generated/prisma/libquery_engine-linux-nixos.so.node")
 
 /**
- * Model models
+ * Model model
  * 
  */
-export type models = Prisma.modelsModel
+export type model = Prisma.modelModel
 /**
- * Model sources
+ * Model source
  * 
  */
-export type sources = Prisma.sourcesModel
+export type source = Prisma.sourceModel
 /**
- * Model keys
+ * Model key
  * 
  */
-export type keys = Prisma.keysModel
+export type key = Prisma.keyModel

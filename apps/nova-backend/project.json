@@ -5,6 +5,15 @@
   "projectType": "application",
   "tags": [],
   "targets": {
+    "prisma:seed": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "bun run ./prisma/seed.ts"
+        ],
+        "cwd": "apps/nova-backend"
+      }
+    },
     "prisma:regenerate": {
       "executor": "nx:run-commands",
       "options": {
@@ -23,7 +32,8 @@
         "outputPath": "dist/apps/nova-backend",
         "webpackConfig": "apps/nova-backend/webpack.config.ts",
         "target": "node",
-        "tsConfig": "apps/nova-backend/tsconfig.app.json"
+        "tsConfig": "apps/nova-backend/tsconfig.app.json",
+        "wathc": true
       },
       "configurations": {
         "development": {
@@ -40,7 +50,7 @@
       "options": {
         "commands": [
           "nx build nova-backend --watch",
-          "node dist/apps/nova-backend/main.js"
+          "nodemon --watch dist/apps/nova-backend dist/apps/nova-backend/main.js"
         ],
         "parallel": false,
         "cwd": "."

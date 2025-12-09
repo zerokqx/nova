@@ -637,7 +637,8 @@
               "outputPath": "dist/apps/nova-backend",
               "webpackConfig": "apps/nova-backend/webpack.config.ts",
               "target": "node",
-              "tsConfig": "apps/nova-backend/tsconfig.app.json"
+              "tsConfig": "apps/nova-backend/tsconfig.app.json",
+              "wathc": true
             },
             "configurations": {
               "development": {
@@ -655,7 +656,7 @@
             "options": {
               "commands": [
                 "nx build nova-backend --watch",
-                "node dist/apps/nova-backend/main.js"
+                "nodemon --watch dist/apps/nova-backend dist/apps/nova-backend/main.js"
               ],
               "parallel": false,
               "cwd": "."
@@ -739,6 +740,17 @@
               "^nx-release-publish"
             ],
             "options": {},
+            "configurations": {},
+            "parallelism": true
+          },
+          "prisma:seed": {
+            "executor": "nx:run-commands",
+            "options": {
+              "commands": [
+                "bun run ./prisma/seed.ts"
+              ],
+              "cwd": "apps/nova-backend"
+            },
             "configurations": {},
             "parallelism": true
           },
@@ -1111,6 +1123,33 @@
     }
   },
   "externalNodes": {
+    "npm:@ai-sdk/deepseek@1.0.31": {
+      "type": "npm",
+      "name": "npm:@ai-sdk/deepseek@1.0.31",
+      "data": {
+        "version": "1.0.31",
+        "packageName": "@ai-sdk/deepseek",
+        "hash": "sha512-Il7WJp8bA3CmlreYSl1YzCucGTn2e5P81IANYIIEeLtWrbK0Y9CLoOCROj8xKYyUSMKlINyGZX2uP79cKewtSg=="
+      }
+    },
+    "npm:@ai-sdk/provider@2.0.0": {
+      "type": "npm",
+      "name": "npm:@ai-sdk/provider@2.0.0",
+      "data": {
+        "version": "2.0.0",
+        "packageName": "@ai-sdk/provider",
+        "hash": "sha512-6o7Y2SeO9vFKB8lArHXehNuusnpddKPk7xqL7T2/b+OvXMRIXUO1rR4wcv1hAFUAT9avGZshty3Wlua/XA7TvA=="
+      }
+    },
+    "npm:@ai-sdk/provider-utils@3.0.18": {
+      "type": "npm",
+      "name": "npm:@ai-sdk/provider-utils@3.0.18",
+      "data": {
+        "version": "3.0.18",
+        "packageName": "@ai-sdk/provider-utils",
+        "hash": "sha512-ypv1xXMsgGcNKUP+hglKqtdDuMg68nWHucPPAhIENrbFAI+xCHiqPVN8Zllxyv1TNZwGWUghPxJXU+Mqps0YRQ=="
+      }
+    },
     "npm:@alloc/quick-lru@5.2.0": {
       "type": "npm",
       "name": "npm:@alloc/quick-lru@5.2.0",
@@ -4340,6 +4379,15 @@
         "version": "1.22.0",
         "packageName": "@remix-run/router",
         "hash": "sha512-MBOl8MeOzpK0HQQQshKB7pABXbmyHizdTpqnrIseTbsv0nAepwC2ENZa1aaBExNQcpLoXmWthhak8SABLzvGPw=="
+      }
+    },
+    "npm:@requesty/ai-sdk@2.1.2": {
+      "type": "npm",
+      "name": "npm:@requesty/ai-sdk@2.1.2",
+      "data": {
+        "version": "2.1.2",
+        "packageName": "@requesty/ai-sdk",
+        "hash": "sha512-SCtRXk32/07q+GvRB3LgXTabNzqUxtbcNuzfqxldkNjPVUBnrQbyD8HADwUriZAkabTcylKuYI4X/V/X9FctJA=="
       }
     },
     "npm:@rolldown/pluginutils@1.0.0-beta.47": {
@@ -9490,6 +9538,15 @@
         "hash": "sha512-LUd5euvbMLpwOF8m6ivPCbhQeSiYVNb8Vs0fQ8QjXo0JTkEHpz8pxdQf0gStltaPpw0Cca8b39KxvK9cfKRiAw=="
       }
     },
+    "npm:eventsource-parser@3.0.6": {
+      "type": "npm",
+      "name": "npm:eventsource-parser@3.0.6",
+      "data": {
+        "version": "3.0.6",
+        "packageName": "eventsource-parser",
+        "hash": "sha512-Vo1ab+QXPzZ4tCa8SwIHJFaSzy4R6SHf7BY79rFBDf0idraZWAkYrDjDj8uWaSm3S2TK+hJ7/t1CEmZ7jXw+pg=="
+      }
+    },
     "npm:execa@5.1.1": {
       "type": "npm",
       "name": "npm:execa@5.1.1",
@@ -11882,6 +11939,15 @@
         "version": "2.3.1",
         "packageName": "json-parse-even-better-errors",
         "hash": "sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w=="
+      }
+    },
+    "npm:json-schema@0.4.0": {
+      "type": "npm",
+      "name": "npm:json-schema@0.4.0",
+      "data": {
+        "version": "0.4.0",
+        "packageName": "json-schema",
+        "hash": "sha512-es94M3nTIfsEPisRafak+HDLfHXnKBhV3vU5eqPcS3flIWqcxJWgXHXiey3YrpaNsanY5ei1VoYEbOzijuq9BA=="
       }
     },
     "npm:json-schema-traverse@1.0.0": {
@@ -21658,6 +21724,33 @@
         "hash": "sha512-4LCcse/U2MHZ63HAJVE+v71o7yOdIe4cZ70Wpf8D/IyjDKYQLV5GD46B+hSTjJsvV5PztjvHoU580EftxjDZFQ=="
       }
     },
+    "npm:@ai-sdk/deepseek": {
+      "type": "npm",
+      "name": "npm:@ai-sdk/deepseek",
+      "data": {
+        "version": "1.0.31",
+        "packageName": "@ai-sdk/deepseek",
+        "hash": "sha512-Il7WJp8bA3CmlreYSl1YzCucGTn2e5P81IANYIIEeLtWrbK0Y9CLoOCROj8xKYyUSMKlINyGZX2uP79cKewtSg=="
+      }
+    },
+    "npm:@ai-sdk/provider": {
+      "type": "npm",
+      "name": "npm:@ai-sdk/provider",
+      "data": {
+        "version": "2.0.0",
+        "packageName": "@ai-sdk/provider",
+        "hash": "sha512-6o7Y2SeO9vFKB8lArHXehNuusnpddKPk7xqL7T2/b+OvXMRIXUO1rR4wcv1hAFUAT9avGZshty3Wlua/XA7TvA=="
+      }
+    },
+    "npm:@ai-sdk/provider-utils": {
+      "type": "npm",
+      "name": "npm:@ai-sdk/provider-utils",
+      "data": {
+        "version": "3.0.18",
+        "packageName": "@ai-sdk/provider-utils",
+        "hash": "sha512-ypv1xXMsgGcNKUP+hglKqtdDuMg68nWHucPPAhIENrbFAI+xCHiqPVN8Zllxyv1TNZwGWUghPxJXU+Mqps0YRQ=="
+      }
+    },
     "npm:@alloc/quick-lru": {
       "type": "npm",
       "name": "npm:@alloc/quick-lru",
@@ -24887,6 +24980,15 @@
         "version": "1.22.0",
         "packageName": "@remix-run/router",
         "hash": "sha512-MBOl8MeOzpK0HQQQshKB7pABXbmyHizdTpqnrIseTbsv0nAepwC2ENZa1aaBExNQcpLoXmWthhak8SABLzvGPw=="
+      }
+    },
+    "npm:@requesty/ai-sdk": {
+      "type": "npm",
+      "name": "npm:@requesty/ai-sdk",
+      "data": {
+        "version": "2.1.2",
+        "packageName": "@requesty/ai-sdk",
+        "hash": "sha512-SCtRXk32/07q+GvRB3LgXTabNzqUxtbcNuzfqxldkNjPVUBnrQbyD8HADwUriZAkabTcylKuYI4X/V/X9FctJA=="
       }
     },
     "npm:@rolldown/pluginutils": {
@@ -30037,6 +30139,15 @@
         "hash": "sha512-LUd5euvbMLpwOF8m6ivPCbhQeSiYVNb8Vs0fQ8QjXo0JTkEHpz8pxdQf0gStltaPpw0Cca8b39KxvK9cfKRiAw=="
       }
     },
+    "npm:eventsource-parser": {
+      "type": "npm",
+      "name": "npm:eventsource-parser",
+      "data": {
+        "version": "3.0.6",
+        "packageName": "eventsource-parser",
+        "hash": "sha512-Vo1ab+QXPzZ4tCa8SwIHJFaSzy4R6SHf7BY79rFBDf0idraZWAkYrDjDj8uWaSm3S2TK+hJ7/t1CEmZ7jXw+pg=="
+      }
+    },
     "npm:execa": {
       "type": "npm",
       "name": "npm:execa",
@@ -32429,6 +32540,15 @@
         "version": "2.3.1",
         "packageName": "json-parse-even-better-errors",
         "hash": "sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w=="
+      }
+    },
+    "npm:json-schema": {
+      "type": "npm",
+      "name": "npm:json-schema",
+      "data": {
+        "version": "0.4.0",
+        "packageName": "json-schema",
+        "hash": "sha512-es94M3nTIfsEPisRafak+HDLfHXnKBhV3vU5eqPcS3flIWqcxJWgXHXiey3YrpaNsanY5ei1VoYEbOzijuq9BA=="
       }
     },
     "npm:json-schema-traverse": {
@@ -38451,12 +38571,22 @@
       },
       {
         "source": "nova-backend",
+        "target": "npm:@ai-sdk/deepseek@1.0.31",
+        "type": "static"
+      },
+      {
+        "source": "nova-backend",
         "target": "npm:@nestjs/mapped-types@2.1.0",
         "type": "static"
       },
       {
         "source": "nova-backend",
         "target": "npm:@nestjs/swagger@11.2.3",
+        "type": "static"
+      },
+      {
+        "source": "nova-backend",
+        "target": "npm:@requesty/ai-sdk@2.1.2",
         "type": "static"
       },
       {
@@ -38496,12 +38626,17 @@
       },
       {
         "source": "nova-backend",
-        "target": "npm:@nestjs/testing@11.1.9",
+        "target": "npm:@nestjs/common@11.1.9",
         "type": "static"
       },
       {
         "source": "nova-backend",
-        "target": "npm:@nestjs/common@11.1.9",
+        "target": "npm:@ai-sdk/provider@2.0.0",
+        "type": "static"
+      },
+      {
+        "source": "nova-backend",
+        "target": "npm:@nestjs/testing@11.1.9",
         "type": "static"
       },
       {
@@ -53735,5 +53870,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1765221591120
+  "computedAt": 1765307127133
 }

@@ -340,6 +340,26 @@
       "apps/nova-backend/project.json",
       "nx/core/project-json"
     ],
+    "targets.prisma:seed": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.prisma:seed.executor": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.prisma:seed.options": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.prisma:seed.options.commands": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.prisma:seed.options.cwd": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
     "targets.prisma:regenerate": [
       "apps/nova-backend/project.json",
       "nx/core/project-json"
@@ -397,6 +417,10 @@
       "nx/core/project-json"
     ],
     "targets.build.options.tsConfig": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.wathc": [
       "apps/nova-backend/project.json",
       "nx/core/project-json"
     ],

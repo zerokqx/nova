@@ -48,9 +48,9 @@ export const AnyNull = runtime.objectEnumValues.instances.AnyNull
 
 
 export const ModelName = {
-  models: 'models',
-  sources: 'sources',
-  keys: 'keys'
+  model: 'model',
+  source: 'source',
+  key: 'key'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -69,33 +69,33 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-export const ModelsScalarFieldEnum = {
+export const ModelScalarFieldEnum = {
   id: 'id',
   name: 'name',
-  source_id: 'source_id'
+  sourceId: 'sourceId'
 } as const
 
-export type ModelsScalarFieldEnum = (typeof ModelsScalarFieldEnum)[keyof typeof ModelsScalarFieldEnum]
+export type ModelScalarFieldEnum = (typeof ModelScalarFieldEnum)[keyof typeof ModelScalarFieldEnum]
 
 
-export const SourcesScalarFieldEnum = {
+export const SourceScalarFieldEnum = {
   id: 'id',
   name: 'name'
 } as const
 
-export type SourcesScalarFieldEnum = (typeof SourcesScalarFieldEnum)[keyof typeof SourcesScalarFieldEnum]
+export type SourceScalarFieldEnum = (typeof SourceScalarFieldEnum)[keyof typeof SourceScalarFieldEnum]
 
 
-export const KeysScalarFieldEnum = {
+export const KeyScalarFieldEnum = {
   id: 'id',
-  source_id: 'source_id',
-  api_key: 'api_key',
-  is_active: 'is_active',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  sourceId: 'sourceId',
+  apiKey: 'apiKey',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
-export type KeysScalarFieldEnum = (typeof KeysScalarFieldEnum)[keyof typeof KeysScalarFieldEnum]
+export type KeyScalarFieldEnum = (typeof KeyScalarFieldEnum)[keyof typeof KeyScalarFieldEnum]
 
 
 export const SortOrder = {

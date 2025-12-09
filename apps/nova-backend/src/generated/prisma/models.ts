@@ -7,7 +7,7 @@
  *
  * 🟢 You can import this file directly.
  */
-export type * from './models/models.js'
-export type * from './models/sources.js'
-export type * from './models/keys.js'
+export type * from './models/model.js'
+export type * from './models/source.js'
+export type * from './models/key.js'
 export type * from './commonInputTypes.js'

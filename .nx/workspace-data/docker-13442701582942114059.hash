@@ -3664,5 +3664,3281 @@
         ]
       }
     }
+  },
+  "5636711827135418348Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "4528580068770775654Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "4490286459332586592Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "12901537874242031371Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "11708857896323643282Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "4338908744447499907Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "3840374280773422360Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "16269022996233889486Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "11852363255350491912Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "12772791614831459806Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "15930415491207782324Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "13943853499462990752Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "7091447456547904137Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "17797141319481011290Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "12643919449970949585Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "7048813725597883412Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "13889201115415451127Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "17402459729723032129Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "6074191757018821693Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "16414591652188247325Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "13569825446892734006Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "8550520726562166685Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "4769432966453615654Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "8288415380539936724Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "2687280989441393036Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "12042546809308029239Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "13806347948965308214Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "9516809735220957611Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "7704212293315718082Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "2888262567723909201Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "14623461948488748623Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "54186485941236950Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "4020702815292190687Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "6871123493390483781Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "9046342027389812425Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "11741385314850247357Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "642687903501001896Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "515432230574326431Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "13619494174771378618Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "11367560814888780422Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "11197628112068028035Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
+  },
+  "14024571424843237084Dockerfile": {
+    "targets": {
+      "docker:build": {
+        "dependsOn": [
+          "build",
+          "^build"
+        ],
+        "command": "docker build .",
+        "options": {
+          "cwd": ".",
+          "args": [
+            "--tag home-zerok-projects-nova"
+          ]
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker build",
+          "help": {
+            "command": "docker build --help",
+            "example": {
+              "options": {
+                "cache-from": "type=s3,region=eu-west-1,bucket=mybucket .",
+                "cache-to": "type=s3,region=eu-west-1,bucket=mybucket ."
+              }
+            }
+          }
+        }
+      },
+      "docker:run": {
+        "dependsOn": [
+          "docker:build"
+        ],
+        "command": "docker run {args} home-zerok-projects-nova",
+        "options": {
+          "cwd": "."
+        },
+        "inputs": [
+          "default",
+          "^default"
+        ],
+        "metadata": {
+          "technologies": [
+            "docker"
+          ],
+          "description": "Run Docker run",
+          "help": {
+            "command": "docker run --help",
+            "example": {
+              "options": {
+                "args": [
+                  "-p",
+                  "3000:3000"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "nx-release-publish": {
+        "executor": "@nx/docker:release-publish"
+      }
+    },
+    "metadata": {
+      "targetGroups": {
+        "Docker": [
+          "docker:build",
+          "docker:run",
+          "nx-release-publish"
+        ]
+      }
+    }
   }
 }
