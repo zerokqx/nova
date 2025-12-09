@@ -7,31 +7,31 @@ import { Prisma } from '@/generated/prisma/client';
 export class SourcesService {
   constructor(private db: PrismaService) { }
   async create(createSourceDto: CreateSourceDto) {
-    return await this.db.sources.create({ data: createSourceDto });
+    return await this.db.source.create({ data: createSourceDto });
   }
 
   async findAll() {
-    return this.db.sources.findMany();
+    return this.db.source.findMany();
   }
 
   async full() {
-    return await this.db.sources.findMany({
-      include: { keys: true, models: true },
+    return await this.db.source.findMany({
+      include: { key: true, models: true },
     });
   }
-  async fullById(data: Prisma.sourcesWhereUniqueInput) {
-    return await this.db.sources.findUnique({
+  async fullById(data: Prisma.sourceWhereUniqueInput) {
+    return await this.db.source.findUnique({
       where: data,
 
-      include: { keys: true, models: true },
+      include: { key: true, models: true },
     });
   }
 
-  async findOne(data: Prisma.sourcesWhereUniqueInput) {
-    return await this.db.sources.findUnique({ where: data });
+  async findOne(data: Prisma.sourceWhereUniqueInput) {
+    return await this.db.source.findUnique({ where: data });
   }
 
-  async remove(data: Prisma.sourcesDeleteArgs) {
-    return await this.db.sources.delete(data);
+  async remove(data: Prisma.sourceDeleteArgs) {
+    return await this.db.source.delete(data);
   }
 }
