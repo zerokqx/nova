@@ -20,7 +20,7 @@ export class ModelService {
   }
   async createModel(
     data: Pick<Prisma.modelCreateInput, 'name'> & { sourceId: number }
-  ): Promise<Prisma.modelModel {
+  ): Promise<Prisma.modelModel> {
     return this.prisma.model.create({ data });
   }
 
