@@ -31,7 +31,7 @@
         "@types/lodash": "^4.17.21",
         "@types/pg": "^8.15.6",
         "@vanilla-extract/css-utils": "^0.1.6",
-        "axios": "^1.13.2",
+        "axios": "^1.6.0",
         "class-transformer": "^0.5.1",
         "class-validator": "^0.14.3",
         "dexie": "^4.2.1",
