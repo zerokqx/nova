@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
 import { SourcesService } from './sources.service';
 import { CreateSourceDto } from './dto/create-source.dto';
-import { UseDataInterceptor } from '@/data/data.interceptor';
+import { UseDataInterceptor } from '@moduleShared/data/data.interceptor';
 import {
   ApiOperation,
   ApiCreatedResponse,
@@ -13,7 +13,7 @@ import {
 @Controller('sources')
 @UseDataInterceptor()
 export class SourcesController {
-  constructor(private readonly sourcesService: SourcesService) {}
+  constructor(private readonly sourcesService: SourcesService) { }
 
   @Post()
   @ApiOperation({ summary: 'Создать источник' })

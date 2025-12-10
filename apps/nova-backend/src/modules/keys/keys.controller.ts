@@ -10,7 +10,7 @@ import {
 import { KeysService } from './keys.service';
 import { CreateKeyDto } from './dto/create-key.dto';
 import { UpdateKeyDto } from './dto/update-key.dto';
-import { UseDataInterceptor } from '@/data/data.interceptor';
+import { UseDataInterceptor } from '@moduleShared/data/data.interceptor';
 import {
   ApiOperation,
   ApiResponse,

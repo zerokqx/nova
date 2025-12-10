@@ -22,5 +22,5 @@ export class CreateModelDto {
   @IsNotEmpty({ message: 'ID источника обязателен' })
   @Min(1, { message: 'ID источника должен быть больше 0' })
   @Type(() => Number)
-  source_id!: number;
+  sourceId!: number;
 }

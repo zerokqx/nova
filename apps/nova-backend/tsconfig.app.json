@@ -12,6 +12,12 @@
     "composite": true,
     "baseUrl": "./",
     "paths": {
+      "@modules/*": [
+        "src/modules/*"
+      ],
+      "@moduleShared/*": [
+        "src/modules/shared/*"
+      ],
       "@lib/*": [
         "src/lib/*"
       ],
@@ -19,7 +25,7 @@
         "src/*"
       ],
       "@orm/*": [
-        "src/generated/*"
+        "src/generated/prisma/*"
       ],
       "@ormClient": [
         "src/generated/prisma/client.ts"

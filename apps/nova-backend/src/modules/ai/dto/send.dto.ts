@@ -1,6 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty, IsString, MaxLength } from 'class-validator';
-import { tr } from 'zod/v4/locales';
 
 export class SendDto {
   @ApiProperty({

@@ -10,7 +10,7 @@ import {
 } from '@nestjs/common';
 import { ModelService } from './model.service';
 import { CreateModelDto } from './dto/create-model.dto';
-import { DataService } from '@/data/data.service';
+import { DataService } from '@moduleShared/data/data.service';
 import {
   ApiOperation,
   ApiCreatedResponse,
@@ -18,7 +18,10 @@ import {
   ApiNotFoundResponse,
   ApiParam,
 } from '@nestjs/swagger';
+import { UseDataInterceptor } from '@moduleShared/data/data.interceptor';
+import { ModelErrors } from './model.constants';
 
+@UseDataInterceptor()
 @Controller('models')
 export class ModelController {
   constructor(
@@ -31,12 +34,13 @@ export class ModelController {
   @ApiCreatedResponse({
     schema: { example: { data: { id: 1, name: 'Model' } } },
   })
-  async create(@Body() modelsDto: CreateModelDto) {
+  async create(@Body() data: CreateModelDto) {
     try {
-      const result = await this.modelService.createModel(modelsDto);
-      return this.data.format(result);
+      return this.modelService.createModel(data);
     } catch {
-      throw new InternalServerErrorException('Не удалось создать модель');
+      throw new InternalServerErrorException(
+        ModelErrors.COULDNT_CREATE_A_MODELS
+      );
     }
   }
 
@@ -45,11 +49,10 @@ export class ModelController {
   @ApiOkResponse({ schema: { example: { data: [] } } })
   async getAllIncludeSouce() {
     try {
-      const data = await this.modelService.getAllIncludeSources();
-      return this.data.format(data);
+      return this.modelService.getAllIncludeSources();
     } catch {
       throw new InternalServerErrorException(
-        'Ошибка при получении моделей с источниками'
+        ModelErrors.WHEN_GETTING_MODELS_WITH_SOURCES
       );
     }
   }
@@ -59,12 +62,9 @@ export class ModelController {
   @ApiOkResponse({ schema: { example: { data: { count: 42 } } } })
   async getCount() {
     try {
-      const count = await this.modelService.getCount();
-      return this.data.format({ count });
+      return this.modelService.getCount();
     } catch {
-      throw new InternalServerErrorException(
-        'Ошибка при получении количества моделей'
-      );
+      throw new InternalServerErrorException(ModelErrors.WHER_GETTING_NUMBER);
     }
   }
 
@@ -73,11 +73,10 @@ export class ModelController {
   @ApiOkResponse({ schema: { example: { data: [] } } })
   async getAll() {
     try {
-      const data = await this.modelService.getAll();
-      return this.data.format(data);
+      return this.modelService.getAll();
     } catch {
       throw new InternalServerErrorException(
-        'Ошибка при получении списка моделей'
+        ModelErrors.WHER_GETTING_LIST_MODELS
       );
     }
   }
@@ -90,7 +89,7 @@ export class ModelController {
   async notation(@Param('id') id: string) {
     try {
       const data = await this.modelService.getForSourceWithNotation({
-        source_id: +id,
+        sourceId: +id,
       });
       if (!data || data.length === 0) {
         throw new NotFoundException(
@@ -113,12 +112,14 @@ export class ModelController {
     try {
       const model = await this.modelService.getById({ id: +id });
       if (!model) {
-        throw new NotFoundException(`Модель с ID ${+id} не найдена`);
+        throw new NotFoundException(ModelErrors.ID_ERROR);
       }
       return this.data.format(model);
     } catch (error) {
       if (error instanceof HttpException) throw error;
-      throw new InternalServerErrorException('Ошибка при получении модели');
+      throw new InternalServerErrorException(
+        ModelErrors.WHEN_EXPLAINING_THE_MODEL
+      );
     }
   }
 }

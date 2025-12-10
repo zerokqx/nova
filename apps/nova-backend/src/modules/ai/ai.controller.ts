@@ -2,7 +2,7 @@ import { Body, Controller, Param, Post } from '@nestjs/common';
 import { PerplexityService } from './perplexity/perplexity.service';
 import { SendDto } from './dto/send.dto';
 import { UseApiGuard } from './ai.guard';
-import { UseDataInterceptor } from '@/data/data.interceptor';
+import { UseDataInterceptor } from '@moduleShared/data/data.interceptor';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('AI')

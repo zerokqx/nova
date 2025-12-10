@@ -5,7 +5,6 @@ import {
   type GoogleGenerativeAIProvider,
 } from '@ai-sdk/google';
 import { AiUtils } from '../ai.utils';
-const serv = createGoogleGenerativeAI();
 
 export class GeminiService extends AiProvider<GoogleGenerativeAIProvider> {
   constructor(private utils: AiUtils) {

@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { CreateSourceDto } from './dto/create-source.dto';
-import { PrismaService } from '@/prisma/prisma.service';
+import { PrismaService } from '@moduleShared/prisma/prisma.service';
 import { Prisma } from '@/generated/prisma/client';
 
 @Injectable()
 export class SourcesService {
-  constructor(private db: PrismaService) { }
+  constructor(private db: PrismaService) {}
   async create(createSourceDto: CreateSourceDto) {
     return await this.db.source.create({ data: createSourceDto });
   }

@@ -1,7 +1,8 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { Prisma, type model } from '@ormClient';
 import { TCreateNotation, TNotation } from '@lib/notation';
-import { PrismaService } from '@/prisma/prisma.service';
+import { PrismaService } from '@moduleShared/prisma/prisma.service';
+import { modelWhereInput } from '@/generated/prisma/models';
 @Injectable()
 export class ModelService {
   constructor(
@@ -9,24 +10,20 @@ export class ModelService {
     @Inject('NOTATION')
     private notation: TCreateNotation
   ) {}
-  async getCount(): Promise<number> {
+  async getCount() {
     return this.prisma.model.count();
   }
-  async getAll(): Promise<model[]> {
+  async getAll() {
     return this.prisma.model.findMany();
   }
   async getAllIncludeSources() {
-    return await this.prisma.model.findMany({ include: { source: true } });
+    return this.prisma.model.findMany({ include: { source: true } });
   }
-  async createModel(
-    data: Pick<Prisma.modelCreateInput, 'name'> & { sourceId: number }
-  ): Promise<Prisma.modelModel> {
-    return this.prisma.model.create({ data });
+  async createModel({ name, sourceId }: { name: string; sourceId: number }) {
+    return this.prisma.model.create({ data: { name, sourceId } });
   }
 
-  async getForSourceWithNotation(
-    where: Pick<Prisma.modelWhereInput, 'sourceId'>
-  ): Promise<TNotation[]> {
+  async getForSourceWithNotation(where: Prisma.modelWhereInput) {
     const models = await this.prisma.model.findMany({
       where,
       include: { source: { select: { name: true } } },
@@ -40,15 +37,11 @@ export class ModelService {
       )
     );
   }
-  async getForSource(
-    where: Pick<Prisma.modelWhereInput, 'sourceId'>
-  ): Promise<Prisma.modelModel[] | null> {
+  async getForSource(where: modelWhereInput) {
     return this.prisma.model.findMany({ where });
   }
 
-  async getById(
-    where: Prisma.modelWhereUniqueInput
-  ): Promise<Prisma.modelModel | null> {
+  async getById(where: Prisma.modelWhereUniqueInput) {
     return this.prisma.model.findUnique({ where });
   }
 }
