@@ -20,10 +20,10 @@ const config: Configuration = {
 
   externals: isDevelopment
     ? [
-        nodeExternals({
-          allowlist: ['webpack/hot/poll?100'],
-        }),
-      ]
+      nodeExternals({
+        allowlist: ['webpack/hot/poll?100'],
+      }),
+    ]
     : [],
 
   plugins: [
@@ -33,7 +33,6 @@ const config: Configuration = {
       compiler: 'swc',
       main: './src/main.ts',
       tsConfig: './tsconfig.app.json',
-      assets: ['./src/assets'],
       optimization: false,
       outputHashing: 'none',
       generatePackageJson: true,

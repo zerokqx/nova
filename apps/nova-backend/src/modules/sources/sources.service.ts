@@ -27,11 +27,21 @@ export class SourcesService {
     });
   }
 
-  async findOne(data: Prisma.sourceWhereUniqueInput) {
-    return await this.db.source.findUnique({ where: data });
+  async findOne(
+    data: Prisma.sourceWhereUniqueInput,
+    select?: Prisma.sourceSelect
+  ) {
+    return await this.db.source.findUnique({ where: data, select });
   }
 
   async remove(data: Prisma.sourceDeleteArgs) {
     return await this.db.source.delete(data);
+  }
+
+  async getApiViaNameSource(name: string) {
+    return await this.db.source.findUnique({
+      where: { name },
+      select: { key: { select: { apiKey: true } } },
+    });
   }
 }

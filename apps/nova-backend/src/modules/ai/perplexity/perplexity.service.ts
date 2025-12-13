@@ -22,4 +22,8 @@ export class PerplexityService extends AiProvider<PerplexityProvider> {
       apiKey,
     });
   }
+  stream(prompt: string, model: string) {
+    const client = this.sendGuard();
+    return this.utils.gStream({ prompt, model: client(model) });
+  }
 }

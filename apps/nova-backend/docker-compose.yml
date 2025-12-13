@@ -40,7 +40,7 @@ services:
       PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
       - ./initdb:/docker-entrypoint-initdb.d
-      - postgres_data:/var/lib/postgresql/data # ← ИЗМЕНЕНО
+      - postgres_data:/var/lib/postgresql/data
     ports:
       - ${POSTGRES_PORT:-5432}:5432
     healthcheck:
@@ -67,7 +67,7 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
       PGADMIN_CONFIG_SERVER_MODE: "False"
     volumes:
-      - pgadmin_data:/var/lib/pgadmin # ← ИЗМЕНЕНО
+      - pgadmin_data:/var/lib/pgadmin
     ports:
       - ${PGADMIN_PORT:-5050}:80
     networks:
@@ -76,6 +76,6 @@ services:
 networks:
   postgres:
     driver: bridge
-volumes: # ← ДОБАВЛЕНО
+volumes:
   postgres_data:
   pgadmin_data:

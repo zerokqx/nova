@@ -5,5 +5,6 @@ import { KeysController } from './keys.controller';
 @Module({
   controllers: [KeysController],
   providers: [KeysService],
+  exports: [KeysService],
 })
-export class KeysModule {}
+export class KeysModule { }

@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app/app.module';
+import { AppModule } from '@modules/app/app.module';
 import type { NestExpressApplication } from '@nestjs/platform-express';
 declare const module: any;
 async function bootstrap() {

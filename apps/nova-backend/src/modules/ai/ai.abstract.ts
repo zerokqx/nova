@@ -1,5 +1,5 @@
 import { Errors } from './ai.constants';
-import { AssistantModelMessage } from 'ai';
+import { AssistantModelMessage, StreamTextResult, ToolSet } from 'ai';
 /**
  * Базовый абстрактный провайдер для AI‑клиентов.
  *
@@ -113,4 +113,9 @@ export abstract class AiProvider<T> {
     this.client = this._createClient(apiKey);
     return this;
   }
+
+  abstract stream(
+    prompt: string,
+    model: string
+  ): StreamTextResult<ToolSet, never>;
 }

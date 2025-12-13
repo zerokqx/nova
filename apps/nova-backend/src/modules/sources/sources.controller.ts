@@ -13,7 +13,7 @@ import {
 @Controller('sources')
 @UseDataInterceptor()
 export class SourcesController {
-  constructor(private readonly sourcesService: SourcesService) { }
+  constructor(private readonly sourcesService: SourcesService) {}
 
   @Post()
   @ApiOperation({ summary: 'Создать источник' })

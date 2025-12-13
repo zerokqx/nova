@@ -10,4 +10,6 @@
 export type * from './models/model.js'
 export type * from './models/source.js'
 export type * from './models/key.js'
+export type * from './models/chat.js'
+export type * from './models/messages.js'
 export type * from './commonInputTypes.js'

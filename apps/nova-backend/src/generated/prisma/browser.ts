@@ -31,3 +31,13 @@ export type source = Prisma.sourceModel
  * 
  */
 export type key = Prisma.keyModel
+/**
+ * Model chat
+ * 
+ */
+export type chat = Prisma.chatModel
+/**
+ * Model messages
+ * 
+ */
+export type messages = Prisma.messagesModel

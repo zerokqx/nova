@@ -13,14 +13,4 @@ export class SendDto {
   @IsNotEmpty()
   @MaxLength(1000)
   content!: string;
-
-  @ApiProperty({
-    description: 'Ключ Api для авторизации',
-    required: true,
-    type: 'string',
-    example: 'pplx-*******************',
-  })
-  @IsString()
-  @IsNotEmpty()
-  apiKey!: string;
 }

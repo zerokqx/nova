@@ -9,32 +9,50 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Roles {
+  user
+  assistant
+  system
+}
+
 model model {
-  id        Int     @id @default(autoincrement())
-  name      String  @db.VarChar(255)
-  sourceId  Int
-  source    source  @relation(fields: [sourceId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  id       Int    @id @default(autoincrement())
+  name     String @unique @db.VarChar(255)
+  sourceId Int
+  source   source @relation(fields: [sourceId], references: [id], onDelete: Cascade, onUpdate: NoAction)
 }
 
 model source {
   id     Int     @id @default(autoincrement())
-  name   String  @db.VarChar(255)
-
+  name   String  @unique @db.VarChar(255)
+  key    key?
   models model[]
-  key    key?    // максимум один ключ на source
 }
 
 model key {
-  id         Int      @id @default(autoincrement())
-
-  sourceId   Int      @unique      // <= гарантирует 1‑к‑1: один ключ на источник
-  apiKey     String   @db.VarChar(512) @unique
-
-  isActive   Boolean  @default(true)
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-
-  source     source   @relation(fields: [sourceId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  id        Int      @id @default(autoincrement())
+  sourceId  Int      @unique
+  apiKey    String   @unique @db.VarChar(512)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  source    source   @relation(fields: [sourceId], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
   @@index([sourceId])
+}
+
+model chat {
+  id       Int        @id @unique @default(autoincrement())
+  title    String     @default(nanoid())
+  provider String
+  messages messages[]
+}
+
+model messages {
+  id      Int      @id @default(autoincrement())
+  chatId  Int
+  content String
+  role    Roles?   @default(user)
+  initial Boolean? @default(false)
+  chat    chat     @relation(fields: [chatId], references: [id], onDelete: Cascade)
 }

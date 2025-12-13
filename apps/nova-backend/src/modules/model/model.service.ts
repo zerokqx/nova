@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { Prisma, type model } from '@ormClient';
-import { TCreateNotation, TNotation } from '@lib/notation';
+import { Prisma } from '@ormClient';
+import { TCreateNotation } from '@lib/notation';
 import { PrismaService } from '@moduleShared/prisma/prisma.service';
 import { modelWhereInput } from '@/generated/prisma/models';
 @Injectable()
