@@ -44,6 +44,6 @@ export class AiUtils {
   }
 
   async generateStreamNest(data: IDataGenerateText, res: Response) {
-    return this.gStream(data).pipeUIMessageStreamToResponse(res);
+    return this.gStream(data).pipeTextStreamToResponse(res);
   }
 }

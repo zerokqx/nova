@@ -19,8 +19,6 @@ import {
 import { ChatsService } from './chats.service';
 import { UseDataInterceptor } from '@modules/shared/data/data.interceptor';
 import { CreateChatDto } from './dto/create-chat.dto';
-import { convertToModelMessages, streamText, UIMessage } from 'ai';
-import { uuidv4 } from 'zod/v4';
 
 @ApiTags('chats')
 @UseDataInterceptor()

@@ -1,5 +1,6 @@
-import type { IMessage } from "@entities/messages/model";
+import { UIMessage } from '@ai-sdk/react';
+import type { IMessage } from '@entities/messages/model';
 
 export interface IMessageProps {
-  message: IMessage;
+  message: UIMessage<unknown, UIDataTypes, UITools>[];
 }

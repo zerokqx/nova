@@ -49,7 +49,7 @@ export class ApiGuard implements CanActivate {
   }
 }
 export const AiProvider = (
-  providerName: string,
+  providerName: Lowercase<string>,
   type: 'stream' | 'static',
   modelNameInPath = 'model'
 ) =>

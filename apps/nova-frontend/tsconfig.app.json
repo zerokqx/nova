@@ -41,5 +41,9 @@
     "src/**/*.tsx",
     "vite-env.d.ts"
   ],
-  "references": []
+  "references": [
+    {
+      "path": "../../libs/notation/tsconfig.lib.json"
+    }
+  ]
 }

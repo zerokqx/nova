@@ -1,8 +1,10 @@
-import { Body, Controller, Param, Post, Res } from '@nestjs/common';
+import { Body, Controller, Logger, Param, Post, Res } from '@nestjs/common';
 import { PerplexityService } from './perplexity/perplexity.service';
 import { SendDto } from './dto/send.dto';
 import { AiProvider } from './ai.guard';
 import { UseDataInterceptor } from '@moduleShared/data/data.interceptor';
+import { convertToModelMessages } from 'ai';
+
 import {
   ApiBearerAuth,
   ApiOperation,
@@ -10,16 +12,13 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import { Response } from 'express';
-import {
-  Bearer,
-  TBearerEntity,
-} from '@modules/shared/headers/headers.auth.decorator';
+import { Bearer } from '@modules/shared/headers/headers.auth.decorator';
 
 @ApiTags('AI')
 @Controller('ai')
 @UseDataInterceptor()
 export class AiController {
-  constructor(private aiService: PerplexityService) { }
+  constructor(private aiService: PerplexityService) {}
 
   @ApiOperation({
     summary: 'Отправить сообщение',
@@ -53,9 +52,10 @@ export class AiController {
     @Res() res: Response,
     @Bearer() token: string
   ) {
-    return this.aiService
+    const result = this.aiService
       .with(token)
-      .stream(body.content, model)
-      .pipeUIMessageStreamToResponse(res);
+      .streamWithMessagesArray(convertToModelMessages(body.messages), model);
+
+    result.pipeUIMessageStreamToResponse(res);
   }
 }

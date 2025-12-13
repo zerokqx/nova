@@ -1,5 +1,11 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsString, MaxLength } from 'class-validator';
+import {
+  ArrayMinSize,
+  ArrayNotEmpty,
+  IsArray,
+  IsString,
+} from 'class-validator';
+import { UIMessage } from 'ai';
 
 export class SendDto {
   @ApiProperty({
@@ -9,8 +15,13 @@ export class SendDto {
     type: 'string',
     required: true,
   })
+  @IsArray()
+  @ArrayMinSize(1)
+  @ArrayNotEmpty()
+  messages!: UIMessage[];
   @IsString()
-  @IsNotEmpty()
-  @MaxLength(1000)
-  content!: string;
+  id!: string;
+
+  @IsString()
+  trigger!: string;
 }

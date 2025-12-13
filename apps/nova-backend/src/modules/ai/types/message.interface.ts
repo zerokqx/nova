@@ -1,4 +1,4 @@
-import { UserModelMessage, type ModelMessage } from 'ai';
+import { type ModelMessage } from 'ai';
 
 export interface IMessage {
   role: ModelMessage['role'];

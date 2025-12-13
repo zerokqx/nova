@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "dependencies": {
+    "@ai-sdk/react": "^2.0.115",
     "@colorfy-software/zfy": "^1.0.0",
     "@google/genai": "^1.30.0",
     "@inversifyjs/strongly-typed": "^2.2.0",
@@ -13,6 +14,7 @@
     "@mantine/modals": "^8.3.9",
     "@nestjs/common": "^11.0.0",
     "@nestjs/core": "^11.0.0",
+    "@nestjs/mapped-types": "*",
     "@nestjs/microservices": "^11.1.9",
     "@nestjs/platform-express": "^11.1.9",
     "@nestjs/websockets": "^11.1.9",

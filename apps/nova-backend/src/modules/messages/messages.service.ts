@@ -6,7 +6,7 @@ import { Omit, Pick } from '@prisma/client/runtime/library';
 
 @Injectable()
 export class MessagesService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService) { }
   private async createContection(data: TWithoutChat, chatId: number) {
     return await this.prisma.messages.create({ data: { ...data, chatId } });
   }

@@ -34,7 +34,18 @@ async function bootstrap() {
     origin: ['http://localhost:5173'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
-    allowedHeaders: 'Content-Type, Authorization',
+    allowedHeaders: [
+      'Content-Type',
+      'Authorization',
+      'User-Agent', // ← КРИТИЧНО для AI SDK
+      'X-Requested-With',
+      'Accept',
+      'Accept-Language',
+      'Accept-Encoding',
+      'DNT',
+      'Connection',
+      'Upgrade-Insecure-Requests',
+    ],
   });
   await app.listen(port);
 }
