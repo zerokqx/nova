@@ -3,16 +3,19 @@ import {
   CanActivate,
   ExecutionContext,
   Injectable,
+  InternalServerErrorException,
   Logger,
   Post,
   SetMetadata,
+  UnauthorizedException,
   UseGuards,
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { SourcesService } from '@modules/sources/sources.service';
+import { Errors } from './ai.constants';
 
-export const PROVIDER_NAME = 'provider-name' as const;
-export const IS_PROVIDER = 'is-handler-provider' as const;
+export const PROVIDER_NAME = Symbol.for('provider-name');
+export const IS_PROVIDER = Symbol.for('is-handler-provider');
 
 @Injectable()
 export class ApiGuard implements CanActivate {
@@ -25,19 +28,24 @@ export class ApiGuard implements CanActivate {
     const log = new Logger(ApiGuard.name);
     const handler = context.getHandler();
     const isProvider = this.reflector.get<boolean>(IS_PROVIDER, handler);
-    if (!isProvider) return false;
+    if (!isProvider) {
+      throw new InternalServerErrorException(Errors.IS_NOT_AI_PROVIDER);
+    }
 
     const providerName = this.reflector.get<string>(PROVIDER_NAME, handler);
-
-    if (!providerName) return false;
+    if (!providerName) {
+      throw new InternalServerErrorException(Errors.NOT_PROVIDER_NAME);
+    }
 
     const apiKey = await this.sourceService.getApiViaNameSource(providerName);
+
     log.debug(`API: ${apiKey}`);
-    if (apiKey?.key?.apiKey) {
+    if (!apiKey?.key?.apiKey) {
+      throw new UnauthorizedException(Errors.WITHOUT_API_KEY);
+    } else {
       context.switchToHttp().getRequest().apiKey = apiKey.key.apiKey;
       return true;
     }
-    return false;
   }
 }
 export const AiProvider = (
