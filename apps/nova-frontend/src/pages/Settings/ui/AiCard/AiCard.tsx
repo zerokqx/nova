@@ -1,19 +1,15 @@
 import {
   Badge,
-  Box,
   Button,
-  Divider,
   Grid,
   Group,
   Image,
-  Space,
   Stack,
   Text,
   Title,
 } from '@mantine/core';
 import { IAiCardProps } from '../types/AiCard.interface';
-import { capitalize, map, upperCase } from 'lodash';
-import scale from '@shared/styles/effects/Scale.module.css';
+import { capitalize } from 'lodash';
 import { motion } from 'motion/react';
 
 const MotionGrid = motion.create(Grid);
@@ -26,8 +22,7 @@ export const AiCard = ({
       bd={`1px solid dark.9`}
       p={'md'}
       bdrs={'sm'}
-      maw={'30rem'}
-      miw={'20rem'}
+      w={'min(25rem, 95%)'}
       bg={'black'}
       whileHover={{
         scale: 1.05,

@@ -11,8 +11,11 @@
       "@nx/react/typings/image.d.ts",
       "vite/client"
     ],
-    "baseUrl": "./", // Указывает, где искать абсолютные пути (установим на корень проекта)
+    "baseUrl": "./",
     "paths": {
+      "@/*": [
+        "src/*"
+      ],
       "@app/*": [
         "src/app/*"
       ],

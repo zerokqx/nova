@@ -12,9 +12,11 @@ export const SettingsPage = () => {
 
   return (
     <AppShellMain h={'100dvh'}>
-      {sources.data?.map((s) => (
-        <AiCard dbRecordInstance={s} />
-      ))}
+      <Group>
+        {sources.data?.map((s) => (
+          <AiCard dbRecordInstance={s} />
+        ))}
+      </Group>
       {/* <Group align="stretch" grow wrap="wrap"> */}
       {/*   {map(allProviders, (provider) => ( */}
       {/*     <AiCard */}

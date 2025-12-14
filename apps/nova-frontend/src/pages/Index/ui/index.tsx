@@ -1,3 +1,4 @@
+import { PromptInput } from '@/components/ai-elements/prompt-input';
 import { initializeChat } from '@entities/chat/lib/initializeChat';
 import { apiKeyStoreActions } from '@features/ai-providers/model/useApiKeyStore';
 import { AppShellMain, Stack } from '@mantine/core';

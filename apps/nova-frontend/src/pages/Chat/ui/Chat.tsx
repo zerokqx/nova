@@ -1,4 +1,8 @@
-import { Message } from '@entities/messages';
+import {
+  MessageContent,
+  Message,
+  MessageResponse,
+} from '@/components/ai-elements/message';
 import { useSendMessage } from '@features/sendMessage';
 import { AppShellMain, Stack, Center, Box } from '@mantine/core';
 import { useAdaptiveSpace } from '@shared/lib/hooks/useAdaptiveSpace';
@@ -7,12 +11,11 @@ import { AiInput } from '@widgets/AiInput/ui/AiInput';
 import { lowerCase, map } from 'lodash';
 import { motion } from 'motion/react';
 import { useEffect, useRef } from 'react';
-const MotionMessage = motion.create(Message);
 export function Chat() {
   const { id, model, provider } = useParams({
     from: '/chat/$id/$provider/$model',
   });
-  const { sendMessage, messages } = useSendMessage(
+  const { sendMessage, status, messages } = useSendMessage(
     `${lowerCase(provider)}/${model}`
   );
 
@@ -29,22 +32,32 @@ export function Chat() {
       <Center>
         <Stack w={{ base: '100%', sm: '50%' }}>
           {messages &&
-            map(messages, (message) => (
-              <Box w={'100%'} key={message.id}>
-                {message.role === 'user' ? 'User: ' : 'AI: '}
-
-                {message.parts.map((part, index) =>
-                  part.type === 'text' ? (
-                    <span key={index}>{part.text}</span>
-                  ) : null
-                )}
-              </Box>
+            map(messages, ({ parts, role, id }) => (
+              <Message from={role} key={id}>
+                <MessageContent className="  p-5 rounded-3xl">
+                  {parts.map((part, i) => {
+                    switch (part.type) {
+                      case 'text':
+                        return (
+                          <MessageResponse
+                            isAnimating
+                            key={`${role}-${i}`}
+                            shikiTheme={['tokyo-night', 'tokyo-night']}
+                            mode="streaming"
+                          >
+                            {part.text}
+                          </MessageResponse>
+                        );
+                    }
+                  })}
+                </MessageContent>
+              </Message>
             ))}
+          <Space />
         </Stack>
       </Center>
 
       <div ref={messagesEndRef} />
-      <Space />
       <Center
         ref={ref}
         pos="fixed"

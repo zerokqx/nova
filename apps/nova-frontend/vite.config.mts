@@ -7,7 +7,7 @@ import { tanstackRouter } from '@tanstack/router-plugin/vite';
 import svgr from 'vite-plugin-svgr';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin';
-import path from 'path';
+import tailwindcss from '@tailwindcss/vite';
 
 const APP = './src/app';
 
@@ -23,6 +23,7 @@ export default defineConfig(() => ({
     host: 'localhost',
   },
   plugins: [
+    tailwindcss(),
     nxViteTsPaths(),
     svgr({
       svgrOptions: {
