@@ -18,21 +18,17 @@ import {
   ApiNotFoundResponse,
   ApiParam,
 } from '@nestjs/swagger';
-import { UseDataInterceptor } from '@moduleShared/data/data.interceptor';
 import { ModelErrors } from './model.constants';
+import { ModelEntity, ModelEntityIncludeSource } from './entites/model.entity';
 
-@UseDataInterceptor()
 @Controller('models')
 export class ModelController {
-  constructor(
-    private readonly modelService: ModelService,
-    private data: DataService
-  ) {}
+  constructor(private readonly modelService: ModelService) {}
 
   @Post()
   @ApiOperation({ summary: 'Создать модель' })
   @ApiCreatedResponse({
-    schema: { example: { data: { id: 1, name: 'Model' } } },
+    type: ModelEntity,
   })
   async create(@Body() data: CreateModelDto) {
     try {
@@ -46,7 +42,7 @@ export class ModelController {
 
   @Get('all/include/source')
   @ApiOperation({ summary: 'Все модели с источниками' })
-  @ApiOkResponse({ schema: { example: { data: [] } } })
+  @ApiOkResponse({ type: ModelEntityIncludeSource, isArray: true })
   async getAllIncludeSouce() {
     try {
       return this.modelService.getAllIncludeSources();
@@ -59,7 +55,7 @@ export class ModelController {
 
   @Get('count')
   @ApiOperation({ summary: 'Количество моделей' })
-  @ApiOkResponse({ schema: { example: { data: { count: 42 } } } })
+  @ApiOkResponse({ type: Number })
   async getCount() {
     try {
       return this.modelService.getCount();
@@ -70,7 +66,7 @@ export class ModelController {
 
   @Get()
   @ApiOperation({ summary: 'Все модели' })
-  @ApiOkResponse({ schema: { example: { data: [] } } })
+  @ApiOkResponse({ type: ModelEntity, isArray: true })
   async getAll() {
     try {
       return this.modelService.getAll();
@@ -82,9 +78,9 @@ export class ModelController {
   }
 
   @Get('notation/:id')
-  @ApiParam({ name: 'id', example: '1' })
+  @ApiParam({ name: 'id', example: '1', type: 'number' })
   @ApiOperation({ summary: 'Нотация по ID источника' })
-  @ApiOkResponse({ schema: { example: { data: [] } } })
+  @ApiOkResponse({ type: String, isArray: true })
   @ApiNotFoundResponse({ description: 'Нотация не найдена' })
   async notation(@Param('id') id: string) {
     try {
@@ -96,7 +92,7 @@ export class ModelController {
           `Нотация для источника с ID ${+id} не найдена`
         );
       }
-      return this.data.format(data);
+      return data;
     } catch (error) {
       if (error instanceof HttpException) throw error;
       throw new InternalServerErrorException('Ошибка при получении нотации');
@@ -106,7 +102,7 @@ export class ModelController {
   @Get(':id')
   @ApiParam({ name: 'id', example: '1' })
   @ApiOperation({ summary: 'Модель по ID' })
-  @ApiOkResponse({ schema: { example: { data: { id: 1, name: 'Model' } } } })
+  @ApiOkResponse({ type: ModelEntity })
   @ApiNotFoundResponse({ description: 'Модель не найдена' })
   async getOne(@Param('id') id: string) {
     try {
@@ -114,7 +110,7 @@ export class ModelController {
       if (!model) {
         throw new NotFoundException(ModelErrors.ID_ERROR);
       }
-      return this.data.format(model);
+      return model;
     } catch (error) {
       if (error instanceof HttpException) throw error;
       throw new InternalServerErrorException(

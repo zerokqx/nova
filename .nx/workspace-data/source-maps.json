@@ -1312,6 +1312,26 @@
       "apps/nova-frontend/project.json",
       "nx/core/project-json"
     ],
+    "targets.openapi:generate": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.openapi:generate.executor": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.openapi:generate.options": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.openapi:generate.options.commands": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.openapi:generate.options.cwd": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
     "targets.test.dependsOn": [
       "nx.json",
       "nx/target-defaults"

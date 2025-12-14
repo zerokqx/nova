@@ -2,6 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "es2022",
+    "noUncheckedIndexedAccess": false,
     "moduleResolution": "bundler",
     "outDir": "../../dist/out-tsc",
     "types": [
@@ -12,14 +13,30 @@
     ],
     "baseUrl": "./", // Указывает, где искать абсолютные пути (установим на корень проекта)
     "paths": {
-      "@app/*": ["src/app/*"],
-      "@pages/*": ["src/pages/*"],
-      "@widgets/*": ["src/widgets/*"],
-      "@features/*": ["src/features/*"],
-      "@entities/*": ["src/entities/*"],
-      "@shared/*": ["src/shared/*"],
-      "@types/*": ["src/shared/types/*"],
-      "@utils/*": ["src/shared/utils/*"]
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@widgets/*": [
+        "src/widgets/*"
+      ],
+      "@features/*": [
+        "src/features/*"
+      ],
+      "@entities/*": [
+        "src/entities/*"
+      ],
+      "@shared/*": [
+        "src/shared/*"
+      ],
+      "@types/*": [
+        "src/shared/types/*"
+      ],
+      "@utils/*": [
+        "src/shared/utils/*"
+      ]
     }
   },
   "exclude": [

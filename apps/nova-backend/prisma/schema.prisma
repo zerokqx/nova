@@ -23,10 +23,13 @@ model model {
 }
 
 model source {
-  id     Int     @id @default(autoincrement())
-  name   String  @unique @db.VarChar(255)
-  key    key?
-  models model[]
+  id        Int     @id @default(autoincrement())
+  name      String  @unique @db.VarChar(255)
+  byCreated String  @db.VarChar(100)
+  color     String? @db.VarChar(7)
+  iconUrl   String? @db.VarChar(255)
+  key       key?
+  models    model[]
 }
 
 model key {

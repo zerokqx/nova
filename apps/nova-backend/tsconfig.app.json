@@ -8,6 +8,7 @@
       "node"
     ],
     "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
     "emitDecoratorMetadata": true,
     "composite": true,
     "baseUrl": "./",

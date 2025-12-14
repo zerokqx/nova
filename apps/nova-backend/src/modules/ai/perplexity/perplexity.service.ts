@@ -2,13 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { AiProvider } from '../ai.abstract';
 import { type PerplexityProvider, createPerplexity } from '@ai-sdk/perplexity';
 import { AiUtils } from '../ai.utils';
-import {
-  ModelMessage,
-  convertToModelMessages,
-  streamText,
-  StreamTextResult,
-  ToolSet,
-} from 'ai';
+import { ModelMessage, streamText, StreamTextResult, ToolSet } from 'ai';
 
 @Injectable()
 export class PerplexityService extends AiProvider<PerplexityProvider> {
@@ -40,8 +34,10 @@ export class PerplexityService extends AiProvider<PerplexityProvider> {
   ): StreamTextResult<ToolSet, never> {
     const client = this.sendGuard();
     return streamText({
+      system:
+        'Shorten your answer as much as possible, your task is to save response tokens.',
       model: client(model),
-      messages: convertToModelMessages(messages),
+      messages,
     });
   }
 }

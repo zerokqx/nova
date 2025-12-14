@@ -1,26 +1,29 @@
-import { useApiKeyStore } from "@features/ai-providers/model/useApiKeyStore";
-import { AiCard } from "@features/ai-providers/ui/AiCard";
-import { AppShellMain, Group } from "@mantine/core";
-import { MetaController } from "@shared/api/ai";
-import { getAllow } from "@shared/api/ai/utils/meta/getAllow";
-import { map } from "lodash";
+import { useApiKeyStore } from '@features/ai-providers/model/useApiKeyStore';
+import { useGetSourcesFull } from '@features/sources/api/useGetSourcesFull';
+import { AppShellMain, Group } from '@mantine/core';
+import { map } from 'lodash';
+import { AiCard } from './AiCard/AiCard';
 
 export const SettingsPage = () => {
+  const sources = useGetSourcesFull();
+
   const keys = useApiKeyStore((s) => Object.keys(s.data));
-  const allProviders = MetaController.getAll();
-  const avalibleProviders = getAllow(keys).map((s) => s.providerName);
+  console.log(sources.data);
 
   return (
-    <AppShellMain h={"100dvh"}>
-      <Group align="stretch" grow wrap="wrap">
-        {map(allProviders, (provider) => (
-          <AiCard
-            models={provider.models}
-            name={provider.providerName}
-            available={avalibleProviders.includes(provider.providerName)}
-          />
-        ))}
-      </Group>
+    <AppShellMain h={'100dvh'}>
+      {sources.data?.map((s) => (
+        <AiCard dbRecordInstance={s} />
+      ))}
+      {/* <Group align="stretch" grow wrap="wrap"> */}
+      {/*   {map(allProviders, (provider) => ( */}
+      {/*     <AiCard */}
+      {/*       models={provider.models} */}
+      {/*       name={provider.providerName} */}
+      {/*       available={avalibleProviders.includes(provider.providerName)} */}
+      {/*     /> */}
+      {/*   ))} */}
+      {/* </Group> */}
     </AppShellMain>
   );
 };

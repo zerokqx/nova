@@ -833,7 +833,10 @@ export type ModelScalarFieldEnum = (typeof ModelScalarFieldEnum)[keyof typeof Mo
 
 export const SourceScalarFieldEnum = {
   id: 'id',
-  name: 'name'
+  name: 'name',
+  byCreated: 'byCreated',
+  color: 'color',
+  iconUrl: 'iconUrl'
 } as const
 
 export type SourceScalarFieldEnum = (typeof SourceScalarFieldEnum)[keyof typeof SourceScalarFieldEnum]

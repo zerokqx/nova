@@ -9,10 +9,10 @@ import { UIMessage } from 'ai';
 
 export class SendDto {
   @ApiProperty({
-    description: 'Запрос к модели',
+    description: 'Масив сообщений',
     maxLength: 1000,
     example: 'Что такое Linux',
-    type: 'string',
+    type: 'array',
     required: true,
   })
   @IsArray()

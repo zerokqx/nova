@@ -4,6 +4,7 @@ import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from '@modules/app/app.module';
 import type { NestExpressApplication } from '@nestjs/platform-express';
+import { writeFileSync } from 'fs';
 declare const module: any;
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);

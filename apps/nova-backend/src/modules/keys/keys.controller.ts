@@ -19,30 +19,19 @@ import {
   ApiNotFoundResponse,
   ApiParam,
 } from '@nestjs/swagger';
+import { KeysEntity } from './entities/keys.entity';
 
 @UseDataInterceptor()
 @Controller('keys')
 export class KeysController {
-  constructor(private readonly keysService: KeysService) {}
+  constructor(private readonly keysService: KeysService) { }
 
   @Post()
   @ApiOperation({
     summary: 'Создать ключ',
     description: 'Создает новый API ключ',
   })
-  @ApiCreatedResponse({
-    description: 'Ключ успешно создан',
-    schema: {
-      example: {
-        data: {
-          id: 'uuid-123',
-          name: 'My API Key',
-          key: 'sk-1234567890abcdef',
-          createdAt: '2025-12-10T12:00:00Z',
-        },
-      },
-    },
-  })
+  @ApiCreatedResponse({ type: KeysEntity })
   @ApiResponse({ status: 400, description: 'Некорректные данные' })
   create(@Body() createKeyDto: CreateKeyDto) {
     return this.keysService.create(createKeyDto);
@@ -50,17 +39,7 @@ export class KeysController {
 
   @Get()
   @ApiOperation({ summary: 'Получить все ключи' })
-  @ApiOkResponse({
-    description: 'Список ключей',
-    schema: {
-      example: {
-        data: [
-          { id: 'uuid-1', name: 'Key 1', createdAt: '2025-12-10T12:00:00Z' },
-          { id: 'uuid-2', name: 'Key 2', createdAt: '2025-12-10T12:01:00Z' },
-        ],
-      },
-    },
-  })
+  @ApiOkResponse({ type: KeysEntity, isArray: true })
   findAll() {
     return this.keysService.findMany();
   }
@@ -68,19 +47,7 @@ export class KeysController {
   @Get(':id')
   @ApiOperation({ summary: 'Получить ключ по ID' })
   @ApiParam({ name: 'id', description: 'ID ключа', example: 'uuid-123' })
-  @ApiOkResponse({
-    description: 'Ключ найден',
-    schema: {
-      example: {
-        data: {
-          id: 'uuid-123',
-          name: 'My API Key',
-          key: 'sk-1234567890abcdef',
-          createdAt: '2025-12-10T12:00:00Z',
-        },
-      },
-    },
-  })
+  @ApiOkResponse({ type: KeysEntity })
   @ApiNotFoundResponse({ description: 'Ключ не найден' })
   findOne(@Param('id') id: string) {
     return this.keysService.findOne({ id: +id });
@@ -89,18 +56,7 @@ export class KeysController {
   @Patch(':id')
   @ApiOperation({ summary: 'Обновить ключ' })
   @ApiParam({ name: 'id', description: 'ID ключа', example: 'uuid-123' })
-  @ApiOkResponse({
-    description: 'Ключ обновлен',
-    schema: {
-      example: {
-        data: {
-          id: 'uuid-123',
-          name: 'Updated Key Name',
-          updatedAt: '2025-12-10T12:05:00Z',
-        },
-      },
-    },
-  })
+  @ApiOkResponse({ type: KeysEntity })
   @ApiNotFoundResponse({ description: 'Ключ не найден' })
   update(@Param('id') id: string, @Body() updateKeyDto: UpdateKeyDto) {
     return this.keysService.update({ id: +id, updateKeyDto });
@@ -109,12 +65,7 @@ export class KeysController {
   @Delete(':id')
   @ApiOperation({ summary: 'Удалить ключ' })
   @ApiParam({ name: 'id', description: 'ID ключа', example: 'uuid-123' })
-  @ApiOkResponse({
-    description: 'Ключ удален',
-    schema: {
-      example: { data: { message: 'Ключ успешно удален' } },
-    },
-  })
+  @ApiOkResponse({ type: KeysEntity })
   @ApiNotFoundResponse({ description: 'Ключ не найден' })
   remove(@Param('id') id: string) {
     return this.keysService.remove({ where: { id: +id } });
