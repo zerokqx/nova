@@ -1,4 +1,3 @@
-
 :root {
   font-family: Roboto, sans-serif;
 
@@ -29,6 +28,12 @@ body {
 ::-webkit-scrollbar-track {
   background: transparent;
   /* прозрачный фон трека */
+}
+
+textarea {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 ::-webkit-scrollbar-thumb {

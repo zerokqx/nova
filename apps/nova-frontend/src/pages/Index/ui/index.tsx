@@ -1,16 +1,15 @@
 import {
   PromptInput,
   PromptInputFooter,
+  PromptInputHeader,
   PromptInputSelect,
   PromptInputSelectContent,
   PromptInputSelectItem,
   PromptInputSelectTrigger,
-  PromptInputSelectValue,
   PromptInputSubmit,
   PromptInputTextarea,
 } from '@/components/ai-elements/prompt-input';
-import { useGetAvailableIncludeSoruce, useGetModels } from '@/features/models';
-import { useGetAvailable } from '@/features/models/api/useGetAvailableModels';
+import { useGetAvailableIncludeSoruce } from '@/features/models';
 import { notation } from '@/shared/lib/utils/notation';
 import { SendButton } from '@/shared/ui/SendButton';
 import { AppShellMain, Group, Stack, useMantineTheme } from '@mantine/core';
@@ -19,8 +18,7 @@ import { LogotypeCombined } from '@shared/ui/LogotypeSection';
 import { useNavigate } from '@tanstack/react-router';
 import { ternary } from '@utils/conditions/ternary';
 import { Cpu } from 'lucide-react';
-import { useEffect, useMemo, useState } from 'react';
-import { MoonLoader } from 'react-spinners';
+import { useMemo, useState } from 'react';
 export const IndexPage = () => {
   const t = useMantineTheme();
   const { data } = useGetAvailableIncludeSoruce();
@@ -46,13 +44,23 @@ export const IndexPage = () => {
           h={'60%'}
         >
           <LogotypeCombined />
-          <PromptInput className="max-w-120">
-            <PromptInputTextarea placeholder="Спросите что угодно" />
-            <PromptInputFooter>
+          <PromptInput
+            className="
+    max-w-120
+    **:data-[slot='input-group']:border-0
+    **:data-[slot='input-group']:ring-0
+    **:data-[slot='input-group']:shadow-none
+  "
+          >
+            <PromptInputTextarea
+              className="outline-none  no-input-ring"
+              placeholder="Спросите что угодно"
+            />
+            <PromptInputFooter className="outline-none">
               <Group w={'100%'} justify="space-between">
                 <PromptInputSelect value={model} onValueChange={setModel}>
                   <PromptInputSelectTrigger className="field-sizing-content max-w-fit">
-                    <Cpu size={16} color={model ? 'blue' : 'white'} />
+                    <Cpu size={16} color={model ? t.colors.blue[8] : 'white'} />
                   </PromptInputSelectTrigger>
 
                   <PromptInputSelectContent className="bg-black">
