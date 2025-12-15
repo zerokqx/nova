@@ -19,7 +19,7 @@ import {
   ApiNotFoundResponse,
   ApiParam,
 } from '@nestjs/swagger';
-import { KeysEntity } from './entiities/key.entity';
+import { KeysEntity } from './entities/key.entity';
 
 @UseDataInterceptor()
 @Controller('keys')

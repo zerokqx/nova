@@ -23,8 +23,23 @@ import { ModelEntity } from './entities/model.entity';
 
 @Controller('models')
 export class ModelController {
-  constructor(private readonly modelService: ModelService) { }
+  constructor(private readonly modelService: ModelService) {}
 
+  @ApiOkResponse({ type: ModelEntityIncludeSource, isArray: true })
+  @ApiOperation({
+    summary:
+      'Получает все модели с которыми можно взаимодействовать а также включает поле source',
+  })
+  @Get('avalible/incluede/source')
+  async getOnlyAvailableIncludeSource() {
+    try {
+      return await this.modelService.getOnlyAvailable({
+        source: { select: { name: true } },
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  }
   @ApiOkResponse({ type: ModelEntity, isArray: true })
   @ApiOperation({
     summary: 'Получает все модели с которыми можно взаимодействовать',

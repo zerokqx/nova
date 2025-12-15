@@ -9,7 +9,7 @@ import {
   PromptInputSubmit,
   PromptInputTextarea,
 } from '@/components/ai-elements/prompt-input';
-import { useGetModels } from '@/features/models';
+import { useGetAvailableIncludeSoruce, useGetModels } from '@/features/models';
 import { useGetAvailable } from '@/features/models/api/useGetAvailableModels';
 import { notation } from '@/shared/lib/utils/notation';
 import { SendButton } from '@/shared/ui/SendButton';
@@ -23,7 +23,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { MoonLoader } from 'react-spinners';
 export const IndexPage = () => {
   const t = useMantineTheme();
-  const { data } = useGetAvailable();
+  const { data } = useGetAvailableIncludeSoruce();
+
   const { mobile } = useResponsive();
   const modelsFormat = useMemo(
     () =>
@@ -68,27 +69,6 @@ export const IndexPage = () => {
               </Group>
             </PromptInputFooter>
           </PromptInput>
-          {/* <AiInput */}
-          {/*   onSubmit={async ({ value: { content, provider } }) => { */}
-          {/*     const { model, source } = deSlashNotation(provider as TAiUrl); */}
-          {/*     const [chatId] = await initializeChat({ */}
-          {/*       url: provider as TAiUrl, */}
-          {/*       preview: content, */}
-          {/*       content, */}
-          {/*       role: 'user', */}
-          {/*     }); */}
-          {/**/}
-          {/*     navigate({ */}
-          {/*       to: `/chat/$id/${provider}`, */}
-          {/*       params: { */}
-          {/*         provider: source, */}
-          {/*         id: chatId.toString(), */}
-          {/*         model, */}
-          {/*       }, */}
-          {/*     }); */}
-          {/*   }} */}
-          {/*   providers={providers.forSelect} */}
-          {/* /> */}
         </Stack>
       </Stack>
     </AppShellMain>

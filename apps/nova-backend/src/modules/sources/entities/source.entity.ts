@@ -4,11 +4,10 @@ import { ApiProperty } from '@nestjs/swagger';
 export class SourceEntity implements source {
   @ApiProperty()
   byCreated: string;
-  @ApiProperty()
+  @ApiProperty({ type: 'string', nullable: true })
   color: string | null;
-  @ApiProperty()
+  @ApiProperty({ type: 'string', nullable: true })
   iconUrl: string | null;
-
   @ApiProperty()
   id: number;
   @ApiProperty()

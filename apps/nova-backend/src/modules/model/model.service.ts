@@ -45,7 +45,7 @@ export class ModelService {
     return this.prisma.model.findUnique({ where });
   }
 
-  async getOnlyAvailable(incluede: Prisma.modelFindManyArgs['include']) {
+  async getOnlyAvailable(include?: Prisma.modelFindManyArgs['include']) {
     return this.prisma.model.findMany({
       where: {
         source: {
@@ -58,6 +58,7 @@ export class ModelService {
           },
         },
       },
+      include,
     });
   }
 }

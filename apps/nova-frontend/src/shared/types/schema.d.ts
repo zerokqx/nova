@@ -4,6 +4,23 @@
  */
 
 export interface paths {
+    "/api/models/avalible/incluede/source": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Получает все модели с которыми можно взаимодействовать а также включает поле source */
+        get: operations["ModelController_getOnlyAvailableIncludeSource"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/models/avalible": {
         parameters: {
             query?: never;
@@ -394,6 +411,19 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
+        SourceEntity: {
+            byCreated: string;
+            color: string | null;
+            iconUrl: string | null;
+            id: number;
+            name: string;
+        };
+        ModelEntityIncludeSource: {
+            name: string;
+            id: number;
+            sourceId: number;
+            source: components["schemas"]["SourceEntity"];
+        };
         ModelEntity: {
             name: string;
             id: number;
@@ -410,19 +440,6 @@ export interface components {
              * @example 1
              */
             sourceId: number;
-        };
-        SourceEntity: {
-            byCreated: string;
-            color: Record<string, never>;
-            iconUrl: Record<string, never>;
-            id: number;
-            name: string;
-        };
-        ModelEntityIncludeSource: {
-            name: string;
-            id: number;
-            sourceId: number;
-            source: components["schemas"]["SourceEntity"];
         };
         CreateSourceDto: {
             byCreated: string;
@@ -442,8 +459,8 @@ export interface components {
         };
         SourceFullEntity: {
             byCreated: string;
-            color: Record<string, never>;
-            iconUrl: Record<string, never>;
+            color: string | null;
+            iconUrl: string | null;
             id: number;
             name: string;
             key: components["schemas"]["KeysEntity"];
@@ -529,6 +546,25 @@ export interface components {
 }
 export type $defs = Record<string, never>;
 export interface operations {
+    ModelController_getOnlyAvailableIncludeSource: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ModelEntityIncludeSource"][];
+                };
+            };
+        };
+    };
     ModelController_getOnlyAvailable: {
         parameters: {
             query?: never;

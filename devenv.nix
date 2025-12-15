@@ -13,6 +13,7 @@
     git
     insomnia
     eslint
+    lsof
 
     nodemon
     nest-cli
@@ -31,6 +32,8 @@
   };
 
   scripts = {
+    runAll.exec = "sudo kill -9 $(sudo lsof -ti:3000) && bunx nx run-many -t serve";
+    runBack.exec = "sudo kill -9 $(sudo lsof -ti:3000) && bunx nx serve nova-backend";
     testProdBuild.exec = "bun vite build && bunx serve ./dist -l 5173 -c ../serve.json";
     build.exec = "bun run build";
     run.exec = "bun run dev";

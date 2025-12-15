@@ -5,3 +5,4 @@ const fetchClient = createFetchClient<paths>({
   baseUrl: 'http://localhost:3000/',
 });
 export const $api = createClient(fetchClient);
+export const $apiOpt = $api.queryOptions;
