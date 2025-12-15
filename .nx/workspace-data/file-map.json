@@ -1635,6 +1635,13 @@
           ]
         },
         {
+          "file": "apps/nova-frontend/src/features/keys/api/usePatchKey.ts",
+          "hash": "2821270708736718749",
+          "deps": [
+            "npm:@tanstack/react-query@5.90.11"
+          ]
+        },
+        {
           "file": "apps/nova-frontend/src/features/models/api/useGetAvailableIncludeSoruce.ts",
           "hash": "1048716662690630402"
         },
@@ -1708,7 +1715,7 @@
         },
         {
           "file": "apps/nova-frontend/src/pages/Settings/ui/index.tsx",
-          "hash": "8923148828559163970",
+          "hash": "4970280738105618923",
           "deps": [
             "npm:@mantine/core@8.3.9"
           ]
@@ -2236,11 +2243,12 @@
         },
         {
           "file": "apps/nova-frontend/src/shared/ui/AiComponents/ui/AiCard/Controls/Controls.tsx",
-          "hash": "1027561592043011705",
+          "hash": "15539710361274597273",
           "deps": [
             "npm:@mantine/core@8.3.9",
             "npm:@mantine/hooks@8.3.9",
-            "npm:lucide-react@0.561.0"
+            "npm:lucide-react@0.561.0",
+            "npm:lodash@4.17.21"
           ]
         },
         {
@@ -2278,10 +2286,14 @@
         },
         {
           "file": "apps/nova-frontend/src/shared/ui/AiComponents/ui/ModalApiKey/ApiKeyModal.tsx",
-          "hash": "5887203766298403666",
+          "hash": "8308589501541063856",
           "deps": [
             "npm:@mantine/core@8.3.9"
           ]
+        },
+        {
+          "file": "apps/nova-frontend/src/shared/ui/AiComponents/ui/ModalApiKey/Patch.tsx",
+          "hash": "9645557255346479061"
         },
         {
           "file": "apps/nova-frontend/src/shared/ui/AiComponents/ui/types/AiCard.interface.ts",
@@ -2292,10 +2304,7 @@
         },
         {
           "file": "apps/nova-frontend/src/shared/ui/AiComponents/ui/types/Controls.interface.ts",
-          "hash": "18295473495018806309",
-          "deps": [
-            "npm:@mantine/hooks@8.3.9"
-          ]
+          "hash": "12467429916487322303"
         },
         {
           "file": "apps/nova-frontend/src/shared/ui/AiComponents/ui/types/Header.interface.ts",
@@ -2306,7 +2315,7 @@
         },
         {
           "file": "apps/nova-frontend/src/shared/ui/AiComponents/ui/types/ModalApiKey.interface.ts",
-          "hash": "2319670028790166844",
+          "hash": "16557024828774738871",
           "deps": [
             "npm:react@19.2.0"
           ]

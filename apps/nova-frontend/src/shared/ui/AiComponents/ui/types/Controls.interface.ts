@@ -1,9 +1,8 @@
-import { useToggle } from '@mantine/hooks';
 import { IAiCardProps } from './AiCard.interface';
 import { IModalApiKeySubmitFunctionParams } from './ModalApiKey.interface';
 
 interface IModalControls {
-  toggle: ReturnType<typeof useToggle>[1];
+  toggle: () => void;
 }
 
 export interface IControlsAiCard {

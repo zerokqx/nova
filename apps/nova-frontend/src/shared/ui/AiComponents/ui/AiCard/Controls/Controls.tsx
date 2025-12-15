@@ -1,17 +1,11 @@
-import {
-  ActionIcon,
-  Button,
-  ButtonGroup,
-  Grid,
-  Group,
-  Stack,
-  Text,
-} from '@mantine/core';
+import { ActionIcon, Button, Grid, Group, Stack, Text } from '@mantine/core';
 import { useAiCard } from '../../../model/ustAiCardProvider';
 import { ApiKeyModal } from '../../ModalApiKey/ApiKeyModal';
 import { useToggle } from '@mantine/hooks';
-import { ArrowUpDown, Trash } from 'lucide-react';
+import { ArrowUpDown, SquarePen, Trash } from 'lucide-react';
 import { IAiCardComponent } from '../../types/AiCard.interface';
+import { ModalApiAddKeyForm } from '@/features/ai-providers/ui/ModalApiAddKeyForm';
+import { capitalize } from 'lodash';
 
 export const Controls: IAiCardComponent['Controls'] = ({
   onCreate,
@@ -20,7 +14,9 @@ export const Controls: IAiCardComponent['Controls'] = ({
 }) => {
   const r = useAiCard();
 
-  const [opened, toggle] = useToggle();
+  const [openedAdd, toggleAdd] = useToggle();
+
+  const [openedPatch, togglePatch] = useToggle();
   return (
     <Grid.Col span={12}>
       <Stack>
@@ -33,7 +29,9 @@ export const Controls: IAiCardComponent['Controls'] = ({
               <ActionIcon color="dark.9">
                 <ArrowUpDown size={16} />
               </ActionIcon>
-
+              <ActionIcon color="dark.9" onClick={() => togglePatch()}>
+                <SquarePen size={16} />
+              </ActionIcon>
               <ActionIcon
                 color="red.9"
                 onClick={() => {
@@ -43,15 +41,31 @@ export const Controls: IAiCardComponent['Controls'] = ({
                 <Trash size={16} />
               </ActionIcon>
             </Group>
+            <ApiKeyModal
+              title={`Изменить ${capitalize(r.name)}`}
+              opened={openedPatch}
+              onClose={togglePatch}
+            >
+              <ApiKeyModal.Patch
+                onSubmit={(v) => {
+                  onPut?.(r, v, { toggle: togglePatch });
+                }}
+                current={r.key.apiKey}
+              />
+            </ApiKeyModal>
           </>
         ) : (
           <>
             <Text c={'yellow'}> Недоступно</Text>
-            <Button onClick={() => toggle()}>Создать API ключ</Button>
-            <ApiKeyModal opened={opened} onClose={toggle}>
+            <Button onClick={() => toggleAdd()}>Создать API ключ</Button>
+            <ApiKeyModal
+              title={`Добавить ключ для ${capitalize(r.name)}`}
+              opened={openedAdd}
+              onClose={toggleAdd}
+            >
               <ApiKeyModal.Add
                 onSubmit={(v) => {
-                  onCreate?.(r, v, { toggle });
+                  onCreate?.(r, v, { toggle: toggleAdd });
                 }}
               />
             </ApiKeyModal>
