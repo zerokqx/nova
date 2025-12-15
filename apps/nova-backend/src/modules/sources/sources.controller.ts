@@ -8,12 +8,12 @@ import {
   ApiNotFoundResponse,
   ApiParam,
 } from '@nestjs/swagger';
-import { SourceEntity, SourceFullEntity } from './entites/source.entity';
+import { SourceFullEntity } from './entities/source-with-relation.entity';
+import { SourceEntity } from './entities/source.entity';
 
 @Controller('sources')
-// @UseDataInterceptor()
 export class SourcesController {
-  constructor(private readonly sourcesService: SourcesService) { }
+  constructor(private readonly sourcesService: SourcesService) {}
 
   @Post()
   @ApiOperation({ summary: 'Создать источник' })

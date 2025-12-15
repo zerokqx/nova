@@ -1,7 +1,7 @@
-import { ActionIcon } from "@mantine/core";
-import styles from "./styles/animation.module.css";
-import type { ISendButton } from "../types/SendButtonProps.type";
-import { Send } from "lucide-react";
+import { ActionIcon } from '@mantine/core';
+import styles from './styles/animation.module.css';
+import type { ISendButton } from '../types/SendButtonProps.type';
+import { Send } from 'lucide-react';
 
 export const SendButton = ({ width = 16 }: ISendButton) => {
   const iconWidth = width;
@@ -10,7 +10,7 @@ export const SendButton = ({ width = 16 }: ISendButton) => {
     <ActionIcon
       className={styles.actionAnimation}
       size={actionIcon}
-      bdrs={"lg"}
+      bdrs={'lg'}
     >
       <Send width={iconWidth} />
     </ActionIcon>

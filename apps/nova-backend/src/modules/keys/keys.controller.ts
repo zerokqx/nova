@@ -19,12 +19,12 @@ import {
   ApiNotFoundResponse,
   ApiParam,
 } from '@nestjs/swagger';
-import { KeysEntity } from './entities/keys.entity';
+import { KeysEntity } from './entiities/key.entity';
 
 @UseDataInterceptor()
 @Controller('keys')
 export class KeysController {
-  constructor(private readonly keysService: KeysService) { }
+  constructor(private readonly keysService: KeysService) {}
 
   @Post()
   @ApiOperation({

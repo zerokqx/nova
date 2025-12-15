@@ -44,4 +44,20 @@ export class ModelService {
   async getById(where: Prisma.modelWhereUniqueInput) {
     return this.prisma.model.findUnique({ where });
   }
+
+  async getOnlyAvailable(incluede: Prisma.modelFindManyArgs['include']) {
+    return this.prisma.model.findMany({
+      where: {
+        source: {
+          key: {
+            is: {
+              apiKey: {
+                not: '',
+              },
+            },
+          },
+        },
+      },
+    });
+  }
 }

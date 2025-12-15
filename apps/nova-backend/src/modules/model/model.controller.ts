@@ -10,7 +10,6 @@ import {
 } from '@nestjs/common';
 import { ModelService } from './model.service';
 import { CreateModelDto } from './dto/create-model.dto';
-import { DataService } from '@moduleShared/data/data.service';
 import {
   ApiOperation,
   ApiCreatedResponse,
@@ -19,12 +18,25 @@ import {
   ApiParam,
 } from '@nestjs/swagger';
 import { ModelErrors } from './model.constants';
-import { ModelEntity, ModelEntityIncludeSource } from './entites/model.entity';
+import { ModelEntityIncludeSource } from './entities/model-with-relation.entity';
+import { ModelEntity } from './entities/model.entity';
 
 @Controller('models')
 export class ModelController {
-  constructor(private readonly modelService: ModelService) {}
+  constructor(private readonly modelService: ModelService) { }
 
+  @ApiOkResponse({ type: ModelEntity, isArray: true })
+  @ApiOperation({
+    summary: 'Получает все модели с которыми можно взаимодействовать',
+  })
+  @Get('avalible')
+  async getOnlyAvailable() {
+    try {
+      return await this.modelService.getOnlyAvailable();
+    } catch (e) {
+      console.log(e);
+    }
+  }
   @Post()
   @ApiOperation({ summary: 'Создать модель' })
   @ApiCreatedResponse({

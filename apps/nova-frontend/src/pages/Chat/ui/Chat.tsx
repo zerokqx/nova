@@ -1,17 +1,39 @@
+import { Loader } from '@/components/ai-elements/loader';
 import {
   MessageContent,
   Message,
   MessageResponse,
 } from '@/components/ai-elements/message';
+import {
+  PromptInput,
+  PromptInputBody,
+  PromptInputButton,
+  PromptInputFooter,
+  PromptInputProvider,
+  PromptInputSelect,
+  PromptInputSelectContent,
+  PromptInputSelectItem,
+  PromptInputSelectTrigger,
+  PromptInputSubmit,
+  PromptInputTextarea,
+} from '@/components/ai-elements/prompt-input';
 import { useSendMessage } from '@features/sendMessage';
-import { AppShellMain, Stack, Center, Box } from '@mantine/core';
+import {
+  AppShellMain,
+  Stack,
+  Center,
+  Box,
+  useMantineTheme,
+} from '@mantine/core';
 import { useAdaptiveSpace } from '@shared/lib/hooks/useAdaptiveSpace';
 import { useParams } from '@tanstack/react-router';
 import { AiInput } from '@widgets/AiInput/ui/AiInput';
 import { lowerCase, map } from 'lodash';
 import { motion } from 'motion/react';
 import { useEffect, useRef } from 'react';
+import { ClipLoader, HashLoader } from 'react-spinners';
 export function Chat() {
+  const t = useMantineTheme();
   const { id, model, provider } = useParams({
     from: '/chat/$id/$provider/$model',
   });
@@ -42,7 +64,6 @@ export function Chat() {
                           <MessageResponse
                             isAnimating
                             key={`${role}-${i}`}
-                            shikiTheme={['tokyo-night', 'tokyo-night']}
                             mode="streaming"
                           >
                             {part.text}
@@ -53,6 +74,13 @@ export function Chat() {
                 </MessageContent>
               </Message>
             ))}
+          {status === 'submitted' && (
+            <Message from="assistant">
+              <MessageContent className="p-5">
+                <HashLoader color={t.colors.blue[8]} size={16} />
+              </MessageContent>
+            </Message>
+          )}
           <Space />
         </Stack>
       </Center>
@@ -73,13 +101,28 @@ export function Chat() {
         }}
         w="100%"
       >
-        <AiInput
-          onSubmit={async ({ value: { content } }) => {
-            sendMessage({ text: content });
-          }}
-          readOnly
-          providers={[{ label: model, value: 'model' }]}
-        />
+        <PromptInputProvider>
+          <PromptInput>
+            <PromptInputTextarea />
+            <PromptInputFooter>daa</PromptInputFooter>
+            <PromptInputBody>daw</PromptInputBody>
+            <PromptInputSelect>
+              <PromptInputSelectTrigger>dawd</PromptInputSelectTrigger>
+              <PromptInputSelectContent>
+                <PromptInputSelectItem value="dw">daw</PromptInputSelectItem>
+              </PromptInputSelectContent>
+            </PromptInputSelect>
+
+            <PromptInputSubmit>dwa</PromptInputSubmit>
+          </PromptInput>
+        </PromptInputProvider>
+        {/* <AiInput */}
+        {/*   onSubmit={async ({ value: { content } }) => { */}
+        {/*     sendMessage({ text: content }); */}
+        {/*   }} */}
+        {/*   readOnly */}
+        {/*   providers={[{ label: model, value: 'model' }]} */}
+        {/* /> */}
       </Center>
     </AppShellMain>
   );

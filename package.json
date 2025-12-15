@@ -54,6 +54,7 @@
     "react-dom": "^19.2.0",
     "react-if": "^4.1.6",
     "react-router-dom": "6.29.0",
+    "react-spinners": "^0.17.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.0",
     "swc": "^1.0.11",
