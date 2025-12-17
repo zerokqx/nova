@@ -4,13 +4,13 @@ import { AppShell } from '@mantine/core';
 import { useLayoutStore } from '@shared/lib/stores/useLayout';
 
 const Navbar = React.lazy(() =>
-  import('@widgets/Navbar').then((s) => ({ default: s.Navbar }))
+  import('@/widgets/navbar').then((s) => ({ default: s.Navbar }))
 );
 const Aside = React.lazy(() =>
-  import('@widgets/Aside').then((s) => ({ default: s.Aside }))
+  import('@/widgets/aside').then((s) => ({ default: s.Aside }))
 );
 const Header = React.lazy(() =>
-  import('@widgets/Header').then((s) => ({ default: s.Header }))
+  import('@/widgets/header').then((s) => ({ default: s.Header }))
 );
 
 export const Route = createRootRoute({

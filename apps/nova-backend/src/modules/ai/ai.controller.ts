@@ -52,6 +52,8 @@ export class AiController {
     @Res() res: Response,
     @Bearer() token: string
   ) {
+    const log = new Logger();
+    log.debug(convertToModelMessages(body.messages));
     const result = this.aiService
       .with(token)
       .streamWithMessagesArray(convertToModelMessages(body.messages), model);

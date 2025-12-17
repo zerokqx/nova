@@ -1,40 +1,32 @@
-import { messages, Prisma, Roles } from '@/generated/prisma/client';
+import { message, Prisma } from '@/generated/prisma/client';
 import { PrismaService } from '@modules/shared/prisma/prisma.service';
 import { Injectable } from '@nestjs/common';
-import { TWithouInitial, TWithoutChat } from './types/messages.service.types';
-import { Omit, Pick } from '@prisma/client/runtime/library';
 
 @Injectable()
 export class MessagesService {
-  constructor(private prisma: PrismaService) { }
-  private async createContection(data: TWithoutChat, chatId: number) {
-    return await this.prisma.messages.create({ data: { ...data, chatId } });
+  constructor(private prisma: PrismaService) {}
+  private async createContection(data: Prisma.messageCreateInput) {
+    return await this.prisma.message.create({ data });
   }
 
-  async create(
-    data: TWithouInitial | TWithoutChat,
-    chatId: number
-  ): Promise<messages> {
-    return await this.createContection(data, chatId);
+  async create(data: Prisma.messageCreateInput): Promise<message> {
+    return await this.createContection(data);
   }
 
-  async createInitial(
-    data: Omit<TWithoutChat | TWithouInitial, 'role'>,
-    chatId: number
-  ) {
-    return await this.createContection(
-      { ...data, role: 'user', initial: true },
-      chatId
-    );
-  }
-
-  async getInitialForChat(chatId: number) {
-    return await this.prisma.messages.findMany({
-      where: { chatId, initial: true },
+  async createInitial(data: Prisma.messageCreateInput) {
+    return await this.createContection({
+      ...data,
+      metadata: { initial: true },
     });
   }
 
-  async getAllMessagesForChat(chatId: number) {
-    return this.prisma.messages.findMany({ where: { chatId } });
+  async getInitialForChat(chatId: string) {
+    return await this.prisma.message.findMany({
+      where: { chatId, metadata: { path: ['initial'], equals: true } },
+    });
+  }
+
+  async getAllMessagesForChat(chatId: string) {
+    return this.prisma.message.findMany({ where: { chatId } });
   }
 }

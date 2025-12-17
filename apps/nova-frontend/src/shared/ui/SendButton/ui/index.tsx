@@ -8,6 +8,7 @@ export const SendButton = ({ width = 16 }: ISendButton) => {
   const actionIcon = iconWidth * 3;
   return (
     <ActionIcon
+      type="submit"
       className={styles.actionAnimation}
       size={actionIcon}
       bdrs={'lg'}

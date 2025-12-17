@@ -1,5 +1,4 @@
-import { model, Prisma, source } from '@/generated/prisma/client';
-import { SourceEntity } from '@modules/sources/entities/source.entity';
+import { model } from '@/generated/prisma/client';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class ModelEntity implements model {
@@ -10,4 +9,3 @@ export class ModelEntity implements model {
   @ApiProperty()
   sourceId: number;
 }
-

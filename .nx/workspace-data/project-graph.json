@@ -44932,22 +44932,7 @@
       },
       {
         "source": "nova-frontend",
-        "target": "npm:@colorfy-software/zfy@1.0.0",
-        "type": "static"
-      },
-      {
-        "source": "nova-frontend",
         "target": "npm:lodash@4.17.21",
-        "type": "static"
-      },
-      {
-        "source": "nova-frontend",
-        "target": "npm:@react-native-async-storage/async-storage@2.2.0",
-        "type": "static"
-      },
-      {
-        "source": "nova-frontend",
-        "target": "npm:@mantine/hooks@8.3.9",
         "type": "static"
       },
       {
@@ -44967,12 +44952,27 @@
       },
       {
         "source": "nova-frontend",
+        "target": "npm:@colorfy-software/zfy@1.0.0",
+        "type": "static"
+      },
+      {
+        "source": "nova-frontend",
+        "target": "npm:@react-native-async-storage/async-storage@2.2.0",
+        "type": "static"
+      },
+      {
+        "source": "nova-frontend",
         "target": "npm:@google/genai@1.30.0",
         "type": "static"
       },
       {
         "source": "nova-frontend",
         "target": "npm:@perplexity-ai/perplexity_ai@0.16.0",
+        "type": "static"
+      },
+      {
+        "source": "nova-frontend",
+        "target": "npm:@mantine/hooks@8.3.9",
         "type": "static"
       },
       {
@@ -63687,5 +63687,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1765843039890
+  "computedAt": 1765938475280
 }

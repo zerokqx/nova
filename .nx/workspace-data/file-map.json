@@ -78,56 +78,6 @@
   "fileMap": {
     "nonProjectFiles": [],
     "projectFileMap": {
-      "nova-backend-e2e": [
-        {
-          "file": "apps/nova-backend-e2e/eslint.config.mjs",
-          "hash": "2624537849564014525"
-        },
-        {
-          "file": "apps/nova-backend-e2e/jest.config.cts",
-          "hash": "9156508797104118334"
-        },
-        {
-          "file": "apps/nova-backend-e2e/project.json",
-          "hash": "1650824680971610568"
-        },
-        {
-          "file": "apps/nova-backend-e2e/src/nova-backend/nova-backend.spec.ts",
-          "hash": "110394728024017389",
-          "deps": [
-            "npm:axios@1.13.2"
-          ]
-        },
-        {
-          "file": "apps/nova-backend-e2e/src/support/global-setup.ts",
-          "hash": "10817858795115919263",
-          "deps": [
-            "npm:@nx/node@22.1.3"
-          ]
-        },
-        {
-          "file": "apps/nova-backend-e2e/src/support/global-teardown.ts",
-          "hash": "14210317125869451873",
-          "deps": [
-            "npm:@nx/node@22.1.3"
-          ]
-        },
-        {
-          "file": "apps/nova-backend-e2e/src/support/test-setup.ts",
-          "hash": "15521797170623961900",
-          "deps": [
-            "npm:axios@1.13.2"
-          ]
-        },
-        {
-          "file": "apps/nova-backend-e2e/tsconfig.json",
-          "hash": "15443990093475294480"
-        },
-        {
-          "file": "apps/nova-backend-e2e/tsconfig.spec.json",
-          "hash": "14954872453723519891"
-        }
-      ],
       "nova-backend": [
         {
           "file": "apps/nova-backend/.babelrc",
@@ -136,6 +86,10 @@
         {
           "file": "apps/nova-backend/.gitignore",
           "hash": "13706716744923412033"
+        },
+        {
+          "file": "apps/nova-backend/.madgerc",
+          "hash": "6072864816851968510"
         },
         {
           "file": "apps/nova-backend/.swcrc",
@@ -785,7 +739,7 @@
         },
         {
           "file": "devenv.nix",
-          "hash": "8738476700287526748"
+          "hash": "14982836319041875761"
         },
         {
           "file": "devenv.yaml",
@@ -988,6 +942,56 @@
           "hash": "4665328684042819579"
         }
       ],
+      "nova-backend-e2e": [
+        {
+          "file": "apps/nova-backend-e2e/eslint.config.mjs",
+          "hash": "2624537849564014525"
+        },
+        {
+          "file": "apps/nova-backend-e2e/jest.config.cts",
+          "hash": "9156508797104118334"
+        },
+        {
+          "file": "apps/nova-backend-e2e/project.json",
+          "hash": "1650824680971610568"
+        },
+        {
+          "file": "apps/nova-backend-e2e/src/nova-backend/nova-backend.spec.ts",
+          "hash": "110394728024017389",
+          "deps": [
+            "npm:axios@1.13.2"
+          ]
+        },
+        {
+          "file": "apps/nova-backend-e2e/src/support/global-setup.ts",
+          "hash": "10817858795115919263",
+          "deps": [
+            "npm:@nx/node@22.1.3"
+          ]
+        },
+        {
+          "file": "apps/nova-backend-e2e/src/support/global-teardown.ts",
+          "hash": "14210317125869451873",
+          "deps": [
+            "npm:@nx/node@22.1.3"
+          ]
+        },
+        {
+          "file": "apps/nova-backend-e2e/src/support/test-setup.ts",
+          "hash": "15521797170623961900",
+          "deps": [
+            "npm:axios@1.13.2"
+          ]
+        },
+        {
+          "file": "apps/nova-backend-e2e/tsconfig.json",
+          "hash": "15443990093475294480"
+        },
+        {
+          "file": "apps/nova-backend-e2e/tsconfig.spec.json",
+          "hash": "14954872453723519891"
+        }
+      ],
       "nova-frontend": [
         {
           "file": "apps/nova-frontend/components.json",
@@ -1086,7 +1090,7 @@
         },
         {
           "file": "apps/nova-frontend/src/app/routes/__root.tsx",
-          "hash": "16486901276136811047",
+          "hash": "9716422812270788653",
           "deps": [
             "npm:react@19.2.0",
             "npm:@tanstack/react-router@1.139.3",
@@ -1281,7 +1285,7 @@
         },
         {
           "file": "apps/nova-frontend/src/components/ai-elements/prompt-input.tsx",
-          "hash": "7441843358877098815",
+          "hash": "5783560074859647754",
           "deps": [
             "npm:ai@5.0.113",
             "npm:lucide-react@0.561.0",
@@ -1468,153 +1472,31 @@
           ]
         },
         {
-          "file": "apps/nova-frontend/src/features/ai-providers/index.ts",
-          "hash": "5163365713162945418"
+          "file": "apps/nova-frontend/src/features/ask-model/api/get-available.ts",
+          "hash": "17139839911074921103"
         },
         {
-          "file": "apps/nova-frontend/src/features/ai-providers/model/types/useApiKeyStore.type.ts",
-          "hash": "7104983746543121263"
+          "file": "apps/nova-frontend/src/features/ask-model/index.ts",
+          "hash": "9169520631228837279"
         },
         {
-          "file": "apps/nova-frontend/src/features/ai-providers/model/useApiKeyStore.tsx",
-          "hash": "16958599806801389842",
-          "deps": [
-            "npm:@colorfy-software/zfy@1.0.0",
-            "npm:lodash@4.17.21",
-            "npm:@react-native-async-storage/async-storage@2.2.0"
-          ]
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/AiCard.tsx",
-          "hash": "13866638380360709582",
-          "deps": [
-            "npm:@mantine/core@8.3.9",
-            "npm:@mantine/hooks@8.3.9",
-            "npm:lodash@4.17.21",
-            "npm:react@19.2.0"
-          ]
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/AiCard/Container.tsx",
-          "hash": "8152257086743665092",
-          "deps": [
-            "npm:@mantine/core@8.3.9"
-          ]
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/AiCard/CreateApiKeyButton.tsx",
-          "hash": "2816128656837307743",
-          "deps": [
-            "npm:@mantine/core@8.3.9",
-            "npm:lucide-react@0.561.0"
-          ]
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/AiCard/CreateKey.tsx",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/AiCard/Model.tsx",
-          "hash": "11606183099882850482",
-          "deps": [
-            "npm:@mantine/core@8.3.9"
-          ]
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/AiCard/PuthcApiKeyButton.tsx",
-          "hash": "11562918370984171336",
-          "deps": [
-            "npm:@mantine/core@8.3.9",
-            "npm:lucide-react@0.561.0"
-          ]
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/AiCard/Remove.tsx",
-          "hash": "18070527872499826395",
-          "deps": [
-            "npm:@mantine/core@8.3.9",
-            "npm:lucide-react@0.561.0"
-          ]
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/AiCard/StatusList.tsx",
-          "hash": "6522468922004390540",
-          "deps": [
-            "npm:@mantine/core@8.3.9",
-            "npm:lucide-react@0.561.0"
-          ]
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/AiCard/Title.tsx",
-          "hash": "13062730972521363033",
-          "deps": [
-            "npm:@mantine/core@8.3.9"
-          ]
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/ApiAddKeyForm.tsx",
-          "hash": "4400267950980450512",
-          "deps": [
-            "npm:lucide-react@0.561.0"
-          ]
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/ModalApiAddKeyForm.tsx",
-          "hash": "8131099327570657317",
-          "deps": [
-            "npm:@mantine/core@8.3.9"
-          ]
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/PutchApiKeyForm.tsx",
-          "hash": "7348425911263606673"
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/PutchApiKeyModal.tsx",
-          "hash": "13626225115858043405",
-          "deps": [
-            "npm:@mantine/core@8.3.9"
-          ]
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/types/ApiAddKeyForm.interface.ts",
-          "hash": "20030698516013903"
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/types/CardList.interface.ts",
-          "hash": "1407524350435819430",
-          "deps": [
-            "npm:@mantine/core@8.3.9"
-          ]
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/types/Container.interface.ts",
-          "hash": "18380550863613082909",
-          "deps": [
-            "npm:@mantine/core@8.3.9"
-          ]
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/types/Model.interface.ts",
-          "hash": "2739671320389188405"
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/types/PutchApiKeyForm.interface.ts",
-          "hash": "11236570403274656733"
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/types/PutchApiKeyModal.interface.ts",
-          "hash": "7725112780407975864",
-          "deps": [
-            "npm:@mantine/core@8.3.9"
-          ]
-        },
-        {
-          "file": "apps/nova-frontend/src/features/ai-providers/ui/types/Remove.interface.ts",
-          "hash": "14297008075075566147",
+          "file": "apps/nova-frontend/src/features/ask-model/model/useGetAvailable.ts",
+          "hash": "4586415101998053446",
           "deps": [
             "npm:react@19.2.0"
           ]
+        },
+        {
+          "file": "apps/nova-frontend/src/features/ask-model/ui/AskModelPromptForm.tsx",
+          "hash": "18007538038071933267",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:lucide-react@0.561.0"
+          ]
+        },
+        {
+          "file": "apps/nova-frontend/src/features/ask-model/ui/types/AskModelPromptForm.interface.ts",
+          "hash": "6328012811456003427"
         },
         {
           "file": "apps/nova-frontend/src/features/keys/api/constants.ts",
@@ -1642,10 +1524,6 @@
           ]
         },
         {
-          "file": "apps/nova-frontend/src/features/models/api/useGetAvailableIncludeSoruce.ts",
-          "hash": "1048716662690630402"
-        },
-        {
           "file": "apps/nova-frontend/src/features/models/api/useGetAvailableModels.ts",
           "hash": "11884539331044091347",
           "deps": [
@@ -1658,11 +1536,11 @@
         },
         {
           "file": "apps/nova-frontend/src/features/models/index.ts",
-          "hash": "319887178766746413"
+          "hash": "10348011077367853983"
         },
         {
           "file": "apps/nova-frontend/src/features/sendMessage/api/useSendMessage.ts",
-          "hash": "662374023012199266",
+          "hash": "4570170112509110682",
           "deps": [
             "npm:@ai-sdk/react@2.0.115",
             "npm:ai@5.0.113"
@@ -1705,17 +1583,16 @@
         },
         {
           "file": "apps/nova-frontend/src/pages/Index/ui/index.tsx",
-          "hash": "17082045976498563538",
+          "hash": "1926131780069496176",
           "deps": [
             "npm:@mantine/core@8.3.9",
             "npm:@tanstack/react-router@1.139.3",
-            "npm:lucide-react@0.561.0",
             "npm:react@19.2.0"
           ]
         },
         {
           "file": "apps/nova-frontend/src/pages/Settings/ui/index.tsx",
-          "hash": "4970280738105618923",
+          "hash": "12304615860464125519",
           "deps": [
             "npm:@mantine/core@8.3.9"
           ]
@@ -1814,7 +1691,7 @@
         },
         {
           "file": "apps/nova-frontend/src/shared/ShadCn/ui/input-group.tsx",
-          "hash": "7482409083419572584",
+          "hash": "118922082039624453",
           "deps": [
             "npm:react@19.2.0",
             "npm:class-variance-authority@0.7.1"
@@ -2206,7 +2083,7 @@
         },
         {
           "file": "apps/nova-frontend/src/shared/types/schema.d.ts",
-          "hash": "16276459778604604110"
+          "hash": "6876409157989914605"
         },
         {
           "file": "apps/nova-frontend/src/shared/types/theme/mantine.d.ts",
@@ -2243,7 +2120,7 @@
         },
         {
           "file": "apps/nova-frontend/src/shared/ui/AiComponents/ui/AiCard/Controls/Controls.tsx",
-          "hash": "15539710361274597273",
+          "hash": "5215266323236089365",
           "deps": [
             "npm:@mantine/core@8.3.9",
             "npm:@mantine/hooks@8.3.9",
@@ -2293,18 +2170,22 @@
         },
         {
           "file": "apps/nova-frontend/src/shared/ui/AiComponents/ui/ModalApiKey/Patch.tsx",
-          "hash": "9645557255346479061"
+          "hash": "15001689563969637320",
+          "deps": [
+            "npm:@tanstack/react-form@1.26.0",
+            "npm:@mantine/core@8.3.9"
+          ]
         },
         {
           "file": "apps/nova-frontend/src/shared/ui/AiComponents/ui/types/AiCard.interface.ts",
-          "hash": "6930479453845218739",
+          "hash": "15727198071462254294",
           "deps": [
             "npm:react@19.2.0"
           ]
         },
         {
           "file": "apps/nova-frontend/src/shared/ui/AiComponents/ui/types/Controls.interface.ts",
-          "hash": "12467429916487322303"
+          "hash": "15795014745173587182"
         },
         {
           "file": "apps/nova-frontend/src/shared/ui/AiComponents/ui/types/Header.interface.ts",
@@ -2548,7 +2429,7 @@
         },
         {
           "file": "apps/nova-frontend/src/shared/ui/SendButton/ui/index.tsx",
-          "hash": "2042460359757641767",
+          "hash": "11027267797876117496",
           "deps": [
             "npm:@mantine/core@8.3.9",
             "npm:lucide-react@0.561.0"
@@ -2559,50 +2440,114 @@
           "hash": "15618599505786270980"
         },
         {
-          "file": "apps/nova-frontend/src/shared/utils/conditions/ternary.ts",
-          "hash": "10448436104487206594"
+          "file": "apps/nova-frontend/src/shared/ui/ai-components/model/ustAiCardProvider.ts",
+          "hash": "7189956274308599605",
+          "deps": [
+            "npm:react@19.2.0"
+          ]
         },
         {
-          "file": "apps/nova-frontend/src/widgets/AiInput/index.ts",
-          "hash": "571985454311173143"
+          "file": "apps/nova-frontend/src/shared/ui/ai-components/ui/ai-card/AiCard.tsx",
+          "hash": "2432378394010132837",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:motion@12.23.26"
+          ]
         },
         {
-          "file": "apps/nova-frontend/src/widgets/AiInput/lib/useAiInputForm.ts",
-          "hash": "13774863140422442866",
+          "file": "apps/nova-frontend/src/shared/ui/ai-components/ui/ai-card/controls/Controls.tsx",
+          "hash": "14642008111403152891",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:@mantine/hooks@8.3.9",
+            "npm:lucide-react@0.561.0",
+            "npm:lodash@4.17.21"
+          ]
+        },
+        {
+          "file": "apps/nova-frontend/src/shared/ui/ai-components/ui/ai-card/controls/Copy.tsx",
+          "hash": "9320948887242923306",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:lucide-react@0.561.0",
+            "npm:@mantine/hooks@8.3.9"
+          ]
+        },
+        {
+          "file": "apps/nova-frontend/src/shared/ui/ai-components/ui/ai-card/header/Icon.tsx",
+          "hash": "12402089211230369866",
           "deps": [
             "npm:@mantine/core@8.3.9"
           ]
         },
         {
-          "file": "apps/nova-frontend/src/widgets/AiInput/ui/AiInput.tsx",
-          "hash": "2835193213450240949"
-        },
-        {
-          "file": "apps/nova-frontend/src/widgets/AiInput/ui/AiInputBottomSection.tsx",
-          "hash": "16025841933341702663"
-        },
-        {
-          "file": "apps/nova-frontend/src/widgets/AiInput/ui/AiInputSubmit.tsx",
-          "hash": "1955741258308492670",
+          "file": "apps/nova-frontend/src/shared/ui/ai-components/ui/ai-card/header/Title.tsx",
+          "hash": "9381900922418226320",
           "deps": [
             "npm:@mantine/core@8.3.9",
+            "npm:lodash@4.17.21"
+          ]
+        },
+        {
+          "file": "apps/nova-frontend/src/shared/ui/ai-components/ui/ai-card/lists/BestUseCases.tsx",
+          "hash": "6651686888739858865",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:lodash@4.17.21",
             "npm:lucide-react@0.561.0"
           ]
         },
         {
-          "file": "apps/nova-frontend/src/widgets/AiInput/ui/AiInputTextArea.tsx",
-          "hash": "14906863338509882424"
+          "file": "apps/nova-frontend/src/shared/ui/ai-components/ui/ai-card/lists/Remarks.tsx",
+          "hash": "3031825954825206674",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:lodash@4.17.21"
+          ]
         },
         {
-          "file": "apps/nova-frontend/src/widgets/AiInput/ui/types/AiInput.interface.ts",
-          "hash": "10830991990569526210",
+          "file": "apps/nova-frontend/src/shared/ui/ai-components/ui/ai-card/models/Models.tsx",
+          "hash": "8073846330104386605",
           "deps": [
             "npm:@mantine/core@8.3.9"
           ]
         },
         {
-          "file": "apps/nova-frontend/src/widgets/AiInput/ui/types/providers.type.ts",
-          "hash": "15739783264771853429"
+          "file": "apps/nova-frontend/src/shared/ui/ai-components/ui/modal-api-key/ApiKeyModal.tsx",
+          "hash": "17338999148832396621",
+          "deps": [
+            "npm:@mantine/core@8.3.9"
+          ]
+        },
+        {
+          "file": "apps/nova-frontend/src/shared/ui/ai-components/ui/types/AiCard.interface.ts",
+          "hash": "2555702988297873470",
+          "deps": [
+            "npm:react@19.2.0"
+          ]
+        },
+        {
+          "file": "apps/nova-frontend/src/shared/ui/ai-components/ui/types/Controls.interface.ts",
+          "hash": "813945906351079779",
+          "deps": [
+            "npm:react@19.2.0"
+          ]
+        },
+        {
+          "file": "apps/nova-frontend/src/shared/ui/ai-components/ui/types/Lists.interface.ts",
+          "hash": "9513225788924175075"
+        },
+        {
+          "file": "apps/nova-frontend/src/shared/utils/conditions/ternary.ts",
+          "hash": "10448436104487206594"
+        },
+        {
+          "file": "apps/nova-frontend/src/widgets/AiCardBlock/ui/index.tsx",
+          "hash": "8411643246019772306"
+        },
+        {
+          "file": "apps/nova-frontend/src/widgets/AiCardBlock/ui/types/AiCardBlock.interface.ts",
+          "hash": "4055606894390288348"
         },
         {
           "file": "apps/nova-frontend/src/widgets/Aside/index.tsx",
@@ -2661,6 +2606,18 @@
         {
           "file": "apps/nova-frontend/src/widgets/Navbar/styles/nav-item-hove.module.css",
           "hash": "6212893682851377115"
+        },
+        {
+          "file": "apps/nova-frontend/src/widgets/navbar/NavItem.tsx",
+          "hash": "8398126643563702543",
+          "deps": [
+            "npm:@mantine/core@8.3.9",
+            "npm:@tanstack/react-router@1.139.3"
+          ]
+        },
+        {
+          "file": "apps/nova-frontend/src/widgets/sources-keys-management/ui/index.tsx",
+          "hash": "7447183056475447993"
         },
         {
           "file": "apps/nova-frontend/tailwind.config.js",

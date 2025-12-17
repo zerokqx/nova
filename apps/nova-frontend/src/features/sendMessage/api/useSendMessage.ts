@@ -4,7 +4,7 @@ import { DefaultChatTransport } from 'ai';
 export const useSendMessage = (notation: TNotation) => {
   const chat = useChat({
     transport: new DefaultChatTransport({
-      api: 'http://localhost:3000/api' + `/ai/${notation}/stream`,
+      api: `http://localhost:3000/api/ai/${notation}/stream`,
     }),
   });
   return chat;

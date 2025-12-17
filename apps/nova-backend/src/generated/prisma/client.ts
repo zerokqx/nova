@@ -62,7 +62,7 @@ export type key = Prisma.keyModel
  */
 export type chat = Prisma.chatModel
 /**
- * Model messages
+ * Model message
  * 
  */
-export type messages = Prisma.messagesModel
+export type message = Prisma.messageModel

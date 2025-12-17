@@ -52,7 +52,7 @@ export const ModelName = {
   source: 'source',
   key: 'key',
   chat: 'chat',
-  messages: 'messages'
+  message: 'message'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -85,7 +85,9 @@ export const SourceScalarFieldEnum = {
   name: 'name',
   byCreated: 'byCreated',
   color: 'color',
-  iconUrl: 'iconUrl'
+  iconUrl: 'iconUrl',
+  remarks: 'remarks',
+  bestUseCases: 'bestUseCases'
 } as const
 
 export type SourceScalarFieldEnum = (typeof SourceScalarFieldEnum)[keyof typeof SourceScalarFieldEnum]
@@ -105,22 +107,20 @@ export type KeyScalarFieldEnum = (typeof KeyScalarFieldEnum)[keyof typeof KeySca
 
 export const ChatScalarFieldEnum = {
   id: 'id',
-  title: 'title',
-  provider: 'provider'
+  title: 'title'
 } as const
 
 export type ChatScalarFieldEnum = (typeof ChatScalarFieldEnum)[keyof typeof ChatScalarFieldEnum]
 
 
-export const MessagesScalarFieldEnum = {
+export const MessageScalarFieldEnum = {
   id: 'id',
   chatId: 'chatId',
-  content: 'content',
-  role: 'role',
-  initial: 'initial'
+  parts: 'parts',
+  metadata: 'metadata'
 } as const
 
-export type MessagesScalarFieldEnum = (typeof MessagesScalarFieldEnum)[keyof typeof MessagesScalarFieldEnum]
+export type MessageScalarFieldEnum = (typeof MessageScalarFieldEnum)[keyof typeof MessageScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -129,6 +129,14 @@ export const SortOrder = {
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const NullableJsonNullValueInput = {
+  DbNull: DbNull,
+  JsonNull: JsonNull
+} as const
+
+export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
 
 
 export const QueryMode = {
@@ -145,4 +153,13 @@ export const NullsOrder = {
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const JsonNullValueFilter = {
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 

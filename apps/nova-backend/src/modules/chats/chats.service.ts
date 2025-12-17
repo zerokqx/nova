@@ -10,11 +10,11 @@ export class ChatsService {
     return await this.prisma.chat.create({ data });
   }
 
-  async update(data: Partial<Omit<chat, 'id'>>, id: number) {
+  async update(data: Partial<Omit<chat, 'id'>>, id: chat['id']) {
     return await this.prisma.chat.update({ data, where: { id } });
   }
 
-  async delete(id: number) {
+  async delete(id: chat['id']) {
     return await this.prisma.chat.delete({ where: { id } });
   }
 
@@ -24,13 +24,13 @@ export class ChatsService {
   async findByKeyWord(data: Prisma.chatWhereInput) {
     return await this.prisma.chat.findMany({ where: data });
   }
-  async findByid(id: number) {
+  async findByid(id: chat['id']) {
     return await this.prisma.chat.findUnique({ where: { id } });
   }
-  async selectChat(id: number) {
+  async selectChat(id: chat['id']) {
     return await this.prisma.chat.findUnique({
       where: { id },
-      select: { messages: true },
+      include: { messages: true },
     });
   }
 }

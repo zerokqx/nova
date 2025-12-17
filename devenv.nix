@@ -14,7 +14,7 @@
     insomnia
     eslint
     lsof
-
+    graphviz
     nodemon
     nest-cli
     docker-compose

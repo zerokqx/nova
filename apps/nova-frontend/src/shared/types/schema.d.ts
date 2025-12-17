@@ -412,6 +412,8 @@ export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
         SourceEntity: {
+            remarks: string[];
+            bestUseCases: string[];
             byCreated: string;
             color: string | null;
             iconUrl: string | null;
@@ -458,6 +460,8 @@ export interface components {
             updatedAt: string;
         };
         SourceFullEntity: {
+            remarks: string[];
+            bestUseCases: string[];
             byCreated: string;
             color: string | null;
             iconUrl: string | null;

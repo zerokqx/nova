@@ -23,13 +23,15 @@ model model {
 }
 
 model source {
-  id        Int     @id @default(autoincrement())
-  name      String  @unique @db.VarChar(255)
-  byCreated String  @db.VarChar(100)
-  color     String? @db.VarChar(7)
-  iconUrl   String? @db.VarChar(255)
-  key       key?
-  models    model[]
+  id           Int      @id @default(autoincrement())
+  name         String   @unique @db.VarChar(255)
+  byCreated    String   @db.VarChar(100)
+  color        String?  @db.VarChar(7)
+  iconUrl      String?  @db.VarChar(255)
+  key          key?
+  remarks      String[]
+  bestUseCases String[]
+  models       model[]
 }
 
 model key {
@@ -45,17 +47,15 @@ model key {
 }
 
 model chat {
-  id       Int        @id @unique @default(autoincrement())
-  title    String     @default(nanoid())
-  provider String
-  messages messages[]
+  id       String    @id @default(cuid())
+  title    String    @default(nanoid())
+  messages message[]
 }
 
-model messages {
-  id      Int      @id @default(autoincrement())
-  chatId  Int
-  content String
-  role    Roles?   @default(user)
-  initial Boolean? @default(false)
-  chat    chat     @relation(fields: [chatId], references: [id], onDelete: Cascade)
+model message {
+  id       String @id @default(cuid())
+  chatId   String
+  parts    Json[]
+  metadata Json?
+  chat     chat   @relation(fields: [chatId], references: [id], onDelete: Cascade)
 }
