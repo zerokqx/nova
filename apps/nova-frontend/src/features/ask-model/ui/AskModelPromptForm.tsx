@@ -26,6 +26,7 @@ export const AskModelPromptForm = ({
     <PromptInput
       onSubmit={onSubmit}
       className="
+      bg-black
         max-w-120
         **:data-[slot='input-group']:border-0
         **:data-[slot='input-group']:ring-0

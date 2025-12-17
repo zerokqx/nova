@@ -22,7 +22,6 @@ export class MessagesController {
   create(@Body() { chatId, ...body }: CreateMessageDto) {
     return this.messagesService.create({
       chat: { connect: { id: chatId } },
-
       ...body,
     });
   }

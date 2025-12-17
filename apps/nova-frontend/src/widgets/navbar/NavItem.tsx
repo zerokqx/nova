@@ -1,47 +1,48 @@
-import { Group, rem, Text, useMantineTheme } from '@mantine/core';
+import {
+  Button,
+  Group,
+  Portal,
+  rem,
+  Text,
+  useMantineTheme,
+} from '@mantine/core';
 import stl from './styles/nav-item-hove.module.css';
 import type { TModels } from '@shared/api/ai/aiAbstract/types/models.type';
 import { Link, useNavigate, useParams } from '@tanstack/react-router';
 import { useLayoutStore } from '@shared/lib/stores/useLayout';
 import { deSlashNotation } from '@shared/api/ai/lib/formatModel/nameModelFormat';
 import type { TAiUrl } from '@shared/api/ai/lib/formatModel/types/metaSourceAndModel.type';
+import { components } from '@/shared/types/schema';
+import { doSelect } from '@/features/chats/model/select-chat.store';
 
 export const NavItem = ({
   text,
   id,
-  url,
 }: {
   text: string;
-  id: number;
-  url: TAiUrl;
+  id: components['schemas']['ChatEntity']['id'];
 }) => {
   const t = useMantineTheme();
   const updateLayout = useLayoutStore((s) => s.update);
-  const { model, source } = deSlashNotation(url);
 
   return (
     <Link
-      to="/chat/$id/$provider/$model"
+      to="/chat/$id"
       params={{
-        provider: source,
         id: id.toString(),
-        model,
       }}
-      style={{
-        borderRadius: t.radius.md,
-        textDecoration: 'none',
-      }}
+      style={{ borderRadius: t.radius.md, textDecoration: 'none' }}
       onClick={() => {
         updateLayout((s) => {
           s.aside = false;
           s.navbar = false;
         });
+        doSelect(id);
       }}
       activeProps={{
         style: { border: `${t.colors.dark[9]} solid ${rem(1)}` },
       }}
     >
-      {' '}
       <Group
         bdrs={'inherit'}
         className={stl.effect}

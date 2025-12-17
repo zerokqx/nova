@@ -14,15 +14,15 @@ import {
 } from 'class-validator';
 
 export class CreateSourceDto implements sourceCreateInput {
-  @ApiProperty()
+  @ApiProperty({ format: 'data-time' })
   @MaxLength(100)
   @IsString()
   byCreated: string;
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ type: String, format: 'hex' })
   @IsHexColor()
   color?: string | null | undefined;
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ type: 'string', format: 'url' })
   @IsUrl()
   iconUrl?: string | null | undefined;
 
@@ -30,7 +30,7 @@ export class CreateSourceDto implements sourceCreateInput {
   key?: Prisma.keyCreateNestedOneWithoutSourceInput | undefined;
   @ApiHideProperty()
   models?: Prisma.modelCreateNestedManyWithoutSourceInput | undefined;
-  @ApiProperty()
+  @ApiProperty({ type: String })
   @IsString()
   @IsNotEmpty()
   @MaxLength(30)

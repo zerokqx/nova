@@ -5,20 +5,19 @@ import { AiProvider } from './ai.guard';
 import { UseDataInterceptor } from '@moduleShared/data/data.interceptor';
 import { convertToModelMessages } from 'ai';
 
-import {
-  ApiBearerAuth,
-  ApiOperation,
-  ApiResponse,
-  ApiTags,
-} from '@nestjs/swagger';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Response } from 'express';
 import { Bearer } from '@modules/shared/headers/headers.auth.decorator';
+import { MessagesService } from '@modules/messages/messages.service';
 
 @ApiTags('AI')
 @Controller('ai')
 @UseDataInterceptor()
 export class AiController {
-  constructor(private aiService: PerplexityService) {}
+  constructor(
+    private aiService: PerplexityService,
+    private messageServcie: MessagesService
+  ) {}
 
   @ApiOperation({
     summary: 'Отправить сообщение',
@@ -44,7 +43,6 @@ export class AiController {
     return await this.aiService.with(token).send(body.content, model);
   }
 
-  @ApiBearerAuth()
   @AiProvider('perplexity', 'stream')
   async ppls(
     @Body() body: SendDto,
@@ -53,11 +51,17 @@ export class AiController {
     @Bearer() token: string
   ) {
     const log = new Logger();
-    log.debug(convertToModelMessages(body.messages));
+
     const result = this.aiService
       .with(token)
       .streamWithMessagesArray(convertToModelMessages(body.messages), model);
 
-    result.pipeUIMessageStreamToResponse(res);
+    const createMsg = this.messageServcie;
+
+    result.pipeUIMessageStreamToResponse(res, {
+      onFinish(s) {
+        createMsg.create();
+      },
+    });
   }
 }

@@ -10,6 +10,7 @@ import '@mantine/core/styles.css';
 import { routeTree } from './routeTree.gen';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { mantineTheme } from '@shared/styles/mantine';
+import { emotionTransform, MantineEmotionProvider } from '@mantine/emotion';
 
 const router = createRouter({ routeTree });
 
@@ -33,9 +34,15 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <MantineProvider theme={mantineTheme} defaultColorScheme="dark">
+      <MantineProvider
+        stylesTransform={emotionTransform}
+        theme={mantineTheme}
+        defaultColorScheme="dark"
+      >
         <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router} />
+          <MantineEmotionProvider>
+            <RouterProvider router={router} />
+          </MantineEmotionProvider>
         </QueryClientProvider>
       </MantineProvider>
     </StrictMode>

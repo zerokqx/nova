@@ -19,7 +19,7 @@ export class ChatsService {
   }
 
   async findMany() {
-    return await this.prisma.chat.findMany();
+    return await this.prisma.chat.findMany({ orderBy: { id: 'asc' } });
   }
   async findByKeyWord(data: Prisma.chatWhereInput) {
     return await this.prisma.chat.findMany({ where: data });

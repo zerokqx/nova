@@ -1,45 +1,26 @@
-import { Loader } from '@/components/ai-elements/loader';
 import {
   MessageContent,
   Message,
   MessageResponse,
 } from '@/components/ai-elements/message';
-import {
-  PromptInput,
-  PromptInputBody,
-  PromptInputButton,
-  PromptInputFooter,
-  PromptInputProvider,
-  PromptInputSelect,
-  PromptInputSelectContent,
-  PromptInputSelectItem,
-  PromptInputSelectTrigger,
-  PromptInputSubmit,
-  PromptInputTextarea,
-} from '@/components/ai-elements/prompt-input';
+import { AskModelPromptForm } from '@/features/ask-model';
+import { useSelectChat } from '@/features/chats/api/select-chat';
+import { TNotation } from '@/shared/lib/utils/notation';
 import { useSendMessage } from '@features/sendMessage';
-import {
-  AppShellMain,
-  Stack,
-  Center,
-  Box,
-  useMantineTheme,
-} from '@mantine/core';
+import { AppShellMain, Stack, Center, useMantineTheme } from '@mantine/core';
 import { useAdaptiveSpace } from '@shared/lib/hooks/useAdaptiveSpace';
 import { useParams } from '@tanstack/react-router';
-import { AiInput } from '@widgets/AiInput/ui/AiInput';
 import { lowerCase, map } from 'lodash';
-import { motion } from 'motion/react';
-import { useEffect, useRef } from 'react';
-import { ClipLoader, HashLoader } from 'react-spinners';
+import { useEffect, useRef, useState } from 'react';
+import { HashLoader } from 'react-spinners';
 export function Chat() {
+  const { data: messagesChat } = useSelectChat();
   const t = useMantineTheme();
-  const { id, model, provider } = useParams({
-    from: '/chat/$id/$provider/$model',
+  const [model, setModel] = useState('');
+  const { id } = useParams({
+    from: '/chat/$id',
   });
-  const { sendMessage, status, messages } = useSendMessage(
-    `${lowerCase(provider)}/${model}`
-  );
+  const { sendMessage, status, messages } = useSendMessage(model as TNotation);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -101,28 +82,12 @@ export function Chat() {
         }}
         w="100%"
       >
-        <PromptInputProvider>
-          <PromptInput>
-            <PromptInputTextarea />
-            <PromptInputFooter>daa</PromptInputFooter>
-            <PromptInputBody>daw</PromptInputBody>
-            <PromptInputSelect>
-              <PromptInputSelectTrigger>dawd</PromptInputSelectTrigger>
-              <PromptInputSelectContent>
-                <PromptInputSelectItem value="dw">daw</PromptInputSelectItem>
-              </PromptInputSelectContent>
-            </PromptInputSelect>
-
-            <PromptInputSubmit>dwa</PromptInputSubmit>
-          </PromptInput>
-        </PromptInputProvider>
-        {/* <AiInput */}
-        {/*   onSubmit={async ({ value: { content } }) => { */}
-        {/*     sendMessage({ text: content }); */}
-        {/*   }} */}
-        {/*   readOnly */}
-        {/*   providers={[{ label: model, value: 'model' }]} */}
-        {/* /> */}
+        <AskModelPromptForm
+          {...{ model, setModel }}
+          onSubmit={async (s) => {
+            sendMessage(s);
+          }}
+        />
       </Center>
     </AppShellMain>
   );

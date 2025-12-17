@@ -287,23 +287,6 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/api/messages/initial": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Создать начальное сообщение для чата */
-        post: operations["MessagesController_initial"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/api/messages/{id}": {
         parameters: {
             query?: never;
@@ -345,7 +328,6 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Получить список всех чатов */
         get: operations["ChatsController_findMany"];
         put?: never;
         post?: never;
@@ -444,10 +426,13 @@ export interface components {
             sourceId: number;
         };
         CreateSourceDto: {
+            /** Format: data-time */
             byCreated: string;
-            color?: Record<string, never>;
-            iconUrl?: Record<string, never>;
-            name: Record<string, never>;
+            /** Format: hex */
+            color?: string;
+            /** Format: url */
+            iconUrl?: string;
+            name: string;
         };
         KeysEntity: {
             id: number;
@@ -511,34 +496,36 @@ export interface components {
              */
             messages: unknown[];
         };
-        CreateMessageDto: {
+        PartEntity: {
+            type: string;
             /**
-             * @description Айди чата для которого сообщение
-             * @example 1
-             */
-            chatId: number;
-            /**
-             * @description Текст сообщения
-             * @example Что такое Nixos?
-             */
-            content: string;
-            /**
-             * @description Роль для текущего сообщения
-             * @example user
+             * @default user
              * @enum {string}
              */
-            role?: "user" | "assistant" | "system";
+            role: "user" | "assistant" | "system";
+        };
+        CreateMessageDto: {
+            metadata?: Record<string, never>;
+            chatId: string;
+            parts: components["schemas"]["PartEntity"][];
+        };
+        MessagesEntity: {
+            trigger: string;
+            metadata?: Record<string, never>;
+            parts: components["schemas"]["PartEntity"][];
+            /** Format: cuid */
+            id: string;
+            /** Format: cuid */
+            chatId: string;
+            content: string;
         };
         CreateChatDto: {
-            /**
-             * @description Провайдер в формате `name/model`. Например `gemini/gemini-2.5-flash`
-             * @example perplexity/sonar
-             */
-            provider: string;
-            /**
-             * @description Начальное сообщение для чата.
-             * @example Что такое Nixos?
-             */
+            /** @description Начальное сообщение для чата. */
+            title: string;
+        };
+        ChatEntity: {
+            /** Format: cuid */
+            id: string;
             title: string;
         };
     };
@@ -1070,49 +1057,13 @@ export interface operations {
             };
         };
         responses: {
-            /** @description Сообщение успешно создано */
-            201: {
+            200: {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
-            };
-            /** @description Некорректные данные */
-            400: {
-                headers: {
-                    [name: string]: unknown;
+                content: {
+                    "application/json": components["schemas"]["MessagesEntity"];
                 };
-                content?: never;
-            };
-        };
-    };
-    MessagesController_initial: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** @description chatId обязателен, content — текст сообщения */
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["CreateMessageDto"];
-            };
-        };
-        responses: {
-            /** @description Начальное сообщение создано */
-            201: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            /** @description Некорректные данные */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
             };
         };
     };
@@ -1128,19 +1079,13 @@ export interface operations {
         };
         requestBody?: never;
         responses: {
-            /** @description Список сообщений для указанного чата */
             200: {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
-            };
-            /** @description Чат не найден */
-            404: {
-                headers: {
-                    [name: string]: unknown;
+                content: {
+                    "application/json": components["schemas"]["MessagesEntity"][];
                 };
-                content?: never;
             };
         };
     };
@@ -1157,19 +1102,13 @@ export interface operations {
             };
         };
         responses: {
-            /** @description Чат создан */
-            201: {
+            200: {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
-            };
-            /** @description Неверные данные */
-            400: {
-                headers: {
-                    [name: string]: unknown;
+                content: {
+                    "application/json": components["schemas"]["ChatEntity"];
                 };
-                content?: never;
             };
         };
     };
@@ -1182,12 +1121,13 @@ export interface operations {
         };
         requestBody?: never;
         responses: {
-            /** @description Список чатов */
             200: {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["ChatEntity"][];
+                };
             };
         };
     };
@@ -1197,25 +1137,19 @@ export interface operations {
             header?: never;
             path: {
                 /** @description ID чата */
-                id: number;
+                id: string;
             };
             cookie?: never;
         };
         requestBody?: never;
         responses: {
-            /** @description Чат найден */
             200: {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
-            };
-            /** @description Чат не найден */
-            404: {
-                headers: {
-                    [name: string]: unknown;
+                content: {
+                    "application/json": components["schemas"]["ChatEntity"];
                 };
-                content?: never;
             };
         };
     };
@@ -1225,33 +1159,27 @@ export interface operations {
             header?: never;
             path: {
                 /** @description ID чата */
-                id: number;
+                id: string;
             };
             cookie?: never;
         };
         requestBody?: never;
         responses: {
-            /** @description Чат удалён */
             200: {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
-            };
-            /** @description Чат не найден */
-            404: {
-                headers: {
-                    [name: string]: unknown;
+                content: {
+                    "application/json": components["schemas"]["ChatEntity"];
                 };
-                content?: never;
             };
         };
     };
     ChatsController_findByTitle: {
         parameters: {
-            query?: {
+            query: {
                 /** @description Подстрока для поиска по названию чата */
-                title?: string;
+                title: unknown;
             };
             header?: never;
             path?: never;
@@ -1259,12 +1187,13 @@ export interface operations {
         };
         requestBody?: never;
         responses: {
-            /** @description Список подходящих чатов */
             200: {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["ChatEntity"];
+                };
             };
         };
     };
@@ -1274,25 +1203,19 @@ export interface operations {
             header?: never;
             path: {
                 /** @description ID чата */
-                id: number;
+                id: string;
             };
             cookie?: never;
         };
         requestBody?: never;
         responses: {
-            /** @description Чат выбран */
             200: {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
-            };
-            /** @description Чат не найден */
-            404: {
-                headers: {
-                    [name: string]: unknown;
+                content: {
+                    "application/json": components["schemas"]["ChatEntity"];
                 };
-                content?: never;
             };
         };
     };

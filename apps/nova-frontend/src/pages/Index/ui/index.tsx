@@ -1,5 +1,6 @@
 import { AskModelPromptForm } from '@/features/ask-model';
-import { AppShellMain, Stack, useMantineTheme } from '@mantine/core';
+import { useCreateChat } from '@/features/chats/api/create-chat';
+import { AppShellMain, Stack } from '@mantine/core';
 import { useResponsive } from '@shared/lib/hooks/useResponsive';
 import { LogotypeCombined } from '@shared/ui/LogotypeSection';
 import { useNavigate } from '@tanstack/react-router';
@@ -9,6 +10,7 @@ export const IndexPage = () => {
   const [model, setModel] = useState('');
   const { mobile } = useResponsive();
   const navigate = useNavigate();
+  const { mutateAsync: createChat } = useCreateChat();
   return (
     <AppShellMain h={'100dvh'}>
       <Stack justify={ternary(mobile, 'end', 'center')} h={'100%'}>
@@ -20,8 +22,9 @@ export const IndexPage = () => {
           <LogotypeCombined />
           <AskModelPromptForm
             {...{ model, setModel }}
-            onSubmit={(messgae) => {
-              navigate({ to: '/chat/$id/$provider/$model', params: {} });
+            onSubmit={async (message) => {
+              const chat = await createChat({ body: { title: message.text } });
+              navigate({ to: '/chat/$id', params: { id: chat.id } });
             }}
           />
         </Stack>

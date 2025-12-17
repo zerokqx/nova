@@ -5375,6 +5375,11 @@
     "type": "static"
   },
   {
+    "source": "npm:hoist-non-react-statics@3.3.2",
+    "target": "npm:react-is@16.13.1",
+    "type": "static"
+  },
+  {
     "source": "npm:homedir-polyfill@1.0.3",
     "target": "npm:parse-passwd@1.0.0",
     "type": "static"
@@ -5400,8 +5405,68 @@
     "type": "static"
   },
   {
+    "source": "npm:html-dom-parser@5.1.2",
+    "target": "npm:domhandler@5.0.3",
+    "type": "static"
+  },
+  {
+    "source": "npm:html-dom-parser@5.1.2",
+    "target": "npm:htmlparser2@10.0.0",
+    "type": "static"
+  },
+  {
     "source": "npm:html-encoding-sniffer@3.0.0",
     "target": "npm:whatwg-encoding@2.0.0",
+    "type": "static"
+  },
+  {
+    "source": "npm:html-react-parser@5.2.10",
+    "target": "npm:domhandler@5.0.3",
+    "type": "static"
+  },
+  {
+    "source": "npm:html-react-parser@5.2.10",
+    "target": "npm:html-dom-parser@5.1.2",
+    "type": "static"
+  },
+  {
+    "source": "npm:html-react-parser@5.2.10",
+    "target": "npm:react-property@2.0.2",
+    "type": "static"
+  },
+  {
+    "source": "npm:html-react-parser@5.2.10",
+    "target": "npm:style-to-js@1.1.21",
+    "type": "static"
+  },
+  {
+    "source": "npm:html-react-parser@5.2.10",
+    "target": "npm:@types/react@19.2.7",
+    "type": "static"
+  },
+  {
+    "source": "npm:html-react-parser@5.2.10",
+    "target": "npm:react@19.2.0",
+    "type": "static"
+  },
+  {
+    "source": "npm:htmlparser2@10.0.0",
+    "target": "npm:domelementtype@2.3.0",
+    "type": "static"
+  },
+  {
+    "source": "npm:htmlparser2@10.0.0",
+    "target": "npm:domhandler@5.0.3",
+    "type": "static"
+  },
+  {
+    "source": "npm:htmlparser2@10.0.0",
+    "target": "npm:domutils@3.2.2",
+    "type": "static"
+  },
+  {
+    "source": "npm:htmlparser2@10.0.0",
+    "target": "npm:entities@6.0.1",
     "type": "static"
   },
   {
