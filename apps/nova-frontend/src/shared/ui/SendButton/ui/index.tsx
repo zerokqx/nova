@@ -3,7 +3,7 @@ import styles from './styles/animation.module.css';
 import type { ISendButton } from '../types/SendButtonProps.type';
 import { Send } from 'lucide-react';
 
-export const SendButton = ({ width = 16 }: ISendButton) => {
+export const SendButton = ({ width = 16, ...props }: ISendButton) => {
   const iconWidth = width;
   const actionIcon = iconWidth * 3;
   return (
@@ -12,6 +12,7 @@ export const SendButton = ({ width = 16 }: ISendButton) => {
       className={styles.actionAnimation}
       size={actionIcon}
       bdrs={'lg'}
+      {...props}
     >
       <Send width={iconWidth} />
     </ActionIcon>

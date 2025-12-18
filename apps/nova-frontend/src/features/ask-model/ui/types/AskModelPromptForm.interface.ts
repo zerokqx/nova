@@ -1,8 +1,23 @@
-import { PromptInputProps } from '@/components/ai-elements/prompt-input';
 import { Fn } from '@/shared/types/functions/fn.type';
+import { TOnSubmitHandlerForm } from '@/shared/ui/Form';
+import { ChatStatus } from 'ai';
 
-export interface IAskModelPromptFormProps {
-  onSubmit: PromptInputProps['onSubmit'];
-  setModel: Fn<[string]>;
+type TAskModelWithSelectProps = {
+  withSelect?: true;
   model: string;
-}
+  onSubmit: TOnSubmitHandlerForm<{ text: string; model: string }>;
+  setModel: Fn<[string]>;
+};
+type TAskModelWithoutSelectProps = {
+  onSubmit: TOnSubmitHandlerForm<{ text: string; model: string }>;
+  withSelect?: false;
+};
+export type IAskModelPromptFormProps = (
+  | TAskModelWithSelectProps
+  | TAskModelWithoutSelectProps
+) & {
+  status?: ChatStatus;
+  callbacks: {
+    stop: () => Promise<void>;
+  };
+};

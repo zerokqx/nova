@@ -1,19 +1,26 @@
+import { $api } from '@/shared/api/client';
 import { useChat } from '@ai-sdk/react';
-import { TNotation } from '@shared/lib/utils/notation';
-import { DefaultChatTransport, HttpChatTransport } from 'ai';
-import { useMemo } from 'react';
-export const useSendMessage = (notation: TNotation) => {
+import { DefaultChatTransport, UIMessage } from 'ai';
+import { nanoid } from 'nanoid';
+import { useEffect, useMemo } from 'react';
+export const useSendMessage = (
+  url: string,
+  id: string,
+  messages?: UIMessage[]
+) => {
   const transport = useMemo(
     () =>
       new DefaultChatTransport({
-        api: `http://localhost:3000/api/ai/${notation}/stream`,
+        api: `http://localhost:3000/api/ai/${url}/stream`,
       }),
-    [notation]
+    [url]
   );
-  const chat = useChat({
-    id: 'dw',
 
+  const chat = useChat({
+    id,
     transport,
+    messages,
   });
+
   return chat;
 };

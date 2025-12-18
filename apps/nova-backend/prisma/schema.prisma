@@ -50,6 +50,7 @@ model chat {
   id       String    @id @default(cuid())
   title    String    @default(nanoid())
   messages message[]
+  provider String
 }
 
 model message {
@@ -58,4 +59,5 @@ model message {
   parts    Json[]
   metadata Json?
   chat     chat   @relation(fields: [chatId], references: [id], onDelete: Cascade)
+  role     Roles
 }

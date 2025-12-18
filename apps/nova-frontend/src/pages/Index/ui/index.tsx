@@ -1,5 +1,7 @@
 import { AskModelPromptForm } from '@/features/ask-model';
 import { useCreateChat } from '@/features/chats/api/create-chat';
+import { useCreateMessage } from '@/features/messages/api/create-message';
+import { doSetInitMessage } from '@/features/messages/model/intializeMessageStore';
 import { AppShellMain, Stack } from '@mantine/core';
 import { useResponsive } from '@shared/lib/hooks/useResponsive';
 import { LogotypeCombined } from '@shared/ui/LogotypeSection';
@@ -11,6 +13,7 @@ export const IndexPage = () => {
   const { mobile } = useResponsive();
   const navigate = useNavigate();
   const { mutateAsync: createChat } = useCreateChat();
+  const { mutateAsync: createInitMessage } = useCreateMessage();
   return (
     <AppShellMain h={'100dvh'}>
       <Stack justify={ternary(mobile, 'end', 'center')} h={'100%'}>
@@ -22,9 +25,15 @@ export const IndexPage = () => {
           <LogotypeCombined />
           <AskModelPromptForm
             {...{ model, setModel }}
-            onSubmit={async (message) => {
-              const chat = await createChat({ body: { title: message.text } });
-              navigate({ to: '/chat/$id', params: { id: chat.id } });
+            onSubmit={async ({ value }) => {
+              const chat = await createChat({
+                body: { title: value.text, provider: value.model },
+              });
+              doSetInitMessage(value.text);
+              await navigate({
+                to: '/chat/$id',
+                params: { id: chat.id },
+              });
             }}
           />
         </Stack>

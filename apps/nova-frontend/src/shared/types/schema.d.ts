@@ -498,35 +498,41 @@ export interface components {
         };
         PartEntity: {
             type: string;
+        };
+        CreateMessageDto: {
+            /** @enum {string} */
+            role: "user" | "assistant" | "system";
+            metadata?: Record<string, never>;
+            chatId: string;
+            parts: components["schemas"]["PartEntity"][];
+        };
+        MessagesEntity: {
+            metadata?: Record<string, never>;
+            parts: components["schemas"]["PartEntity"][];
+            /** Format: cuid */
+            id: string;
+            /** Format: cuid */
+            chatId: string;
             /**
              * @default user
              * @enum {string}
              */
             role: "user" | "assistant" | "system";
         };
-        CreateMessageDto: {
-            metadata?: Record<string, never>;
-            chatId: string;
-            parts: components["schemas"]["PartEntity"][];
-        };
-        MessagesEntity: {
-            trigger: string;
-            metadata?: Record<string, never>;
-            parts: components["schemas"]["PartEntity"][];
-            /** Format: cuid */
-            id: string;
-            /** Format: cuid */
-            chatId: string;
-            content: string;
-        };
         CreateChatDto: {
-            /** @description Начальное сообщение для чата. */
+            provider: string;
             title: string;
         };
         ChatEntity: {
+            /**
+             * Format: source/model
+             * @description Провайдер для чата
+             */
+            provider: string;
             /** Format: cuid */
             id: string;
             title: string;
+            messages: components["schemas"]["MessagesEntity"][];
         };
     };
     responses: never;

@@ -2,6 +2,7 @@ import { chat, Prisma } from '@/generated/prisma/client';
 import { PrismaService } from '@modules/shared/prisma/prisma.service';
 import { Injectable } from '@nestjs/common';
 import { Omit } from '@prisma/client/runtime/library';
+import { title } from 'process';
 
 @Injectable()
 export class ChatsService {

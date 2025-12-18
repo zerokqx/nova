@@ -173,6 +173,13 @@ export type JsonNullableFilterBase<$PrismaModel = never> = {
   not?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
 }
 
+export type EnumRolesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Roles | Prisma.EnumRolesFieldRefInput<$PrismaModel>
+  in?: $Enums.Roles[] | Prisma.ListEnumRolesFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Roles[] | Prisma.ListEnumRolesFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumRolesFilter<$PrismaModel> | $Enums.Roles
+}
+
 export type JsonNullableWithAggregatesFilter<$PrismaModel = never> =
 | Prisma.PatchUndefined<
     Prisma.Either<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
@@ -198,6 +205,16 @@ export type JsonNullableWithAggregatesFilterBase<$PrismaModel = never> = {
   _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
   _min?: Prisma.NestedJsonNullableFilter<$PrismaModel>
   _max?: Prisma.NestedJsonNullableFilter<$PrismaModel>
+}
+
+export type EnumRolesWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Roles | Prisma.EnumRolesFieldRefInput<$PrismaModel>
+  in?: $Enums.Roles[] | Prisma.ListEnumRolesFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Roles[] | Prisma.ListEnumRolesFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumRolesWithAggregatesFilter<$PrismaModel> | $Enums.Roles
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumRolesFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumRolesFilter<$PrismaModel>
 }
 
 export type NestedIntFilter<$PrismaModel = never> = {
@@ -349,6 +366,13 @@ export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedDateTimeFilter<$PrismaModel>
 }
 
+export type NestedEnumRolesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Roles | Prisma.EnumRolesFieldRefInput<$PrismaModel>
+  in?: $Enums.Roles[] | Prisma.ListEnumRolesFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Roles[] | Prisma.ListEnumRolesFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumRolesFilter<$PrismaModel> | $Enums.Roles
+}
+
 export type NestedJsonNullableFilter<$PrismaModel = never> =
 | Prisma.PatchUndefined<
     Prisma.Either<Required<NestedJsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>,
@@ -371,6 +395,16 @@ export type NestedJsonNullableFilterBase<$PrismaModel = never> = {
   gt?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
   gte?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
   not?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
+}
+
+export type NestedEnumRolesWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Roles | Prisma.EnumRolesFieldRefInput<$PrismaModel>
+  in?: $Enums.Roles[] | Prisma.ListEnumRolesFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Roles[] | Prisma.ListEnumRolesFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumRolesWithAggregatesFilter<$PrismaModel> | $Enums.Roles
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumRolesFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumRolesFilter<$PrismaModel>
 }
 
 

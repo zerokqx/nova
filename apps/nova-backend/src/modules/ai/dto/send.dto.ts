@@ -3,6 +3,8 @@ import {
   ArrayMinSize,
   ArrayNotEmpty,
   IsArray,
+  IsNotEmpty,
+  IsOptional,
   IsString,
 } from 'class-validator';
 import { UIMessage } from 'ai';
@@ -19,9 +21,13 @@ export class SendDto {
   @ArrayMinSize(1)
   @ArrayNotEmpty()
   messages!: UIMessage[];
+  @IsNotEmpty()
   @IsString()
   id!: string;
 
+  @IsOptional()
+  @IsString()
+  messageId: string;
   @IsString()
   trigger!: string;
 }

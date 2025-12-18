@@ -3,8 +3,6 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { PartEntity } from './part.entity';
 
 export class MessagesEntity implements message {
-  @ApiProperty()
-  trigger: string;
   @ApiPropertyOptional()
   metadata: Prisma.JsonValue;
   @ApiProperty({ type: PartEntity, isArray: true, additionalProperties: true })
@@ -13,6 +11,7 @@ export class MessagesEntity implements message {
   id: string;
   @ApiProperty({ format: 'cuid' })
   chatId: string;
-  @ApiProperty()
-  content: string;
+
+  @ApiProperty({ enum: Roles, default: Roles.user })
+  role: Roles;
 }

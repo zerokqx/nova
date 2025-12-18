@@ -162,7 +162,7 @@
         },
         {
           "file": "apps/nova-frontend/src/app/main.tsx",
-          "hash": "13339672226664247940",
+          "hash": "14475949588638571927",
           "deps": [
             "npm:react@19.2.0",
             "npm:react-dom@19.2.0",
@@ -191,7 +191,7 @@
         },
         {
           "file": "apps/nova-frontend/src/app/routes/chat.$id.tsx",
-          "hash": "7256646619428982669",
+          "hash": "8462833659026407747",
           "deps": [
             "npm:@tanstack/react-router@1.139.3"
           ]
@@ -212,7 +212,7 @@
         },
         {
           "file": "apps/nova-frontend/src/app/style.css",
-          "hash": "2591976526491436717"
+          "hash": "12985564596807825350"
         },
         {
           "file": "apps/nova-frontend/src/components/ai-elements/artifact.tsx",
@@ -328,8 +328,9 @@
         },
         {
           "file": "apps/nova-frontend/src/components/ai-elements/message.tsx",
-          "hash": "3368330812626105526",
+          "hash": "17699288719551519222",
           "deps": [
+            "npm:@mantine/core@8.3.9",
             "npm:ai@5.0.113",
             "npm:lucide-react@0.561.0",
             "npm:react@19.2.0",
@@ -377,8 +378,9 @@
         },
         {
           "file": "apps/nova-frontend/src/components/ai-elements/prompt-input.tsx",
-          "hash": "5783560074859647754",
+          "hash": "17035625916097051162",
           "deps": [
+            "npm:@mantine/core@8.3.9",
             "npm:ai@5.0.113",
             "npm:lucide-react@0.561.0",
             "npm:nanoid@5.1.6",
@@ -573,22 +575,26 @@
         },
         {
           "file": "apps/nova-frontend/src/features/ask-model/model/useGetAvailable.ts",
-          "hash": "4586415101998053446",
+          "hash": "7916902852181200674",
           "deps": [
             "npm:react@19.2.0"
           ]
         },
         {
           "file": "apps/nova-frontend/src/features/ask-model/ui/AskModelPromptForm.tsx",
-          "hash": "7361034675344030957",
+          "hash": "15152709154831650836",
           "deps": [
             "npm:@mantine/core@8.3.9",
-            "npm:lucide-react@0.561.0"
+            "npm:lucide-react@0.561.0",
+            "npm:motion@12.23.26"
           ]
         },
         {
           "file": "apps/nova-frontend/src/features/ask-model/ui/types/AskModelPromptForm.interface.ts",
-          "hash": "6328012811456003427"
+          "hash": "8045525563953792353",
+          "deps": [
+            "npm:ai@5.0.113"
+          ]
         },
         {
           "file": "apps/nova-frontend/src/features/chats/api/const.ts",
@@ -622,14 +628,7 @@
         },
         {
           "file": "apps/nova-frontend/src/features/chats/api/select-chat.ts",
-          "hash": "14335556976296342201"
-        },
-        {
-          "file": "apps/nova-frontend/src/features/chats/model/select-chat.store.ts",
-          "hash": "4362326754678767526",
-          "deps": [
-            "npm:@colorfy-software/zfy@1.0.0"
-          ]
+          "hash": "12541784149059465764"
         },
         {
           "file": "apps/nova-frontend/src/features/keys/api/constants.ts",
@@ -657,6 +656,17 @@
           ]
         },
         {
+          "file": "apps/nova-frontend/src/features/messages/api/create-message.ts",
+          "hash": "142635535402171503"
+        },
+        {
+          "file": "apps/nova-frontend/src/features/messages/model/intializeMessageStore.ts",
+          "hash": "12785290388123852200",
+          "deps": [
+            "npm:@colorfy-software/zfy@1.0.0"
+          ]
+        },
+        {
           "file": "apps/nova-frontend/src/features/models/api/useGetAvailableModels.ts",
           "hash": "11884539331044091347",
           "deps": [
@@ -673,10 +683,11 @@
         },
         {
           "file": "apps/nova-frontend/src/features/sendMessage/api/useSendMessage.ts",
-          "hash": "12821051052618110650",
+          "hash": "16849565357060119658",
           "deps": [
             "npm:@ai-sdk/react@2.0.115",
             "npm:ai@5.0.113",
+            "npm:nanoid@5.1.6",
             "npm:react@19.2.0"
           ]
         },
@@ -705,18 +716,20 @@
         },
         {
           "file": "apps/nova-frontend/src/pages/Chat/ui/Chat.tsx",
-          "hash": "11679560112823101011",
+          "hash": "263110496405851155",
           "deps": [
             "npm:@mantine/core@8.3.9",
             "npm:@tanstack/react-router@1.139.3",
+            "npm:ai@5.0.113",
             "npm:lodash@4.17.21",
+            "npm:nanoid@5.1.6",
             "npm:react@19.2.0",
             "npm:react-spinners@0.17.0"
           ]
         },
         {
           "file": "apps/nova-frontend/src/pages/Index/ui/index.tsx",
-          "hash": "12666892702467588418",
+          "hash": "9633298018220271682",
           "deps": [
             "npm:@mantine/core@8.3.9",
             "npm:@tanstack/react-router@1.139.3",
@@ -824,10 +837,11 @@
         },
         {
           "file": "apps/nova-frontend/src/shared/ShadCn/ui/input-group.tsx",
-          "hash": "118922082039624453",
+          "hash": "10816966531298804988",
           "deps": [
             "npm:react@19.2.0",
-            "npm:class-variance-authority@0.7.1"
+            "npm:class-variance-authority@0.7.1",
+            "npm:@mantine/core@8.3.9"
           ]
         },
         {
@@ -1093,7 +1107,7 @@
         },
         {
           "file": "apps/nova-frontend/src/shared/api/client.ts",
-          "hash": "12862534411442975117",
+          "hash": "7659836886175087361",
           "deps": [
             "npm:openapi-fetch@0.15.0",
             "npm:openapi-react-query@0.5.1"
@@ -1200,6 +1214,13 @@
           "hash": "9752898186073332355"
         },
         {
+          "file": "apps/nova-frontend/src/shared/styles/effects/sx/hover.ts",
+          "hash": "3010454526498844318",
+          "deps": [
+            "npm:@mantine/emotion@8.3.10"
+          ]
+        },
+        {
           "file": "apps/nova-frontend/src/shared/styles/mantine/index.ts",
           "hash": "11350066726408781141"
         },
@@ -1216,7 +1237,7 @@
         },
         {
           "file": "apps/nova-frontend/src/shared/types/schema.d.ts",
-          "hash": "11504538240229310697"
+          "hash": "13899181019849507700"
         },
         {
           "file": "apps/nova-frontend/src/shared/types/theme/emotion.d.ts",
@@ -1435,16 +1456,17 @@
         },
         {
           "file": "apps/nova-frontend/src/shared/ui/LogotypeSection/ui/LogotypeCombined.tsx",
-          "hash": "17954625160901443224",
+          "hash": "14828515561022597640",
           "deps": [
             "npm:@mantine/core@8.3.9"
           ]
         },
         {
           "file": "apps/nova-frontend/src/shared/ui/LogotypeSection/ui/LogotypeIcon.tsx",
-          "hash": "31865796375267360",
+          "hash": "13683048838756612314",
           "deps": [
-            "npm:motion@12.23.26"
+            "npm:motion@12.23.26",
+            "npm:react@19.2.0"
           ]
         },
         {
@@ -1468,11 +1490,14 @@
         },
         {
           "file": "apps/nova-frontend/src/shared/ui/SendButton/types/SendButtonProps.type.ts",
-          "hash": "1285145454697540265"
+          "hash": "10923298070365476025",
+          "deps": [
+            "npm:react@19.2.0"
+          ]
         },
         {
           "file": "apps/nova-frontend/src/shared/ui/SendButton/ui/index.tsx",
-          "hash": "11027267797876117496",
+          "hash": "9558732588323440681",
           "deps": [
             "npm:@mantine/core@8.3.9",
             "npm:lucide-react@0.561.0"
@@ -1525,7 +1550,7 @@
         },
         {
           "file": "apps/nova-frontend/src/shared/ui/ai-components/ui/ai-card/header/Icon.tsx",
-          "hash": "12402089211230369866",
+          "hash": "16343331063607235139",
           "deps": [
             "npm:@mantine/core@8.3.9"
           ]
@@ -1631,7 +1656,7 @@
         },
         {
           "file": "apps/nova-frontend/src/widgets/aside/ui/AsideAction.tsx",
-          "hash": "8663815629073343999",
+          "hash": "14229117882193062284",
           "deps": [
             "npm:@mantine/core@8.3.9",
             "npm:react@19.2.0"
@@ -1656,7 +1681,7 @@
         },
         {
           "file": "apps/nova-frontend/src/widgets/navbar/NavItem.tsx",
-          "hash": "1822134265477184076",
+          "hash": "16607809064872917744",
           "deps": [
             "npm:@mantine/core@8.3.9",
             "npm:@tanstack/react-router@1.139.3"
@@ -1664,13 +1689,10 @@
         },
         {
           "file": "apps/nova-frontend/src/widgets/navbar/index.tsx",
-          "hash": "14740244273218908807",
+          "hash": "2771137476689722855",
           "deps": [
             "npm:@mantine/core@8.3.9",
-            "npm:dexie-react-hooks@4.2.0",
-            "npm:lodash@4.17.21",
-            "npm:lucide-react@0.561.0",
-            "npm:motion@12.23.26"
+            "npm:lodash@4.17.21"
           ]
         },
         {

@@ -1,66 +1,79 @@
 import {
+  Conversation,
+  ConversationContent,
+} from '@/components/ai-elements/conversation';
+import {
   MessageContent,
   Message,
   MessageResponse,
 } from '@/components/ai-elements/message';
 import { AskModelPromptForm } from '@/features/ask-model';
 import { useSelectChat } from '@/features/chats/api/select-chat';
-import { TNotation } from '@/shared/lib/utils/notation';
+import { doGetInitMessage } from '@/features/messages/model/intializeMessageStore';
 import { useSendMessage } from '@features/sendMessage';
 import { AppShellMain, Stack, Center, useMantineTheme } from '@mantine/core';
 import { useAdaptiveSpace } from '@shared/lib/hooks/useAdaptiveSpace';
-import { useParams } from '@tanstack/react-router';
-import { lowerCase, map } from 'lodash';
-import { useEffect, useRef, useState } from 'react';
+import { getRouteApi, useParams } from '@tanstack/react-router';
+import { UIMessage } from 'ai';
+import { map } from 'lodash';
+import { nanoid } from 'nanoid';
+import { useEffect, useRef } from 'react';
 import { HashLoader } from 'react-spinners';
 export function Chat() {
-  const { data: messagesChat } = useSelectChat();
-  const t = useMantineTheme();
-  const [model, setModel] = useState('');
+  const initSend = useRef(false);
+  const routeApi = getRouteApi('/chat/$id');
+  const data = routeApi.useLoaderData().data;
   const { id } = useParams({
     from: '/chat/$id',
   });
-  const { sendMessage, status, messages } = useSendMessage(model as TNotation);
+
+  const t = useMantineTheme();
+  const { sendMessage, status, messages, stop } = useSendMessage(
+    data?.provider ?? '',
+    data?.id ?? '',
+    data?.messages as UIMessage[]
+  );
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
-
   const [ref, Space] = useAdaptiveSpace();
+  useEffect(() => {
+    console.log(data);
+    if (data?.messages.length === 0 && !initSend.current) {
+      console.log(doGetInitMessage());
+      sendMessage({ text: doGetInitMessage() });
+      initSend.current = true;
+    }
+  }, [data]);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
-
   return (
     <AppShellMain>
       <Center>
-        <Stack w={{ base: '100%', sm: '50%' }}>
-          {messages &&
-            map(messages, ({ parts, role, id }) => (
-              <Message from={role} key={id}>
-                <MessageContent className="  p-5 rounded-3xl">
-                  {parts.map((part, i) => {
-                    switch (part.type) {
-                      case 'text':
-                        return (
-                          <MessageResponse
-                            isAnimating
-                            key={`${role}-${i}`}
-                            mode="streaming"
-                          >
-                            {part.text}
-                          </MessageResponse>
-                        );
-                    }
-                  })}
-                </MessageContent>
-              </Message>
-            ))}
-          {status === 'submitted' && (
-            <Message from="assistant">
-              <MessageContent className="p-5">
-                <HashLoader color={t.colors.blue[8]} size={16} />
-              </MessageContent>
-            </Message>
+        <Stack w={{ base: '100%', sm: '20%' }}>
+          {messages.length > 0 && (
+            <Conversation>
+              <ConversationContent>
+                {messages &&
+                  map(messages, ({ parts, role, id }, messageIndex) => (
+                    <Message from={role} key={nanoid(4)}>
+                      <MessageContent>
+                        {parts?.map(
+                          (part) => part.type === 'text' && part.text
+                        )}
+                      </MessageContent>
+                    </Message>
+                  ))}
+                {status === 'submitted' && (
+                  <Message from="assistant">
+                    <MessageContent className="p-5">
+                      <HashLoader color={t.colors.blue[8]} size={16} />
+                    </MessageContent>
+                  </Message>
+                )}
+              </ConversationContent>
+            </Conversation>
           )}
           <Space />
         </Stack>
@@ -71,7 +84,7 @@ export function Chat() {
         ref={ref}
         pos="fixed"
         bottom={0}
-        pb={'md'}
+        p={'md'}
         left={0}
         right={0}
         style={{
@@ -83,9 +96,11 @@ export function Chat() {
         w="100%"
       >
         <AskModelPromptForm
-          {...{ model, setModel }}
-          onSubmit={async (s) => {
-            sendMessage(s);
+          callbacks={{ stop }}
+          status={status}
+          withSelect={false}
+          onSubmit={async ({ value }) => {
+            sendMessage(value);
           }}
         />
       </Center>

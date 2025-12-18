@@ -3,12 +3,21 @@ import {
   ApiProperty,
   ApiPropertyOptional,
 } from '@nestjs/swagger';
-import { IsArray, IsNotEmpty, IsObject, IsString } from 'class-validator';
-import { Prisma } from '@/generated/prisma/client';
+import {
+  IsArray,
+  IsEnum,
+  IsNotEmpty,
+  IsObject,
+  IsString,
+} from 'class-validator';
+import { Prisma, Roles } from '@/generated/prisma/client';
 import { PartEntity } from '../entities/part.entity';
 import { messageCreateInput } from '@/generated/prisma/models';
 
 export class CreateMessageDto implements messageCreateInput {
+  @ApiProperty({ enum: Roles })
+  @IsEnum(Roles)
+  role: Roles;
   @ApiHideProperty()
   id?: string | undefined;
 

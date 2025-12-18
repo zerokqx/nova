@@ -5,14 +5,19 @@ import { cn } from '@/shared/lib/utils/shadcn/utils';
 import { Button } from '@/shared/ShadCn/ui/button';
 import { Input } from '@/shared/ShadCn/ui/input';
 import { Textarea } from '@/shared/ShadCn/ui/textarea';
+import { useMantineTheme } from '@mantine/core';
 
 function InputGroup({ className, ...props }: React.ComponentProps<'div'>) {
+  const t = useMantineTheme().colors.dark[5];
   return (
     <div
       data-slot="input-group"
       role="group"
+      style={{
+        border: `1px solid ${t}`,
+      }}
       className={cn(
-        'group/input-group border-input dark:bg-input/30 shadow-xs relative flex w-full items-center rounded-4xl border outline-none transition-[color,box-shadow]',
+        'group/input-group border-input dark:bg-input/30 shadow-xs relative flex w-full items-center rounded-xl border outline-none transition-[color,box-shadow]',
         'h-9 has-[>textarea]:h-auto',
 
         // Variants based on alignment.
@@ -21,10 +26,6 @@ function InputGroup({ className, ...props }: React.ComponentProps<'div'>) {
         'has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>[data-align=block-start]]:[&>input]:pb-3',
         'has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-end]]:[&>input]:pt-3',
 
-        // Focus state.
-        'has-[[data-slot=input-group-control]:focus-visible]:ring-ring has-[[data-slot=input-group-control]:focus-visible]:ring-1',
-
-        // Error state.
         'has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[[data-slot][aria-invalid=true]]:border-destructive dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40',
 
         className

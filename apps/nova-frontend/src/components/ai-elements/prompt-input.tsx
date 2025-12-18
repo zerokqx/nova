@@ -35,6 +35,7 @@ import {
   SelectValue,
 } from '@/shared/ShadCn/ui/select';
 import { cn } from '@/shared/lib/utils/shadcn/utils';
+import { useMantineTheme } from '@mantine/core';
 import type { ChatStatus, FileUIPart } from 'ai';
 import {
   CornerDownLeftIcon,
@@ -154,7 +155,7 @@ export function PromptInputProvider({
     (FileUIPart & { id: string })[]
   >([]);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
-  const openRef = useRef<() => void>(() => { });
+  const openRef = useRef<() => void>(() => {});
 
   const add = useCallback((files: File[] | FileList) => {
     const incoming = Array.from(files);
@@ -714,9 +715,9 @@ export const PromptInput = ({
     const text = usingProvider
       ? controller.textInput.value
       : (() => {
-        const formData = new FormData(form);
-        return (formData.get('message') as string) || '';
-      })();
+          const formData = new FormData(form);
+          return (formData.get('message') as string) || '';
+        })();
 
     // Reset form immediately after capturing text to avoid race condition
     // where user input during async blob conversion would be lost
@@ -888,15 +889,15 @@ export const PromptInputTextarea = ({
 
   const controlledProps = controller
     ? {
-      value: controller.textInput.value,
-      onChange: (e: ChangeEvent<HTMLTextAreaElement>) => {
-        controller.textInput.setInput(e.currentTarget.value);
-        onChange?.(e);
-      },
-    }
+        value: controller.textInput.value,
+        onChange: (e: ChangeEvent<HTMLTextAreaElement>) => {
+          controller.textInput.setInput(e.currentTarget.value);
+          onChange?.(e);
+        },
+      }
     : {
-      onChange,
-    };
+        onChange,
+      };
 
   return (
     <InputGroupTextarea
@@ -1030,6 +1031,7 @@ export const PromptInputSubmit = ({
   children,
   ...props
 }: PromptInputSubmitProps) => {
+  const t = useMantineTheme();
   let Icon = <CornerDownLeftIcon className="size-4" />;
 
   if (status === 'submitted') {
@@ -1047,6 +1049,9 @@ export const PromptInputSubmit = ({
       size={size}
       type="submit"
       variant={variant}
+      style={{
+        background: t.colors.blue[8],
+      }}
       {...props}
     >
       {children ?? Icon}
@@ -1063,11 +1068,11 @@ interface SpeechRecognition extends EventTarget {
   onstart: ((this: SpeechRecognition, ev: Event) => any) | null;
   onend: ((this: SpeechRecognition, ev: Event) => any) | null;
   onresult:
-  | ((this: SpeechRecognition, ev: SpeechRecognitionEvent) => any)
-  | null;
+    | ((this: SpeechRecognition, ev: SpeechRecognitionEvent) => any)
+    | null;
   onerror:
-  | ((this: SpeechRecognition, ev: SpeechRecognitionErrorEvent) => any)
-  | null;
+    | ((this: SpeechRecognition, ev: SpeechRecognitionErrorEvent) => any)
+    | null;
 }
 
 interface SpeechRecognitionEvent extends Event {
@@ -1100,10 +1105,10 @@ interface SpeechRecognitionErrorEvent extends Event {
 declare global {
   interface Window {
     SpeechRecognition: {
-      new(): SpeechRecognition;
+      new (): SpeechRecognition;
     };
     webkitSpeechRecognition: {
-      new(): SpeechRecognition;
+      new (): SpeechRecognition;
     };
   }
 }

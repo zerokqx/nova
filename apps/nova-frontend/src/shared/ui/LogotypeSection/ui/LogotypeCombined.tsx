@@ -5,7 +5,7 @@ import { LogotypeText } from './LogotypeText';
 export const LogotypeCombined = ({ ...props }: GroupProps) => {
   return (
     <Group h={'max-content'} w={'max-content'} {...props}>
-      <LogotypeIcon />
+      <LogotypeIcon animate />
       <LogotypeText />
     </Group>
   );

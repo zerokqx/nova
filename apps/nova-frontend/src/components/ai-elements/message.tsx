@@ -9,6 +9,7 @@ import {
   TooltipTrigger,
 } from '@/shared/ShadCn/ui/tooltip';
 import { cn } from '@/shared/lib/utils/shadcn/utils';
+import { useMantineTheme } from '@mantine/core';
 import type { FileUIPart, UIMessage } from 'ai';
 import {
   ChevronLeftIcon,
@@ -41,19 +42,22 @@ export const MessageContent = ({
   children,
   className,
   ...props
-}: MessageContentProps) => (
-  <div
-    className={cn(
-      'is-user:dark flex w-fit max-w-full min-w-0 flex-col gap-2 overflow-hidden text-sm',
-      'group-[.is-user]:ml-auto group-[.is-user]:rounded-lg group-[.is-user]:bg-secondary group-[.is-user]:px-4 group-[.is-user]:py-3 group-[.is-user]:text-foreground',
-      'group-[.is-assistant]:text-foreground',
-      className
-    )}
-    {...props}
-  >
-    {children}
-  </div>
-);
+}: MessageContentProps) => {
+  const t = useMantineTheme();
+  return (
+    <div
+      className={cn(
+        'is-user:dark flex w-fit max-w-full min-w-0 flex-col gap-2 overflow-hidden text-sm',
+        `group-[.is-user]:ml-auto group-[.is-user]:rounded-lg group-[.is-user]:bg-blue-600 group-[.is-user]:px-4 group-[.is-user]:py-3 group-[.is-user]:text-white`,
+        'group-[.is-assistant]:text-white',
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};
 
 export type MessageActionsProps = ComponentProps<'div'>;
 

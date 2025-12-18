@@ -45354,11 +45354,6 @@
       },
       {
         "source": "nova-frontend",
-        "target": "npm:dexie-react-hooks@4.2.0",
-        "type": "static"
-      },
-      {
-        "source": "nova-frontend",
         "target": "npm:@nx/react@22.1.3",
         "type": "static"
       },
@@ -64127,5 +64122,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1765989102683
+  "computedAt": 1766025008859
 }

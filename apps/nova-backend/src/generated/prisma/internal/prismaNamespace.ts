@@ -858,7 +858,8 @@ export type KeyScalarFieldEnum = (typeof KeyScalarFieldEnum)[keyof typeof KeySca
 
 export const ChatScalarFieldEnum = {
   id: 'id',
-  title: 'title'
+  title: 'title',
+  provider: 'provider'
 } as const
 
 export type ChatScalarFieldEnum = (typeof ChatScalarFieldEnum)[keyof typeof ChatScalarFieldEnum]
@@ -868,7 +869,8 @@ export const MessageScalarFieldEnum = {
   id: 'id',
   chatId: 'chatId',
   parts: 'parts',
-  metadata: 'metadata'
+  metadata: 'metadata',
+  role: 'role'
 } as const
 
 export type MessageScalarFieldEnum = (typeof MessageScalarFieldEnum)[keyof typeof MessageScalarFieldEnum]
@@ -988,6 +990,20 @@ export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'J
  * Reference to a field of type 'QueryMode'
  */
 export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
+    
+
+
+/**
+ * Reference to a field of type 'Roles'
+ */
+export type EnumRolesFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Roles'>
+    
+
+
+/**
+ * Reference to a field of type 'Roles[]'
+ */
+export type ListEnumRolesFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Roles[]'>
     
 
 
