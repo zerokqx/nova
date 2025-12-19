@@ -30,12 +30,10 @@ export class PerplexityService extends AiProvider<PerplexityProvider> {
   }
   streamWithMessagesArray(
     messages: ModelMessage[],
-    model: string
+    model: string,
   ): StreamTextResult<ToolSet, never> {
     const client = this.sendGuard();
     return streamText({
-      system:
-        'Shorten your answer as much as possible, your task is to save response tokens.',
       model: client(model),
       messages,
     });

@@ -1,8 +1,6 @@
-import { $api } from '@/shared/api/client';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport, UIMessage } from 'ai';
-import { nanoid } from 'nanoid';
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 export const useSendMessage = (
   url: string,
   id: string,

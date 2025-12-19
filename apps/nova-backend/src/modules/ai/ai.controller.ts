@@ -9,9 +9,7 @@ import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Response } from 'express';
 import { Bearer } from '@modules/shared/headers/headers.auth.decorator';
 import { MessagesService } from '@modules/messages/messages.service';
-import { create } from 'domain';
 import { Prisma } from '@/generated/prisma/client';
-import { lstat } from 'fs';
 
 @ApiTags('AI')
 @Controller('ai')
@@ -53,34 +51,32 @@ export class AiController {
     @Res() res: Response,
     @Bearer() token: string
   ) {
-    const log = new Logger();
-
-    log.log(body);
     const result = this.aiService
       .with(token)
       .streamWithMessagesArray(convertToModelMessages(body.messages), model);
 
-    const createMsg = this.messageServcie;
+    const messagesService = this.messageServcie;
 
     return result.pipeUIMessageStreamToResponse(res, {
       async onFinish(r) {
-        // последнее сообщение в body.messages — тот user, который только что отправил запрос
         const userMessage = body.messages[body.messages.length - 1];
         const assistantMessage = r.responseMessage;
 
-        await createMsg.create({
-          metadata: (userMessage.metadata ?? {}) as Prisma.InputJsonObject,
-          parts: userMessage.parts as Prisma.InputJsonObject[],
-          role: userMessage.role, // 'user'
-          chat: { connect: { id: body.id } },
-        });
-
-        await createMsg.create({
-          metadata: (assistantMessage.metadata ?? {}) as Prisma.InputJsonObject,
-          parts: assistantMessage.parts as Prisma.InputJsonObject[],
-          role: assistantMessage.role, // 'assistant'
-          chat: { connect: { id: body.id } },
-        });
+        messagesService.combindedCreate([
+          {
+            metadata: (userMessage.metadata ?? {}) as Prisma.InputJsonObject,
+            parts: userMessage.parts as Prisma.InputJsonObject[],
+            role: userMessage.role,
+            chatId: body.id,
+          },
+          {
+            metadata: (assistantMessage.metadata ??
+              {}) as Prisma.InputJsonObject,
+            parts: assistantMessage.parts as Prisma.InputJsonObject[],
+            chatId: body.id,
+            role: assistantMessage.role,
+          },
+        ]);
       },
     });
   }

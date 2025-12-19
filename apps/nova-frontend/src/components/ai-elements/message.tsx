@@ -9,6 +9,7 @@ import {
   TooltipTrigger,
 } from '@/shared/ShadCn/ui/tooltip';
 import { cn } from '@/shared/lib/utils/shadcn/utils';
+import { css } from '@emotion/react';
 import { useMantineTheme } from '@mantine/core';
 import type { FileUIPart, UIMessage } from 'ai';
 import {
@@ -312,6 +313,9 @@ export const MessageResponse = memo(
     <Streamdown
       className={cn(
         'size-full [&>*:first-child]:mt-0 [&>*:last-child]:mb-0',
+        ' [&_code[data-streamdown="inline-code"]]:bg-(--mantine-color-dark-9)',
+        '[&_a[data-streamdown="link"]]:text-(--mantine-color-blue-6)',
+        '[&_a[data-streamdown="link"]]:text-(--mantine-color-blue-6)',
         className
       )}
       {...props}

@@ -5,18 +5,17 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class MessagesService {
   constructor(private prisma: PrismaService) {}
-  private async createContection(data: Prisma.messageCreateInput) {
+
+  async create(data: Prisma.messageUncheckedCreateInput) {
     return await this.prisma.message.create({ data });
   }
 
-  async create(data: Prisma.messageCreateInput): Promise<message> {
-    return await this.createContection(data);
-  }
-
-  async createInitial(data: Prisma.messageCreateInput) {
-    return await this.createContection({
-      ...data,
-      metadata: { initial: true },
+  async createInitial(data: Prisma.messageUncheckedCreateInput) {
+    return await this.prisma.message.create({
+      data: {
+        ...data,
+        metadata: { initial: true },
+      },
     });
   }
 
@@ -27,6 +26,12 @@ export class MessagesService {
   }
 
   async getAllMessagesForChat(chatId: string) {
-    return this.prisma.message.findMany({ where: { chatId } });
+    return await this.prisma.message.findMany({ where: { chatId } });
+  }
+
+  async combindedCreate(dataForCreate: Prisma.messageCreateManyInput[]) {
+    return await this.prisma.message.createMany({
+      data: dataForCreate,
+    });
   }
 }

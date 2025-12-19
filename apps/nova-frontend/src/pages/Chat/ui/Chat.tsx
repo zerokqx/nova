@@ -2,31 +2,28 @@ import {
   Conversation,
   ConversationContent,
 } from '@/components/ai-elements/conversation';
+import { motion } from 'motion/react';
 import {
   MessageContent,
   Message,
   MessageResponse,
 } from '@/components/ai-elements/message';
 import { AskModelPromptForm } from '@/features/ask-model';
-import { useSelectChat } from '@/features/chats/api/select-chat';
 import { doGetInitMessage } from '@/features/messages/model/intializeMessageStore';
 import { useSendMessage } from '@features/sendMessage';
 import { AppShellMain, Stack, Center, useMantineTheme } from '@mantine/core';
 import { useAdaptiveSpace } from '@shared/lib/hooks/useAdaptiveSpace';
-import { getRouteApi, useParams } from '@tanstack/react-router';
+import { getRouteApi } from '@tanstack/react-router';
 import { UIMessage } from 'ai';
 import { map } from 'lodash';
-import { nanoid } from 'nanoid';
 import { useEffect, useRef } from 'react';
 import { HashLoader } from 'react-spinners';
+const AnimateMessageResponse = motion.create(MessageResponse);
 export function Chat() {
   const initSend = useRef(false);
   const routeApi = getRouteApi('/chat/$id');
   const data = routeApi.useLoaderData().data;
-  const { id } = useParams({
-    from: '/chat/$id',
-  });
-
+  console.log(data);
   const t = useMantineTheme();
   const { sendMessage, status, messages, stop } = useSendMessage(
     data?.provider ?? '',
@@ -37,39 +34,53 @@ export function Chat() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [ref, Space] = useAdaptiveSpace();
   useEffect(() => {
-    console.log(data);
-    if (data?.messages.length === 0 && !initSend.current) {
-      console.log(doGetInitMessage());
+    if (!initSend.current && messages.length === 0) {
       sendMessage({ text: doGetInitMessage() });
       initSend.current = true;
     }
-  }, [data]);
-
+  }, [messages, sendMessage]);
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
   return (
     <AppShellMain>
       <Center>
-        <Stack w={{ base: '100%', sm: '20%' }}>
+        <Stack w={{ base: '100%', sm: '50rem' }}>
           {messages.length > 0 && (
             <Conversation>
               <ConversationContent>
                 {messages &&
                   map(messages, ({ parts, role, id }, messageIndex) => (
-                    <Message from={role} key={nanoid(4)}>
-                      <MessageContent>
-                        {parts?.map(
-                          (part) => part.type === 'text' && part.text
-                        )}
-                      </MessageContent>
-                    </Message>
+                    <motion.div
+                      initial={{ scale: 2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                    >
+                      <Message from={role} key={id}>
+                        <MessageContent>
+                          {parts?.map(
+                            (part, i) =>
+                              part.type === 'text' && (
+                                <MessageResponse key={`${i}-${id}-${role}`}>
+                                  {part.text}
+                                </MessageResponse>
+                              )
+                          )}
+                        </MessageContent>
+                      </Message>
+                    </motion.div>
                   ))}
                 {status === 'submitted' && (
                   <Message from="assistant">
-                    <MessageContent className="p-5">
-                      <HashLoader color={t.colors.blue[8]} size={16} />
-                    </MessageContent>
+                    <Center>
+                      <MessageContent className="p-5">
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                        >
+                          <HashLoader color={t.colors.blue[8]} size={16} />
+                        </motion.div>
+                      </MessageContent>
+                    </Center>
                   </Message>
                 )}
               </ConversationContent>

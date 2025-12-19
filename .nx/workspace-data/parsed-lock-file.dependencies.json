@@ -9895,6 +9895,56 @@
     "type": "static"
   },
   {
+    "source": "npm:nodemon@3.1.11",
+    "target": "npm:chokidar@3.6.0",
+    "type": "static"
+  },
+  {
+    "source": "npm:nodemon@3.1.11",
+    "target": "npm:debug@4.3.1",
+    "type": "static"
+  },
+  {
+    "source": "npm:nodemon@3.1.11",
+    "target": "npm:ignore-by-default@1.0.1",
+    "type": "static"
+  },
+  {
+    "source": "npm:nodemon@3.1.11",
+    "target": "npm:minimatch@3.1.2",
+    "type": "static"
+  },
+  {
+    "source": "npm:nodemon@3.1.11",
+    "target": "npm:pstree.remy@1.1.8",
+    "type": "static"
+  },
+  {
+    "source": "npm:nodemon@3.1.11",
+    "target": "npm:semver@7.5.4",
+    "type": "static"
+  },
+  {
+    "source": "npm:nodemon@3.1.11",
+    "target": "npm:simple-update-notifier@2.0.0",
+    "type": "static"
+  },
+  {
+    "source": "npm:nodemon@3.1.11",
+    "target": "npm:supports-color@5.5.0",
+    "type": "static"
+  },
+  {
+    "source": "npm:nodemon@3.1.11",
+    "target": "npm:touch@3.1.1",
+    "type": "static"
+  },
+  {
+    "source": "npm:nodemon@3.1.11",
+    "target": "npm:undefsafe@2.0.5",
+    "type": "static"
+  },
+  {
     "source": "npm:npm-conf@1.1.3",
     "target": "npm:config-chain@1.1.13",
     "type": "static"
@@ -13090,6 +13140,11 @@
     "type": "static"
   },
   {
+    "source": "npm:simple-update-notifier@2.0.0",
+    "target": "npm:semver@7.5.4",
+    "type": "static"
+  },
+  {
     "source": "npm:sirv@3.0.2",
     "target": "npm:@polka/url@1.0.0-next.29",
     "type": "static"
@@ -13722,6 +13777,11 @@
   {
     "source": "npm:sugarss@5.0.1",
     "target": "npm:postcss@8.5.6",
+    "type": "static"
+  },
+  {
+    "source": "npm:supports-color@5.5.0",
+    "target": "npm:has-flag@3.0.0",
     "type": "static"
   },
   {

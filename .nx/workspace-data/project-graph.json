@@ -12278,13 +12278,13 @@
         "hash": "sha512-R3pbpkcIqv2Pm3dUwgjclDRVmWpTJW2DcMzcIhEXEx1oh/CEMObMm3KLmRJOdvhM7o4uQBnwr8pzRK2sJWIqfg=="
       }
     },
-    "npm:has-flag@4.0.0": {
+    "npm:has-flag@3.0.0": {
       "type": "npm",
-      "name": "npm:has-flag@4.0.0",
+      "name": "npm:has-flag@3.0.0",
       "data": {
-        "version": "4.0.0",
+        "version": "3.0.0",
         "packageName": "has-flag",
-        "hash": "sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ=="
+        "hash": "sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw=="
       }
     },
     "npm:has-property-descriptors@1.0.2": {
@@ -12771,6 +12771,15 @@
         "version": "5.3.2",
         "packageName": "ignore",
         "hash": "sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g=="
+      }
+    },
+    "npm:ignore-by-default@1.0.1": {
+      "type": "npm",
+      "name": "npm:ignore-by-default@1.0.1",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "ignore-by-default",
+        "hash": "sha512-Ius2VYcGNk7T90CppJqcIkS5ooHUZyIQK+ClZfMfMNFEF9VSE73Fq+906u/CWu92x4gzZMWOwfFYckPObzdEbA=="
       }
     },
     "npm:image-size@0.5.5": {
@@ -15698,6 +15707,15 @@
         "hash": "sha512-OXdegQq03OmXEjt2hZP33W2YPs/E5BcFQks46+G2gAxs4gHOIVD1u7EqlYLYSKsaIpyKCK9Gbk0ta1/gjRSMRQ=="
       }
     },
+    "npm:nodemon@3.1.11": {
+      "type": "npm",
+      "name": "npm:nodemon@3.1.11",
+      "data": {
+        "version": "3.1.11",
+        "packageName": "nodemon",
+        "hash": "sha512-is96t8F/1//UHAjNPHpbsNY46ELPpftGUoSVNXwUfMk/qdjSylYrWSu1XavVTBOn526kFiOR733ATgNBCQyH0g=="
+      }
+    },
     "npm:normalize-path@3.0.0": {
       "type": "npm",
       "name": "npm:normalize-path@3.0.0",
@@ -16985,13 +17003,13 @@
         "hash": "sha512-ravE6m9Atw9Z/jjttRUZ+clIXogdghyZAuWJ3qEzjT+jI/dL1ifAqhZeC5VHzQp1MSt1+jxKkFNemj/iO7tVUA=="
       }
     },
-    "npm:prettier@2.8.8": {
+    "npm:prettier@3.7.4": {
       "type": "npm",
-      "name": "npm:prettier@2.8.8",
+      "name": "npm:prettier@3.7.4",
       "data": {
-        "version": "2.8.8",
+        "version": "3.7.4",
         "packageName": "prettier",
-        "hash": "sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q=="
+        "hash": "sha512-v6UNi1+3hSlVvv8fSaoUbggEM5VErKmmpGA7Pl3HF8V6uKY7rvClBOJlH6yNwQtfTueNkGVpOv/mtWL9L4bgRA=="
       }
     },
     "npm:pretty-format@27.5.1": {
@@ -17118,6 +17136,15 @@
         "version": "1.15.0",
         "packageName": "psl",
         "hash": "sha512-JZd3gMVBAVQkSs6HdNZo9Sdo0LNcQeMNP3CozBJb3JYC/QUYZTnKxP+f8oWRX4rHP5EurWxqAHTSwUCjlNKa1w=="
+      }
+    },
+    "npm:pstree.remy@1.1.8": {
+      "type": "npm",
+      "name": "npm:pstree.remy@1.1.8",
+      "data": {
+        "version": "1.1.8",
+        "packageName": "pstree.remy",
+        "hash": "sha512-77DZwxQmxKnu3aR542U+X8FypNzbfJ+C5XQDk3uWjWxn6151aIMGthWYRXTqT1E5oJvg+ljaa2OJi+VfvCOQ8w=="
       }
     },
     "npm:pump@3.0.3": {
@@ -18470,6 +18497,15 @@
         "hash": "sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw=="
       }
     },
+    "npm:simple-update-notifier@2.0.0": {
+      "type": "npm",
+      "name": "npm:simple-update-notifier@2.0.0",
+      "data": {
+        "version": "2.0.0",
+        "packageName": "simple-update-notifier",
+        "hash": "sha512-a2B9Y0KlNXl9u/vsW6sTIu9vGEpfKu2wRV6l1H3XEas/0gUIzGzBoP/IouTcUQbm9JWZLH3COxyn03TYlFax6w=="
+      }
+    },
     "npm:sirv@3.0.2": {
       "type": "npm",
       "name": "npm:sirv@3.0.2",
@@ -19028,13 +19064,13 @@
         "hash": "sha512-ctS5RYCBVvPoZAnzIaX5QSShK8ZiZxD5HUqSxlusvEMC+QZQIPCPOIJg6aceFX+K2rf4+SH89eu++h1Zmsr2nw=="
       }
     },
-    "npm:supports-color@10.2.2": {
+    "npm:supports-color@5.5.0": {
       "type": "npm",
-      "name": "npm:supports-color@10.2.2",
+      "name": "npm:supports-color@5.5.0",
       "data": {
-        "version": "10.2.2",
+        "version": "5.5.0",
         "packageName": "supports-color",
-        "hash": "sha512-SS+jx45GF1QjgEXQx4NJZV9ImqmO2NPz5FNsIHrsDjh2YsHnawpan7SNQ1o8NuhrbHZy9AZhIoCUiCeaW/C80g=="
+        "hash": "sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow=="
       }
     },
     "npm:supports-preserve-symlinks-flag@1.0.0": {
@@ -19649,6 +19685,15 @@
         "hash": "sha512-sf4i37nQ2LBx4m3wB74y+ubopq6W/dIzXg0FDGjsYnZHVa1Da8FH853wlL2gtUhg+xJXjfk3kUZS3BRoQeoQBQ=="
       }
     },
+    "npm:touch@3.1.1": {
+      "type": "npm",
+      "name": "npm:touch@3.1.1",
+      "data": {
+        "version": "3.1.1",
+        "packageName": "touch",
+        "hash": "sha512-r0eojU4bI8MnHr8c5bNo7lJDdI2qXlWWJk6a9EAFG7vbhTjElYhBVS3/miuE0uOuoLdb8Mc/rVfsmm6eo5o9GA=="
+      }
+    },
     "npm:tough-cookie@4.1.4": {
       "type": "npm",
       "name": "npm:tough-cookie@4.1.4",
@@ -20016,6 +20061,15 @@
         "version": "1.4.3",
         "packageName": "unbzip2-stream",
         "hash": "sha512-mlExGW4w71ebDJviH16lQLtZS32VKqsSfk80GCfUlwT/4/hNRFsoscrF/c++9xinkMzECL1uL9DDwXqFWkruPg=="
+      }
+    },
+    "npm:undefsafe@2.0.5": {
+      "type": "npm",
+      "name": "npm:undefsafe@2.0.5",
+      "data": {
+        "version": "2.0.5",
+        "packageName": "undefsafe",
+        "hash": "sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA=="
       }
     },
     "npm:undici-types@7.16.0": {
@@ -22664,6 +22718,15 @@
         "hash": "sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw=="
       }
     },
+    "npm:supports-color@10.2.2": {
+      "type": "npm",
+      "name": "npm:supports-color@10.2.2",
+      "data": {
+        "version": "10.2.2",
+        "packageName": "supports-color",
+        "hash": "sha512-SS+jx45GF1QjgEXQx4NJZV9ImqmO2NPz5FNsIHrsDjh2YsHnawpan7SNQ1o8NuhrbHZy9AZhIoCUiCeaW/C80g=="
+      }
+    },
     "npm:arch@2.2.0": {
       "type": "npm",
       "name": "npm:arch@2.2.0",
@@ -23526,6 +23589,15 @@
         "version": "5.3.4",
         "packageName": "fraction.js",
         "hash": "sha512-1X1NTtiJphryn/uLQz3whtY6jK3fTqoE3ohKs0tT+Ujr1W59oopxmoEh7Lu5p6vBaPbgoM0bzveAW4Qi5RyWDQ=="
+      }
+    },
+    "npm:has-flag@4.0.0": {
+      "type": "npm",
+      "name": "npm:has-flag@4.0.0",
+      "data": {
+        "version": "4.0.0",
+        "packageName": "has-flag",
+        "hash": "sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ=="
       }
     },
     "npm:hermes-estree@0.32.0": {
@@ -36348,9 +36420,9 @@
       "type": "npm",
       "name": "npm:has-flag",
       "data": {
-        "version": "4.0.0",
+        "version": "3.0.0",
         "packageName": "has-flag",
-        "hash": "sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ=="
+        "hash": "sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw=="
       }
     },
     "npm:has-property-descriptors": {
@@ -36837,6 +36909,15 @@
         "version": "5.3.2",
         "packageName": "ignore",
         "hash": "sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g=="
+      }
+    },
+    "npm:ignore-by-default": {
+      "type": "npm",
+      "name": "npm:ignore-by-default",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "ignore-by-default",
+        "hash": "sha512-Ius2VYcGNk7T90CppJqcIkS5ooHUZyIQK+ClZfMfMNFEF9VSE73Fq+906u/CWu92x4gzZMWOwfFYckPObzdEbA=="
       }
     },
     "npm:image-size": {
@@ -39764,6 +39845,15 @@
         "hash": "sha512-OXdegQq03OmXEjt2hZP33W2YPs/E5BcFQks46+G2gAxs4gHOIVD1u7EqlYLYSKsaIpyKCK9Gbk0ta1/gjRSMRQ=="
       }
     },
+    "npm:nodemon": {
+      "type": "npm",
+      "name": "npm:nodemon",
+      "data": {
+        "version": "3.1.11",
+        "packageName": "nodemon",
+        "hash": "sha512-is96t8F/1//UHAjNPHpbsNY46ELPpftGUoSVNXwUfMk/qdjSylYrWSu1XavVTBOn526kFiOR733ATgNBCQyH0g=="
+      }
+    },
     "npm:normalize-path": {
       "type": "npm",
       "name": "npm:normalize-path",
@@ -41055,9 +41145,9 @@
       "type": "npm",
       "name": "npm:prettier",
       "data": {
-        "version": "2.8.8",
+        "version": "3.7.4",
         "packageName": "prettier",
-        "hash": "sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q=="
+        "hash": "sha512-v6UNi1+3hSlVvv8fSaoUbggEM5VErKmmpGA7Pl3HF8V6uKY7rvClBOJlH6yNwQtfTueNkGVpOv/mtWL9L4bgRA=="
       }
     },
     "npm:pretty-format": {
@@ -41184,6 +41274,15 @@
         "version": "1.15.0",
         "packageName": "psl",
         "hash": "sha512-JZd3gMVBAVQkSs6HdNZo9Sdo0LNcQeMNP3CozBJb3JYC/QUYZTnKxP+f8oWRX4rHP5EurWxqAHTSwUCjlNKa1w=="
+      }
+    },
+    "npm:pstree.remy": {
+      "type": "npm",
+      "name": "npm:pstree.remy",
+      "data": {
+        "version": "1.1.8",
+        "packageName": "pstree.remy",
+        "hash": "sha512-77DZwxQmxKnu3aR542U+X8FypNzbfJ+C5XQDk3uWjWxn6151aIMGthWYRXTqT1E5oJvg+ljaa2OJi+VfvCOQ8w=="
       }
     },
     "npm:pump": {
@@ -42536,6 +42635,15 @@
         "hash": "sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw=="
       }
     },
+    "npm:simple-update-notifier": {
+      "type": "npm",
+      "name": "npm:simple-update-notifier",
+      "data": {
+        "version": "2.0.0",
+        "packageName": "simple-update-notifier",
+        "hash": "sha512-a2B9Y0KlNXl9u/vsW6sTIu9vGEpfKu2wRV6l1H3XEas/0gUIzGzBoP/IouTcUQbm9JWZLH3COxyn03TYlFax6w=="
+      }
+    },
     "npm:sirv": {
       "type": "npm",
       "name": "npm:sirv",
@@ -43080,9 +43188,9 @@
       "type": "npm",
       "name": "npm:supports-color",
       "data": {
-        "version": "10.2.2",
+        "version": "5.5.0",
         "packageName": "supports-color",
-        "hash": "sha512-SS+jx45GF1QjgEXQx4NJZV9ImqmO2NPz5FNsIHrsDjh2YsHnawpan7SNQ1o8NuhrbHZy9AZhIoCUiCeaW/C80g=="
+        "hash": "sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow=="
       }
     },
     "npm:supports-preserve-symlinks-flag": {
@@ -43697,6 +43805,15 @@
         "hash": "sha512-sf4i37nQ2LBx4m3wB74y+ubopq6W/dIzXg0FDGjsYnZHVa1Da8FH853wlL2gtUhg+xJXjfk3kUZS3BRoQeoQBQ=="
       }
     },
+    "npm:touch": {
+      "type": "npm",
+      "name": "npm:touch",
+      "data": {
+        "version": "3.1.1",
+        "packageName": "touch",
+        "hash": "sha512-r0eojU4bI8MnHr8c5bNo7lJDdI2qXlWWJk6a9EAFG7vbhTjElYhBVS3/miuE0uOuoLdb8Mc/rVfsmm6eo5o9GA=="
+      }
+    },
     "npm:tough-cookie": {
       "type": "npm",
       "name": "npm:tough-cookie",
@@ -44064,6 +44181,15 @@
         "version": "1.4.3",
         "packageName": "unbzip2-stream",
         "hash": "sha512-mlExGW4w71ebDJviH16lQLtZS32VKqsSfk80GCfUlwT/4/hNRFsoscrF/c++9xinkMzECL1uL9DDwXqFWkruPg=="
+      }
+    },
+    "npm:undefsafe": {
+      "type": "npm",
+      "name": "npm:undefsafe",
+      "data": {
+        "version": "2.0.5",
+        "packageName": "undefsafe",
+        "hash": "sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA=="
       }
     },
     "npm:undici-types": {
@@ -45840,6 +45966,11 @@
       },
       {
         "source": "nova",
+        "target": "npm:nodemon@3.1.11",
+        "type": "static"
+      },
+      {
+        "source": "nova",
         "target": "npm:nx@22.1.3",
         "type": "static"
       },
@@ -45850,7 +45981,7 @@
       },
       {
         "source": "nova",
-        "target": "npm:prettier@2.8.8",
+        "target": "npm:prettier@3.7.4",
         "type": "static"
       },
       {
@@ -57086,6 +57217,58 @@
         "type": "static"
       }
     ],
+    "npm:nodemon@3.1.11": [
+      {
+        "source": "npm:nodemon@3.1.11",
+        "target": "npm:chokidar@3.6.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:nodemon@3.1.11",
+        "target": "npm:debug@4.3.1",
+        "type": "static"
+      },
+      {
+        "source": "npm:nodemon@3.1.11",
+        "target": "npm:ignore-by-default@1.0.1",
+        "type": "static"
+      },
+      {
+        "source": "npm:nodemon@3.1.11",
+        "target": "npm:minimatch@3.1.2",
+        "type": "static"
+      },
+      {
+        "source": "npm:nodemon@3.1.11",
+        "target": "npm:pstree.remy@1.1.8",
+        "type": "static"
+      },
+      {
+        "source": "npm:nodemon@3.1.11",
+        "target": "npm:semver@7.5.4",
+        "type": "static"
+      },
+      {
+        "source": "npm:nodemon@3.1.11",
+        "target": "npm:simple-update-notifier@2.0.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:nodemon@3.1.11",
+        "target": "npm:supports-color@5.5.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:nodemon@3.1.11",
+        "target": "npm:touch@3.1.1",
+        "type": "static"
+      },
+      {
+        "source": "npm:nodemon@3.1.11",
+        "target": "npm:undefsafe@2.0.5",
+        "type": "static"
+      }
+    ],
     "npm:npm-conf@1.1.3": [
       {
         "source": "npm:npm-conf@1.1.3",
@@ -60633,6 +60816,13 @@
         "type": "static"
       }
     ],
+    "npm:simple-update-notifier@2.0.0": [
+      {
+        "source": "npm:simple-update-notifier@2.0.0",
+        "target": "npm:semver@7.5.4",
+        "type": "static"
+      }
+    ],
     "npm:sirv@3.0.2": [
       {
         "source": "npm:sirv@3.0.2",
@@ -61319,6 +61509,13 @@
       {
         "source": "npm:sugarss@5.0.1",
         "target": "npm:postcss@8.5.6",
+        "type": "static"
+      }
+    ],
+    "npm:supports-color@5.5.0": [
+      {
+        "source": "npm:supports-color@5.5.0",
+        "target": "npm:has-flag@3.0.0",
         "type": "static"
       }
     ],
@@ -64122,5 +64319,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1766025008859
+  "computedAt": 1766114151792
 }

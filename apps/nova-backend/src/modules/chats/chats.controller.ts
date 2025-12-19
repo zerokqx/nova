@@ -19,12 +19,18 @@ import { ChatsService } from './chats.service';
 import { CreateChatDto } from './dto/create-chat.dto';
 import { ChatEntity } from './entities/chats.entity';
 import { chat } from '@/generated/prisma/client';
+import { DeleteManyChatDto } from './dto/delete-many.dto';
 
 @ApiTags('Сhats')
 @Controller('chats')
 export class ChatsController {
-  constructor(private readonly chatsService: ChatsService) {}
+  constructor(private readonly chatsService: ChatsService) { }
 
+  @Delete('/delete_many')
+  @ApiOperation({ summary: 'Удаляет чаты коотрые были переданы в body.ids' })
+  delete(@Body() body: DeleteManyChatDto) {
+    return this.chatsService.deleteManyChat(body.ids);
+  }
   @Post()
   @ApiOperation({ summary: 'Создать новый чат' })
   @ApiOkResponse({ type: ChatEntity })

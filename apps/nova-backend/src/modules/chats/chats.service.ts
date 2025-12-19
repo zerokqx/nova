@@ -1,12 +1,12 @@
 import { chat, Prisma } from '@/generated/prisma/client';
 import { PrismaService } from '@modules/shared/prisma/prisma.service';
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { Omit } from '@prisma/client/runtime/library';
 import { title } from 'process';
 
 @Injectable()
 export class ChatsService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService) { }
   async create(data: Omit<chat, 'id'>) {
     return await this.prisma.chat.create({ data });
   }
@@ -33,5 +33,8 @@ export class ChatsService {
       where: { id },
       include: { messages: true },
     });
+  }
+  async deleteManyChat(ids: string[]) {
+    return await this.prisma.chat.deleteMany({ where: { id: { in: ids } } });
   }
 }

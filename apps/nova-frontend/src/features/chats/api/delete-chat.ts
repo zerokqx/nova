@@ -8,3 +8,10 @@ export const useDeleteChat = () => {
     onSuccess: () => client.invalidateQueries(CHAT_ALL),
   });
 };
+
+export const useDeleteManyChat = () => {
+  const client = useQueryClient();
+  return $api.useMutation('delete', '/api/chats/delete_many', {
+    onSuccess: () => client.invalidateQueries(CHAT_ALL),
+  });
+};

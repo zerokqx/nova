@@ -10,14 +10,14 @@ import { useGetAvailableForMantine } from '../model/useGetAvailable';
 import { IAskModelPromptFormProps } from './types/AskModelPromptForm.interface';
 import { motion } from 'motion/react';
 import { useAppForm } from '@/shared/ui/Form';
-import { callbackify } from 'util';
 
 const MotionPromptInput = motion.create(PromptInput);
 export const AskModelPromptForm = (props: IAskModelPromptFormProps) => {
   const { format } = useGetAvailableForMantine();
   const { onSubmit, withSelect = true, status, callbacks } = props;
+
   const form = useAppForm({
-    defaultState: { canSubmit: false },
+    defaultState: { canSubmit: true },
     defaultValues: { text: '', model: '' },
 
     onSubmit,
@@ -34,6 +34,7 @@ export const AskModelPromptForm = (props: IAskModelPromptFormProps) => {
         }}
         animate={{ scale: 1, opacity: 1 }}
         className="
+        rounded-2xl
         bg-black
         max-w-120
         **:data-[slot='input-group']:border-0
@@ -44,10 +45,8 @@ export const AskModelPromptForm = (props: IAskModelPromptFormProps) => {
         <form.AppField
           name="text"
           validators={{
-            onChange: ({ value }) =>
-              value.length > 0 ? undefined : 'Ввведите что нибудь',
-            onSubmit: ({ value }) =>
-              value.length > 0 ? undefined : 'Ввведите что нибудь',
+            onChange: ({ value }) => (value.length > 0 ? undefined : 'Ввведите что нибудь'),
+            onSubmit: ({ value }) => (value.length > 0 ? undefined : 'Ввведите что нибудь'),
           }}
           children={(field) => (
             <PromptInputTextarea
@@ -67,8 +66,7 @@ export const AskModelPromptForm = (props: IAskModelPromptFormProps) => {
             {showSelect && 'model' in props && 'setModel' in props && (
               <form.AppField
                 validators={{
-                  onSubmit: ({ value }) =>
-                    value ? undefined : 'Нужно выбрать модель',
+                  onSubmit: ({ value }) => (value ? undefined : 'Нужно выбрать модель'),
                 }}
                 name="model"
                 children={(field) => (
@@ -93,9 +91,7 @@ export const AskModelPromptForm = (props: IAskModelPromptFormProps) => {
               children={([canSubmit]) => {
                 return (
                   <PromptInputSubmit
-                    onClick={
-                      status === 'streaming' ? callbacks.stop : () => null
-                    }
+                    onClick={status === 'streaming' ? callbacks.stop : () => null}
                     status={status}
                     disabled={!canSubmit}
                     className="rounded-full"

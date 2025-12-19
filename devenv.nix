@@ -8,7 +8,6 @@
 
 {
   env.GREET = "NovaAI";
-
   packages = with pkgs; [
     git
     insomnia
@@ -18,6 +17,7 @@
     nodemon
     nest-cli
     docker-compose
+
     openssl
     bun
     prisma
@@ -44,6 +44,7 @@
   };
 
   enterTest = ''
+
     echo "Running tests"
     git --version | grep --color=auto "${pkgs.git.version}"
   '';

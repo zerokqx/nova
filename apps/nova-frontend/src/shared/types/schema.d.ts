@@ -304,6 +304,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/chats/delete_many": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        /** Удаляет чаты коотрые были переданы в body.ids */
+        delete: operations["ChatsController_delete"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/chats": {
         parameters: {
             query?: never;
@@ -518,6 +535,9 @@ export interface components {
              * @enum {string}
              */
             role: "user" | "assistant" | "system";
+        };
+        DeleteManyChatDto: {
+            ids: string[];
         };
         CreateChatDto: {
             provider: string;
@@ -1092,6 +1112,27 @@ export interface operations {
                 content: {
                     "application/json": components["schemas"]["MessagesEntity"][];
                 };
+            };
+        };
+    };
+    ChatsController_delete: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["DeleteManyChatDto"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
             };
         };
     };

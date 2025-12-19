@@ -16,11 +16,11 @@ export default defineConfig(() => ({
   cacheDir: '../../node_modules/.vite/apps/nova-frontend',
   server: {
     port: 5173,
-    host: 'localhost',
+    host: '0.0.0.0',
   },
   preview: {
     port: 5173,
-    host: 'localhost',
+    host: '0.0.0.0',
   },
   plugins: [
     tailwindcss(),
@@ -51,11 +51,6 @@ export default defineConfig(() => ({
     }),
     nxCopyAssetsPlugin(['*.md']),
   ],
-  // resolve: {
-  //   alias: {
-  //     '@shared': path.resolve(__dirname, './src/shared'),
-  //   },
-  // },
   build: {
     outDir: '../../dist/apps/nova-frontend',
     emptyOutDir: true,
