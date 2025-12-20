@@ -12,6 +12,7 @@ import { map } from 'lodash';
 import { useEffect, useRef } from 'react';
 import { HashLoader } from 'react-spinners';
 import { AnimatedRoute } from '@/shared/ui/animated-route';
+
 export function Chat() {
   const initSend = useRef(false);
   const routeApi = getRouteApi('/chat/$id');

@@ -10,8 +10,7 @@ export const useGetAvailable = () => {
         id: notation.createStringNotation(source.name, '/', name),
         name,
       })) ?? [],
-    [data]
-  );
+    [data]);
 
   return { modelsFormat, ...other };
 };
@@ -20,8 +19,7 @@ export const useGetAvailableForMantine = () => {
   const { data, ...other } = useGetAvailableIncludeSoruce();
   const format = useMemo(
     () =>
-      data?.map(({ source, name }) => ({
-        label: name,
+      data?.map(({ source, name }) => ({ label: name,
         value: notation.createStringNotation(source.name, '/', name),
       })),
     [data]

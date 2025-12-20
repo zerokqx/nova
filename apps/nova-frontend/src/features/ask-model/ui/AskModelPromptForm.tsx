@@ -91,7 +91,7 @@ export const AskModelPromptForm = (props: IAskModelPromptFormProps) => {
               children={([canSubmit]) => {
                 return (
                   <PromptInputSubmit
-                    onClick={status === 'streaming' ? callbacks.stop : () => null}
+                    onClick={status === 'streaming' ? callbacks?.stop : () => null}
                     status={status}
                     disabled={!canSubmit}
                     className="rounded-full"

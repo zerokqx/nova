@@ -2,7 +2,6 @@ import { Body, Controller, Logger, Param, Post, Res } from '@nestjs/common';
 import { PerplexityService } from './perplexity/perplexity.service';
 import { SendDto } from './dto/send.dto';
 import { AiProvider } from './ai.guard';
-import { UseDataInterceptor } from '@moduleShared/data/data.interceptor';
 import { convertToModelMessages } from 'ai';
 
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
@@ -15,7 +14,6 @@ import { DeepSeekService } from './deepseek/deepseek.service';
 
 @ApiTags('AI')
 @Controller('ai')
-@UseDataInterceptor()
 export class AiController {
   constructor(
     private pplxService: PerplexityService,
