@@ -20,11 +20,12 @@ import { CreateChatDto } from './dto/create-chat.dto';
 import { ChatEntity } from './entities/chats.entity';
 import { chat } from '@/generated/prisma/client';
 import { DeleteManyChatDto } from './dto/delete-many.dto';
+import { ChatIncludeRelationEntity } from './entities/chats-include-relation.entity';
 
 @ApiTags('Сhats')
 @Controller('chats')
 export class ChatsController {
-  constructor(private readonly chatsService: ChatsService) { }
+  constructor(private readonly chatsService: ChatsService) {}
 
   @Delete('/delete_many')
   @ApiOperation({ summary: 'Удаляет чаты коотрые были переданы в body.ids' })
@@ -92,8 +93,7 @@ export class ChatsController {
     required: true,
     format: 'cuid',
   })
-  @ApiOkResponse({ type: ChatEntity })
-  @ApiOkResponse({ type: ChatEntity })
+  @ApiOkResponse({ type: ChatIncludeRelationEntity })
   select(@Param('id') id: chat['id']) {
     return this.chatsService.selectChat(id);
   }

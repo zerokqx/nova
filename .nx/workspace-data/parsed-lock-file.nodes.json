@@ -1,12 +1,12 @@
 {
   "nodes": {
-    "npm:@ai-sdk/deepseek@1.0.31": {
+    "npm:@ai-sdk/deepseek@1.0.32": {
       "type": "npm",
-      "name": "npm:@ai-sdk/deepseek@1.0.31",
+      "name": "npm:@ai-sdk/deepseek@1.0.32",
       "data": {
-        "version": "1.0.31",
+        "version": "1.0.32",
         "packageName": "@ai-sdk/deepseek",
-        "hash": "sha512-Il7WJp8bA3CmlreYSl1YzCucGTn2e5P81IANYIIEeLtWrbK0Y9CLoOCROj8xKYyUSMKlINyGZX2uP79cKewtSg=="
+        "hash": "sha512-DDNZSZn6OuExVBJBAWdk3VeyQPH+pYwSykixePhzll9EnT3aakapMYr5gjw3wMl+eZ0tLplythHL1TfIehUZ0g=="
       }
     },
     "npm:@ai-sdk/gateway@2.0.21": {
@@ -19926,15 +19926,6 @@
         "hash": "sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A=="
       }
     },
-    "npm:@ai-sdk/provider-utils@3.0.18": {
-      "type": "npm",
-      "name": "npm:@ai-sdk/provider-utils@3.0.18",
-      "data": {
-        "version": "3.0.18",
-        "packageName": "@ai-sdk/provider-utils",
-        "hash": "sha512-ypv1xXMsgGcNKUP+hglKqtdDuMg68nWHucPPAhIENrbFAI+xCHiqPVN8Zllxyv1TNZwGWUghPxJXU+Mqps0YRQ=="
-      }
-    },
     "npm:source-map@0.7.4": {
       "type": "npm",
       "name": "npm:source-map@0.7.4",
@@ -20277,6 +20268,15 @@
         "hash": "sha512-DT9ck5YIRU+8GYzzU5kT3eHGA5iL+1Zd0EutOmTE9Dtk+Tvuzd23VBU+ec7HPNSTxXYO55gPV/hq4pSBJDjFpA=="
       }
     },
+    "npm:@ai-sdk/deepseek@1.0.31": {
+      "type": "npm",
+      "name": "npm:@ai-sdk/deepseek@1.0.31",
+      "data": {
+        "version": "1.0.31",
+        "packageName": "@ai-sdk/deepseek",
+        "hash": "sha512-Il7WJp8bA3CmlreYSl1YzCucGTn2e5P81IANYIIEeLtWrbK0Y9CLoOCROj8xKYyUSMKlINyGZX2uP79cKewtSg=="
+      }
+    },
     "npm:@swc/cli@0.7.9": {
       "type": "npm",
       "name": "npm:@swc/cli@0.7.9",
@@ -20509,6 +20509,15 @@
         "version": "5.1.6",
         "packageName": "minimatch",
         "hash": "sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g=="
+      }
+    },
+    "npm:@ai-sdk/provider-utils@3.0.18": {
+      "type": "npm",
+      "name": "npm:@ai-sdk/provider-utils@3.0.18",
+      "data": {
+        "version": "3.0.18",
+        "packageName": "@ai-sdk/provider-utils",
+        "hash": "sha512-ypv1xXMsgGcNKUP+hglKqtdDuMg68nWHucPPAhIENrbFAI+xCHiqPVN8Zllxyv1TNZwGWUghPxJXU+Mqps0YRQ=="
       }
     },
     "npm:glob@8.1.0": {
@@ -24142,9 +24151,9 @@
       "type": "npm",
       "name": "npm:@ai-sdk/deepseek",
       "data": {
-        "version": "1.0.31",
+        "version": "1.0.32",
         "packageName": "@ai-sdk/deepseek",
-        "hash": "sha512-Il7WJp8bA3CmlreYSl1YzCucGTn2e5P81IANYIIEeLtWrbK0Y9CLoOCROj8xKYyUSMKlINyGZX2uP79cKewtSg=="
+        "hash": "sha512-DDNZSZn6OuExVBJBAWdk3VeyQPH+pYwSykixePhzll9EnT3aakapMYr5gjw3wMl+eZ0tLplythHL1TfIehUZ0g=="
       }
     },
     "npm:@ai-sdk/gateway": {

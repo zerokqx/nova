@@ -1,5 +1,4 @@
 import { chat } from '@/generated/prisma/client';
-import { MessagesEntity } from '@modules/messages/entities/messages.entity';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class ChatEntity implements chat {
@@ -13,6 +12,4 @@ export class ChatEntity implements chat {
   id: string;
   @ApiProperty()
   title: string;
-  @ApiProperty({ type: MessagesEntity, isArray: true })
-  messages: MessagesEntity[];
 }

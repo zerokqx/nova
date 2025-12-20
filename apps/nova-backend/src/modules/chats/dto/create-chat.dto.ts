@@ -9,9 +9,6 @@ export class CreateChatDto implements chatCreateInput {
   @ApiProperty()
   @IsString()
   @IsNotEmpty()
-  @Matches(/^[A-Za-z0-9_-]+\/[A-Za-z0-9_-]+$/, {
-    message: 'provider must be in format "source/model"',
-  })
   provider: string;
 
   @ApiProperty({})

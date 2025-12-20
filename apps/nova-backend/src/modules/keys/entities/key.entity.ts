@@ -1,4 +1,4 @@
-import { key } from '@/generated/prisma/client';
+import { type key } from '@/generated/prisma/client';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class KeysEntity implements key {

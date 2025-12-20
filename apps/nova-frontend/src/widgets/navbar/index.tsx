@@ -1,25 +1,21 @@
-import {
-  ActionIcon,
-  AppShellNavbar,
-  Center,
-  Group,
-  Loader,
-  Space,
-  Stack,
-  Text,
-  Title,
-} from '@mantine/core';
-import { map, update } from 'lodash';
+import { AppShellNavbar, Center, Space, Stack, Title, Text, Alert, Button } from '@mantine/core';
+import { map } from 'lodash';
 import { NavItem } from './NavItem';
 import { useGetAllChats } from '@/features/chats/api/get-all-chats';
-import { CheckCheck, Trash } from 'lucide-react';
 import { useNavbarStore } from './model/navbar-mode-store';
 import { NavbarControls } from './NavbarControls';
+import { Loader } from '@mantine/core';
 import { useLogger } from '@mantine/hooks';
+import { AlertCircle } from 'lucide-react';
+import { ErrorMessage } from '@/shared/ui/message-blocs';
+
 export const Navbar = () => {
-  const { data: chats } = useGetAllChats();
+  const { data: chats, isLoading, isError, refetch } = useGetAllChats();
   const s = useNavbarStore((s) => s.data.selectedItems);
+
+  console.log(chats);
   useLogger('SLEECT', [s]);
+
   return (
     <AppShellNavbar
       p={'md'}
@@ -32,11 +28,23 @@ export const Navbar = () => {
         },
       })}
     >
-      {chats && chats.length > 0 && <NavbarControls />}
       <Space h={'1rem'} />
-      {chats === undefined ? (
-        <Loader />
-      ) : chats.length === 0 ? (
+
+      {isLoading ? (
+        <Center>
+          <Loader />
+        </Center>
+      ) : isError ? (
+        <ErrorMessage
+          leftSection={<AlertCircle />}
+          center
+          message="Не удалось загрузить список чатов"
+        >
+          <Button onClick={() => refetch()} color="red" variant="light">
+            Попробовать еще раз
+          </Button>
+        </ErrorMessage>
+      ) : chats?.length === 0 ? (
         <Center>
           <Stack>
             <Title c={'blue'}>Чатов нет</Title>
@@ -44,9 +52,12 @@ export const Navbar = () => {
           </Stack>
         </Center>
       ) : (
-        map(chats.reverse(), ({ id, title }) => (
-          <NavItem key={`chat-${title}-${id}`} id={id} text={title} />
-        ))
+        <>
+          <NavbarControls />
+          {map(chats?.reverse(), ({ id, title }, i) => (
+            <NavItem key={`chat-${i}-${id}`} id={id} text={title} />
+          ))}
+        </>
       )}
     </AppShellNavbar>
   );

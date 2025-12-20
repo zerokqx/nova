@@ -12,12 +12,9 @@ type TAskModelWithoutSelectProps = {
   onSubmit: TOnSubmitHandlerForm<{ text: string; model: string }>;
   withSelect?: false;
 };
-export type IAskModelPromptFormProps = (
-  | TAskModelWithSelectProps
-  | TAskModelWithoutSelectProps
-) & {
+export type IAskModelPromptFormProps = (TAskModelWithSelectProps | TAskModelWithoutSelectProps) & {
   status?: ChatStatus;
-  callbacks: {
+  callbacks?: {
     stop: () => Promise<void>;
   };
 };
