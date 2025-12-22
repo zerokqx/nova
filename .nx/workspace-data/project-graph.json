@@ -211,32 +211,14 @@
             "parallelism": true
           },
           "serve": {
-            "continuous": true,
+            "executor": "@nx/vite:dev-server",
+            "defaultConfiguration": "development",
             "options": {
-              "cwd": "apps/nova-frontend",
-              "command": "vite"
+              "buildTarget": "nova-frontend:build"
             },
-            "metadata": {
-              "technologies": [
-                "vite"
-              ],
-              "description": "Starts Vite dev server",
-              "help": {
-                "command": "bun vite --help",
-                "example": {
-                  "options": {
-                    "port": 3000
-                  }
-                }
-              },
-              "deprecated": "Use devTargetName instead. This option will be removed in Nx 22."
-            },
-            "syncGenerators": [
-              "@nx/js:typescript-sync"
-            ],
-            "executor": "nx:run-commands",
             "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "continuous": true
           },
           "vite:dev": {
             "continuous": true,
@@ -470,6 +452,26 @@
             "configurations": {},
             "parallelism": true
           },
+          "build": {
+            "cache": true,
+            "executor": "@nx/vite:build",
+            "options": {
+              "outputPath": "dist/apps/nova-frontend"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "preview": {
+            "executor": "@nx/vite:preview-server",
+            "defaultConfiguration": "development",
+            "options": {
+              "port": 5173,
+              "buildTarget": "nova-frontend:build"
+            },
+            "configurations": {},
+            "parallelism": true,
+            "continuous": true
+          },
           "openapi:generate": {
             "executor": "nx:run-commands",
             "options": {
@@ -678,35 +680,16 @@
             "parallelism": true
           },
           "preview": {
-            "continuous": true,
-            "options": {
-              "cwd": "apps/nova-backend",
-              "args": [
-                "--node-env=production"
-              ],
-              "command": "webpack-cli serve"
-            },
-            "metadata": {
-              "technologies": [
-                "webpack"
-              ],
-              "description": "Starts Webpack dev server in production mode",
-              "help": {
-                "command": "bun webpack-cli serve --help",
-                "example": {
-                  "options": {
-                    "args": [
-                      "--client-progress",
-                      "--history-api-fallback "
-                    ]
-                  }
-                }
-              }
-            },
-            "syncGenerators": [
-              "@nx/js:typescript-sync"
-            ],
             "executor": "nx:run-commands",
+            "options": {
+              "command": "bun dist/apps/nova-backend/main.js",
+              "cwd": "."
+            },
+            "dependsOn": [
+              {
+                "target": "build"
+              }
+            ],
             "configurations": {},
             "parallelism": true
           },
@@ -1043,6 +1026,10 @@
               "docker:build",
               "docker:run",
               "nx-release-publish"
+            ],
+            "NPM Scripts": [
+              "nova:build:all",
+              "nova:development:all"
             ]
           },
           "js": {
@@ -1124,6 +1111,30 @@
             "executor": "@nx/docker:release-publish",
             "configurations": {},
             "options": {},
+            "parallelism": true
+          },
+          "nova:build:all": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "nova:build:all"
+            },
+            "metadata": {
+              "scriptContent": "nx run-many -t preview -c production",
+              "runCommand": "bun run nova:build:all -- undefined"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "nova:development:all": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "nova:development:all"
+            },
+            "metadata": {
+              "scriptContent": "nx run-many -t serve",
+              "runCommand": "bun run nova:development:all -- undefined"
+            },
+            "configurations": {},
             "parallelism": true
           }
         },
@@ -45415,26 +45426,11 @@
       {
         "source": "nova-frontend",
         "target": "npm:@tanstack/query-core@5.90.11",
-        "type": "dynamic"
+        "type": "static"
       },
       {
         "source": "nova-frontend",
         "target": "npm:framer-motion@12.23.24",
-        "type": "static"
-      },
-      {
-        "source": "nova-frontend",
-        "target": "npm:type-fest",
-        "type": "static"
-      },
-      {
-        "source": "nova-frontend",
-        "target": "npm:dexie@4.2.1",
-        "type": "static"
-      },
-      {
-        "source": "nova-frontend",
-        "target": "npm:@ai-sdk/react@2.0.115",
         "type": "static"
       },
       {
@@ -45449,32 +45445,12 @@
       },
       {
         "source": "nova-frontend",
+        "target": "npm:@ai-sdk/react@2.0.115",
+        "type": "static"
+      },
+      {
+        "source": "nova-frontend",
         "target": "npm:react-spinners@0.17.0",
-        "type": "static"
-      },
-      {
-        "source": "nova-frontend",
-        "target": "npm:@inversifyjs/strongly-typed@2.2.0",
-        "type": "static"
-      },
-      {
-        "source": "nova-frontend",
-        "target": "npm:inversify@7.10.4",
-        "type": "static"
-      },
-      {
-        "source": "nova-frontend",
-        "target": "npm:@react-native-async-storage/async-storage@2.2.0",
-        "type": "static"
-      },
-      {
-        "source": "nova-frontend",
-        "target": "npm:@google/genai@1.30.0",
-        "type": "static"
-      },
-      {
-        "source": "nova-frontend",
-        "target": "npm:@perplexity-ai/perplexity_ai@0.16.0",
         "type": "static"
       },
       {
@@ -45485,6 +45461,11 @@
       {
         "source": "nova-frontend",
         "target": "@nova/notation",
+        "type": "static"
+      },
+      {
+        "source": "nova-frontend",
+        "target": "npm:type-fest",
         "type": "static"
       },
       {
@@ -45642,6 +45623,11 @@
       {
         "source": "nova-backend",
         "target": "npm:prisma@6.19.0",
+        "type": "static"
+      },
+      {
+        "source": "nova-backend",
+        "target": "npm:nanoid@5.1.6",
         "type": "static"
       },
       {
@@ -64338,5 +64324,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1766250475509
+  "computedAt": 1766343086024
 }

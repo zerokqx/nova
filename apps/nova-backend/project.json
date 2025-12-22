@@ -23,6 +23,18 @@
         "cwd": "apps/nova-backend"
       }
     },
+    "preview": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "bun dist/apps/nova-backend/main.js",
+        "cwd": "."
+      },
+      "dependsOn": [
+        {
+          "target": "build"
+        }
+      ]
+    },
     "build": {
       "executor": "@nx/webpack:webpack",
       "outputs": [

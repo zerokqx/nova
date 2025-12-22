@@ -2,11 +2,7 @@ import { Checkbox, Group, rem, Text, useMantineTheme } from '@mantine/core';
 import { Link } from '@tanstack/react-router';
 import { useLayoutStore } from '@shared/lib/stores/useLayout';
 import { components } from '@/shared/types/schema';
-import {
-  doNewSelectItem,
-  doRemoveSelectItem,
-  useNavbarStore,
-} from './model/navbar-mode-store';
+import { doNewSelectItem, doRemoveSelectItem, useNavbarStore } from './model/navbar-mode-store';
 import { AnimatePresence, motion } from 'motion/react';
 
 export const NavItem = ({
@@ -20,7 +16,6 @@ export const NavItem = ({
   const select = useNavbarStore((s) => s.data.sleect);
   const isChecked = useNavbarStore((s) => s.data.selectedItems.includes(id));
   const updateLayout = useLayoutStore((s) => s.update);
-
   return (
     <Link
       to="/chat/$id"
@@ -39,7 +34,7 @@ export const NavItem = ({
             s.navbar = false;
           });
       }}
-      className="hover:bg-[#ffffff10]"
+      className="hover:bg-white/5"
       activeProps={{
         style: { border: `${t.colors.dark[9]} solid ${rem(1)}` },
       }}

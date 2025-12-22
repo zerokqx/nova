@@ -1,4 +1,5 @@
 import { paths } from '@shared/types/schema';
+import { QueryClient } from '@tanstack/react-query';
 import createFetchClient from 'openapi-fetch';
 import createClient from 'openapi-fetch';
 import createClientQuery from 'openapi-react-query';
@@ -12,3 +13,5 @@ export const $apiOpt = $api.queryOptions;
 export const $apiFetch = createClient<paths>({
   baseUrl: import.meta.env.VITE_API_URL,
 });
+
+export const queryClient = new QueryClient();

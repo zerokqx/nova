@@ -1,6 +1,11 @@
 {
   "name": "nova",
   "private": true,
+  "$schema": "https://json.schemastore.org/package.json",
+  "scripts": {
+    "nova:build:all": "nx run-many -t preview -c production",
+    "nova:development:all": "nx run-many -t serve"
+  },
   "version": "0.0.0",
   "dependencies": {
     "@ai-sdk/deepseek": "^1.0.32",

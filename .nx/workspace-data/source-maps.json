@@ -204,66 +204,6 @@
       "apps/nova-backend/project.json",
       "nx/core/project-json"
     ],
-    "targets.preview": [
-      "apps/nova-backend/webpack.config.ts",
-      "@nx/webpack/plugin"
-    ],
-    "targets.preview.continuous": [
-      "apps/nova-backend/webpack.config.ts",
-      "@nx/webpack/plugin"
-    ],
-    "targets.preview.options": [
-      "apps/nova-backend/webpack.config.ts",
-      "@nx/webpack/plugin"
-    ],
-    "targets.preview.metadata": [
-      "apps/nova-backend/webpack.config.ts",
-      "@nx/webpack/plugin"
-    ],
-    "targets.preview.syncGenerators": [
-      "apps/nova-backend/webpack.config.ts",
-      "@nx/webpack/plugin"
-    ],
-    "targets.preview.executor": [
-      "apps/nova-backend/webpack.config.ts",
-      "@nx/webpack/plugin"
-    ],
-    "targets.preview.options.cwd": [
-      "apps/nova-backend/webpack.config.ts",
-      "@nx/webpack/plugin"
-    ],
-    "targets.preview.options.args": [
-      "apps/nova-backend/webpack.config.ts",
-      "@nx/webpack/plugin"
-    ],
-    "targets.preview.options.command": [
-      "apps/nova-backend/webpack.config.ts",
-      "@nx/webpack/plugin"
-    ],
-    "targets.preview.metadata.technologies": [
-      "apps/nova-backend/webpack.config.ts",
-      "@nx/webpack/plugin"
-    ],
-    "targets.preview.metadata.technologies.0": [
-      "apps/nova-backend/webpack.config.ts",
-      "@nx/webpack/plugin"
-    ],
-    "targets.preview.metadata.description": [
-      "apps/nova-backend/webpack.config.ts",
-      "@nx/webpack/plugin"
-    ],
-    "targets.preview.metadata.help": [
-      "apps/nova-backend/webpack.config.ts",
-      "@nx/webpack/plugin"
-    ],
-    "targets.preview.metadata.help.command": [
-      "apps/nova-backend/webpack.config.ts",
-      "@nx/webpack/plugin"
-    ],
-    "targets.preview.metadata.help.example": [
-      "apps/nova-backend/webpack.config.ts",
-      "@nx/webpack/plugin"
-    ],
     "targets.watch-deps": [
       "apps/nova-backend/webpack.config.ts",
       "@nx/webpack/plugin"
@@ -377,6 +317,30 @@
       "nx/core/project-json"
     ],
     "targets.prisma:regenerate.options.cwd": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.executor": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.options": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.dependsOn": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.options.command": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.options.cwd": [
       "apps/nova-backend/project.json",
       "nx/core/project-json"
     ],
@@ -761,367 +725,279 @@
       "nx/core/project-json"
     ],
     "targets.vite:build": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:build.options": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:build.cache": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:build.dependsOn": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:build.inputs": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:build.outputs": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:build.metadata": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:build.syncGenerators": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:build.executor": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:build.options.cwd": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:build.options.command": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:build.metadata.technologies": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:build.metadata.technologies.0": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:build.metadata.description": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:build.metadata.help": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:build.metadata.help.command": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:build.metadata.help.example": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve.continuous": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve.options": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve.metadata": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve.syncGenerators": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve.executor": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve.options.cwd": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve.options.command": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve.metadata.technologies": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve.metadata.technologies.0": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve.metadata.description": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve.metadata.help": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve.metadata.help.command": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve.metadata.help.example": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve.metadata.deprecated": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:dev": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:dev.continuous": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:dev.options": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:dev.metadata": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:dev.syncGenerators": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:dev.executor": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:dev.options.cwd": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:dev.options.command": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:dev.metadata.technologies": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:dev.metadata.technologies.0": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:dev.metadata.description": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:dev.metadata.help": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:dev.metadata.help.command": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:dev.metadata.help.example": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:preview": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:preview.continuous": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:preview.dependsOn": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:preview.options": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:preview.metadata": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:preview.executor": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:preview.options.cwd": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:preview.options.command": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:preview.metadata.technologies": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:preview.metadata.technologies.0": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:preview.metadata.description": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:preview.metadata.help": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:preview.metadata.help.command": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.vite:preview.metadata.help.example": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve-static": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve-static.continuous": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve-static.executor": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve-static.options": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve-static.syncGenerators": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve-static.options.buildTarget": [
-      "apps/nova-frontend/vite.config.mts",
-      "@nx/vite/plugin"
-    ],
-    "targets.serve-static.options.spa": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.typecheck": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.typecheck.cache": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.typecheck.inputs": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.typecheck.options": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.typecheck.metadata": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.typecheck.dependsOn": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.typecheck.syncGenerators": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.typecheck.executor": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.typecheck.options.cwd": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.typecheck.options.command": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.typecheck.metadata.description": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.typecheck.metadata.technologies": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.typecheck.metadata.technologies.0": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.typecheck.metadata.help": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.typecheck.metadata.help.command": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.typecheck.metadata.help.example": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.build-deps": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.build-deps.dependsOn": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.watch-deps": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.watch-deps.continuous": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.watch-deps.dependsOn": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.watch-deps.executor": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.watch-deps.options": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.watch-deps.options.command": [
-      "apps/nova-frontend/vite.config.mts",
+      "apps/nova-frontend/vite.config.ts",
       "@nx/vite/plugin"
     ],
     "targets.test": [
@@ -1309,6 +1185,74 @@
       "nx/core/project-json"
     ],
     "// targets": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.cache": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.executor": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.outputPath": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.executor": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.defaultConfiguration": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options.buildTarget": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.executor": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.defaultConfiguration": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.options": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.configurations": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.options.port": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.options.buildTarget": [
       "apps/nova-frontend/project.json",
       "nx/core/project-json"
     ],
@@ -1697,8 +1641,8 @@
       "nx/core/package-json"
     ],
     "metadata.targetGroups": [
-      "Dockerfile",
-      "@nx/docker"
+      "package.json",
+      "nx/core/package-json"
     ],
     "metadata.targetGroups.Docker": [
       "Dockerfile",
@@ -1869,6 +1813,62 @@
       "nx/core/package-json"
     ],
     "metadata.js.isInPackageManagerWorkspaces": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:build:all": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:build:all.executor": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:build:all.options": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:build:all.metadata": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:build:all.options.script": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:build:all.metadata.scriptContent": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:build:all.metadata.runCommand": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:development:all": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:development:all.executor": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:development:all.options": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:development:all.metadata": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:development:all.options.script": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:development:all.metadata.scriptContent": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:development:all.metadata.runCommand": [
       "package.json",
       "nx/core/package-json"
     ]

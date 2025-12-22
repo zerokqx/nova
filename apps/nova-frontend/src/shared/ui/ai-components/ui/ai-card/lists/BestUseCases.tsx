@@ -2,7 +2,6 @@ import { Grid, List, Stack, Title } from '@mantine/core';
 import { useAiCard } from '../../../model/ustAiCardProvider';
 import { map } from 'lodash';
 import { IAiCardComponent } from '../../types/AiCard.interface';
-import { Dot } from 'lucide-react';
 
 export const BestUseCases: IAiCardComponent['BestUseCases'] = ({ title }) => {
   const { bestUseCases } = useAiCard();
@@ -15,7 +14,6 @@ export const BestUseCases: IAiCardComponent['BestUseCases'] = ({ title }) => {
               Лучшие практики
             </Title>
           )}
-
           <List p={'none'}>
             {map(bestUseCases, (useCase) => (
               <List.Item c={'dark'} fw={'bold'}>

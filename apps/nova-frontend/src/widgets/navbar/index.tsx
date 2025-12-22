@@ -2,19 +2,13 @@ import { AppShellNavbar, Center, Space, Stack, Title, Text, Alert, Button } from
 import { map } from 'lodash';
 import { NavItem } from './NavItem';
 import { useGetAllChats } from '@/features/chats/api/get-all-chats';
-import { useNavbarStore } from './model/navbar-mode-store';
 import { NavbarControls } from './NavbarControls';
 import { Loader } from '@mantine/core';
-import { useLogger } from '@mantine/hooks';
 import { AlertCircle } from 'lucide-react';
 import { ErrorMessage } from '@/shared/ui/message-blocs';
 
 export const Navbar = () => {
   const { data: chats, isLoading, isError, refetch } = useGetAllChats();
-  const s = useNavbarStore((s) => s.data.selectedItems);
-
-  console.log(chats);
-  useLogger('SLEECT', [s]);
 
   return (
     <AppShellNavbar
@@ -54,7 +48,7 @@ export const Navbar = () => {
       ) : (
         <>
           <NavbarControls />
-          {map(chats?.reverse(), ({ id, title }, i) => (
+          {map(chats, ({ id, title }, i) => (
             <NavItem key={`chat-${i}-${id}`} id={id} text={title} />
           ))}
         </>

@@ -9,6 +9,7 @@ import { routeTree } from './routeTree.gen';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { mantineTheme } from '@shared/styles/mantine';
 import { emotionTransform, MantineEmotionProvider } from '@mantine/emotion';
+import { queryClient } from '@/shared/api/client';
 
 const router = createRouter({ routeTree });
 
@@ -18,7 +19,6 @@ declare module '@tanstack/react-router' {
   }
 }
 
-const queryClient = new QueryClient();
 declare global {
   interface Window {
     __TANSTACK_QUERY_CLIENT__: import('@tanstack/query-core').QueryClient;
@@ -43,6 +43,6 @@ if (!rootElement.innerHTML) {
           </MantineEmotionProvider>
         </QueryClientProvider>
       </MantineProvider>
-    </StrictMode>
+    </StrictMode>,
   );
 }

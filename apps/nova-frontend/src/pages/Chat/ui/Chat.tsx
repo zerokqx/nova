@@ -6,32 +6,38 @@ import { doGetInitMessage } from '@/features/messages/model/intializeMessageStor
 import { useSendMessage } from '@features/sendMessage';
 import { AppShellMain, Stack, Center, useMantineTheme } from '@mantine/core';
 import { useAdaptiveSpace } from '@shared/lib/hooks/useAdaptiveSpace';
-import { getRouteApi } from '@tanstack/react-router';
+import { getRouteApi, useParams } from '@tanstack/react-router';
 import { UIMessage } from 'ai';
 import { map } from 'lodash';
 import { useEffect, useRef } from 'react';
 import { HashLoader } from 'react-spinners';
 import { AnimatedRoute } from '@/shared/ui/animated-route';
+import { useLogger } from '@mantine/hooks';
+import { useSuspenseSelect } from '@/features/chats/api/select-chat';
 
 export function Chat() {
   const initSend = useRef(false);
-  const routeApi = getRouteApi('/chat/$id');
-  const data = routeApi.useLoaderData().data;
+  const { id } = useParams({ from: '/chat/$id' });
+
+  const { data, refetch, isLoading, isFetching } = useSuspenseSelect(id);
+  useLogger('DATA', [data]);
   const t = useMantineTheme();
   const { sendMessage, status, messages, stop } = useSendMessage(
     data?.provider ?? '',
     data?.id ?? '',
     data?.messages as UIMessage[],
   );
-
+  useLogger('FETCH', [isFetching]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [ref, Space] = useAdaptiveSpace();
+
   useEffect(() => {
-    if (!initSend.current && messages.length === 0) {
+    if (isFetching) return;
+    if (data?.messages?.length === 0 && !initSend.current) {
       sendMessage({ text: doGetInitMessage() });
       initSend.current = true;
     }
-  }, [messages, sendMessage]);
+  }, [id, data?.messages?.length, isFetching, sendMessage]);
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
@@ -42,9 +48,9 @@ export function Chat() {
           <Stack w={{ base: '100%', sm: '50rem' }}>
             {messages.length > 0 && (
               <Conversation>
-                <ConversationContent>
+                <ConversationContent style={{ overflowX: 'hidden' }}>
                   {messages &&
-                    map(messages, ({ parts, role, id }, messageIndex) => (
+                    map(messages, ({ parts, role, id }) => (
                       <motion.div
                         initial={{ scale: 2, opacity: 0, filter: 'blur(10px)' }}
                         animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}
@@ -103,6 +109,20 @@ export function Chat() {
             withSelect={false}
             onSubmit={async ({ value }) => {
               sendMessage(value);
+              // if (data?.id) {
+              //   queryClient.invalidateQueries({
+              //     ...$apiOpt(
+              //       'get',
+              //       '/api/chats/select/{id}',
+              //       {
+              //         params: { path: { id: data.id } },
+              //       },
+              //       { refetchOnMount: 'always' },
+              //     ),
+              //
+              //     refetchType: 'none',
+              //   });
+              // }
             }}
           />
         </Center>
