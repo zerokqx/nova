@@ -1,0 +1,50 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "module": "commonjs", // Важно: должно быть commonjs для Node
+    "target": "es2020",
+    "types": [
+      "node"
+    ],
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "emitDecoratorMetadata": true,
+    "composite": true,
+    "baseUrl": "./",
+    "paths": {
+      "@modules/*": [
+        "src/modules/*"
+      ],
+      "@moduleShared/*": [
+        "src/modules/shared/*"
+      ],
+      "@lib/*": [
+        "src/lib/*"
+      ],
+      "@/*": [
+        "src/*"
+      ],
+      "@orm/*": [
+        "src/generated/prisma/*"
+      ],
+      "@ormClient": [
+        "src/generated/prisma/client.ts"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "jest.config.ts",
+    "jest.config.cts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts"
+  ],
+  "references": [
+    {
+      "path": "../../libs/notation/tsconfig.lib.json"
+    }
+  ]
+}

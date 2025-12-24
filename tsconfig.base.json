@@ -1,0 +1,16 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "lib": [
+      "ES2022.Error",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "strict": true,
+    "composite": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "baseUrl": "./"
+  },
+}

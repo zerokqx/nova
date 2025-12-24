@@ -1,0 +1,21 @@
+.main {
+  overflow: hidden;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: .2;
+  filter: blur(80px);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.8s ease-out;
+  height: 20px;
+  z-index: -1;
+}
+
+.main:hover::before {
+  transform: scaleX(1);
+}

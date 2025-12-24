@@ -1,0 +1,1748 @@
+{
+  "apps/nova-backend": {
+    "root": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "apps/nova-backend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint": [
+      "apps/nova-backend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.cache": [
+      "apps/nova-backend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options": [
+      "apps/nova-backend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs": [
+      "apps/nova-backend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.outputs": [
+      "apps/nova-backend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata": [
+      "apps/nova-backend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.executor": [
+      "apps/nova-backend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.cwd": [
+      "apps/nova-backend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.command": [
+      "apps/nova-backend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.technologies": [
+      "apps/nova-backend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.technologies.0": [
+      "apps/nova-backend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.description": [
+      "apps/nova-backend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help": [
+      "apps/nova-backend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help.command": [
+      "apps/nova-backend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help.example": [
+      "apps/nova-backend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.test": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.metadata": [
+      "apps/nova-backend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.cache": [
+      "apps/nova-backend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.inputs": [
+      "apps/nova-backend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.outputs": [
+      "apps/nova-backend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.executor": [
+      "apps/nova-backend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.options.cwd": [
+      "apps/nova-backend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.options.env": [
+      "apps/nova-backend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.options.command": [
+      "apps/nova-backend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.technologies": [
+      "apps/nova-backend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.technologies.0": [
+      "apps/nova-backend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.description": [
+      "apps/nova-backend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.help": [
+      "apps/nova-backend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.help.command": [
+      "apps/nova-backend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.help.example": [
+      "apps/nova-backend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.tsc:typecheck": [
+      "apps/nova-backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.dependsOn": [
+      "apps/nova-backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.options": [
+      "apps/nova-backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.cache": [
+      "apps/nova-backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.inputs": [
+      "apps/nova-backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.outputs": [
+      "apps/nova-backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.syncGenerators": [
+      "apps/nova-backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata": [
+      "apps/nova-backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.executor": [
+      "apps/nova-backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.options.cwd": [
+      "apps/nova-backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.options.command": [
+      "apps/nova-backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.technologies": [
+      "apps/nova-backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.technologies.0": [
+      "apps/nova-backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.description": [
+      "apps/nova-backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.help": [
+      "apps/nova-backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.help.command": [
+      "apps/nova-backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.help.example": [
+      "apps/nova-backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "projectType": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.watch-deps": [
+      "apps/nova-backend/webpack.config.ts",
+      "@nx/webpack/plugin"
+    ],
+    "targets.watch-deps.continuous": [
+      "apps/nova-backend/webpack.config.ts",
+      "@nx/webpack/plugin"
+    ],
+    "targets.watch-deps.dependsOn": [
+      "apps/nova-backend/webpack.config.ts",
+      "@nx/webpack/plugin"
+    ],
+    "targets.watch-deps.executor": [
+      "apps/nova-backend/webpack.config.ts",
+      "@nx/webpack/plugin"
+    ],
+    "targets.watch-deps.options": [
+      "apps/nova-backend/webpack.config.ts",
+      "@nx/webpack/plugin"
+    ],
+    "targets.watch-deps.options.command": [
+      "apps/nova-backend/webpack.config.ts",
+      "@nx/webpack/plugin"
+    ],
+    "name": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "apps/nova-backend/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:public": [
+      "apps/nova-backend/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups": [
+      "apps/nova-backend/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js": [
+      "apps/nova-backend/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageName": [
+      "apps/nova-backend/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.isInPackageManagerWorkspaces": [
+      "apps/nova-backend/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish": [
+      "apps/nova-backend/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.executor": [
+      "apps/nova-backend/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.dependsOn": [
+      "apps/nova-backend/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.options": [
+      "apps/nova-backend/package.json",
+      "nx/core/package-json"
+    ],
+    "$schema": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.prisma:seed": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.prisma:seed.executor": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.prisma:seed.options": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.prisma:seed.options.commands": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.prisma:seed.options.cwd": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.prisma:regenerate": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.prisma:regenerate.executor": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.prisma:regenerate.options": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.prisma:regenerate.options.commands": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.prisma:regenerate.options.cwd": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.executor": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.options": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.dependsOn": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.options.command": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.options.cwd": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.executor": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.outputs": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.defaultConfiguration": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.outputPath": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.webpackConfig": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.target": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.tsConfig": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.wathc": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.development": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.development.optimization": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.production": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.production.optimization": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.executor": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options.commands": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options.parallel": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options.cwd": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve:dev": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve:dev.executor": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve:dev.options": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve:dev.dependsOn": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve:dev.options.command": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve:dev.options.cwd": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "apps/nova-backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.dependsOn": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "apps/nova-backend-e2e": {
+    "root": [
+      "apps/nova-backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "apps/nova-backend-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint": [
+      "apps/nova-backend-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.cache": [
+      "apps/nova-backend-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options": [
+      "apps/nova-backend-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs": [
+      "apps/nova-backend-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.outputs": [
+      "apps/nova-backend-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata": [
+      "apps/nova-backend-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.executor": [
+      "apps/nova-backend-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.cwd": [
+      "apps/nova-backend-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.command": [
+      "apps/nova-backend-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.technologies": [
+      "apps/nova-backend-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.technologies.0": [
+      "apps/nova-backend-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.description": [
+      "apps/nova-backend-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help": [
+      "apps/nova-backend-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help.command": [
+      "apps/nova-backend-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help.example": [
+      "apps/nova-backend-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.tsc:typecheck": [
+      "apps/nova-backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.dependsOn": [
+      "apps/nova-backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.options": [
+      "apps/nova-backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.cache": [
+      "apps/nova-backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.inputs": [
+      "apps/nova-backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.outputs": [
+      "apps/nova-backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.syncGenerators": [
+      "apps/nova-backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata": [
+      "apps/nova-backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.executor": [
+      "apps/nova-backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.options.cwd": [
+      "apps/nova-backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.options.command": [
+      "apps/nova-backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.technologies": [
+      "apps/nova-backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.technologies.0": [
+      "apps/nova-backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.description": [
+      "apps/nova-backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.help": [
+      "apps/nova-backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.help.command": [
+      "apps/nova-backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.help.example": [
+      "apps/nova-backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "name": [
+      "apps/nova-backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "apps/nova-backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "apps/nova-backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "implicitDependencies": [
+      "apps/nova-backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "implicitDependencies.nova-backend": [
+      "apps/nova-backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.e2e": [
+      "apps/nova-backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.e2e.executor": [
+      "apps/nova-backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.e2e.outputs": [
+      "apps/nova-backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.e2e.options": [
+      "apps/nova-backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.e2e.dependsOn": [
+      "apps/nova-backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.e2e.options.jestConfig": [
+      "apps/nova-backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.e2e.options.passWithNoTests": [
+      "apps/nova-backend-e2e/project.json",
+      "nx/core/project-json"
+    ]
+  },
+  "apps/nova-frontend": {
+    "root": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "apps/nova-frontend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint": [
+      "apps/nova-frontend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.cache": [
+      "apps/nova-frontend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options": [
+      "apps/nova-frontend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs": [
+      "apps/nova-frontend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.outputs": [
+      "apps/nova-frontend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata": [
+      "apps/nova-frontend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.executor": [
+      "apps/nova-frontend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.cwd": [
+      "apps/nova-frontend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.command": [
+      "apps/nova-frontend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.technologies": [
+      "apps/nova-frontend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.technologies.0": [
+      "apps/nova-frontend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.description": [
+      "apps/nova-frontend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help": [
+      "apps/nova-frontend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help.command": [
+      "apps/nova-frontend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help.example": [
+      "apps/nova-frontend/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "projectType": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.vite:build": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:build.options": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:build.cache": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:build.dependsOn": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:build.inputs": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:build.outputs": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:build.metadata": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:build.syncGenerators": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:build.executor": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:build.options.cwd": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:build.options.command": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:build.metadata.technologies": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:build.metadata.technologies.0": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:build.metadata.description": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:build.metadata.help": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:build.metadata.help.command": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:build.metadata.help.example": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:dev": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:dev.continuous": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:dev.options": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:dev.metadata": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:dev.syncGenerators": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:dev.executor": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:dev.options.cwd": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:dev.options.command": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:dev.metadata.technologies": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:dev.metadata.technologies.0": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:dev.metadata.description": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:dev.metadata.help": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:dev.metadata.help.command": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:dev.metadata.help.example": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:preview": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:preview.continuous": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:preview.dependsOn": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:preview.options": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:preview.metadata": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:preview.executor": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:preview.options.cwd": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:preview.options.command": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:preview.metadata.technologies": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:preview.metadata.technologies.0": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:preview.metadata.description": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:preview.metadata.help": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:preview.metadata.help.command": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.vite:preview.metadata.help.example": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.typecheck": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.typecheck.cache": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.typecheck.inputs": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.typecheck.options": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.typecheck.metadata": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.typecheck.dependsOn": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.typecheck.syncGenerators": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.typecheck.executor": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.typecheck.options.cwd": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.typecheck.options.command": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.typecheck.metadata.description": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.typecheck.metadata.technologies": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.typecheck.metadata.technologies.0": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.typecheck.metadata.help": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.typecheck.metadata.help.command": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.typecheck.metadata.help.example": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.build-deps": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.build-deps.dependsOn": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.watch-deps": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.watch-deps.continuous": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.watch-deps.dependsOn": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.watch-deps.executor": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.watch-deps.options": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.watch-deps.options.command": [
+      "apps/nova-frontend/vite.config.ts",
+      "@nx/vite/plugin"
+    ],
+    "targets.test": [
+      "apps/nova-frontend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.options": [
+      "apps/nova-frontend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata": [
+      "apps/nova-frontend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.cache": [
+      "apps/nova-frontend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.inputs": [
+      "apps/nova-frontend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.outputs": [
+      "apps/nova-frontend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.executor": [
+      "apps/nova-frontend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.options.cwd": [
+      "apps/nova-frontend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.options.env": [
+      "apps/nova-frontend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.options.command": [
+      "apps/nova-frontend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.technologies": [
+      "apps/nova-frontend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.technologies.0": [
+      "apps/nova-frontend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.description": [
+      "apps/nova-frontend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.help": [
+      "apps/nova-frontend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.help.command": [
+      "apps/nova-frontend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.help.example": [
+      "apps/nova-frontend/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.tsc:typecheck": [
+      "apps/nova-frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.dependsOn": [
+      "apps/nova-frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.options": [
+      "apps/nova-frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.cache": [
+      "apps/nova-frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.inputs": [
+      "apps/nova-frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.outputs": [
+      "apps/nova-frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.syncGenerators": [
+      "apps/nova-frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata": [
+      "apps/nova-frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.executor": [
+      "apps/nova-frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.options.cwd": [
+      "apps/nova-frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.options.command": [
+      "apps/nova-frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.technologies": [
+      "apps/nova-frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.technologies.0": [
+      "apps/nova-frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.description": [
+      "apps/nova-frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.help": [
+      "apps/nova-frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.help.command": [
+      "apps/nova-frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.help.example": [
+      "apps/nova-frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "name": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "apps/nova-frontend/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:public": [
+      "apps/nova-frontend/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups": [
+      "apps/nova-frontend/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js": [
+      "apps/nova-frontend/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageName": [
+      "apps/nova-frontend/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.isInPackageManagerWorkspaces": [
+      "apps/nova-frontend/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish": [
+      "apps/nova-frontend/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.executor": [
+      "apps/nova-frontend/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.dependsOn": [
+      "apps/nova-frontend/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.options": [
+      "apps/nova-frontend/package.json",
+      "nx/core/package-json"
+    ],
+    "$schema": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "// targets": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.cache": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.executor": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.outputPath": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.executor": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.defaultConfiguration": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options.buildTarget": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.executor": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.defaultConfiguration": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.options": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.configurations": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.options.port": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.preview.options.buildTarget": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.openapi:generate": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.openapi:generate.executor": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.openapi:generate.options": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.openapi:generate.options.commands": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.openapi:generate.options.cwd": [
+      "apps/nova-frontend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.dependsOn": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/notation": {
+    "root": [
+      "libs/notation/package.json",
+      "nx/core/package-json"
+    ],
+    "targets": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.cache": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.outputs": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.executor": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.cwd": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.command": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.technologies": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.technologies.0": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.description": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help.command": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help.example": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.test": [
+      "libs/notation/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.options": [
+      "libs/notation/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata": [
+      "libs/notation/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.cache": [
+      "libs/notation/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.inputs": [
+      "libs/notation/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.outputs": [
+      "libs/notation/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.executor": [
+      "libs/notation/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.options.cwd": [
+      "libs/notation/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.options.env": [
+      "libs/notation/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.options.command": [
+      "libs/notation/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.technologies": [
+      "libs/notation/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.technologies.0": [
+      "libs/notation/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.description": [
+      "libs/notation/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.help": [
+      "libs/notation/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.help.command": [
+      "libs/notation/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.test.metadata.help.example": [
+      "libs/notation/jest.config.cts",
+      "@nx/jest/plugin"
+    ],
+    "targets.tsc:typecheck": [
+      "libs/notation/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.dependsOn": [
+      "libs/notation/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.options": [
+      "libs/notation/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.cache": [
+      "libs/notation/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.inputs": [
+      "libs/notation/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.outputs": [
+      "libs/notation/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.syncGenerators": [
+      "libs/notation/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata": [
+      "libs/notation/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.executor": [
+      "libs/notation/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.options.cwd": [
+      "libs/notation/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.options.command": [
+      "libs/notation/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.technologies": [
+      "libs/notation/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.technologies.0": [
+      "libs/notation/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.description": [
+      "libs/notation/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.help": [
+      "libs/notation/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.help.command": [
+      "libs/notation/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.tsc:typecheck.metadata.help.example": [
+      "libs/notation/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build.dependsOn": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build.options": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build.cache": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build.inputs": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build.outputs": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build.syncGenerators": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build.metadata": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build.executor": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build.options.cwd": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build.options.command": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build.metadata.technologies": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build.metadata.technologies.0": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build.metadata.description": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build.metadata.help": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build.metadata.help.command": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build.metadata.help.example": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build-deps": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.build-deps.dependsOn": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.watch-deps": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.watch-deps.continuous": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.watch-deps.dependsOn": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.watch-deps.executor": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.watch-deps.options": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "targets.watch-deps.options.command": [
+      "libs/notation/tsconfig.lib.json",
+      "@nx/js/typescript"
+    ],
+    "name": [
+      "libs/notation/package.json",
+      "nx/core/package-json"
+    ],
+    "tags": [
+      "libs/notation/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:private": [
+      "libs/notation/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups": [
+      "libs/notation/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js": [
+      "libs/notation/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageName": [
+      "libs/notation/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageVersion": [
+      "libs/notation/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageExports": [
+      "libs/notation/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageMain": [
+      "libs/notation/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.isInPackageManagerWorkspaces": [
+      "libs/notation/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.dependsOn": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  ".": {
+    "root": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "name": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "tags": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:private": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.0": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.1": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageName": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageVersion": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.isInPackageManagerWorkspaces": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:build:all": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:build:all.executor": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:build:all.options": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:build:all.metadata": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:build:all.options.script": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:build:all.metadata.scriptContent": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:build:all.metadata.runCommand": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:development:all": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:development:all.executor": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:development:all.options": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:development:all.metadata": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:development:all.options.script": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:development:all.metadata.scriptContent": [
+      "package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nova:development:all.metadata.runCommand": [
+      "package.json",
+      "nx/core/package-json"
+    ]
+  }
+}

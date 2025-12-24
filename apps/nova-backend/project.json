@@ -1,0 +1,87 @@
+{
+  "name": "nova-backend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nova-backend/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "prisma:seed": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "bun run ./prisma/seed.ts"
+        ],
+        "cwd": "apps/nova-backend"
+      }
+    },
+    "prisma:regenerate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "prisma db pull && prisma generate"
+        ],
+        "cwd": "apps/nova-backend"
+      }
+    },
+    "preview": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "bun dist/apps/nova-backend/main.js",
+        "cwd": "."
+      },
+      "dependsOn": [
+        {
+          "target": "build"
+        }
+      ]
+    },
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/nova-backend",
+        "webpackConfig": "apps/nova-backend/webpack.config.ts",
+        "target": "node",
+        "tsConfig": "apps/nova-backend/tsconfig.app.json",
+        "wathc": true
+      },
+      "configurations": {
+        "development": {
+          "optimization": false
+        },
+        "production": {
+          "optimization": true
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx build nova-backend --watch",
+          "nodemon --watch dist/apps/nova-backend dist/apps/nova-backend/main.js"
+        ],
+        "parallel": false,
+        "cwd": "."
+      }
+    },
+    "serve:dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nodemon --watch dist/apps/nova-backend dist/apps/nova-backend/main.js",
+        "cwd": "."
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "test": {
+      "options": {
+        "passWithNoTests": true
+      }
+    }
+  }
+}
