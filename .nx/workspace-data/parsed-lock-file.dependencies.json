@@ -2555,21 +2555,6 @@
     "type": "static"
   },
   {
-    "source": "npm:dexie-react-hooks@4.2.0",
-    "target": "npm:@types/react@19.2.7",
-    "type": "static"
-  },
-  {
-    "source": "npm:dexie-react-hooks@4.2.0",
-    "target": "npm:dexie@4.2.1",
-    "type": "static"
-  },
-  {
-    "source": "npm:dexie-react-hooks@4.2.0",
-    "target": "npm:react@19.2.0",
-    "type": "static"
-  },
-  {
     "source": "npm:dir-glob@3.0.1",
     "target": "npm:path-type@4.0.0",
     "type": "static"
@@ -5737,21 +5722,6 @@
   {
     "source": "npm:invariant@2.2.4",
     "target": "npm:loose-envify@1.4.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:inversify@7.10.4",
-    "target": "npm:@inversifyjs/common@1.5.2",
-    "type": "static"
-  },
-  {
-    "source": "npm:inversify@7.10.4",
-    "target": "npm:@inversifyjs/container@1.14.1",
-    "type": "static"
-  },
-  {
-    "source": "npm:inversify@7.10.4",
-    "target": "npm:@inversifyjs/core@9.1.1",
     "type": "static"
   },
   {
@@ -11486,11 +11456,6 @@
   },
   {
     "source": "npm:react-dom@19.2.0",
-    "target": "npm:react@19.2.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:react-if@4.1.6",
     "target": "npm:react@19.2.0",
     "type": "static"
   },
